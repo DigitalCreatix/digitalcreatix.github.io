@@ -426,13 +426,13 @@ nav {
 
 .card-left-1 {
     top: 25%;
-    left: 5%;
+    left: 30%;
     animation-delay: 0s;
 }
 
 .card-right-1 {
     top: 25%;
-    right: 5%;
+    right: 30%;
     animation-delay: 2s;
 }
 
