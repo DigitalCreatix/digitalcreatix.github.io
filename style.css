@@ -430,10 +430,20 @@ nav {
         animation: floatCard 4s ease-in-out infinite;
     }
 
-    @keyframes floatCard {
-        0%, 100% { transform: translateY(-50%); }
-        50% { transform: translateY(calc(-50% - 8px)); }
+    .card-left-1 {
+        left: 20px;
     }
+
+    .card-right-1 {
+        right: 20px;
+        animation-delay: 2s;
+    }
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(-50%); }
+    50% { transform: translateY(calc(-50% - 8px)); }
+}
 /* Features & Metrics Section Styling */
 .features-metrics-section {
     max-width: 1400px;
