@@ -401,50 +401,88 @@ nav {
     display: none; /* Mobile par hide */
 }
 
-@media (min-width: 1024px) {
-    .hero-floating-cards {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        box-sizing: border-box;
-        padding: 0 30px;
-    }
-
-    .floating-card {
-        position: absolute;
-        top: 45%; 
-        transform: translateY(-50%); 
-        background: #ffffff;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        padding: 16px 20px;
-        border-radius: 14px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-        text-align: left;
-        width: 240px;
-        pointer-events: auto;
-        z-index: 3;
-        animation: floatCard 4s ease-in-out infinite;
-    }
-
-    .card-left-1 {
-        left: 20px;
-    }
-
-    .card-right-1 {
-        right: 20px;
-        animation-delay: 2s;
-    }
+/* Hero Section Container */
+.hero {
+    position: relative;
+    padding: 80px 40px 60px 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
+/* Floating Cards Container */
+.hero-floating-cards {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    padding: 0 30px;
+    z-index: 3;
+}
+
+/* Base Floating Card Style */
+.floating-card {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 16px 20px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    width: 240px;
+    pointer-events: auto;
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+/* Left Card Fixed Position */
+.card-left-1 {
+    left: 40px !important;
+}
+
+/* Right Card Fixed Position */
+.card-right-1 {
+    right: 40px !important;
+    animation-delay: 2s;
+}
+
+/* Card Typography */
+.card-title {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-value {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.card-badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+/* Floating Animation */
 @keyframes floatCard {
     0%, 100% { transform: translateY(-50%); }
     50% { transform: translateY(calc(-50% - 8px)); }
-}
-/* Features & Metrics Section Styling */
+}/* Features & Metrics Section Styling */
 .features-metrics-section {
     max-width: 1400px;
     margin: 80px auto;
