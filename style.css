@@ -384,16 +384,19 @@ nav {
         transform: translateX(-50%);
     }
 }
-/* Hero Section Layout */
+/* Hero Section - 1440px Full Professional Width */
 .hero {
     position: relative;
-    padding: 70px 20px 50px 20px;
+    padding: 80px 40px 60px 40px;
     text-align: center;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* Floating Cards Wrapper - Fixed Layout */
+/* Floating Cards Wrapper for 1400px Layout */
 .hero-floating-cards {
     display: none; /* Mobile par hide */
 }
@@ -401,7 +404,16 @@ nav {
 @media (min-width: 1024px) {
     .hero-floating-cards {
         display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        box-sizing: border-box;
+        padding: 0 30px;
     }
+
     .floating-card {
         position: absolute;
         top: 35%;
@@ -411,15 +423,18 @@ nav {
         border-radius: 14px;
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
         text-align: left;
-        width: 230px;
+        width: 240px;
+        pointer-events: auto;
         z-index: 3;
         animation: floatCard 4s ease-in-out infinite;
     }
+
     .card-left-1 {
-        left: 2%; /* Left side par fix spacing */
+        left: 20px; /* 1400px container ke andar left side par fit */
     }
+
     .card-right-1 {
-        right: 2%; /* Right side par fix spacing */
+        right: 20px; /* 1400px container ke andar right side par fit */
         animation-delay: 2s;
     }
 }
