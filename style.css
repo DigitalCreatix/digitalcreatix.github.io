@@ -416,7 +416,8 @@ nav {
 
     .floating-card {
         position: absolute;
-        top: 35%;
+        top: 45%; 
+        transform: translateY(-50%); 
         background: #ffffff;
         border: 1px solid rgba(0, 0, 0, 0.08);
         padding: 16px 20px;
@@ -429,44 +430,10 @@ nav {
         animation: floatCard 4s ease-in-out infinite;
     }
 
-    .card-left-1 {
-        left: 20px; /* 1400px container ke andar left side par fit */
+    @keyframes floatCard {
+        0%, 100% { transform: translateY(-50%); }
+        50% { transform: translateY(calc(-50% - 8px)); }
     }
-
-    .card-right-1 {
-        right: 20px; /* 1400px container ke andar right side par fit */
-        animation-delay: 2s;
-    }
-}
-
-.card-title {
-    font-size: 12px;
-    color: #64748b;
-    font-weight: 600;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.card-value {
-    font-size: 17px;
-    font-weight: 700;
-    color: #0f172a;
-}
-
-.card-badge {
-    display: inline-block;
-    font-size: 11px;
-    padding: 3px 8px;
-    border-radius: 20px;
-    font-weight: 600;
-    margin-top: 6px;
-}
-
-@keyframes floatCard {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
 /* Features & Metrics Section Styling */
 .features-metrics-section {
     max-width: 1400px;
