@@ -831,42 +831,75 @@ body {
     visibility: visible;
 }
 
-/* Mobile Sidebar Drawer */
+/* ================================================= */
+/* FIXED Z-INDEX FOR NAVBAR & OVERLAY                */
+/* ================================================= */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 900; /* Navbar ko sidebar se neeche rakha hai */
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ================================================= */
+/* ADVANCED MOBILE SIDEBAR STYLING                   */
+/* ================================================= */
 .mobile-sidebar {
     position: fixed;
     top: 0;
-    left: -300px; /* Default mein screen se bahar hoga */
-    width: 280px;
+    left: -330px;
+    width: 320px;
     height: 100%;
     background: #ffffff;
-    z-index: 999;
-    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+    z-index: 999; /* Sabse upar rahega taake navbar iske peeche rahe */
+    box-shadow: 15px 0 40px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
-    padding: 25px;
     box-sizing: border-box;
     transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-sidebar.active {
-    left: 0; /* Click hone par left se bahar aa jayega */
+    left: 0;
 }
 
-/* Sidebar Header */
 .sidebar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    padding: 20px 24px;
     border-bottom: 1px solid #f1f5f9;
-    padding-bottom: 15px;
 }
 
 .sidebar-title {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     color: #64748b;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
 }
 
 .close-sidebar-btn {
@@ -881,50 +914,178 @@ body {
     align-items: center;
     justify-content: center;
     color: #0f172a;
+    transition: background 0.2s;
 }
 
-/* Sidebar Navigation Links */
+.close-sidebar-btn:hover {
+    background: #e2e8f0;
+}
+
+/* Scrollable Content Area */
+.sidebar-content-scroll {
+    padding: 20px 24px;
+    overflow-y: auto;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+/* Navigation Links inside Sidebar */
 .sidebar-nav-links {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    flex-grow: 1;
+    gap: 8px;
+    margin-bottom: 25px;
 }
 
-.sidebar-nav-links a {
-    font-size: 16px;
+.sidebar-nav-links > a, .dropdown-toggle-btn {
+    font-size: 15px;
     font-weight: 600;
     color: #0f172a;
     text-decoration: none;
     padding: 10px 12px;
     border-radius: 8px;
+    background: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
-.sidebar-nav-links a:hover {
+.sidebar-nav-links > a:hover, .dropdown-toggle-btn:hover {
     background: #f8fafc;
-    color: #2563eb;
+    color: #3b82f6;
 }
 
-/* Sidebar Footer CTA */
-.sidebar-footer-cta {
-    margin-top: auto;
-    padding-top: 20px;
-    border-top: 1px solid #f1f5f9;
+/* Services Dropdown Menu List */
+.dropdown-menu-list {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 12px;
+    margin-top: 6px;
+    border-left: 2px solid #e2e8f0;
 }
 
-.sidebar-cta-btn {
-    display: block;
-    width: 100%;
-    background: #2563eb;
-    color: #ffffff;
-    text-align: center;
-    padding: 12px;
-    border-radius: 10px;
-    font-weight: 600;
+.dropdown-menu-list.active {
+    display: flex;
+}
+
+.dropdown-menu-list a {
+    font-size: 13px;
+    color: #475569;
     text-decoration: none;
-    box-sizing: border-box;
+    padding: 8px 10px;
+    border-radius: 6px;
+    display: block;
+    transition: all 0.2s ease;
 }
+
+.dropdown-menu-list a:hover {
+    background: #f1f5f9;
+    color: #3b82f6;
+    padding-left: 14px;
+}
+
+/* Contact Section inside Sidebar */
+.sidebar-contact-section {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 1.2px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.sidebar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-form input, .sidebar-form textarea {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 13px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.sidebar-form input:focus, .sidebar-form textarea:focus {
+    border-color: #3b82f6;
+    background: #ffffff;
+}
+
+.sidebar-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: #64748b;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.sidebar-checkbox-label input {
+    margin-top: 2px;
+    width: auto;
+    cursor: pointer;
+}
+
+.sidebar-checkbox-label a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.sidebar-checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+.sidebar-send-btn {
+    background: #0f172a;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background 0.2s ease;
+}
+
+.sidebar-send-btn:hover {
+    background: #3b82f6;
+}
+
+/* Find Us / Footer Info inside Sidebar */
+.sidebar-find-us {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.sidebar-find-us p {
+    margin-bottom: 8px;
+    word-break: break-all;
+}}
 /* ================================================= */
 /* 1. ORIGINAL COMPACT PILL NAVBAR CSS               */
 /* ================================================= */
