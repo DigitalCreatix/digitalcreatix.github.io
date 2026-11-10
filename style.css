@@ -948,103 +948,46 @@ nav {
     text-decoration: none;
     box-sizing: border-box;
 }
-/* Navbar Wrapper & Pill Container */
+/* Sticky & Centered Navbar Wrapper */
 .navbar-wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 1400px;
-    margin: 20px auto 0 auto;
-    padding: 0 40px;
+    z-index: 1000;
+    background: rgba(240, 244, 248, 0.85); /* Scroll hone par background halka transparent blur rahe ga */
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
     box-sizing: border-box;
-    position: relative;
-    z-index: 10;
 }
 
+/* Sticky Frosted Glass Navbar Wrapper */
+.navbar-wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(240, 244, 248, 0.65); /* Isay mazeed transparent kar diya hai taake peeche se feel ho */
+    backdrop-filter: blur(12px); /* Yeh peeche wale content ko blur kar dega */
+    -webkit-backdrop-filter: blur(12px); /* Safari / Mobile browsers ke liye support */
+    padding: 15px 40px; /* Saath hi padding set kar di taake sides se chipke nahi */
+    box-sizing: border-box;
+}
+
+/* Navbar Centered Pill Container */
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.85); /* Pill khud bhi halka sa translucent glass feel dega */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     padding: 14px 28px;
     border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
     box-sizing: border-box;
-}
-
-/* Logo Styling */
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 18px;
-    font-weight: 800;
-    color: #0f172a;
-    text-decoration: none;
-}
-
-.logo-icon {
-    background: #2563eb;
-    color: #ffffff;
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-/* Desktop Links */
-.desktop-menu {
-    display: none;
-    align-items: center;
-    gap: 32px;
-}
-
-@media (min-width: 1024px) {
-    .desktop-menu {
-        display: flex;
-    }
-}
-
-.desktop-menu a {
-    font-size: 15px;
-    font-weight: 500;
-    color: #475569;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.desktop-menu a:hover, .desktop-menu a.active {
-    color: #2563eb;
-    font-weight: 600;
-}
-
-/* Desktop CTA Button */
-.desktop-cta {
-    display: none;
-}
-
-@media (min-width: 1024px) {
-    .desktop-cta {
-        display: block;
-    }
-}
-
-.nav-cta-btn {
-    background: #2563eb;
-    color: #ffffff;
-    padding: 10px 22px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s ease, transform 0.2s ease;
-    display: inline-block;
-}
-
-.nav-cta-btn:hover {
-    background: #1d4ed8;
-    transform: translateY(-1px);
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
