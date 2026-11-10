@@ -10,29 +10,6 @@ body {
     line-height: 1.6; 
     overflow-x: hidden;
 }
-
-/* Floating Pill Navbar */
-.nav-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 25px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-nav { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 10px 20px; 
-    background: rgba(255, 255, 255, 0.85); 
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50px;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
 .logo { 
     font-size: 18px; 
     font-weight: bold; 
@@ -948,46 +925,97 @@ nav {
     text-decoration: none;
     box-sizing: border-box;
 }
-/* Sticky & Centered Navbar Wrapper */
-.navbar-wrapper {
+/* ================================================= */
+/* 1. ORIGINAL COMPACT PILL NAVBAR CSS               */
+/* ================================================= */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
     position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
     z-index: 1000;
-    background: rgba(240, 244, 248, 0.85); /* Scroll hone par background halka transparent blur rahe ga */
-    backdrop-filter: blur(10px);
-    padding: 15px 0;
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px; 
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    width: 90%;
+    max-width: 800px; /* Aapka original compact size */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     box-sizing: border-box;
 }
 
-/* Sticky Frosted Glass Navbar Wrapper */
-.navbar-wrapper {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(240, 244, 248, 0.65); /* Isay mazeed transparent kar diya hai taake peeche se feel ho */
-    backdrop-filter: blur(12px); /* Yeh peeche wale content ko blur kar dega */
-    -webkit-backdrop-filter: blur(12px); /* Safari / Mobile browsers ke liye support */
-    padding: 15px 40px; /* Saath hi padding set kar di taake sides se chipke nahi */
-    box-sizing: border-box;
-}
-
-/* Navbar Centered Pill Container */
-.navbar {
+.logo { 
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #0f172a; 
+    text-decoration: none; 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background: rgba(255, 255, 255, 0.85); /* Pill khud bhi halka sa translucent glass feel dega */
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 14px 28px;
-    border-radius: 50px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
+    gap: 8px;
+    padding-left: 10px;
+}
+
+.logo-icon {
+    background: #3b82f6;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 25px; 
+    list-style: none; 
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a { 
+    color: #475569; 
+    text-decoration: none; 
+    font-size: 14px; 
+    font-weight: 500; 
+    transition: 0.3s; 
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: #3b82f6; 
+}
+
+.audit-btn { 
+    background-color: #3b82f6; 
+    color: #ffffff; 
+    padding: 10px 22px; 
+    border-radius: 30px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 14px; 
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+    transition: 0.3s; 
+}
+
+.audit-btn:hover { 
+    background-color: #2563eb; 
+}
+
+/* Mobile par desktop links hide karne ke liye */
+@media (max-width: 1023px) {
+    .nav-links, .audit-btn {
+        display: none;
+    }
 }
