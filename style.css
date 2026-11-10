@@ -629,7 +629,177 @@ nav {
     color: #0f172a;
     margin-bottom: 6px;
 }
+/* Services Grid Section */
+.services-grid-section {
+    max-width: 1400px;
+    margin: 100px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
 
+.services-section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-section-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.services-section-header p {
+    font-size: 16px;
+    color: #64748b;
+}
+
+/* 3x3 Grid Layout */
+.services-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .services-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Individual Service Card */
+.service-card {
+    position: relative;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #0f172a;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Background Image with Grayscale default */
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%) brightness(0.7);
+    transition: filter 0.6s ease, transform 0.6s ease;
+    z-index: 1;
+}
+
+.service-card:hover .card-bg {
+    filter: grayscale(0%) brightness(0.9); /* Hover par colorful ho jaye gi */
+    transform: scale(1.05);
+}
+
+/* Dark Gradient Overlay for text readability */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    z-index: 2;
+    transition: background 0.4s ease;
+}
+
+.service-card:hover .card-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+}
+
+/* Top Right Number (01, 02...) */
+.card-number {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 3;
+    letter-spacing: 1px;
+}
+
+/* Card Content (Heading & Paragraph) */
+.card-content {
+    position: relative;
+    z-index: 3;
+    transform: translateY(38px); /* Default state par paragraph chhupa rehta hai */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .card-content {
+    transform: translateY(0); /* Hover par heading upar hogi aur paragraph show hoga */
+}
+
+.card-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.service-card:hover .card-content p {
+    opacity: 1;
+    max-height: 100px; /* Paragraph reveal animation */
+}
+
+/* Bottom-Right Blue Circle Arrow Icon */
+.card-arrow {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 44px;
+    height: 44px;
+    background: #2563eb; /* Aapka brand blue color */
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .card-arrow {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
 .stat-box p {
     font-size: 14px;
     color: #64748b;
