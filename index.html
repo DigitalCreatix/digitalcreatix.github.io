@@ -456,5 +456,25 @@
 
         </div>
     </section>
+        <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    function openMenu() {
+        mobileSidebar.classList.add('active');
+        sidebarOverlay.classList.add('active');
+    }
+
+    function closeMenu() {
+        mobileSidebar.classList.remove('active');
+        sidebarOverlay.classList.remove('active');
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    sidebarOverlay.addEventListener('click', closeMenu);
+</script>
         </body>
 </html>
