@@ -834,14 +834,7 @@ body {
 /* ================================================= */
 /* FIXED Z-INDEX FOR NAVBAR & OVERLAY                */
 /* ================================================= */
-.nav-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 25px;
-    position: sticky;
-    top: 0;
-    z-index: 900; /* Navbar ko sidebar se neeche rakha hai */
-}
+
 
 /* Sidebar Overlay */
 .sidebar-overlay {
@@ -1089,30 +1082,6 @@ body {
 /* ================================================= */
 /* 1. ORIGINAL COMPACT PILL NAVBAR CSS               */
 /* ================================================= */
-.nav-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 25px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 10px 20px; 
-    background: rgba(255, 255, 255, 0.85); 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50px;
-    width: 90%;
-    max-width: 800px; /* Aapka original compact size */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    box-sizing: border-box;
-}
 
 .logo { 
     font-size: 18px; 
@@ -1175,6 +1144,95 @@ nav {
 }
 
 /* Mobile par desktop links hide karne ke liye */
+@media (max-width: 1023px) {
+    .nav-links, .audit-btn {
+        display: none;
+    }
+}
+/* ================================================= */
+/* 1. FINAL CLEAN NAVBAR & LOGO STYLING              */
+/* ================================================= */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px; 
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.logo { 
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #0f172a; 
+    text-decoration: none; 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 0;
+}
+
+/* Navbar Logo Image - Yeh image ko chota aur fit rakhe ga */
+.nav-logo-img {
+    height: 32px !important;
+    width: auto !important;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 25px; 
+    list-style: none; 
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a { 
+    color: #475569; 
+    text-decoration: none; 
+    font-size: 14px; 
+    font-weight: 500; 
+    transition: 0.3s; 
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: #3b82f6; 
+}
+
+.audit-btn { 
+    background-color: #3b82f6; 
+    color: #ffffff; 
+    padding: 10px 22px; 
+    border-radius: 30px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 14px; 
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+    transition: 0.3s; 
+}
+
+.audit-btn:hover { 
+    background-color: #2563eb; 
+}
+
 @media (max-width: 1023px) {
     .nav-links, .audit-btn {
         display: none;
