@@ -509,5 +509,33 @@
     closeBtn.addEventListener('click', closeMenu);
     sidebarOverlay.addEventListener('click', closeMenu);
 </script>
+        <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    // Sidebar open/close
+    menuBtn.addEventListener('click', () => {
+        mobileSidebar.classList.add('active');
+        sidebarOverlay.classList.add('active');
+    });
+
+    function closeMenu() {
+        mobileSidebar.classList.remove('active');
+        sidebarOverlay.classList.remove('active');
+    }
+
+    closeBtn.addEventListener('click', closeMenu);
+    sidebarOverlay.addEventListener('click', closeMenu);
+
+    // Services Dropdown Toggle
+    const servicesDropdownBtn = document.getElementById('servicesDropdownBtn');
+    const servicesSubMenu = document.getElementById('servicesSubMenu');
+
+    servicesDropdownBtn.addEventListener('click', () => {
+        servicesSubMenu.classList.toggle('active');
+    });
+</script>
         </body>
 </html>
