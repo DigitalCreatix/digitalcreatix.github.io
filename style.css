@@ -1647,8 +1647,8 @@ nav {
 /* ================================================= */
 .cta-dark-section {
     position: relative;
-    width: 100vw;
-    left: calc(50% - 50vw);
+    width: 100%;
+    left: auto;
     background-color: #0b0f19;
     background-image: radial-gradient(circle at center, #1e293b 0%, #0b0f19 80%);
     padding: 120px 20px;
@@ -1656,7 +1656,6 @@ nav {
     box-sizing: border-box;
     margin-top: 100px;
 }
-
 .cta-dark-content {
     width: 100%;
     max-width: 900px;
@@ -1749,6 +1748,9 @@ nav {
     padding: 80px 40px 30px 40px;
     box-sizing: border-box;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    max-width: none;
+    margin: 0;
 }
 
 .footer-container {
