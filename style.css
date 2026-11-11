@@ -1238,3 +1238,105 @@ nav {
         display: none;
     }
 }
+/* ================================================= */
+/* OUR PROJECT ROADMAP SECTION STYLING               */
+/* ================================================= */
+.roadmap-section {
+    max-width: 1400px;
+    margin: 100px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.roadmap-header {
+    margin-bottom: 60px;
+}
+
+.roadmap-header h2 {
+    font-size: 44px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+
+.roadmap-subtitle {
+    font-size: 26px;
+    font-weight: 600;
+    font-style: italic;
+    color: #3b82f6; /* Aapka brand blue color */
+    margin-bottom: 10px;
+}
+
+.roadmap-desc {
+    font-size: 16px;
+    color: #64748b;
+}
+
+/* 4 Cards Grid Layout */
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .roadmap-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .roadmap-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Individual Roadmap Card with Hover Animation */
+.roadmap-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Animation Effect */
+.roadmap-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Big Number Styling */
+.roadmap-number {
+    font-size: 38px;
+    font-weight: 800;
+    color: #3b82f6; /* Brand Blue */
+    margin-bottom: 20px;
+    display: block;
+    line-height: 1;
+}
+
+/* Card Content Typography */
+.roadmap-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.roadmap-content p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
