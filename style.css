@@ -724,7 +724,7 @@ body {
 .card-content {
     position: relative;
     z-index: 3;
-    transform: translateY(45px); /* Default state par paragraph chhupa rehta hai */
+    transform: translateY(75px); /* Default state par paragraph chhupa rehta hai */
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
