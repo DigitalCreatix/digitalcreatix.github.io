@@ -662,5 +662,66 @@
         </div>
     </div>
 </section>
+        <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const track = document.getElementById('carouselTrack');
+        if (!track) return;
+        
+        const originalCards = Array.from(track.children);
+        
+        // Seamless loop ke liye cards ko double kar dete hain
+        originalCards.forEach(card => {
+            const clone = card.cloneNode(true);
+            track.appendChild(clone);
+        });
+
+        const allCards = Array.from(track.children);
+        let currentIndex = 0;
+        const cardWidth = 210 + 20; // Card width (210px) + Gap (20px)
+
+        function slideCarousel() {
+            currentIndex++;
+            
+            track.style.transition = "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)";
+            const containerWidth = track.parentElement.offsetWidth;
+            const centerOffset = (containerWidth / 2) - (210 / 2);
+            const offset = centerOffset - (currentIndex * cardWidth);
+            
+            track.style.transform = `translateX(${offset}px)`;
+
+            // Active class (Center card ko bara karne ke liye)
+            // Kyunke 3rd card center mein aayega jab offset adjust hoga
+            allCards.forEach((card, index) => {
+                card.classList.remove('active');
+            });
+            
+            // Center active card index calculate karna
+            const activeCardIndex = currentIndex + 2; 
+            if (allCards[activeCardIndex]) {
+                allCards[activeCardIndex].classList.add('active');
+            }
+
+            // Jab pehla set khatam ho toh baghair jhatke ke wapas start par le aayein
+            if (currentIndex >= originalCards.length) {
+                setTimeout(() => {
+                    track.style.transition = "none";
+                    currentIndex = 0;
+                    const resetOffset = centerOffset - (currentIndex * cardWidth);
+                    track.style.transform = `translateX(${resetOffset}px)`;
+                    if (allCards[2]) allCards[2].classList.add('active');
+                }, 600); // Transition time ke barabar delay
+            }
+        }
+
+        // Initial Active Set
+        const containerWidth = track.parentElement.offsetWidth;
+        const centerOffset = (containerWidth / 2) - (210 / 2);
+        track.style.transform = `translateX(${centerOffset}px)`;
+        if (allCards[2]) allCards[2].classList.add('active');
+
+        // Har 2 second baad ek card aage move hoga aur ruk kar center wala bara ho jayega
+        setInterval(slideCarousel, 2000);
+    });
+</script>
         </body>
 </html>
