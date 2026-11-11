@@ -1166,10 +1166,12 @@ body {
 .nav-container {
     display: flex;
     justify-content: center;
-    padding-top: 25px;
     position: sticky;
     top: 0;
-    z-index: 900;
+    z-index: 9999; /* Z-index ko barha diya taake yeh sabse upar rahe */
+    width: 100%;
+    background: transparent; /* Ya agar background dena ho toh wo bhi de sakte hain */
+    padding: 15px 0; /* Padding-top ki jagah balanced padding */
 }
 
 nav { 
