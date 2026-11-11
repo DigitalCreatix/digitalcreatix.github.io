@@ -1346,7 +1346,7 @@ nav {
     margin: 0;
 }
 /* ================================================= */
-/* SEAMLESS INFINITE CAROUSEL STYLING                */
+/* NETFLIX STEP-BY-STEP CAROUSEL STYLING             */
 /* ================================================= */
 .project-carousel-section {
     max-width: 1400px;
@@ -1382,17 +1382,11 @@ nav {
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-/* Moving Track with Infinite Animation */
+/* Moving Track */
 .carousel-track {
     display: flex;
     gap: 20px;
     width: max-content;
-    animation: scrollProjects 40s linear infinite;
-}
-
-/* Mouse hover par carousel ko roknay ke liye */
-.carousel-track:hover {
-    animation-play-state: paused;
 }
 
 /* Individual Card Styling */
@@ -1404,10 +1398,10 @@ nav {
     background: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     flex-shrink: 0;
-    opacity: 0.6;
+    opacity: 0.5;
     transform: scale(0.85);
     filter: brightness(0.7);
-    transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+    transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
 }
 
 .carousel-card img {
@@ -1417,20 +1411,11 @@ nav {
     display: block;
 }
 
-/* Center Highlight Effect */
-.carousel-card:nth-child(3) {
+/* Center Active Card (Bara aur Bright - JavaScript se control hoga) */
+.carousel-card.active {
     opacity: 1;
     transform: scale(1.15);
     filter: brightness(1);
     box-shadow: 0 20px 45px rgba(59, 130, 246, 0.25);
-}
-
-/* Smooth Infinite Scroll Keyframes */
-@keyframes scrollProjects {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+    z-index: 10;
 }
