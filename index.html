@@ -662,21 +662,28 @@
             <div class="carousel-card"><img src="project15.jpg" alt="Project 15"></div>
         </div>
     </div>
-</section><script>
+</section>
+        <script>
     document.addEventListener("DOMContentLoaded", function () {
         const track = document.getElementById('carouselTrack');
         const cards = Array.from(track.children);
+        const originalLength = cards.length / 2; // Total unique cards (15)
         let currentIndex = 2; // Shuru mein 3rd card center mein hoga
         const cardWidth = 210 + 20; // Card width (210px) + Gap (20px)
 
-        function updateCarousel() {
+        function updateCarousel(withTransition = true) {
             // Track ko center align karne ke liye offset calculation
             const containerWidth = track.parentElement.offsetWidth;
             const centerOffset = (containerWidth / 2) - (210 / 2);
             const offset = centerOffset - (currentIndex * cardWidth);
             
+            if (withTransition) {
+                track.style.transition = "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)";
+            } else {
+                track.style.transition = "none";
+            }
+            
             track.style.transform = `translateX(${offset}px)`;
-            track.style.transition = "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)";
 
             // Active class manage karna (Center card ko bara karne ke liye)
             cards.forEach((card, index) => {
@@ -686,19 +693,26 @@
                     card.classList.remove('active');
                 }
             });
+        }
 
-            // Index aage barhana, agar end par jaye toh wapas shuru se start ho
+        function slideCarousel() {
             currentIndex++;
-            if (currentIndex >= cards.length - 2) {
-                currentIndex = 2; 
+            updateCarousel(true);
+
+            // Jab 15 cards ka pehla set khatam ho kar duplicate par jaye
+            if (currentIndex >= originalLength + 2) {
+                setTimeout(() => {
+                    currentIndex = 2; // Baghair jhatke ke wapas start par le aayein
+                    updateCarousel(false);
+                }, 800); // Transition time ke barabar delay
             }
         }
 
-        // Run first time
-        updateCarousel();
+        // Run first time (bina transition ke instant set)
+        updateCarousel(false);
 
         // Har 2 second baad automatic move ho ga
-        setInterval(updateCarousel, 2000);
+        setInterval(slideCarousel, 2000);
     });
 </script>
     </body>
