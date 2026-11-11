@@ -1,8 +1,18 @@
+
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+/* Koi bhi section screen se bahar na nikle */
+section, div {
+    max-width: 100%;
+    box-sizing: border-box;
 }
 body { 
     background: #f4f6f9; /* Ekdam clean aur premium neutral shade jo poori website par aik jaisa chalega */
