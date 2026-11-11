@@ -2081,3 +2081,16 @@ nav {
     font-size: 13px;
     color: #64748b;
 }
+/* Sirf Mobile View ke liye Better Together cards ki height aur padding kam karne ka code */
+@media (max-width: 768px) {
+    .bt-card.bt-horizontal-card {
+        padding: 18px 20px !important; /* Mobile par padding kam kar di taake card chota ho jaye */
+        min-height: unset !important;  /* Height ki koi zabardasti restriction na ho */
+    }
+    
+    /* Agar icon aur text ka fasla mobile par kam karna ho */
+    .bt-horizontal-card {
+        gap: 15px !important;
+        align-items: center !important; /* Icon aur text ko aik line mein center set karne ke liye */
+    }
+}
