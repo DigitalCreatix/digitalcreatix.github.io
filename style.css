@@ -1575,7 +1575,7 @@ nav {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 24px;
 }
 
 @media (min-width: 1024px) {
