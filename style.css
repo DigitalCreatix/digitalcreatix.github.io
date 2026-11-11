@@ -1564,3 +1564,30 @@ nav {
     width: 100%;
     left: 0;
 }
+/* ================================================= */
+/* SECOND ROW CARDS STYLING (Horizontal Layout Style) */
+/* ================================================= */
+.bt-second-row {
+    margin-top: 24px; /* Pehli row aur doosri row ke darmiyan gap */
+}
+
+/* Doosri row ke cards ka andar ka layout (Icon upar aur text left aligned ya clean stacked) */
+.bt-second-row .bt-card {
+    align-items: flex-start; /* Left side alignment screenshot ke mutabiq */
+    text-align: left;
+    padding: 36px 32px;
+}
+
+.bt-second-row .bt-card h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.bt-second-row .bt-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
