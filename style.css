@@ -822,8 +822,8 @@ body {
     }
 }
 
-/* Sidebar Overlay */
-.sidebar-overlay {
+/* /* Sidebar Overlay */
+/* .sidebar-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -840,7 +840,7 @@ body {
 .sidebar-overlay.active {
     opacity: 1;
     visibility: visible;
-}
+} */ */
 
 /* ================================================= */
 /* FIXED Z-INDEX FOR NAVBAR & OVERLAY                */
@@ -855,19 +855,16 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    z-index: 998;
-    opacity: 0;
+    z-index: 9999; /* Navbar (50) se bohat upar */
     visibility: hidden;
+    opacity: 0;
     transition: all 0.3s ease;
 }
 
 .sidebar-overlay.active {
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
 }
-
 
 /* ================================================= */
 /* ADVANCED MOBILE SIDEBAR STYLING                   */
@@ -875,20 +872,18 @@ body {
 .mobile-sidebar {
     position: fixed;
     top: 0;
-    left: -330px;
-    width: 320px;
+    left: -100%; /* Ya right se khulta hai toh right-100% */
+    width: 300px;
     height: 100%;
     background: #ffffff;
-    z-index: 999; /* Sabse upar rahega taake navbar iske peeche rahe */
-    box-shadow: 15px 0 40px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10000; /* Sabse upar layer */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
 
 .mobile-sidebar.active {
-    left: 0;
+    left: 0; /* Jab active ho toh samne aa jaye */
 }
 
 .sidebar-header {
@@ -1166,12 +1161,13 @@ body {
 .nav-container {
     display: flex;
     justify-content: center;
-    position: sticky;
-    top: 0;
-    z-index: 9999; /* Z-index ko barha diya taake yeh sabse upar rahe */
+    position: fixed;
+    top: 15px; /* Upar se thora sa gap */
+    left: 0;
     width: 100%;
-    background: transparent; /* Ya agar background dena ho toh wo bhi de sakte hain */
-    padding: 15px 0; /* Padding-top ki jagah balanced padding */
+    z-index: 50; /* Bahut kam rakha hai taake sidebar iske upar aaye */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 nav { 
