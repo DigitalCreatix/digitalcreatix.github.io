@@ -1641,22 +1641,19 @@ nav {
     margin: 0;
 }
 /* ================================================= */
-/* FULL-WIDTH FIXED DARK CTA SECTION                 */
+/* 100% FULL-WIDTH EDGE-TO-EDGE DARK CTA SECTION     */
 /* ================================================= */
 .cta-dark-section {
+    width: 100vw;
     position: relative;
-    width: 100vw;               /* Poori screen ki width */
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;         /* Container ki baqi padding khatam karke full-bleed karne ke liye */
-    margin-right: -50vw;
+    left: calc(-50vw + 50%);
     background-color: #0b0f19;
     background-image: radial-gradient(circle at center, #1e293b 0%, #0b0f19 80%);
     padding: 120px 20px;
     text-align: center;
-    overflow: hidden;
-    margin-top: 100px;
     box-sizing: border-box;
+    margin-top: 100px;
+    margin-bottom: -100px; /* Agar iske niche aur koi section hai toh gap balance karne ke liye */
 }
 
 .cta-dark-content {
@@ -1666,7 +1663,7 @@ nav {
     z-index: 2;
 }
 
-/* Top Small Badge (Theme Blue) */
+/* Top Small Badge */
 .cta-badge {
     font-size: 12px;
     font-weight: 700;
@@ -1687,11 +1684,11 @@ nav {
     letter-spacing: -1.5px;
 }
 
-/* Italic Gradient Part - 100% Brand Blue Theme */
+/* Italic Gradient Part (Pure Blue Theme) */
 .cta-italic-gradient {
     font-style: italic;
     font-weight: 700;
-    background: linear-gradient(90deg, #60a5fa, #3b82f6, #93c5fd); /* Pure Blue Gradient */
+    background: linear-gradient(90deg, #60a5fa, #3b82f6, #93c5fd);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
