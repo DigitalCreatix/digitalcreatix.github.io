@@ -1901,3 +1901,163 @@ nav {
 .footer-bottom a:hover {
     color: #3b82f6;
 }
+/* ================================================= */
+/* TESTIMONIALS & FLOATING COLLAGE SECTION           */
+/* ================================================= */
+.testimonials-section {
+    max-width: 1300px;
+    margin: 120px auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Collage Container */
+.floating-collage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Individual Image Box Styling */
+.float-box {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    flex-shrink: 0;
+}
+
+.float-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Different sizes and specific smooth floating animations for each box */
+.fb-1 { width: 110px; height: 150px; animation: floatSlow 5s ease-in-out infinite; }
+.fb-2 { width: 120px; height: 130px; animation: floatFast 4s ease-in-out infinite; animation-delay: 1s; }
+.fb-3 { width: 130px; height: 180px; animation: floatSlow 6s ease-in-out infinite; animation-delay: 0.5s; }
+.fb-4 { width: 115px; height: 160px; animation: floatFast 4.5s ease-in-out infinite; animation-delay: 1.5s; }
+.fb-5 { width: 140px; height: 210px; animation: floatSlow 5.5s ease-in-out infinite; animation-delay: 0.2s; } /* Center main tall box */
+.fb-6 { width: 120px; height: 170px; animation: floatFast 5s ease-in-out infinite; animation-delay: 0.8s; }
+.fb-7 { width: 110px; height: 140px; animation: floatSlow 4.2s ease-in-out infinite; animation-delay: 1.2s; }
+.fb-8 { width: 125px; height: 155px; animation: floatFast 5.8s ease-in-out infinite; animation-delay: 0.4s; }
+
+/* Subtle Up and Down Floating Keyframes */
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); } /* Bohat halka sa upar niche */
+}
+
+@keyframes floatFast {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Header & Badge */
+.testimonials-header {
+    margin-bottom: 60px;
+}
+
+.testi-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+.testimonials-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.testimonials-header h2 span {
+    color: #64748b; /* Niche wali line ko thora soft grey look diya hai jesa image mein hai */
+}
+
+/* Reviews 3-Column Grid */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: repeat(3, 1fr); /* Bilkul 3 columns */
+    }
+}
+
+/* Individual Review Card */
+.review-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    padding: 32px 28px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+.stars {
+    font-size: 14px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+}
+
+.review-card p {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Client Profile Info */
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.client-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e2e8f0;
+}
+
+.client-info h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 2px 0;
+}
+
+.client-info span {
+    font-size: 13px;
+    color: #64748b;
+}
