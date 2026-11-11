@@ -1565,27 +1565,49 @@ nav {
     left: 0;
 }
 /* ================================================= */
-/* SECOND ROW CARDS STYLING (Horizontal Layout Style) */
+/* HORIZONTAL CARDS STYLING (Matching Reference Image) */
 /* ================================================= */
-.bt-second-row {
-    margin-top: 24px; /* Pehli row aur doosri row ke darmiyan gap */
+.bt-second-row-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 24px;
 }
 
-/* Doosri row ke cards ka andar ka layout (Icon upar aur text left aligned ya clean stacked) */
-.bt-second-row .bt-card {
-    align-items: flex-start; /* Left side alignment screenshot ke mutabiq */
+@media (min-width: 1024px) {
+    .bt-second-row-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns wide cards */
+    }
+}
+
+/* Horizontal Card Layout */
+.bt-horizontal-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
     text-align: left;
-    padding: 36px 32px;
+    padding: 32px 36px;
+    border-radius: 20px;
 }
 
-.bt-second-row .bt-card h3 {
-    font-size: 19px;
+/* Icon on Left */
+.bt-horizontal-card .bt-icon-wrapper {
+    flex-shrink: 0;
+    margin-bottom: 0;
+    width: 48px;
+    height: 48px;
+}
+
+/* Content Area */
+.bt-horizontal-card .bt-card-content h3 {
+    font-size: 18px;
     font-weight: 700;
     color: #0f172a;
     margin-bottom: 6px;
 }
 
-.bt-second-row .bt-card p {
+.bt-horizontal-card .bt-card-content p {
     font-size: 14px;
     color: #64748b;
     line-height: 1.5;
