@@ -1916,11 +1916,12 @@ nav {
 .floating-collage-container {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     gap: 16px;
     margin-bottom: 50px;
-    height: 320px; /* Upar niche movement ke liye fix height */
-    overflow: hidden;
+    padding: 30px 0;
+    height: auto; /* Upar niche movement ke liye fix height */
+    overflow: visible;
 }
 
 /* Columns for Staggered Layout */
