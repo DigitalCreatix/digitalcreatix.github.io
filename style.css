@@ -1641,16 +1641,22 @@ nav {
     margin: 0;
 }
 /* ================================================= */
-/* DARK CTA SECTION STYLING                          */
+/* FULL-WIDTH FIXED DARK CTA SECTION                 */
 /* ================================================= */
 .cta-dark-section {
-    background-color: #0b0f19; /* Ekdam rich dark background */
-    background-image: radial-gradient(circle at center, #1e293b 0%, #0b0f19 70%);
+    position: relative;
+    width: 100vw;               /* Poori screen ki width */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;         /* Container ki baqi padding khatam karke full-bleed karne ke liye */
+    margin-right: -50vw;
+    background-color: #0b0f19;
+    background-image: radial-gradient(circle at center, #1e293b 0%, #0b0f19 80%);
     padding: 120px 20px;
     text-align: center;
-    position: relative;
     overflow: hidden;
     margin-top: 100px;
+    box-sizing: border-box;
 }
 
 .cta-dark-content {
@@ -1660,11 +1666,11 @@ nav {
     z-index: 2;
 }
 
-/* Top Small Badge */
+/* Top Small Badge (Theme Blue) */
 .cta-badge {
     font-size: 12px;
     font-weight: 700;
-    color: #60a5fa; /* Light Blue */
+    color: #3b82f6; /* Brand Blue */
     letter-spacing: 2px;
     text-transform: uppercase;
     display: inline-block;
@@ -1681,11 +1687,11 @@ nav {
     letter-spacing: -1.5px;
 }
 
-/* Italic Gradient Part ("Amazing Together") */
+/* Italic Gradient Part - 100% Brand Blue Theme */
 .cta-italic-gradient {
     font-style: italic;
     font-weight: 700;
-    background: linear-gradient(90deg, #60a5fa, #818cf8, #c084fc);
+    background: linear-gradient(90deg, #60a5fa, #3b82f6, #93c5fd); /* Pure Blue Gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -1693,7 +1699,7 @@ nav {
 /* Description Text */
 .cta-dark-content p {
     font-size: 18px;
-    color: #94a3b8; /* Soft Gray */
+    color: #94a3b8;
     max-width: 600px;
     margin: 0 auto 40px auto;
     line-height: 1.6;
