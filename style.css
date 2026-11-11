@@ -1346,7 +1346,7 @@ nav {
     margin: 0;
 }
 /* ================================================= */
-/* NETFLIX STYLE AUTO CAROUSEL SECTION               */
+/* SEAMLESS INFINITE CAROUSEL STYLING                */
 /* ================================================= */
 .project-carousel-section {
     max-width: 1400px;
@@ -1372,35 +1372,42 @@ nav {
     color: #64748b;
 }
 
-/* Carousel Outer Viewport */
+/* Outer Viewport with Fade Edges */
 .carousel-container {
     position: relative;
     width: 100%;
     overflow: hidden;
     padding: 40px 0;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
-/* Moving Track */
+/* Moving Track with Infinite Animation */
 .carousel-track {
     display: flex;
     gap: 20px;
     width: max-content;
-    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    animation: scrollProjects 40s linear infinite;
+}
+
+/* Mouse hover par carousel ko roknay ke liye */
+.carousel-track:hover {
+    animation-play-state: paused;
 }
 
 /* Individual Card Styling */
 .carousel-card {
-    width: 210px; /* Screen par 5 cards fit karne ke liye width */
+    width: 210px;
     height: 310px;
     border-radius: 16px;
     overflow: hidden;
     background: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
     flex-shrink: 0;
-    opacity: 0.5; /* Side wale cards thore fade honge */
+    opacity: 0.6;
     transform: scale(0.85);
     filter: brightness(0.7);
+    transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
 }
 
 .carousel-card img {
@@ -1410,11 +1417,20 @@ nav {
     display: block;
 }
 
-/* Center Active Card (Bara aur Bright) */
-.carousel-card.active {
+/* Center Highlight Effect */
+.carousel-card:nth-child(3) {
     opacity: 1;
-    transform: scale(1.15); /* Beech wala card bara ho jaye ga */
+    transform: scale(1.15);
     filter: brightness(1);
     box-shadow: 0 20px 45px rgba(59, 130, 246, 0.25);
-    z-index: 10;
+}
+
+/* Smooth Infinite Scroll Keyframes */
+@keyframes scrollProjects {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
