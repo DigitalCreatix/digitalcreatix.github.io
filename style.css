@@ -1639,18 +1639,16 @@ nav {
     color: #64748b;
     line-height: 1.5;
     margin: 0;
-}
-/* ================================================= */
-/* 100% FULL-WIDTH EDGE-TO-EDGE DARK CTA SECTION     */
-/* ================================================= */
-/* ================================================= */
+}/* ================================================= */
 /* 100% FULL-WIDTH EDGE-TO-EDGE DARK CTA SECTION     */
 /* ================================================= */
 .cta-dark-section {
     position: relative;
     width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     background-color: #0b0f19;
     background-image: radial-gradient(circle at center, #1e293b 0%, #0b0f19 80%);
     padding: 120px 20px;
@@ -1658,11 +1656,15 @@ nav {
     box-sizing: border-box;
     margin-top: 100px;
 }
+
 .cta-dark-content {
+    width: 100%;
     max-width: 900px;
     margin: 0 auto;
     position: relative;
     z-index: 2;
+    padding: 0 20px; /* Content mobile par side se touch na ho isliye padding */
+    box-sizing: border-box;
 }
 
 /* Top Small Badge */
@@ -1729,12 +1731,12 @@ nav {
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
     .cta-dark-section {
-        padding: 80px 20px;
+        padding: 80px 15px;
     }
     .cta-dark-content h2 {
-        font-size: 36px;
+        font-size: 34px;
     }
     .cta-dark-content p {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
