@@ -662,66 +662,44 @@
             <div class="carousel-card"><img src="project15.jpg" alt="Project 15"></div>
         </div>
     </div>
-</section>
-       <script>
+</section><script>
     document.addEventListener("DOMContentLoaded", function () {
         const track = document.getElementById('carouselTrack');
-        if (!track) return;
-        
-        const originalCards = Array.from(track.children);
-        
-        // Seamless infinite loop ke liye JS khud cards ko clone karegi
-        originalCards.forEach(card => {
-            const clone = card.cloneNode(true);
-            track.appendChild(clone);
-        });
-
-        const allCards = Array.from(track.children);
-        let currentIndex = 0;
+        const cards = Array.from(track.children);
+        let currentIndex = 2; // Shuru mein 3rd card center mein hoga
         const cardWidth = 210 + 20; // Card width (210px) + Gap (20px)
 
-        function slideCarousel() {
-            currentIndex++;
-            
-            track.style.transition = "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)";
+        function updateCarousel() {
+            // Track ko center align karne ke liye offset calculation
             const containerWidth = track.parentElement.offsetWidth;
             const centerOffset = (containerWidth / 2) - (210 / 2);
             const offset = centerOffset - (currentIndex * cardWidth);
             
             track.style.transform = `translateX(${offset}px)`;
+            track.style.transition = "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)";
 
-            // Active class remove all
-            allCards.forEach((card) => {
-                card.classList.remove('active');
+            // Active class manage karna (Center card ko bara karne ke liye)
+            cards.forEach((card, index) => {
+                if (index === currentIndex) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
             });
-            
-            // Center active card ko bara karne ke liye
-            const activeCardIndex = currentIndex + 2; 
-            if (allCards[activeCardIndex]) {
-                allCards[activeCardIndex].classList.add('active');
-            }
 
-            // Seamless reset without jump
-            if (currentIndex >= originalCards.length) {
-                setTimeout(() => {
-                    track.style.transition = "none";
-                    currentIndex = 0;
-                    const resetOffset = centerOffset - (currentIndex * cardWidth);
-                    track.style.transform = `translateX(${resetOffset}px)`;
-                    if (allCards[2]) allCards[2].classList.add('active');
-                }, 600);
+            // Index aage barhana, agar end par jaye toh wapas shuru se start ho
+            currentIndex++;
+            if (currentIndex >= cards.length - 2) {
+                currentIndex = 2; 
             }
         }
 
-        // Initial Setup
-        const containerWidth = track.parentElement.offsetWidth;
-        const centerOffset = (containerWidth / 2) - (210 / 2);
-        track.style.transform = `translateX(${centerOffset}px)`;
-        if (allCards[2]) allCards[2].classList.add('active');
+        // Run first time
+        updateCarousel();
 
-        // Har 2 second baad automatic step move hoga
-        setInterval(slideCarousel, 2000);
+        // Har 2 second baad automatic move ho ga
+        setInterval(updateCarousel, 2000);
     });
-</script>      
+</script>
     </body>
 </html>
