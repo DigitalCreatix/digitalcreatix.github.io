@@ -10,6 +10,16 @@ body {
     line-height: 1.6; 
     overflow-x: hidden;
 }
+/* Hero Section */
+.hero { 
+    text-align: center; 
+    padding: 80px 20px 40px 20px; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    background: linear-gradient(180deg, #e0edff 0%, #f4f8ff 70%, #f4f6f9 100%); /* Hero ke peeche wahi pyara blue gradient */
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 .logo { 
     font-size: 18px; 
