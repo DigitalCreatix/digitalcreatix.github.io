@@ -1902,7 +1902,7 @@ nav {
     color: #3b82f6;
 }
 /* ================================================= */
-/* TESTIMONIALS & FLOATING COLLAGE SECTION           */
+/* EXACT MATCH STAGGERED FLOATING IMAGE COLLAGE      */
 /* ================================================= */
 .testimonials-section {
     max-width: 1300px;
@@ -1916,21 +1916,34 @@ nav {
 .floating-collage-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     gap: 16px;
-    flex-wrap: wrap;
     margin-bottom: 50px;
-    position: relative;
+    height: 320px; /* Upar niche movement ke liye fix height */
+    overflow: hidden;
 }
+
+/* Columns for Staggered Layout */
+.collage-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Column vertical offsets to create the exact curve/wave layout */
+.col-top { transform: translateY(-30px); }
+.col-middle { transform: translateY(-10px); }
+.col-low { transform: translateY(20px); }
+.col-center { transform: translateY(-50px); z-index: 5; } /* Center box sabse upar aur lamba hoga */
 
 /* Individual Image Box Styling */
 .float-box {
-    border-radius: 14px;
+    border-radius: 16px;
     overflow: hidden;
     background: #ffffff;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.06);
-    flex-shrink: 0;
 }
 
 .float-box img {
@@ -1940,25 +1953,21 @@ nav {
     display: block;
 }
 
-/* Different sizes and specific smooth floating animations for each box */
-.fb-1 { width: 110px; height: 150px; animation: floatSlow 5s ease-in-out infinite; }
-.fb-2 { width: 120px; height: 130px; animation: floatFast 4s ease-in-out infinite; animation-delay: 1s; }
-.fb-3 { width: 130px; height: 180px; animation: floatSlow 6s ease-in-out infinite; animation-delay: 0.5s; }
-.fb-4 { width: 115px; height: 160px; animation: floatFast 4.5s ease-in-out infinite; animation-delay: 1.5s; }
-.fb-5 { width: 140px; height: 210px; animation: floatSlow 5.5s ease-in-out infinite; animation-delay: 0.2s; } /* Center main tall box */
-.fb-6 { width: 120px; height: 170px; animation: floatFast 5s ease-in-out infinite; animation-delay: 0.8s; }
-.fb-7 { width: 110px; height: 140px; animation: floatSlow 4.2s ease-in-out infinite; animation-delay: 1.2s; }
-.fb-8 { width: 125px; height: 155px; animation: floatFast 5.8s ease-in-out infinite; animation-delay: 0.4s; }
+/* Box Sizes matching reference */
+.fb-tall { width: 115px; height: 160px; animation: floatSlow 5s ease-in-out infinite; }
+.fb-small { width: 115px; height: 105px; animation: floatFast 4s ease-in-out infinite; }
+.fb-medium { width: 125px; height: 175px; animation: floatSlow 6s ease-in-out infinite; }
+.fb-center-tall { width: 135px; height: 215px; animation: floatFast 4.5s ease-in-out infinite; }
 
-/* Subtle Up and Down Floating Keyframes */
+/* Subtle Up and Down Floating Animations */
 @keyframes floatSlow {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); } /* Bohat halka sa upar niche */
+    50% { transform: translateY(-6px); }
 }
 
 @keyframes floatFast {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
+    50% { transform: translateY(-10px); }
 }
 
 /* Header & Badge */
@@ -1987,7 +1996,7 @@ nav {
 }
 
 .testimonials-header h2 span {
-    color: #64748b; /* Niche wali line ko thora soft grey look diya hai jesa image mein hai */
+    color: #64748b;
 }
 
 /* Reviews 3-Column Grid */
@@ -1999,7 +2008,7 @@ nav {
 
 @media (min-width: 768px) {
     .reviews-grid {
-        grid-template-columns: repeat(3, 1fr); /* Bilkul 3 columns */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
