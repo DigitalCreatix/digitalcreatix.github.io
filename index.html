@@ -617,8 +617,7 @@
             <p>Continuous improvement and dedicated partnership.</p>
         </div>
     </div>
-</section>
-        <!-- Projects Showcase Carousel Section -->
+</section><!-- Projects Showcase Carousel Section -->
 <section class="project-carousel-section">
     <div class="carousel-header">
         <h2>Our Featured Work</h2>
@@ -626,8 +625,8 @@
     </div>
 
     <div class="carousel-container">
-        <div class="carousel-track" id="carouselTrack">
-            <!-- Total 15 Project Cards with Images -->
+        <div class="carousel-track">
+            <!-- First Set (1 to 15) -->
             <div class="carousel-card"><img src="kitkatimage.jpg" alt="Project 1"></div>
             <div class="carousel-card"><img src="iphoneimage.jpg" alt="Project 2"></div>
             <div class="carousel-card"><img src="branding1.jpg" alt="Project 3"></div>
@@ -643,47 +642,25 @@
             <div class="carousel-card"><img src="project13.jpg" alt="Project 13"></div>
             <div class="carousel-card"><img src="project14.jpg" alt="Project 14"></div>
             <div class="carousel-card"><img src="project15.jpg" alt="Project 15"></div>
+
+            <!-- Second Set (Duplicate for Seamless Infinite Loop) -->
+            <div class="carousel-card"><img src="kitkatimage.jpg" alt="Project 1"></div>
+            <div class="carousel-card"><img src="iphoneimage.jpg" alt="Project 2"></div>
+            <div class="carousel-card"><img src="branding1.jpg" alt="Project 3"></div>
+            <div class="carousel-card"><img src="project4.jpg" alt="Project 4"></div>
+            <div class="carousel-card"><img src="project5.jpg" alt="Project 5"></div>
+            <div class="carousel-card"><img src="project6.jpg" alt="Project 6"></div>
+            <div class="carousel-card"><img src="project7.jpg" alt="Project 7"></div>
+            <div class="carousel-card"><img src="project8.jpg" alt="Project 8"></div>
+            <div class="carousel-card"><img src="project9.jpg" alt="Project 9"></div>
+            <div class="carousel-card"><img src="project10.jpg" alt="Project 10"></div>
+            <div class="carousel-card"><img src="project11.jpg" alt="Project 11"></div>
+            <div class="carousel-card"><img src="project12.jpg" alt="Project 12"></div>
+            <div class="carousel-card"><img src="carousel-card"><img src="project13.jpg" alt="Project 13"></div>
+            <div class="carousel-card"><img src="project14.jpg" alt="Project 14"></div>
+            <div class="carousel-card"><img src="project15.jpg" alt="Project 15"></div>
         </div>
     </div>
 </section>
-        <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const track = document.getElementById('carouselTrack');
-        const cards = Array.from(track.children);
-        let currentIndex = 2; // Shuru mein 3rd card center mein hoga
-        const cardWidth = 210 + 20; // Card width (210px) + Gap (20px)
-
-        function updateCarousel() {
-            // Track ko center align karne ke liye offset calculation
-            const containerWidth = track.parentElement.offsetWidth;
-            const centerOffset = (containerWidth / 2) - (210 / 2);
-            const offset = centerOffset - (currentIndex * cardWidth);
-            
-            track.style.transform = `translateX(${offset}px)`;
-            track.style.transition = "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)";
-
-            // Active class manage karna (Center card ko bara karne ke liye)
-            cards.forEach((card, index) => {
-                if (index === currentIndex) {
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active');
-                }
-            });
-
-            // Index aage barhana, agar end par jaye toh wapas shuru se start ho
-            currentIndex++;
-            if (currentIndex >= cards.length - 2) {
-                currentIndex = 2; 
-            }
-        }
-
-        // Run first time
-        updateCarousel();
-
-        // Har 2 second baad automatic move ho ga
-        setInterval(updateCarousel, 2000);
-    });
-</script>
         </body>
 </html>
