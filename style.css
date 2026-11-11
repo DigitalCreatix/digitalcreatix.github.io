@@ -5,10 +5,11 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 body { 
-    background: linear-gradient(180deg, #e0edff 0%, #f4f8ff 40%, #ffffff 100%); 
+    background: #f4f6f9; /* Ekdam clean aur premium neutral shade jo poori website par aik jaisa chalega */
     color: #0f172a; 
     line-height: 1.6; 
     overflow-x: hidden;
+}
 }
 .logo { 
     font-size: 18px; 
