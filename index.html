@@ -996,5 +996,41 @@
         <a href="privacy.html">Privacy Policy</a>
     </div>
 </footer>
+    <!-- Combined & Clean JavaScript for Mobile Sidebar, Dropdown & Counters -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 1. Mobile Sidebar Open / Close Logic
+            const menuBtn = document.getElementById('menuBtn');
+            const closeBtn = document.getElementById('closeBtn');
+            const mobileSidebar = document.getElementById('mobileSidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+            if (menuBtn && mobileSidebar && sidebarOverlay) {
+                menuBtn.addEventListener('click', () => {
+                    mobileSidebar.classList.add('active');
+                    sidebarOverlay.classList.add('active');
+                });
+
+                function closeMenu() {
+                    mobileSidebar.classList.remove('active');
+                    sidebarOverlay.classList.remove('active');
+                }
+
+                if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+                sidebarOverlay.addEventListener('click', closeMenu);
+            }
+
+            // 2. Mobile Services Dropdown Toggle Logic
+            const servicesDropdownBtn = document.getElementById('servicesDropdownBtn');
+            const servicesSubMenu = document.getElementById('servicesSubMenu');
+
+            if (servicesDropdownBtn && servicesSubMenu) {
+                servicesDropdownBtn.addEventListener('click', (e) => {
+                    e.preventDefault(); // Page ko upar scroll hone se rokne ke liye
+                    servicesSubMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
     </body>
 </html>
