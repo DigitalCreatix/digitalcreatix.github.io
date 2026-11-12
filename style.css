@@ -3385,18 +3385,18 @@ border-radius: 20px;
         font-size: 16px;
     }
 }
-/* --- Mobile App Development Hero Section Styling --- */
+/* --- Mobile App Development Hero Section (Light Theme with Blue Gradients) --- */
 
 .app-hero-section {
     position: relative;
     padding: 160px 20px 100px 20px;
-    background: #060b14; /* Official deep blue background */
+    background: #f4f6f9; /* Clean light background */
     background-image: 
-        radial-gradient(circle at 50% 25%, rgba(2, 132, 199, 0.4) 0%, transparent 60%),
-        radial-gradient(circle at 85% 75%, rgba(14, 116, 144, 0.25) 0%, transparent 50%),
-        radial-gradient(circle at 15% 75%, rgba(3, 105, 161, 0.25) 0%, transparent 50%);
+        radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.25) 0%, transparent 60%),
+        radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 10% 80%, rgba(129, 140, 248, 0.15) 0%, transparent 50%);
     overflow: hidden;
-    color: #ffffff;
+    color: #0b0f19; /* Dark text for light background */
     text-align: center;
 }
 
@@ -3407,20 +3407,21 @@ border-radius: 20px;
     z-index: 2;
 }
 
-/* Top Badge */
+/* Top Badge (Light Theme Styling) */
 .app-top-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(15, 23, 42, 0.75);
-    border: 1px solid rgba(56, 189, 248, 0.3);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.4);
     padding: 8px 18px;
     border-radius: 30px;
     font-size: 13px;
     font-weight: 600;
-    color: #e2e8f0;
+    color: #0b0f19;
     margin-bottom: 30px;
     backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 /* Hero Content */
@@ -3433,14 +3434,14 @@ border-radius: 20px;
     font-size: 52px;
     font-weight: 800;
     line-height: 1.15;
-    color: #ffffff;
+    color: #0b0f19; /* Dark heading */
     margin-bottom: 20px;
     letter-spacing: -1px;
 }
 
 .app-hero-content p {
     font-size: 17px;
-    color: #94a3b8;
+    color: #475569; /* Soft dark gray text for readability */
     line-height: 1.6;
     margin-bottom: 35px;
 }
@@ -3461,31 +3462,32 @@ border-radius: 20px;
     font-weight: 600;
     font-size: 15px;
     text-decoration: none;
-    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.3);
     transition: all 0.3s ease;
 }
 
 .app-primary-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(2, 132, 199, 0.6);
+    box-shadow: 0 15px 30px rgba(2, 132, 199, 0.5);
 }
 
 .app-secondary-btn {
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #ffffff;
+    background: #ffffff;
+    border: 1.5px solid rgba(203, 213, 225, 0.8);
+    color: #0b0f19;
     padding: 14px 28px;
     border-radius: 40px;
     font-weight: 600;
     font-size: 15px;
     text-decoration: none;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
     transition: all 0.3s ease;
 }
 
 .app-secondary-btn:hover {
-    background: rgba(30, 41, 59, 0.9);
-    border-color: rgba(56, 189, 248, 0.4);
+    background: #f8fafc;
+    border-color: #38bdf8;
+    color: #0284c7;
 }
 
 /* Mockups Universe */
@@ -3503,7 +3505,7 @@ border-radius: 20px;
     position: absolute;
     width: 600px;
     height: 250px;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, transparent 70%);
     top: 30%;
     z-index: 1;
     pointer-events: none;
@@ -3516,7 +3518,7 @@ border-radius: 20px;
     border: 4px solid #334155;
     border-radius: 36px;
     overflow: hidden;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     z-index: 2;
 }
 
@@ -3532,8 +3534,8 @@ border-radius: 20px;
 .side-phone {
     width: 230px;
     height: 360px;
-    opacity: 0.75;
-    filter: blur(1px);
+    opacity: 0.85;
+    filter: blur(0.5px);
     transform: scale(0.92);
 }
 
@@ -3608,7 +3610,7 @@ border-radius: 20px;
     align-items: center;
     gap: 20px;
     font-size: 14px;
-    color: #94a3b8;
+    color: #64748b;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -3619,7 +3621,7 @@ border-radius: 20px;
         font-size: 36px;
     }
     .side-phone {
-        display: none; /* Mobile view par sirf center phone dikhega taake clean rahe */
+        display: none;
     }
     .center-phone {
         width: 280px;
