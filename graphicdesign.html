@@ -428,6 +428,26 @@
         <a href="privacy.html">Privacy Policy</a>
     </div>
 </footer>
+    <!-- Navbar services Dropdown -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropdownWrapper = document.getElementById('servicesDropdown');
+        const servicesToggle = document.getElementById('servicesToggle');
+
+        // Toggle dropdown on click
+        servicesToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownWrapper.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdownWrapper.contains(e.target)) {
+                dropdownWrapper.classList.remove('active');
+            }
+        });
+    });
+</script>
 </body>
 </html>
 
