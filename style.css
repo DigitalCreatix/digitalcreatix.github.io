@@ -3745,6 +3745,7 @@ border-radius: 20px;
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
 }
+
 /* --- App Benefits Row Section Styling --- */
 .app-benefits-section {
     padding: 120px 20px;
@@ -3766,23 +3767,16 @@ border-radius: 20px;
     justify-content: space-between;
     align-items: center;
     padding: 45px 0;
-    border-bottom: 1px solid rgba(203, 213, 225, 0.6); /* Clean horizontal separator */
+    border-bottom: 1px solid rgba(203, 213, 225, 0.6);
     
-    /* Scroll Fade-Up Animation Properties */
-    opacity: 0;
-    transform: translateY(40px);
+    /* Pehle opacity 0 thi jis ki waja se blank lag raha tha, ab opacity 1 kar di hai */
+    opacity: 1; 
+    transform: translateY(0);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Pehli line ke upar bhi border dena ho toh de sakte hain, warna niche wali line kaafi hai */
 .benefit-row:first-child {
     border-top: 1px solid rgba(203, 213, 225, 0.6);
-}
-
-/* Jab JavaScript yeh class add karegi toh element niche se upar fade-in ho jaye ga */
-.benefit-row.fade-in-active {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Left Side (Number + Heading) */
@@ -3796,7 +3790,7 @@ border-radius: 20px;
 .benefit-num {
     font-size: 32px;
     font-weight: 800;
-    color: #3b82f6; /* Brand Blue Number */
+    color: #3b82f6;
     letter-spacing: -1px;
 }
 
@@ -3821,7 +3815,7 @@ border-radius: 20px;
     margin: 0;
 }
 
-/* --- Mobile Responsive --- */
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .benefit-row {
         flex-direction: column;
@@ -3844,7 +3838,7 @@ border-radius: 20px;
 
     .benefit-right {
         max-width: 100%;
-        padding-left: 50px; /* Number ke niche align karne ke liye */
+        padding-left: 50px;
     }
 
     .benefit-right p {
