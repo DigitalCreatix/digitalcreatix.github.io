@@ -2269,14 +2269,16 @@ nav {
     overflow-y: hidden;
     padding: 20px 40px 40px 40px;
     box-sizing: border-box;
-    scrollbar-width: thin;
-    scrollbar-color: #cbd5e1 #f1f5f9;
+    scrollbar-width: none;
+   -ms-overflow-style: none;
 }
 
+/* Chrome, Safari aur Opera ke liye scrollbar bar bilkul gayab */
 .flip-cards-scroll-container::-webkit-scrollbar {
-    height: 8px;
+    display: none;
+    width: 0;
+    height: 0;
 }
-
 .flip-cards-scroll-container::-webkit-scrollbar-track {
     background: #f1f5f9;
     border-radius: 10px;
