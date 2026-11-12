@@ -2660,3 +2660,64 @@ border-radius: 20px;
         font-size: 16px;
     }
 }
+/* --- Mobile Responsive Fixes for Expert Team Section --- */
+@media (max-width: 768px) {
+    .expert-team-section {
+        padding: 80px 15px;
+    }
+
+    .team-header-content h2 {
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 20px;
+    }
+
+    /* Mobile par visual universe ki height barha di taake items door door rahein */
+    .team-visual-universe {
+        height: 540px;
+        margin-top: 20px;
+    }
+
+    /* Mobile ke liye tracks ka size adjust kiya */
+    .track-1 {
+        width: 95%;
+        height: 380px;
+    }
+    .track-2 {
+        width: 80%;
+        height: 280px;
+    }
+    .track-3 {
+        width: 60%;
+        height: 180px;
+    }
+
+    /* Mobile par avatars aur icons ki positions ko spread kar diya */
+    .member-1 { top: 8%; left: 12%; }
+    .member-2 { top: 2%; left: 50%; transform: translateX(-50%); }
+    .member-3 { top: 8%; right: 12%; }
+
+    .black-icon-1 { top: 38%; left: 5%; }
+    .black-icon-2 { top: 38%; right: 5%; }
+
+    .center-action-pill {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .member-4 { bottom: 12%; left: 15%; }
+    .member-5 { bottom: 5%; left: 50%; transform: translateX(-50%); }
+    .black-icon-3 { bottom: 18%; right: 42%; }
+    .member-6 { bottom: 12%; right: 15%; }
+
+    .avatar-circle {
+        width: 52px;
+        height: 52px;
+    }
+
+    .icon-box {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
