@@ -2919,11 +2919,9 @@ border-radius: 20px;
 }
 /* --- Tech Stack & Tools Floating Section --- */
 
-/* --- Tech Stack & Tools Stroke Section --- */
-
 .tech-stack-section {
     padding: 100px 20px;
-    background: #060b14; /* Official deep blue theme background */
+    background: #f4f6f9; /* Official deep blue theme background */
     position: relative;
     overflow: hidden;
     text-align: center;
