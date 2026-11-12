@@ -2147,18 +2147,21 @@ nav {
 }
 
 .highlight-pill {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: #e0f2fe;
-    color: transparent; /* Text ko transparent kiya taake gradient nazar aaye */
-    background-image: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); /* Aapki theme ka vibrant blue gradient */
-    -webkit-background-clip: text; /* Text ke andar gradient clip karne ke liye */
+    color: transparent; 
+    background-image: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    -webkit-background-clip: text; 
     background-clip: text;
-    padding: 2px 16px;
+    padding: 8px 16px; /* Top/Bottom 8px, Left/Right 16px */
     border-radius: 40px;
-    font-size: 0.85em;
+    font-size: 0.75em; /* Text size mazeed chhota kar diya hai taake shape ke andar fit aaye */
     font-weight: 700;
     transform: rotate(-1deg);
-    text-shadow: none; /* Glow khatam kar diya */
+    line-height: 1;
+    text-shadow: none; 
     box-shadow: none;
 }
 
