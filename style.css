@@ -2146,17 +2146,17 @@ nav {
     font-weight: 500; 
 }
 
-/* Magic pill: Size chhota aur glow effect ke sath */
 .highlight-pill {
     display: inline-block;
     background: #e0f2fe;
     color: #0284c7;
-    padding: 2px 14px;
-    border-radius: 30px;
-    font-size: 0.85em; /* Text size ko thora chhota kar diya hai */
+    padding: 2px 16px;
+    border-radius: 40px;
+    font-size: 0.85em; /* Text size chhota */
     font-weight: 700;
     transform: rotate(-1deg);
-    box-shadow: 0 0 15px rgba(2, 132, 199, 0.35); /* Blue glow effect */
+    text-shadow: 0 0 10px rgba(2, 132, 199, 0.6); /* Sirf text par glow effect */
+    box-shadow: none; /* Background shape se shadow khatam kar di hai */
 }
 
 .services-hero-desc {
