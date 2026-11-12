@@ -3632,6 +3632,7 @@ border-radius: 20px;
     }
 }
 /* --- Mobile Fixes for App Development Hero Section --- */
+/* --- Updated Mobile Fix for App Mockups (Showing all 3 phones) --- */
 @media (max-width: 768px) {
     .app-hero-section {
         padding: 120px 15px 60px 15px;
@@ -3647,7 +3648,6 @@ border-radius: 20px;
         margin-bottom: 25px;
     }
 
-    /* Buttons ko mobile par neatly column ya wrap mein set karne ke liye */
     .app-hero-cta-group {
         flex-direction: column;
         width: 100%;
@@ -3660,23 +3660,56 @@ border-radius: 20px;
         box-sizing: border-box;
     }
 
-    /* Mockups universe ki height aur phone size mobile ke liye adjust kiya */
+    /* Mobile par universe height aur phones adjustment */
     .app-mockups-universe {
-        height: 340px;
-        margin-top: 30px;
+        height: 320px;
+        margin-top: 20px;
+        overflow: hidden; /* Taake screen se bahar na nikle */
     }
 
+    /* Center phone mobile ke liye thora chota */
     .center-phone {
-        width: 220px;
-        height: 340px;
+        width: 190px;
+        height: 310px;
+        z-index: 3;
     }
 
-    /* Bottom Ticker ko mobile par vertical ya scrollable wrap mein kar diya taake text na phate */
+    /* Side phones ko mobile par bhi show karwaya with compact scaling */
+    .side-phone {
+        display: block !important; /* Force show on mobile */
+        width: 150px;
+        height: 250px;
+        opacity: 0.7;
+        filter: blur(1px);
+    }
+
+    .left-phone {
+        transform: rotate(-10deg) translateY(30px) scale(0.85);
+        margin-right: -55px; /* Center phone ke sath overlap set kiya */
+    }
+
+    .right-phone {
+        transform: rotate(10deg) translateY(30px) scale(0.85);
+        margin-left: -55px;
+    }
+
+    /* Screen internal text size mobile par adjust kiya */
+    .screen-content-mock {
+        padding: 10px;
+    }
+    .screen-content-mock h3, .screen-content-mock h4 {
+        font-size: 12px;
+        margin: 4px 0 6px 0;
+    }
+    .mock-tag {
+        font-size: 8px;
+    }
+
     .app-features-ticker {
         flex-wrap: wrap;
-        gap: 10px;
-        font-size: 12px;
-        margin-top: 40px;
+        gap: 8px;
+        font-size: 11px;
+        margin-top: 35px;
         justify-content: center;
     }
 }
