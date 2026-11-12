@@ -2121,6 +2121,7 @@ nav {
 }
 
 .services-hero-badge .badge-tag {
+    position: static;
     background: #0f172a;
     color: #ffffff;
     padding: 2px 8px;
