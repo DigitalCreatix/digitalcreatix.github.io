@@ -3964,13 +3964,24 @@ border-radius: 20px;
     transform: translateY(-50px);
 }
 
-/* --- Mobile Responsive --- */
+/* --- Mobile Responsive Fix for Alternating Showcase --- */
 @media (max-width: 900px) {
     .showcase-row, 
     .showcase-row.reverse-row {
-        flex-direction: column;
+        flex-direction: column !important; /* Mobile par sabko column mein kar diya */
         gap: 30px;
         text-align: left;
+    }
+
+    /* Mobile par har row mein text (content) hamesha pehle aaye ga aur image neechay aayegi */
+    .showcase-row .showcase-text,
+    .showcase-row.reverse-row .showcase-text {
+        order: 1;
+    }
+
+    .showcase-row .showcase-image,
+    .showcase-row.reverse-row .showcase-image {
+        order: 2;
     }
 
     .showcase-container {
@@ -3987,5 +3998,6 @@ border-radius: 20px;
 
     .mockup-img {
         max-width: 100%;
+        height: 280px; /* Mobile screen ke liye image height thori compact kar di */
     }
 }
