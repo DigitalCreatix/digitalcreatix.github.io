@@ -2919,13 +2919,15 @@ border-radius: 20px;
 }
 /* --- Tech Stack & Tools Floating Section --- */
 
+/* --- Tech Stack & Tools Stroke Section --- */
+
 .tech-stack-section {
     padding: 100px 20px;
-    background: #ffffff; /* Official deep blue theme background */
+    background: #060b14; /* Official deep blue theme background */
     position: relative;
     overflow: hidden;
     text-align: center;
-    color: #0B0F19;
+    color: #ffffff;
 }
 
 .tech-stack-container {
@@ -2951,10 +2953,11 @@ border-radius: 20px;
 .tech-stack-header h2 {
     font-size: 42px;
     font-weight: 800;
-    color: #ffffff;
+    color: #0b0f19; /* Tools & ka color (#0b0f19) */
     letter-spacing: -0.5px;
 }
 
+/* Technologies par gradient wese hi rahega */
 .gradient-tech-text {
     background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%);
     -webkit-background-clip: text;
@@ -2972,30 +2975,32 @@ border-radius: 20px;
     margin: 0 auto;
 }
 
-/* Individual Pill Styling */
+/* Individual Pill Styling - Stroke Only (No Fill) */
 .tech-pill {
-    background: rgba(15, 23, 42, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #f8fafc;
+    background: transparent; /* Fill khatam kar diya */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(11, 15, 25, 0.4); /* Stroke outline (#0b0f19 matching tone) */
+    color: #0b0f19; /* Text color bhi wahi dark shade */
     padding: 14px 28px;
     border-radius: 50px;
     font-size: 15px;
     font-weight: 600;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     cursor: default;
     animation: gentleTechFloat 4s ease-in-out infinite;
 }
 
 .tech-pill:hover {
-    border-color: rgba(56, 189, 248, 0.6);
-    box-shadow: 0 15px 30px rgba(2, 132, 199, 0.25);
+    border-color: #38bdf8;
+    color: #38bdf8;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
     transform: translateY(-4px);
+    background: rgba(56, 189, 248, 0.05);
 }
 
-/* Staggered Floating Animation Delays for organic movement */
+/* Staggered Floating Animation Delays */
 .float-item-1 { animation-delay: 0s; }
 .float-item-2 { animation-delay: 0.5s; }
 .float-item-3 { animation-delay: 1s; }
