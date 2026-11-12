@@ -2130,22 +2130,33 @@ nav {
 }
 
 .services-hero-container h1 {
-    font-size: 52px;
+    font-size: 50px;
     font-weight: 800;
-    line-height: 1.15;
+    line-height: 1.2;
     color: #0f172a;
     margin-bottom: 20px;
     letter-spacing: -1px;
 }
+/* Pehli line bold hi rahegi */
+.services-hero-container h1 .heading-line-1 {
+    font-weight: 800; 
+}
+/* Doosri line ("brand needs to scale like") medium weight ki ho jaye gi */
+.services-hero-container h1 .heading-line-2 {
+    font-weight: 500; 
+}
 
+/* Magic pill: Size chhota aur glow effect ke sath */
 .highlight-pill {
     display: inline-block;
     background: #e0f2fe;
     color: #0284c7;
-    padding: 2px 18px;
-    border-radius: 40px;
+    padding: 2px 14px;
+    border-radius: 30px;
+    font-size: 0.85em; /* Text size ko thora chhota kar diya hai */
     font-weight: 700;
     transform: rotate(-1deg);
+    box-shadow: 0 0 15px rgba(2, 132, 199, 0.35); /* Blue glow effect */
 }
 
 .services-hero-desc {
