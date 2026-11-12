@@ -3683,15 +3683,15 @@ border-radius: 20px;
         filter: blur(0.5px);
     }
 
-    /* .left-phone {
+    .left-phone {
         transform: rotate(-8deg) translateY(20px) scale(0.85);
         margin-right: -50px; /* Center phone ke sath overlap set kiya */
-    } */
+    }
 
-    /* .right-phone {
+    .right-phone {
         transform: rotate(8deg) translateY(20px) scale(0.85);
         margin-left: -50px;
-    } */
+    }
 
     /* Screen internal text size mobile par adjust kiya */
     .screen-content-mock {
