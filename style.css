@@ -3863,7 +3863,8 @@ border-radius: 20px;
 
 /* Row Layout (Default: Text Left, Image Right) */
 .showcase-row {
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
@@ -3871,13 +3872,20 @@ border-radius: 20px;
 
 /* Reverse Row Layout (Image Left, Text Right) */
 .showcase-row.reverse-row {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse !important;
 }
 
 /* Text Column */
 .showcase-text {
     flex: 1;
     text-align: left;
+}
+.showcase-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 /* Small Top Tag / Number */
@@ -3964,16 +3972,16 @@ border-radius: 20px;
     transform: translateY(-50px);
 }
 
-/* --- Mobile Responsive Fix for Alternating Showcase --- */
+/* --- Mobile View Media Query (Sirf 900px ya choti screens ke liye) --- */
 @media (max-width: 900px) {
     .showcase-row, 
     .showcase-row.reverse-row {
-        flex-direction: column !important; /* Mobile par sabko column mein kar diya */
+        flex-direction: column !important; /* Mobile par sabko column kar diya */
         gap: 30px;
         text-align: left;
     }
 
-    /* Mobile par har row mein text (content) hamesha pehle aaye ga aur image neechay aayegi */
+    /* Mobile par content pehle aur image neechay */
     .showcase-row .showcase-text,
     .showcase-row.reverse-row .showcase-text {
         order: 1;
@@ -3984,20 +3992,8 @@ border-radius: 20px;
         order: 2;
     }
 
-    .showcase-container {
-        gap: 70px;
-    }
-
-    .showcase-text h2 {
-        font-size: 32px;
-    }
-
-    .showcase-text h3 {
-        font-size: 28px;
-    }
-
     .mockup-img {
         max-width: 100%;
-        height: 280px; /* Mobile screen ke liye image height thori compact kar di */
+        height: 280px;
     }
 }
