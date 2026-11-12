@@ -3034,3 +3034,120 @@ border-radius: 20px;
         gap: 12px;
     }
 }
+/* --- How We Work Process Section Styling --- */
+
+.our-process-section {
+    padding: 110px 20px;
+    background: #f4f6f9; /* Exact matching light background */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: #0b0f19;
+}
+
+.process-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+.process-header {
+    margin-bottom: 60px;
+}
+
+.process-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.process-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0b0f19;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+}
+
+.gradient-process-text {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.process-header p {
+    font-size: 16px;
+    color: #475569;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* 4 Cards Grid */
+.process-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* Individual Card Styling */
+.process-card {
+    background: #ffffff;
+    border: 1.5px solid rgba(203, 213, 225, 0.6); /* Clean subtle border */
+    border-radius: 20px;
+    padding: 45px 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+/* Hover Effect & Active State (Jesa 03 card par hai) */
+.process-card:hover, .process-card.active-card {
+    border-color: #38bdf8; /* Blue/Cyan stroke highlight */
+    box-shadow: 0 15px 35px rgba(2, 132, 199, 0.12);
+    transform: translateY(-5px);
+}
+
+.process-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #6366f1; /* Purple/Blue accent number */
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+}
+
+.process-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0b0f19;
+    margin-bottom: 12px;
+}
+
+.process-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .process-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .process-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .process-header h2 {
+        font-size: 32px;
+    }
+}
