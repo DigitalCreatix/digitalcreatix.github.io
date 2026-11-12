@@ -2472,3 +2472,191 @@ border-radius: 20px;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
+/* --- Expert Team Futuristic Floating Section --- */
+
+.expert-team-section {
+    padding: 120px 20px;
+    background: #0f0728; /* Deep purple dark futuristic background */
+    background-image: 
+        radial-gradient(circle at 50% 30%, rgba(147, 51, 234, 0.35) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(79, 70, 229, 0.25) 0%, transparent 50%);
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+}
+
+.expert-team-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header Content */
+.team-header-content {
+    margin-bottom: 60px;
+}
+
+.team-header-content h2 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.team-demo-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #0f0728;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.team-demo-btn:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+/* Visual Universe Area */
+.team-visual-universe {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Concentric Oval Track Lines */
+.orbit-track {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 100px;
+    pointer-events: none;
+}
+
+.track-1 {
+    width: 90%;
+    height: 320px;
+}
+
+.track-2 {
+    width: 75%;
+    height: 240px;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.track-3 {
+    width: 60%;
+    height: 160px;
+}
+
+/* Center Action Pill */
+.center-action-pill {
+    position: relative;
+    z-index: 5;
+    background: rgba(15, 7, 40, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(168, 85, 247, 0.3);
+}
+
+/* Floating Elements & Positions */
+.floating-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    animation: gentleFloat 4s ease-in-out infinite;
+}
+
+/* Avatar Circles */
+.avatar-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Black Floating Icons */
+.icon-box {
+    width: 48px;
+    height: 48px;
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Specific Positions on Orbit */
+.member-1 { top: 15%; left: 32%; animation-delay: 0s; }
+.member-2 { top: 5%; left: 50%; transform: translateX(-50%); animation-delay: 1s; }
+.member-3 { top: 20%; right: 30%; animation-delay: 0.5s; }
+
+.black-icon-1 { top: 45%; left: 18%; animation-delay: 1.5s; }
+.black-icon-2 { top: 45%; right: 18%; animation-delay: 0.8s; }
+
+.member-4 { bottom: 15%; left: 28%; animation-delay: 2s; }
+.member-5 { bottom: 10%; left: 45%; animation-delay: 1.2s; }
+.black-icon-3 { bottom: 12%; right: 42%; animation-delay: 0.3s; }
+.member-6 { bottom: 15%; right: 28%; animation-delay: 1.7s; }
+
+/* Floating Badge */
+.floating-badge {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    white-space: nowrap;
+}
+
+/* Smooth Floating Keyframes Animation */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .team-header-content h2 {
+        font-size: 32px;
+    }
+    .team-visual-universe {
+        height: 380px;
+    }
+    .avatar-circle {
+        width: 50px;
+        height: 50px;
+    }
+    .icon-box {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+}
