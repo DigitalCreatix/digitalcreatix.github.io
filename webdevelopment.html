@@ -363,10 +363,32 @@
                     <p>Yes, we offer ongoing maintenance, security updates, performance optimization, and continuous support packages after your site launches.</p>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
+    <script>
+    // Bulletproof FAQ Accordion Script
+    document.addEventListener("DOMContentLoaded", function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const questionBtn = item.querySelector('.faq-question');
+
+            questionBtn.addEventListener('click', () => {
+                // Check if this item is already active
+                const isOpen = item.classList.contains('active');
+
+                // Optional: Baqi saare close karne ke liye (agar sab band rakhne hain jab aik khule)
+                faqItems.forEach(el => el.classList.remove('active'));
+
+                // Agar pehle se open nahi tha, toh isay open kar do
+                if (!isOpen) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
 <!-- Footer Section -->
 <footer class="footer-section">
     <div class="footer-container">
