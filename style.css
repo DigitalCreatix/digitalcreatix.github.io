@@ -3385,3 +3385,247 @@ border-radius: 20px;
         font-size: 16px;
     }
 }
+/* --- Mobile App Development Hero Section Styling --- */
+
+.app-hero-section {
+    position: relative;
+    padding: 160px 20px 100px 20px;
+    background: #060b14; /* Official deep blue background */
+    background-image: 
+        radial-gradient(circle at 50% 25%, rgba(2, 132, 199, 0.4) 0%, transparent 60%),
+        radial-gradient(circle at 85% 75%, rgba(14, 116, 144, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 15% 75%, rgba(3, 105, 161, 0.25) 0%, transparent 50%);
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+}
+
+.app-hero-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Top Badge */
+.app-top-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+/* Hero Content */
+.app-hero-content {
+    max-width: 750px;
+    margin: 0 auto 50px auto;
+}
+
+.app-hero-content h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.app-hero-content p {
+    font-size: 17px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* CTA Buttons */
+.app-hero-cta-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    align-items: center;
+}
+
+.app-primary-btn {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    transition: all 0.3s ease;
+}
+
+.app-primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(2, 132, 199, 0.6);
+}
+
+.app-secondary-btn {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.app-secondary-btn:hover {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+/* Mockups Universe */
+.app-mockups-universe {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 440px;
+    margin-top: 20px;
+    perspective: 1000px;
+}
+
+.glow-backdrop {
+    position: absolute;
+    width: 600px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.35) 0%, transparent 70%);
+    top: 30%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Phone Mockup Frames */
+.phone-mockup {
+    position: relative;
+    background: #0f172a;
+    border: 4px solid #334155;
+    border-radius: 36px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+/* Center Phone */
+.center-phone {
+    width: 270px;
+    height: 420px;
+    z-index: 3;
+    border-color: #475569;
+}
+
+/* Side Phones */
+.side-phone {
+    width: 230px;
+    height: 360px;
+    opacity: 0.75;
+    filter: blur(1px);
+    transform: scale(0.92);
+}
+
+.left-phone {
+    transform: rotate(-8deg) translateY(20px) scale(0.92);
+    margin-right: -40px;
+}
+
+.right-phone {
+    transform: rotate(8deg) translateY(20px) scale(0.92);
+    margin-left: -40px;
+}
+
+/* Phone Screen Mock Content */
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.screen-content-mock {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 16px;
+    border-radius: 20px;
+    text-align: left;
+}
+
+.mock-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: #38bdf8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.screen-content-mock h3, .screen-content-mock h4 {
+    color: #ffffff;
+    font-size: 15px;
+    margin: 6px 0 10px 0;
+}
+
+.mock-cards-row {
+    display: flex;
+    gap: 8px;
+}
+
+.mini-card {
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* Bottom Features Ticker */
+.app-features-ticker {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    color: #94a3b8;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .app-hero-content h1 {
+        font-size: 36px;
+    }
+    .side-phone {
+        display: none; /* Mobile view par sirf center phone dikhega taake clean rahe */
+    }
+    .center-phone {
+        width: 280px;
+        height: 440px;
+    }
+    .app-mockups-universe {
+        height: 380px;
+    }
+}
