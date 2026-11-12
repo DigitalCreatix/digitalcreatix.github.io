@@ -3151,3 +3151,105 @@ border-radius: 20px;
         font-size: 32px;
     }
 }
+/* --- Built to Perform (Why Choose Us) Section Styling --- */
+
+.why-choose-section {
+    padding: 110px 20px;
+    background: #f4f6f9; /* Exact matching light background */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: #0b0f19;
+}
+
+.choose-container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+.choose-header {
+    margin-bottom: 60px;
+}
+
+.choose-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.choose-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0b0f19;
+    letter-spacing: -0.5px;
+}
+
+.gradient-choose-text {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 2x2 Cards Grid */
+.choose-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: left;
+}
+
+/* Individual Large Card Styling */
+.choose-card {
+    background: #ffffff;
+    border: 1.5px solid rgba(203, 213, 225, 0.6);
+    border-radius: 24px;
+    padding: 45px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.choose-card:hover {
+    border-color: #38bdf8; /* Blue/Cyan stroke highlight */
+    box-shadow: 0 15px 35px rgba(2, 132, 199, 0.12);
+    transform: translateY(-5px);
+}
+
+.choose-icon {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.choose-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0b0f19;
+    margin-bottom: 12px;
+}
+
+.choose-card p {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .choose-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .choose-header h2 {
+        font-size: 32px;
+    }
+    .choose-card {
+        padding: 30px 24px;
+    }
+}
