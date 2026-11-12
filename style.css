@@ -3872,7 +3872,7 @@ border-radius: 20px;
 
 /* Reverse Row Layout (Image Left, Text Right) */
 .showcase-row.reverse-row {
-    flex-direction: row-reverse !important;
+    flex-direction: row !important;
 }
 
 /* Text Column */
