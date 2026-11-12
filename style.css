@@ -3745,3 +3745,109 @@ border-radius: 20px;
     background: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(10px);
 }
+/* --- App Benefits Row Section Styling --- */
+.app-benefits-section {
+    padding: 120px 20px;
+    background: #f4f6f9; /* Website ki consistent light background */
+    position: relative;
+    overflow: hidden;
+}
+
+.app-benefits-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Individual Row Styling with Divider Line */
+.benefit-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 45px 0;
+    border-bottom: 1px solid rgba(203, 213, 225, 0.6); /* Clean horizontal separator */
+    
+    /* Scroll Fade-Up Animation Properties */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Pehli line ke upar bhi border dena ho toh de sakte hain, warna niche wali line kaafi hai */
+.benefit-row:first-child {
+    border-top: 1px solid rgba(203, 213, 225, 0.6);
+}
+
+/* Jab JavaScript yeh class add karegi toh element niche se upar fade-in ho jaye ga */
+.benefit-row.fade-in-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Left Side (Number + Heading) */
+.benefit-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex: 1;
+}
+
+.benefit-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: #3b82f6; /* Brand Blue Number */
+    letter-spacing: -1px;
+}
+
+.benefit-left h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+/* Right Side (Paragraph Description) */
+.benefit-right {
+    flex: 1;
+    max-width: 480px;
+}
+
+.benefit-right p {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    .benefit-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 35px 0;
+    }
+
+    .benefit-left {
+        gap: 20px;
+    }
+
+    .benefit-num {
+        font-size: 26px;
+    }
+
+    .benefit-left h3 {
+        font-size: 22px;
+    }
+
+    .benefit-right {
+        max-width: 100%;
+        padding-left: 50px; /* Number ke niche align karne ke liye */
+    }
+
+    .benefit-right p {
+        font-size: 14px;
+    }
+}
