@@ -3631,3 +3631,52 @@ border-radius: 20px;
         height: 380px;
     }
 }
+/* --- Mobile Fixes for App Development Hero Section --- */
+@media (max-width: 768px) {
+    .app-hero-section {
+        padding: 120px 15px 60px 15px;
+    }
+
+    .app-hero-content h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .app-hero-content p {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    /* Buttons ko mobile par neatly column ya wrap mein set karne ke liye */
+    .app-hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .app-primary-btn, .app-secondary-btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /* Mockups universe ki height aur phone size mobile ke liye adjust kiya */
+    .app-mockups-universe {
+        height: 340px;
+        margin-top: 30px;
+    }
+
+    .center-phone {
+        width: 220px;
+        height: 340px;
+    }
+
+    /* Bottom Ticker ko mobile par vertical ya scrollable wrap mein kar diya taake text na phate */
+    .app-features-ticker {
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: 12px;
+        margin-top: 40px;
+        justify-content: center;
+    }
+}
