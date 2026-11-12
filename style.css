@@ -3848,7 +3848,7 @@ border-radius: 20px;
 /* --- Alternating Feature Showcase Section Styling --- */
 
 .feature-showcase-section {
-    padding: 120px 20px;
+    padding: 40px 20px 120px 20px !important;
     background: #f4f6f9; /* Website ki consistent clean background */
     overflow: hidden;
 }
