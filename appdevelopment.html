@@ -470,6 +470,98 @@
             }
         });
     </script>
+     <!-- FAQ Accordion Section -->
+<section class="faq-section">
+    <div class="faq-container">
+        
+        <!-- Section Header -->
+        <div class="faq-header">
+            <span class="faq-tag">— COMMON QUESTIONS —</span>
+            <h2>Frequently Asked <span class="gradient-faq-text">Questions</span></h2>
+        </div>
+
+        <!-- FAQ Accordion List -->
+        <div class="faq-list">
+            
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>iOS, Android, or both?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Both. We build native Swift/Kotlin apps or cross-platform React Native / Flutter apps depending on your budget.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you handle App Store submission?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes — we manage the full submission process for both Apple App Store and Google Play Store.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What does post-launch support look like?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer 3-month post-launch support packages including bug fixes, performance monitoring, and minor updates.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you sign NDAs?</h3>
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. We sign NDAs before any project discussion at no extra cost.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <script>
+    // Bulletproof FAQ Accordion Script
+    document.addEventListener("DOMContentLoaded", function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const questionBtn = item.querySelector('.faq-question');
+
+            questionBtn.addEventListener('click', () => {
+                // Check if this item is already active
+                const isOpen = item.classList.contains('active');
+
+                // Optional: Baqi saare close karne ke liye (agar sab band rakhne hain jab aik khule)
+                faqItems.forEach(el => el.classList.remove('active'));
+
+                // Agar pehle se open nahi tha, toh isay open kar do
+                if (!isOpen) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+    
+<!-- Dark CTA Section (Let's Build Something Amazing Together) -->
+<section class="cta-dark-section">
+    <div class="cta-dark-content">
+        <span class="cta-badge">— READY TO START?</span>
+        <h2>Let's Build Something <br><span class="cta-italic-gradient">Amazing Together</span></h2>
+        <p>Whether you need a website, a brand, or a full AI-powered marketing strategy — we're here to make it happen.</p>
+        <a href="contact.html" class="cta-white-btn">Start Your Project →</a>
+    </div>
+</section>
 <!-- Footer Section -->
 <footer class="footer-section">
     <div class="footer-container">
