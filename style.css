@@ -2149,14 +2149,17 @@ nav {
 .highlight-pill {
     display: inline-block;
     background: #e0f2fe;
-    color: #0284c7;
+    color: transparent; /* Text ko transparent kiya taake gradient nazar aaye */
+    background-image: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%); /* Aapki theme ka vibrant blue gradient */
+    -webkit-background-clip: text; /* Text ke andar gradient clip karne ke liye */
+    background-clip: text;
     padding: 2px 16px;
     border-radius: 40px;
-    font-size: 0.85em; /* Text size chhota */
+    font-size: 0.85em;
     font-weight: 700;
     transform: rotate(-1deg);
-    text-shadow: 0 0 10px rgba(2, 132, 199, 0.6); /* Sirf text par glow effect */
-    box-shadow: none; /* Background shape se shadow khatam kar di hai */
+    text-shadow: none; /* Glow khatam kar diya */
+    box-shadow: none;
 }
 
 .services-hero-desc {
