@@ -232,7 +232,33 @@
 
     </div>
 </section>
-    
+    <script>
+    // Scroll Fade-Up Observer
+    document.addEventListener("DOMContentLoaded", function() {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15 // Jab 15% section nazar aaye ga toh animation trigger hogi
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Stagger effect ke liye thora delay diya hai taake aik ke baad aik aayein
+                    setTimeout(() => {
+                        entry.target.classList.add('fade-in-active');
+                    }, index * 150);
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-row').forEach(row => {
+            observer.observe(row);
+        });
+    });
+</script>
     <!-- Mobile Sidebar & Dropdown JavaScript for Services Page -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
