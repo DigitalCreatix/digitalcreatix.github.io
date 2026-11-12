@@ -3713,3 +3713,34 @@ border-radius: 20px;
         justify-content: center;
     }
 }
+/* --- Phone Screen Video Styling --- */
+.phone-screen-video-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #0f172a;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.phone-ui-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Video ko frame mein perfect fit karne ke liye */
+    z-index: 1;
+}
+
+/* Overlay content ko video ke upar rakhne ke liye z-index diya hai */
+.phone-screen-video-wrapper .screen-content-mock {
+    position: relative;
+    z-index: 2;
+    margin: 15px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
+}
