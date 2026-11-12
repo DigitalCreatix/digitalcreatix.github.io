@@ -3939,26 +3939,29 @@ border-radius: 20px;
 }
 
 /* Image Column */
+/* --- Fixed Mockup Image Styling --- */
 .showcase-image {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .mockup-img {
     width: 100%;
     max-width: 480px;
-    height: auto;
+    height: 340px; /* Fix height de di hai taake box hamesha poora barha nazar aaye */
     border-radius: 24px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.8);
-    object-fit: cover;
+    object-fit: cover; /* Image box ke andar bilkul fit aur crop ho kar chale gi */
+    background: #e2e8f0; /* Jab tak image load hogi, light gray background dikhega */
     transition: transform 0.4s ease;
 }
 
 .mockup-img:hover {
-    transform: translateY(-5px);
+    transform: translateY(-50px);
 }
 
 /* --- Mobile Responsive --- */
