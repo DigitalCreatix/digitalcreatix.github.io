@@ -3989,3 +3989,24 @@ border-radius: 20px;
         max-width: 100%;
     }
 }
+/* --- Alternating Showcase Rows Setup --- */
+.showcase-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* Rows ke darmiyan khula space */
+}
+
+/* Default Row (1st & 3rd): Text Left, Image Right */
+.showcase-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* Reverse Row (2nd & 4th): Image Left, Text Right */
+.showcase-row.reverse-row {
+    flex-direction: row-reverse;
+}
