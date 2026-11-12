@@ -3845,3 +3845,144 @@ border-radius: 20px;
         font-size: 14px;
     }
 }
+/* --- Alternating Feature Showcase Section Styling --- */
+
+.feature-showcase-section {
+    padding: 120px 20px;
+    background: #f4f6f9; /* Website ki consistent clean background */
+    overflow: hidden;
+}
+
+.showcase-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px; /* Rows ke darmiyan khula space */
+}
+
+/* Row Layout (Default: Text Left, Image Right) */
+.showcase-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* Reverse Row Layout (Image Left, Text Right) */
+.showcase-row.reverse-row {
+    flex-direction: row-reverse;
+}
+
+/* Text Column */
+.showcase-text {
+    flex: 1;
+    text-align: left;
+}
+
+/* Small Top Tag / Number */
+.showcase-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #0284c7; /* Blue accent */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.showcase-num {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 800;
+    color: #0284c7;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+/* Headings */
+.showcase-text h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.showcase-text h3 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.highlight-text {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Paragraphs */
+.showcase-text p {
+    font-size: 15px;
+    color: #64748b; /* Soft gray color */
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
+.showcase-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Image Column */
+.showcase-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mockup-img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.mockup-img:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 900px) {
+    .showcase-row, 
+    .showcase-row.reverse-row {
+        flex-direction: column;
+        gap: 30px;
+        text-align: left;
+    }
+
+    .showcase-container {
+        gap: 70px;
+    }
+
+    .showcase-text h2 {
+        font-size: 32px;
+    }
+
+    .showcase-text h3 {
+        font-size: 28px;
+    }
+
+    .mockup-img {
+        max-width: 100%;
+    }
+}
