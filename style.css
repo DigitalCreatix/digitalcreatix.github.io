@@ -1,7 +1,5 @@
-/* ================================================= */
-/* GLOBAL RESET & BASE STYLES                        */
-/* ================================================= */
-- { 
+
+* { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
@@ -11,46 +9,16 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+/* Koi bhi section screen se bahar na nikle */
 section, div {
     max-width: 100%;
     box-sizing: border-box;
 }
 body { 
-    background: #f4f6f9; 
+    background: #f4f6f9; /* Ekdam clean aur premium neutral shade jo poori website par aik jaisa chalega */
     color: #0f172a; 
     line-height: 1.6; 
     overflow-x: hidden;
-}
-
-/* ================================================= */
-/* NAVBAR & HEADER STYLING                           */
-/* ================================================= */
-.nav-container {
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    top: 15px;
-    left: 0;
-    width: 100%;
-    z-index: 50;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-nav { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 10px 20px; 
-    background: rgba(255, 255, 255, 0.85); 
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 50px;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    box-sizing: border-box;
 }
 
 .logo { 
@@ -61,9 +29,8 @@ nav {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding-left: 0;
+    padding-left: 10px;
 }
-
 .logo-icon {
     background: #3b82f6;
     color: #fff;
@@ -75,23 +42,12 @@ nav {
     border-radius: 50%;
     font-size: 14px;
 }
-
-.nav-logo-img {
-    height: 32px !important;
-    width: auto !important;
-    object-fit: contain;
-    display: block;
-}
-
 .nav-links { 
     display: flex; 
     gap: 25px; 
     list-style: none; 
-    align-items: center;
-    margin: 0;
-    padding: 0;
+    align-items: center; 
 }
-
 .nav-links a { 
     color: #475569; 
     text-decoration: none; 
@@ -99,7 +55,6 @@ nav {
     font-weight: 500; 
     transition: 0.3s; 
 }
-
 .nav-links a:hover, .nav-links a.active { 
     color: #3b82f6; 
 }
@@ -115,31 +70,17 @@ nav {
     box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
     transition: 0.3s; 
 }
-
 .audit-btn:hover { 
     background-color: #2563eb; 
 }
 
-@media (max-width: 1023px) {
-    .nav-links, .audit-btn {
-        display: none;
-    }
-}
-
-/* ================================================= */
-/* HERO SECTION                                      */
-/* ================================================= */
-.hero {
-    position: relative;
-    padding: 130px 40px 60px 40px;
-    text-align: center;
-    width: 100%;
-    max-width: 1400px;
+/* Hero Section */
+.hero { 
+    text-align: center; 
+    padding: 150px 20px 60px 20px; 
+    max-width: 850px; 
     margin: 0 auto;
-    box-sizing: border-box;
-    overflow: hidden;
 }
-
 .hero h1 { 
     font-size: 54px; 
     margin-bottom: 20px; 
@@ -148,11 +89,9 @@ nav {
     color: #0f172a;
     line-height: 1.15;
 }
-
 .hero h1 span { 
     color: #3b82f6; 
 }
-
 .hero p { 
     font-size: 18px; 
     color: #475569; 
@@ -176,99 +115,12 @@ nav {
     box-shadow: 0 10px 25px rgba(59, 130, 246, 0.35);
     transition: 0.3s;
 }
-
 .primary-cta:hover {
     background-color: #2563eb;
     transform: translateY(-2px);
 }
 
-/* Floating Cards in Hero */
-.hero-floating-cards {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    box-sizing: border-box;
-    padding: 0 30px;
-    z-index: 3;
-}
-
-.floating-card {
-    position: absolute;
-    top: 45%;
-    transform: translateY(-50%);
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 16px 20px;
-    border-radius: 14px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    text-align: left;
-    width: 240px;
-    pointer-events: auto;
-    animation: floatCard 4s ease-in-out infinite;
-}
-
-.card-left-1 { left: 40px !important; }
-.card-right-1 { right: 40px !important; animation-delay: 2s; }
-
-.card-title {
-    font-size: 12px;
-    color: #64748b;
-    font-weight: 600;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.card-value {
-    font-size: 17px;
-    font-weight: 700;
-    color: #0f172a;
-}
-
-.card-badge {
-    display: inline-block;
-    font-size: 11px;
-    padding: 3px 8px;
-    border-radius: 20px;
-    font-weight: 600;
-    margin-top: 6px;
-}
-
-@keyframes floatCard {
-    0%, 100% { transform: translateY(-50%); }
-    50% { transform: translateY(calc(-50% - 8px)); }
-}
-
-/* ================================================= */
-/* TYPING EFFECT                                     */
-/* ================================================= */
-.dynamic-text-wrapper {
-    font-size: 24px;
-    font-weight: 600;
-    color: #475569;
-    margin-top: 15px;
-    margin-bottom: 35px;
-    height: 40px;
-    text-align: center;
-}
-.dynamic-text {
-    color: #3b82f6;
-    border-right: 3px solid #3b82f6;
-    padding-right: 4px;
-    animation: blink 0.75s infinite;
-}
-@keyframes blink {
-    0% { border-color: transparent; }
-    50% { border-color: #3b82f6; }
-    100% { border-color: transparent; }
-}
-
-/* ================================================= */
-/* WEB SHOWCASE / MOCKUPS SECTION                    */
-/* ================================================= */
+/* Web Showcase / Mockups Section */
 .showcase-container {
     display: flex;
     justify-content: center;
@@ -365,9 +217,35 @@ nav {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* ================================================= */
-/* LANGUAGE DROPUP (BOTTOM-LEFT)                     */
-/* ================================================= */
+/* Typing Effect Styling */
+.dynamic-text-wrapper {
+    font-size: 24px;
+    font-weight: 600;
+    color: #475569;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    height: 40px;
+    text-align: center;
+}
+.dynamic-text {
+    color: #3b82f6;
+    border-right: 3px solid #3b82f6;
+    padding-right: 4px;
+    animation: blink 0.75s infinite;
+}
+@keyframes blink {
+    0% { border-color: transparent; }
+    50% { border-color: #3b82f6; }
+    100% { border-color: transparent; }
+}
+
+@media(max-width: 768px) {
+    .hero h1 { font-size: 36px; }
+    .nav-links { display: none; }
+    nav { width: 95%; }
+}
+
+/* Bottom-Left Floating Language Dropup */
 .lang-dropup-container {
     position: fixed;
     bottom: 25px;
@@ -425,10 +303,7 @@ nav {
     color: #3b82f6;
     padding-left: 20px;
 }
-
-/* ================================================= */
-/* TRUSTED LOGOS MARQUEE                             */
-/* ================================================= */
+/* Trusted By Clean Minimalist Marquee */
 .trusted-section {
     padding: 30px 0 50px 0;
     text-align: center;
@@ -445,6 +320,7 @@ nav {
     text-align: center;
 }
 
+/* Slider Container */
 .logos-slider {
     display: flex;
     overflow: hidden;
@@ -457,12 +333,13 @@ nav {
 .logos-track {
     display: flex;
     flex-direction: row;
-    gap: 60px;
+    gap: 60px; /* Logos ke darmiyan khula fasla */
     align-items: center;
     width: max-content;
     animation: scrollLogos 30s linear infinite;
 }
 
+/* Baghair box ya background ke clean logo items */
 .logo-item {
     background: transparent !important;
     border: none !important;
@@ -475,7 +352,7 @@ nav {
 }
 
 .logo-item img {
-    height: 28px;
+    height: 28px; /* Bilkul reference image jaisa size */
     width: auto;
     object-fit: contain;
     opacity: 0.8;
@@ -486,14 +363,437 @@ nav {
     opacity: 1;
 }
 
+/* Smooth Infinite Scroll */
 @keyframes scrollLogos {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+/* Hero Section - 1440px Full Professional Width */
+.hero {
+    position: relative;
+    padding: 80px 40px 60px 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* ================================================= */
-/* MOBILE SIDEBAR & OVERLAY                          */
-/* ================================================= */
+/* Floating Cards Wrapper for 1400px Layout */
+.hero-floating-cards {
+    display: none; /* Mobile par hide */
+}
+
+/* Hero Section Container */
+.hero {
+    position: relative;
+    padding: 130px 40px 60px 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Floating Cards Container */
+.hero-floating-cards {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    box-sizing: border-box;
+    padding: 0 30px;
+    z-index: 3;
+}
+
+/* Base Floating Card Style */
+.floating-card {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 16px 20px;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    width: 240px;
+    pointer-events: auto;
+    animation: floatCard 4s ease-in-out infinite;
+}
+
+/* Left Card Fixed Position */
+.card-left-1 {
+    left: 40px !important;
+}
+
+/* Right Card Fixed Position */
+.card-right-1 {
+    right: 40px !important;
+    animation-delay: 2s;
+}
+
+/* Card Typography */
+.card-title {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-value {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.card-badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+/* Floating Animation */
+@keyframes floatCard {
+    0%, 100% { transform: translateY(-50%); }
+    50% { transform: translateY(calc(-50% - 8px)); }
+}/* Features & Metrics Section Styling */
+.features-metrics-section {
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.features-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+@media (min-width: 1024px) {
+    .features-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+/* Left Intro */
+.features-intro {
+    flex: 1;
+    max-width: 350px;
+    text-align: left;
+}
+
+.features-intro h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.features-intro p {
+    font-size: 16px;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.features-link {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.features-link:hover {
+    text-decoration: underline;
+}
+
+/* Right Cards Grid */
+.features-grid {
+    flex: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 30px 24px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+    font-size: 24px;
+    background: #f1f5f9;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* Bottom Stats Row */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding-top: 50px;
+}
+
+@media (min-width: 768px) {
+    .stats-row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-box h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+/* Services Grid Section */
+.services-grid-section {
+    max-width: 1400px;
+    margin: 100px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.services-section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.services-section-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.services-section-header p {
+    font-size: 16px;
+    color: #64748b;
+}
+
+/* 3x3 Grid Layout */
+.services-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .services-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .services-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Individual Service Card */
+.service-card {
+    position: relative;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    box-sizing: border-box;
+    background: #0f172a;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Background Image with Grayscale default */
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%) brightness(0.7);
+    transition: filter 0.6s ease, transform 0.6s ease;
+    z-index: 1;
+}
+
+.service-card:hover .card-bg {
+    filter: grayscale(0%) brightness(0.9); /* Hover par colorful ho jaye gi */
+    transform: scale(1.05);
+}
+
+/* Dark Gradient Overlay for text readability */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    z-index: 2;
+    transition: background 0.4s ease;
+}
+
+.service-card:hover .card-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+}
+
+/* Top Right Number (01, 02...) */
+.card-number {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 3;
+    letter-spacing: 1px;
+}
+
+/* Card Content (Heading & Paragraph) */
+.card-content {
+    position: relative;
+    z-index: 3;
+    transform: translateY(-2px); /* Default state par paragraph chhupa rehta hai */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .card-content {
+    transform: translateY(0); /* Hover par heading upar hogi aur paragraph show hoga */
+}
+
+.card-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.service-card:hover .card-content p {
+    opacity: 1;
+    max-height: 100px; /* Paragraph reveal animation */
+}
+
+/* Bottom-Right Blue Circle Arrow Icon */
+.card-arrow {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 44px;
+    height: 44px;
+    background: #2563eb; /* Aapka brand blue color */
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .card-arrow {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+.stat-box p {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+/* Mobile Menu Button Styles */
 .mobile-menu-btn {
     display: flex;
     flex-direction: column;
@@ -518,10 +818,36 @@ nav {
 
 @media (min-width: 1024px) {
     .mobile-menu-btn {
-        display: none;
+        display: none; /* Desktop par hide rahega */
     }
 }
 
+/* /* Sidebar Overlay */
+/* .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+} */ */
+
+/* ================================================= */
+/* FIXED Z-INDEX FOR NAVBAR & OVERLAY                */
+/* ================================================= */
+
+
+/* Sidebar Overlay */
 .sidebar-overlay {
     position: fixed;
     top: 0;
@@ -529,7 +855,7 @@ nav {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
+    z-index: 9999; /* Navbar (50) se bohat upar */
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease;
@@ -540,21 +866,24 @@ nav {
     opacity: 1;
 }
 
+/* ================================================= */
+/* ADVANCED MOBILE SIDEBAR STYLING                   */
+/* ================================================= */
 .mobile-sidebar {
     position: fixed;
     top: 0;
-    left: -100%;
+    left: -100%; /* Ya right se khulta hai toh right-100% */
     width: 300px;
     height: 100%;
     background: #ffffff;
-    z-index: 10000;
+    z-index: 10000; /* Sabse upar layer */
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 5px 0 25px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
 }
 
 .mobile-sidebar.active {
-    left: 0;
+    left: 0; /* Jab active ho toh samne aa jaye */
 }
 
 .sidebar-header {
@@ -591,6 +920,7 @@ nav {
     background: #e2e8f0;
 }
 
+/* Scrollable Content Area */
 .sidebar-content-scroll {
     padding: 20px 24px;
     overflow-y: auto;
@@ -598,6 +928,7 @@ nav {
     box-sizing: border-box;
 }
 
+/* Navigation Links inside Sidebar */
 .sidebar-nav-links {
     display: flex;
     flex-direction: column;
@@ -628,6 +959,7 @@ nav {
     color: #3b82f6;
 }
 
+/* Services Dropdown Menu List */
 .dropdown-menu-list {
     display: none;
     flex-direction: column;
@@ -657,227 +989,266 @@ nav {
     padding-left: 14px;
 }
 
-/* ================================================= */
-/* SERVICES HERO & GRID SECTION                      */
-/* ================================================= */
-.services-hero-section {
-    padding: 190px 20px 80px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background-color: #f5f6ff;
-    background-image:
-        radial-gradient(ellipse at 12% 15%, rgba(190, 199, 255, 0.48) 0%, transparent 48%),
-        radial-gradient(ellipse at 88% 20%, rgba(190, 205, 255, 0.52) 0%, transparent 48%),
-        radial-gradient(ellipse at 48% 100%, rgba(210, 211, 255, 0.55) 0%, transparent 55%),
-        radial-gradient(ellipse at 100% 85%, rgba(210, 195, 255, 0.32) 0%, transparent 45%),
-        linear-gradient(120deg, #f8f9ff 0%, #eef0ff 50%, #f5f6ff 100%);
-    border-radius: 20px;
-}
-
-.services-hero-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.services-hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #f1f5f9;
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #0f172a;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-}
-
-.services-hero-container h1 {
-    font-size: 50px;
-    font-weight: 800;
-    line-height: 1.2;
-    color: #0f172a;
+/* Contact Section inside Sidebar */
+.sidebar-contact-section {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
     margin-bottom: 20px;
-    letter-spacing: -1px;
 }
 
-.highlight-pill {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #e0f2fe;
-    padding: 8px 16px;
-    border-radius: 40px;
-    font-size: 0.75em;
+.sidebar-subtitle {
+    font-size: 11px;
     font-weight: 700;
-    transform: rotate(-1deg);
-    line-height: 1;
-}
-
-.highlight-pill span {
-    background-image: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-}
-
-.services-grid-section {
-    max-width: 1400px;
-    margin: 100px auto;
-    padding: 0 40px;
-    box-sizing: border-box;
-}
-
-.services-section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.services-section-header h2 {
-    font-size: 40px;
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 10px;
-}
-
-.services-grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-}
-
-@media (min-width: 768px) {
-    .services-grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .services-grid-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.service-card {
-    position: relative;
-    height: 420px;
-    border-radius: 20px;
-    overflow: hidden;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 30px;
-    box-sizing: border-box;
-    background: #0f172a;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.card-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    filter: grayscale(100%) brightness(0.7);
-    transition: filter 0.6s ease, transform 0.6s ease;
-    z-index: 1;
-}
-
-.service-card:hover .card-bg {
-    filter: grayscale(0%) brightness(0.9);
-    transform: scale(1.05);
-}
-
-.card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
-    z-index: 2;
-}
-
-.card-number {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    font-size: 14px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.7);
-    z-index: 3;
-}
-
-.card-content {
-    position: relative;
-    z-index: 3;
-    transform: translateY(-2px);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.service-card:hover .card-content {
-    transform: translateY(0);
-}
-
-.card-content h3 {
-    font-size: 24px;
-    font-weight: 700;
-    color: #ffffff;
+    color: #64748b;
+    letter-spacing: 1.2px;
+    display: block;
     margin-bottom: 12px;
 }
 
-.card-content p {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.5;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.4s ease, max-height 0.4s ease;
+.sidebar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.service-card:hover .card-content p {
-    opacity: 1;
-    max-height: 100px;
+.sidebar-form input, .sidebar-form textarea {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 13px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    color: #0f172a;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
 }
 
-.card-arrow {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-    width: 44px;
-    height: 44px;
-    background: #2563eb;
+.sidebar-form input:focus, .sidebar-form textarea:focus {
+    border-color: #3b82f6;
+    background: #ffffff;
+}
+
+.sidebar-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12px;
+    color: #64748b;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.sidebar-checkbox-label input {
+    margin-top: 2px;
+    width: auto;
+    cursor: pointer;
+}
+
+.sidebar-checkbox-label a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.sidebar-checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+.sidebar-send-btn {
+    background: #0f172a;
     color: #ffffff;
-    border-radius: 50%;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background 0.2s ease;
+}
+
+.sidebar-send-btn:hover {
+    background: #3b82f6;
+}
+
+/* Find Us / Footer Info inside Sidebar */
+.sidebar-find-us {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.sidebar-find-us p {
+    margin-bottom: 8px;
+    word-break: break-all;
+}}
+/* ================================================= */
+/* 1. ORIGINAL COMPACT PILL NAVBAR CSS               */
+/* ================================================= */
+
+.logo { 
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #0f172a; 
+    text-decoration: none; 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 10px;
+}
+
+.logo-icon {
+    background: #3b82f6;
+    color: #fff;
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 3;
-    opacity: 0;
-    transform: scale(0.8) translateY(10px);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 50%;
+    font-size: 14px;
 }
 
-.service-card:hover .card-arrow {
-    opacity: 1;
-    transform: scale(1) translateY(0);
+.nav-links { 
+    display: flex; 
+    gap: 25px; 
+    list-style: none; 
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
+.nav-links a { 
+    color: #475569; 
+    text-decoration: none; 
+    font-size: 14px; 
+    font-weight: 500; 
+    transition: 0.3s; 
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: #3b82f6; 
+}
+
+.audit-btn { 
+    background-color: #3b82f6; 
+    color: #ffffff; 
+    padding: 10px 22px; 
+    border-radius: 30px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 14px; 
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+    transition: 0.3s; 
+}
+
+.audit-btn:hover { 
+    background-color: #2563eb; 
+}
+
+/* Mobile par desktop links hide karne ke liye */
+@media (max-width: 1023px) {
+    .nav-links, .audit-btn {
+        display: none;
+    }
+}
 /* ================================================= */
-/* ROADMAP & FEATURES SECTIONS                       */
+/* 1. FINAL CLEAN NAVBAR & LOGO STYLING              */
+/* ================================================= */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 15px; /* Upar se thora sa gap */
+    left: 0;
+    width: 100%;
+    z-index: 50; /* Bahut kam rakha hai taake sidebar iske upar aaye */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+nav { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px; 
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.logo { 
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #0f172a; 
+    text-decoration: none; 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 0;
+}
+
+/* Navbar Logo Image - Yeh image ko chota aur fit rakhe ga */
+.nav-logo-img {
+    height: 32px !important;
+    width: auto !important;
+    object-fit: contain;
+    display: block;
+}
+
+.nav-links { 
+    display: flex; 
+    gap: 25px; 
+    list-style: none; 
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a { 
+    color: #475569; 
+    text-decoration: none; 
+    font-size: 14px; 
+    font-weight: 500; 
+    transition: 0.3s; 
+}
+
+.nav-links a:hover, .nav-links a.active { 
+    color: #3b82f6; 
+}
+
+.audit-btn { 
+    background-color: #3b82f6; 
+    color: #ffffff; 
+    padding: 10px 22px; 
+    border-radius: 30px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 14px; 
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+    transition: 0.3s; 
+}
+
+.audit-btn:hover { 
+    background-color: #2563eb; 
+}
+
+@media (max-width: 1023px) {
+    .nav-links, .audit-btn {
+        display: none;
+    }
+}
+/* ================================================= */
+/* OUR PROJECT ROADMAP SECTION STYLING               */
 /* ================================================= */
 .roadmap-section {
     max-width: 1350px;
@@ -899,6 +1270,20 @@ nav {
     letter-spacing: -1px;
 }
 
+.roadmap-subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+    color: #3b82f6;
+    margin-bottom: 8px;
+}
+
+.roadmap-desc {
+    font-size: 15px;
+    color: #64748b;
+}
+
+/* Cards Grid Layout */
 .roadmap-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -906,21 +1291,26 @@ nav {
 }
 
 @media (min-width: 768px) {
-    .roadmap-grid { grid-template-columns: repeat(2, 1fr); }
+    .roadmap-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (min-width: 1024px) {
-    .roadmap-grid { grid-template-columns: repeat(4, 1fr); }
+    .roadmap-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
+/* Individual Card Styling - Reduced Height & Wider Look */
 .roadmap-card {
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 18px;
-    padding: 24px 22px;
+    padding: 24px 22px; /* Height kam karne ke liye padding choti ki hai */
     text-align: left;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -932,6 +1322,7 @@ nav {
     border-color: rgba(59, 130, 246, 0.3);
 }
 
+/* Number aur Heading ko aik line (side-by-side) karne ke liye */
 .card-top {
     display: flex;
     align-items: center;
@@ -939,21 +1330,225 @@ nav {
     margin-bottom: 12px;
 }
 
+/* Number Styling */
 .roadmap-number {
-    font-size: 28px;
+    font-size: 28px; /* Thora balanced size taake heading ke sath fit aaye */
     font-weight: 800;
     color: #3b82f6;
     line-height: 1;
 }
 
+/* Card Heading */
 .roadmap-card h3 {
     font-size: 17px;
     font-weight: 700;
     color: #0f172a;
     margin: 0;
+    line-height: 1.25;
 }
 
+/* Card Description */
 .roadmap-card p {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+/* ================================================= */
+/* FIXED CAROUSEL SECTION & CONTAINER (No Shadow Cut)*/
+/* ================================================= */
+.project-carousel-section {
+    max-width: 1400px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+    overflow: visible; /* Yahan overflow visible kar diya hai */
+}
+
+.carousel-header {
+    margin-bottom: 40px;
+}
+
+.carousel-header h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.carousel-header p {
+    font-size: 16px;
+    color: #64748b;
+}
+
+/* Carousel Outer Viewport */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: visible; /* Yahan bhi overflow visible kar diya hai taake shadow na kate */
+    padding: 50px 0;   /* Upar niche padding barha di hai taake shadow ke liye poori jagah ho */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Moving Track */
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Individual Card Styling */
+.carousel-card {
+    width: 210px;
+    height: 310px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+    flex-shrink: 0;
+    opacity: 0.5;
+    transform: scale(0.85);
+    filter: brightness(0.7);
+}
+
+.carousel-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Center Active Card (Bara aur Bright) */
+.carousel-card.active {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: brightness(1);
+    box-shadow: 0 20px 45px rgba(59, 130, 246, 0.25);
+    z-index: 10;
+}
+/* ================================================= */
+/* BETTER TOGETHER SECTION STYLING (Fixed Height & Gradient Line) */
+/* ================================================= */
+.better-together-section {
+    max-width: 1400px;
+    margin: 100px auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.bt-header {
+    margin-bottom: 50px;
+}
+
+.bt-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: #3b82f6; /* Brand Blue */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.bt-header h2 {
+    font-size: 46px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+}
+
+.bt-subtitle {
+    font-size: 16px;
+    color: #64748b;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* 4 Cards Grid Layout */
+.bt-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .bt-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .bt-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Individual Card Styling - Compact Height */
+.bt-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 32px 24px; /* Height kam karne ke liye padding compact ki hai */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bt-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(59, 130, 246, 0.12);
+}
+
+/* Icon Wrapper Styling */
+.bt-icon-wrapper {
+    width: 54px;
+    height: 54px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3b82f6;
+    margin-bottom: 18px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.bt-card:hover .bt-icon-wrapper {
+    background: #e0f2fe;
+    color: #2563eb;
+}
+
+/* Card Typography */
+.bt-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.bt-card-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.bt-card p {
     font-size: 13.5px;
     color: #64748b;
     line-height: 1.5;
@@ -961,15 +1556,1376 @@ nav {
 }
 
 /* ================================================= */
-/* TECH STACK & PROCESS SECTIONS                     */
+/* BOTTOM GRADIENT LINE HOVER ANIMATION              */
 /* ================================================= */
+.bt-bottom-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3.5px;
+    /* Aapki theme se match karta hua brand blue gradient */
+    background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa); 
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+.bt-card:hover .bt-bottom-line {
+    width: 100%;
+    left: 0;
+}
+/* ================================================= */
+/* 2x2 GRID HORIZONTAL CARDS STYLING (FINAL FIX)     */
+/* ================================================= */
+.bt-second-row-grid {
+    max-width: 1400px;
+    margin: 50px auto 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 1024px) {
+    .bt-second-row-grid {
+        grid-template-columns: repeat(2, 1fr); /* Bilkul 2 columns (2 upar, 2 niche) */
+    }
+}
+
+/* Horizontal Card Layout (Icon on Left, Text on Right) */
+.bt-horizontal-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+    padding: 32px 36px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.bt-horizontal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(59, 130, 246, 0.12);
+}
+
+/* Left Icon Wrapper */
+.bt-horizontal-card .bt-icon-wrapper {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3b82f6;
+    margin-bottom: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.bt-horizontal-card:hover .bt-icon-wrapper {
+    background: #e0f2fe;
+    color: #2563eb;
+}
+
+/* Content Area */
+.bt-horizontal-card .bt-card-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.bt-horizontal-card .bt-card-content p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ================================================= */
+/* 100% FULL-WIDTH EDGE-TO-EDGE DARK CTA SECTION     */
+/* ================================================= */
+.cta-dark-section {
+    position: relative;
+    width: 100%;
+    left: auto;
+    background-color: #0b0f19;
+    background-image: radial-gradient(circle at center, #1e293b 0%, #0b0f19 80%);
+    padding: 120px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+.cta-dark-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px; /* Content mobile par side se touch na ho isliye padding */
+    box-sizing: border-box;
+}
+
+/* Top Small Badge */
+.cta-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: #3b82f6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Main Heading */
+.cta-dark-content h2 {
+    font-size: 56px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -1.5px;
+}
+
+/* Italic Gradient Part (Pure Blue Theme) */
+.cta-italic-gradient {
+    font-style: italic;
+    font-weight: 700;
+    background: linear-gradient(90deg, #60a5fa, #3b82f6, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Description Text */
+.cta-dark-content p {
+    font-size: 18px;
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+/* Center White Pill Button */
+.cta-white-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    color: #0f172a;
+    padding: 16px 36px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-white-btn:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.25);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .cta-dark-section {
+        padding: 80px 15px;
+    }
+    .cta-dark-content h2 {
+        font-size: 34px;
+    }
+    .cta-dark-content p {
+        font-size: 15px;
+    }
+}
+/* ================================================= */
+/* PERFECT ALIGNED PROFESSIONAL FOOTER STYLING       */
+/* ================================================= */
+.footer-section {
+    background-color: #0b0f19;
+    color: #94a3b8;
+    padding: 80px 40px 30px 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: left; /* Sab kuch strict left-aligned */
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    }
+}
+
+/* Column Headings */
+.footer-col h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+/* Brand Column & Logo */
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.footer-logo-img {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-bio {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Social Icons */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+.footer-socials a {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    transform: translateY(-3px);
+}
+
+/* Footer Links List (Strict Left Sequence Alignment) */
+.footer-links, .footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.footer-links li a {
+    font-size: 14px;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links li a:hover, .footer-links li a.active-blue {
+    color: #3b82f6; /* Har option par blue hover effect */
+    padding-left: 4px;
+}
+
+/* Contact List Text */
+.footer-contact-list li {
+    font-size: 13.5px;
+    color: #94a3b8;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Footer Bottom Strip (Aligned with Logo Left Edge) */
+.footer-bottom {
+    max-width: 1300px;
+    margin: 60px auto 0 auto;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: flex-start; /* Logo ke left alignment ke sath perfectly match */
+    font-size: 13px;
+    color: #64748b;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.footer-bottom p {
+    margin: 0;
+    text-align: left;
+}
+
+.footer-bottom a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #3b82f6;
+}
+/* ================================================= */
+/* EXACT MATCH STAGGERED FLOATING IMAGE COLLAGE      */
+/* ================================================= */
+.testimonials-section {
+    max-width: 1300px;
+    margin: 120px auto;
+    padding: 0 30px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Collage Container */
+.floating-collage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 50px;
+    padding: 30px 0;
+    height: auto; /* Upar niche movement ke liye fix height */
+    overflow: visible;
+}
+
+/* Columns for Staggered Layout */
+.collage-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Column vertical offsets to create the exact curve/wave layout */
+.col-top { transform: translateY(-30px); }
+.col-middle { transform: translateY(-10px); }
+.col-low { transform: translateY(20px); }
+.col-center { transform: translateY(-50px); z-index: 5; } /* Center box sabse upar aur lamba hoga */
+
+/* Individual Image Box Styling */
+.float-box {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.float-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Box Sizes matching reference */
+.fb-tall { width: 115px; height: 160px; animation: floatSlow 5s ease-in-out infinite; }
+.fb-small { width: 115px; height: 105px; animation: floatFast 4s ease-in-out infinite; }
+.fb-medium { width: 125px; height: 175px; animation: floatSlow 6s ease-in-out infinite; }
+.fb-center-tall { width: 135px; height: 215px; animation: floatFast 4.5s ease-in-out infinite; }
+
+/* Subtle Up and Down Floating Animations */
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes floatFast {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Header & Badge */
+.testimonials-header {
+    margin-bottom: 60px;
+}
+
+.testi-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+.testimonials-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.testimonials-header h2 span {
+    color: #64748b;
+}
+
+/* Reviews 3-Column Grid */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Individual Review Card */
+.review-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    padding: 32px 28px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+.stars {
+    font-size: 14px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+}
+
+.review-card p {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Client Profile Info */
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.client-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e2e8f0;
+}
+
+.client-info h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 2px 0;
+}
+
+.client-info span {
+    font-size: 13px;
+    color: #64748b;
+}
+/* Sirf Mobile View ke liye Better Together cards ki height aur padding kam karne ka code */
+@media (max-width: 768px) {
+    .bt-card.bt-horizontal-card {
+        padding: 18px 20px !important; /* Mobile par padding kam kar di taake card chota ho jaye */
+        min-height: unset !important;  /* Height ki koi zabardasti restriction na ho */
+    }
+    
+    /* Agar icon aur text ka fasla mobile par kam karna ho */
+    .bt-horizontal-card {
+        gap: 15px !important;
+        align-items: center !important; /* Icon aur text ko aik line mein center set karne ke liye */
+    }
+}
+/* Services Hero Section Styles (Reference Match) */
+.services-hero-section {
+    padding: 190px 20px 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    
+    /* Screenshot jesa exact mesh gradient background */    
+background-color: #f5f6ff;
+background-image:
+    radial-gradient(ellipse at 12% 15%, rgba(190, 199, 255, 0.48) 0%, transparent 48%),
+    radial-gradient(ellipse at 88% 20%, rgba(190, 205, 255, 0.52) 0%, transparent 48%),
+    radial-gradient(ellipse at 48% 100%, rgba(210, 211, 255, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 100% 85%, rgba(210, 195, 255, 0.32) 0%, transparent 45%),
+    linear-gradient(120deg, #f8f9ff 0%, #eef0ff 50%, #f5f6ff 100%);
+border-radius: 20px;
+
+}
+.services-hero-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.services-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #f1f5f9;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f172a;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.services-hero-badge .badge-tag {
+    position: static;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.services-hero-container h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #0f172a;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+/* Pehli line bold hi rahegi */
+.services-hero-container h1 .heading-line-1 {
+    font-weight: 800; 
+}
+/* Doosri line ("brand needs to scale like") medium weight ki ho jaye gi */
+.services-hero-container h1 .heading-line-2 {
+    font-weight: 500; 
+}
+
+.highlight-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0f2fe; /* Yeh raha aapka background shape ka light blue color */
+    padding: 8px 16px; /* Top/Bottom 8px, Sides 16px */
+    border-radius: 40px;
+    font-size: 0.75em;
+    font-weight: 700;
+    transform: rotate(-1deg);
+    line-height: 1;
+    box-shadow: none;
+}
+
+/* Sirf Magic text ke liye gradient */
+.highlight-pill span {
+    background-image: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.services-hero-desc {
+    font-size: 18px;
+    color: #64748b;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    line-height: 1.6;
+}
+
+.services-hero-ctas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-audit-btn {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+}
+
+.primary-audit-btn:hover {
+    background: #000000;
+    transform: translateY(-2px);
+}
+
+.secondary-explore-btn {
+    background: #ffffff;
+    color: #0f172a;
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #e2e8f0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.secondary-explore-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .services-hero-container h1 {
+        font-size: 34px;
+    }
+    .services-hero-section {
+        padding: 130px 15px 50px 15px;
+    }
+}
+/* --- Interactive Flip Cards Carousel Fixes --- */
+
+/* --- Glassmorphism & Glowing CTA Flip Cards Styling --- */
+
+.flip-carousel-section {
+    padding: 100px 0;
+    background: #f8fafc;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.flip-carousel-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+}
+
+.flip-carousel-header h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.flip-carousel-header p {
+    font-size: 16px;
+    color: #64748b;
+}
+
+/* Horizontal Scroll Container */
+.flip-cards-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 40px 40px 40px;
+    box-sizing: border-box;
+    scrollbar-width: none;
+   -ms-overflow-style: none;
+}
+
+/* Chrome, Safari aur Opera ke liye scrollbar bar bilkul gayab */
+.flip-cards-scroll-container::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
+.flip-cards-scroll-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.flip-cards-scroll-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.flip-cards-track {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    padding: 10px 20px;
+}
+
+/* Individual Flip Card */
+.flip-card {
+    background-color: transparent;
+    width: 290px;
+    height: 440px;
+    perspective: 1000px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 28px;
+}
+
+/* Hover par exact apni jagah flip hoga */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* --- GLASSMORPHISM EFFECT ON CARDS --- */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 28px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Front Side Layout */
+.flip-card-front {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Image overlay taake text clearly readability rahe */
+.flip-card-front::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.75) 100%);
+    z-index: 1;
+}
+
+.card-top-number {
+    position: relative;
+    z-index: 2;
+    align-self: flex-end;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 5px 14px;
+    border-radius: 20px;
+}
+
+.card-front-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.service-title-tag {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 700;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* --- BLUE GLOWING CTA BUTTON (Front & Back) --- */
+.flip-cta-badge {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4); /* Default glowing shadow */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Sirf CTA ke hover par glow mazeed barhega */
+.flip-cta-badge:hover, .back-book-btn:hover {
+    background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+    box-shadow: 0 12px 28px rgba(2, 132, 199, 0.65);
+    transform: translateY(-2px);
+}
+
+/* Back Side Layout */
+.flip-card-back {
+    color: #0f172a;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.back-card-img {
+    height: 170px;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+.back-card-info {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.back-card-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.back-card-info p {
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+/* Back Side CTA Button */
+.back-book-btn {
+    display: block;
+    text-align: center;
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 11px 18px;
+    border-radius: 35px;
+    font-weight: 600;
+    font-size: 13px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* --- Expert Team Futuristic Floating Section --- */
+
+.expert-team-section {
+    padding: 120px 20px;
+    background: #090d16; /* Deep purple dark futuristic background */
+    background-image: 
+        radial-gradient(circle at 50% 30%, rgba(2, 132, 199, 0.4) 0%, transparent 60%),
+        radial-gradient(circle at 80% 80%, rgba(3, 105, 161, 0.3) 0%, transparent 50%);
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+}
+
+.expert-team-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header Content */
+.team-header-content {
+    margin-bottom: 60px;
+}
+
+.team-header-content h2 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.team-demo-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #0f0728;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.team-demo-btn:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+/* Visual Universe Area */
+.team-visual-universe {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Concentric Oval Track Lines */
+.orbit-track {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 100px;
+    pointer-events: none;
+}
+
+.track-1 {
+    width: 90%;
+    height: 320px;
+}
+
+.track-2 {
+    width: 75%;
+    height: 240px;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.track-3 {
+    width: 60%;
+    height: 160px;
+}
+
+/* Center Action Pill */
+.center-action-pill {
+    position: relative;
+    z-index: 5;
+    background: rgba(15, 7, 40, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(168, 85, 247, 0.3);
+}
+
+/* Floating Elements & Positions */
+.floating-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    animation: gentleFloat 4s ease-in-out infinite;
+}
+
+/* Avatar Circles */
+.avatar-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Black Floating Icons */
+.icon-box {
+    width: 48px;
+    height: 48px;
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Specific Positions on Orbit */
+.member-1 { top: 15%; left: 32%; animation-delay: 0s; }
+.member-2 { top: 5%; left: 50%; transform: translateX(-50%); animation-delay: 1s; }
+.member-3 { top: 20%; right: 30%; animation-delay: 0.5s; }
+
+.black-icon-1 { top: 45%; left: 18%; animation-delay: 1.5s; }
+.black-icon-2 { top: 45%; right: 18%; animation-delay: 0.8s; }
+
+.member-4 { bottom: 15%; left: 28%; animation-delay: 2s; }
+.member-5 { bottom: 10%; left: 45%; animation-delay: 1.2s; }
+.black-icon-3 { bottom: 12%; right: 42%; animation-delay: 0.3s; }
+.member-6 { bottom: 15%; right: 28%; animation-delay: 1.7s; }
+
+/* Floating Badge */
+.floating-badge {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    white-space: nowrap;
+}
+
+/* Smooth Floating Keyframes Animation */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .team-header-content h2 {
+        font-size: 32px;
+    }
+    .team-visual-universe {
+        height: 380px;
+    }
+    .avatar-circle {
+        width: 50px;
+        height: 50px;
+    }
+    .icon-box {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+}
+/* --- Mobile Responsive Fixes for Expert Team Section --- */
+@media (max-width: 768px) {
+    .expert-team-section {
+        padding: 80px 15px;
+    }
+
+    .team-header-content h2 {
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 20px;
+    }
+
+    /* Mobile par visual universe ki height barha di taake items door door rahein */
+    .team-visual-universe {
+        height: 540px;
+        margin-top: 20px;
+    }
+
+    /* Mobile ke liye tracks ka size adjust kiya */
+    .track-1 {
+        width: 95%;
+        height: 380px;
+    }
+    .track-2 {
+        width: 80%;
+        height: 280px;
+    }
+    .track-3 {
+        width: 60%;
+        height: 180px;
+    }
+
+    /* Mobile par avatars aur icons ki positions ko spread kar diya */
+    .member-1 { top: 8%; left: 12%; }
+    .member-2 { top: 2%; left: 50%; transform: translateX(-50%); }
+    .member-3 { top: 8%; right: 12%; }
+
+    .black-icon-1 { top: 38%; left: 5%; }
+    .black-icon-2 { top: 38%; right: 5%; }
+
+    .center-action-pill {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .member-4 { bottom: 12%; left: 15%; }
+    .member-5 { bottom: 5%; left: 50%; transform: translateX(-50%); }
+    .black-icon-3 { bottom: 18%; right: 42%; }
+    .member-6 { bottom: 12%; right: 15%; }
+
+    .avatar-circle {
+        width: 52px;
+        height: 52px;
+    }
+
+    .icon-box {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+/* --- Inner Service Page (Web Development & Design) --- */
+
+.inner-service-hero {
+    position: relative;
+    padding: 160px 20px 100px 20px;
+    background: #060b14; /* Official deep blue background */
+    background-image: 
+        radial-gradient(circle at 50% 20%, rgba(2, 132, 199, 0.35) 0%, transparent 55%),
+        radial-gradient(circle at 90% 80%, rgba(14, 116, 144, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 10% 80%, rgba(3, 105, 161, 0.2) 0%, transparent 45%);
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+}
+
+.inner-service-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Content */
+.inner-hero-content {
+    max-width: 750px;
+    margin: 0 auto 70px auto;
+}
+
+.inner-service-tag {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    color: #38bdf8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.inner-hero-content h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.inner-hero-content p {
+    font-size: 17px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.inner-hero-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    transition: all 0.3s ease;
+}
+
+.inner-hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(2, 132, 199, 0.6);
+}
+
+/* Floating Stat Cards (Reference match corners) */
+.floating-stat-card {
+    position: absolute;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 14px 20px;
+    border-radius: 18px;
+    text-align: left;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: floatingCardAnim 5s ease-in-out infinite;
+}
+
+.stat-left {
+    top: 120px;
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.stat-right {
+    top: 150px;
+    right: 8%;
+    animation-delay: 2.5s;
+}
+
+.stat-badge {
+    font-weight: 700;
+    font-size: 16px;
+    color: #38bdf8;
+}
+
+.floating-stat-card p {
+    font-size: 12px;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+@keyframes floatingCardAnim {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* 3 Glassmorphism Cards Grid */
+.inner-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.inner-feature-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 35px 28px;
+    text-align: left;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.inner-feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+.card-icon-box {
+    width: 48px;
+    height: 48px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.inner-feature-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.inner-feature-card p {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.card-link {
+    color: #38bdf8;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-link:hover {
+    color: #7dd3fc;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .inner-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .inner-hero-content h1 {
+        font-size: 36px;
+    }
+    .floating-stat-card {
+        display: none; /* Mobile screen par clean rakhne ke liye hide kar diya hai */
+    }
+}
+/* --- Tech Stack & Tools Floating Section --- */
+
 .tech-stack-section {
     padding: 100px 20px;
-    background: #f4f6f9;
+    background: #f4f6f9; /* Official deep blue theme background */
     position: relative;
     overflow: hidden;
     text-align: center;
-    color: #0b0f19;
+    color: #ffffff;
 }
 
 .tech-stack-container {
@@ -977,6 +2933,7 @@ nav {
     margin: 0 auto;
 }
 
+/* Header Styling */
 .tech-stack-header {
     margin-bottom: 50px;
 }
@@ -994,10 +2951,11 @@ nav {
 .tech-stack-header h2 {
     font-size: 42px;
     font-weight: 800;
-    color: #0b0f19;
+    color: #0b0f19; /* Tools & ka color (#0b0f19) */
     letter-spacing: -0.5px;
 }
 
+/* Technologies par gradient wese hi rahega */
 .gradient-tech-text {
     background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%);
     -webkit-background-clip: text;
@@ -1005,6 +2963,7 @@ nav {
     background-clip: text;
 }
 
+/* Floating Pills Wrapper */
 .tech-pills-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -1014,12 +2973,13 @@ nav {
     margin: 0 auto;
 }
 
+/* Individual Pill Styling - Stroke Only (No Fill) */
 .tech-pill {
-    background: transparent;
+    background: transparent; /* Fill khatam kar diya */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1.5px solid rgba(11, 15, 25, 0.4);
-    color: #0b0f19;
+    border: 1.5px solid rgba(11, 15, 25, 0.4); /* Stroke outline (#0b0f19 matching tone) */
+    color: #0b0f19; /* Text color bhi wahi dark shade */
     padding: 14px 28px;
     border-radius: 50px;
     font-size: 15px;
@@ -1038,37 +2998,107 @@ nav {
     background: rgba(56, 189, 248, 0.05);
 }
 
+/* Staggered Floating Animation Delays */
+.float-item-1 { animation-delay: 0s; }
+.float-item-2 { animation-delay: 0.5s; }
+.float-item-3 { animation-delay: 1s; }
+.float-item-4 { animation-delay: 1.5s; }
+.float-item-5 { animation-delay: 0.3s; }
+.float-item-6 { animation-delay: 0.8s; }
+.float-item-7 { animation-delay: 1.2s; }
+.float-item-8 { animation-delay: 0.2s; }
+.float-item-9 { animation-delay: 1.7s; }
+.float-item-10 { animation-delay: 0.7s; }
+.float-item-11 { animation-delay: 1.4s; }
+.float-item-12 { animation-delay: 0.4s; }
+
 @keyframes gentleTechFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
 }
 
-/* ================================================= */
-/* HOW WE WORK / WHY CHOOSE US / FAQ SECTIONS        */
-/* ================================================= */
-.our-process-section, .why-choose-section, .faq-section {
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .tech-stack-header h2 {
+        font-size: 32px;
+    }
+    .tech-pill {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .tech-pills-wrapper {
+        gap: 12px;
+    }
+}
+/* --- How We Work Process Section Styling --- */
+
+.our-process-section {
     padding: 110px 20px;
-    background: #f4f6f9;
+    background: #f4f6f9; /* Exact matching light background */
     position: relative;
     overflow: hidden;
     text-align: center;
     color: #0b0f19;
 }
 
-.process-cards-grid, .choose-cards-grid {
+.process-container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+.process-header {
+    margin-bottom: 60px;
+}
+
+.process-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.process-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0b0f19;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+}
+
+.gradient-process-text {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.process-header p {
+    font-size: 16px;
+    color: #475569;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* 4 Cards Grid */
+.process-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
 
-.choose-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-    text-align: left;
-}
-
-.process-card, .choose-card, .faq-item {
+/* Individual Card Styling */
+.process-card {
     background: #ffffff;
-    border: 1.5px solid rgba(203, 213, 225, 0.6);
+    border: 1.5px solid rgba(203, 213, 225, 0.6); /* Clean subtle border */
     border-radius: 20px;
     padding: 25px 20px;
     text-align: center;
@@ -1077,25 +3107,296 @@ nav {
     cursor: pointer;
 }
 
-.process-card:hover, .choose-card:hover, .faq-item.active {
-    border-color: #38bdf8;
+/* Hover Effect & Active State (Jesa 03 card par hai) */
+.process-card:hover, .process-card.active-card {
+    border-color: #38bdf8; /* Blue/Cyan stroke highlight */
     box-shadow: 0 15px 35px rgba(2, 132, 199, 0.12);
     transform: translateY(-5px);
 }
 
-/* ================================================= */
-/* MOBILE APP DEVELOPMENT HERO SECTION (CLEAN & FIXED)*/
-/* ================================================= */
+.process-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #6366f1; /* Purple/Blue accent number */
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+}
+
+.process-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0b0f19;
+    margin-bottom: 12px;
+}
+
+.process-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .process-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .process-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .process-header h2 {
+        font-size: 32px;
+    }
+}
+/* --- Built to Perform (Why Choose Us) Section Styling --- */
+
+.why-choose-section {
+    padding: 110px 20px;
+    background: #f4f6f9; /* Exact matching light background */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: #0b0f19;
+}
+
+.choose-container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+.choose-header {
+    margin-bottom: 60px;
+}
+
+.choose-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.choose-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0b0f19;
+    letter-spacing: -0.5px;
+}
+
+.gradient-choose-text {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 2x2 Cards Grid */
+.choose-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: left;
+}
+
+/* Individual Large Card Styling */
+.choose-card {
+    background: #ffffff;
+    border: 1.5px solid rgba(203, 213, 225, 0.6);
+    border-radius: 24px;
+    padding: 25px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.choose-card:hover {
+    border-color: #38bdf8; /* Blue/Cyan stroke highlight */
+    box-shadow: 0 15px 35px rgba(2, 132, 199, 0.12);
+    transform: translateY(-5px);
+}
+
+.choose-icon {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.choose-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0b0f19;
+    margin-bottom: 12px;
+}
+
+.choose-card p {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .choose-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .choose-header h2 {
+        font-size: 32px;
+    }
+    .choose-card {
+        padding: 30px 24px;
+    }
+}
+/* --- FAQ Accordion Section Styling --- */
+
+.faq-section {
+    padding: 110px 20px;
+    background: #f4f6f9; /* Matching light background */
+    position: relative;
+    overflow: hidden;
+    color: #0b0f19;
+}
+
+.faq-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+.faq-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.faq-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0b0f19;
+    letter-spacing: -0.5px;
+}
+
+.gradient-faq-text {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* FAQ List Wrapper */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Individual FAQ Box */
+.faq-item {
+    background: #ffffff;
+    border: 1.5px solid rgba(203, 213, 225, 0.6);
+    border-radius: 18px;
+    padding: 24px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Question Header */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0b0f19;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Arrow Icon */
+.faq-icon {
+    font-size: 12px;
+    color: #64748b;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Answer Content (Hidden by default) */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-in-out, padding 0.35s ease;
+    padding: 0;
+}
+
+.faq-answer p {
+    font-size: 15px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Active / Open State (Jesa image 2 mein hai) */
+.faq-item.active {
+    border-color: #38bdf8; /* Blue stroke highlight */
+    box-shadow: 0 15px 35px rgba(2, 132, 199, 0.1);
+}
+
+.faq-item.active .faq-question h3 {
+    color: #0284c7; /* Question title turns blue when open */
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg); /* Arrow flips up */
+    color: #0284c7;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 150px; /* Expands smoothly */
+    padding-top: 14px; /* Space between question and answer */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .faq-header h2 {
+        font-size: 32px;
+    }
+    .faq-item {
+        padding: 20px;
+    }
+    .faq-question h3 {
+        font-size: 16px;
+    }
+}
+/* --- Mobile App Development Hero Section (Light Theme with Blue Gradients) --- */
+
 .app-hero-section {
     position: relative;
     padding: 160px 20px 100px 20px;
-    background: #f4f6f9;
+    background: #f4f6f9; /* Clean light background */
     background-image: 
         radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.25) 0%, transparent 60%),
         radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 10% 80%, rgba(129, 140, 248, 0.15) 0%, transparent 50%);
     overflow: hidden;
-    color: #0b0f19;
+    color: #0b0f19; /* Dark text for light background */
     text-align: center;
 }
 
@@ -1106,6 +3407,7 @@ nav {
     z-index: 2;
 }
 
+/* Top Badge (Light Theme Styling) */
 .app-top-badge {
     display: inline-flex;
     align-items: center;
@@ -1122,27 +3424,29 @@ nav {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
+/* Hero Content */
 .app-hero-content {
     max-width: 750px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 50px auto;
 }
 
 .app-hero-content h1 {
     font-size: 52px;
     font-weight: 800;
     line-height: 1.15;
-    color: #0b0f19;
+    color: #0b0f19; /* Dark heading */
     margin-bottom: 20px;
     letter-spacing: -1px;
 }
 
 .app-hero-content p {
     font-size: 17px;
-    color: #475569;
+    color: #475569; /* Soft dark gray text for readability */
     line-height: 1.6;
     margin-bottom: 35px;
 }
 
+/* CTA Buttons */
 .app-hero-cta-group {
     display: flex;
     justify-content: center;
@@ -1186,7 +3490,7 @@ nav {
     color: #0284c7;
 }
 
-/* --- MOCKUPS UNIVERSE & PHONES (SINGLEIZED & CLEANED) --- */
+/* Mockups Universe */
 .app-mockups-universe {
     position: relative;
     display: flex;
@@ -1194,6 +3498,7 @@ nav {
     align-items: flex-end;
     height: 440px;
     margin-top: 20px;
+    perspective: 1000px;
 }
 
 .glow-backdrop {
@@ -1206,6 +3511,7 @@ nav {
     pointer-events: none;
 }
 
+/* Phone Mockup Frames */
 .phone-mockup {
     position: relative;
     background: #0f172a;
@@ -1214,10 +3520,9 @@ nav {
     overflow: hidden;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
     z-index: 2;
-    box-sizing: border-box;
 }
 
-/* Center Phone Dimensions */
+/* Center Phone */
 .center-phone {
     width: 270px;
     height: 420px;
@@ -1225,56 +3530,45 @@ nav {
     border-color: #475569;
 }
 
-/* Side Phones Dimensions & Transforms (No Duplication) */
+/* Side Phones */
 .side-phone {
     width: 230px;
     height: 360px;
     opacity: 0.85;
+    filter: blur(0.5px);
+    transform: scale(0.92);
 }
 
 .left-phone {
-    transform: rotate(-8deg) translateY(20px);
-    margin-right: -45px;
-    z-index: 2;
+    transform: rotate(-8deg) translateY(20px) scale(0.92);
+    margin-right: -40px;
 }
 
 .right-phone {
-    transform: rotate(8deg) translateY(20px);
-    margin-left: -45px;
-    z-index: 2;
+    transform: rotate(8deg) translateY(20px) scale(0.92);
+    margin-left: -40px;
 }
 
-/* Video Wrapper & Video Fitting */
-.phone-screen-video-wrapper {
+/* Phone Screen Mock Content */
+.phone-screen {
     width: 100%;
     height: 100%;
-    position: relative;
-    overflow: hidden;
-    background: #0f172a;
+    background-size: cover;
+    background-position: center;
+    background-color: #1e293b;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-}
-
-.phone-ui-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-/* Screen Overlay Content */
-.screen-content-mock {
+    padding: 20px;
+    box-sizing: border-box;
     position: relative;
-    z-index: 2;
-    margin: 12px;
+}
+
+.screen-content-mock {
     background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 14px;
+    padding: 16px;
     border-radius: 20px;
     text-align: left;
 }
@@ -1289,13 +3583,28 @@ nav {
 
 .screen-content-mock h3, .screen-content-mock h4 {
     color: #ffffff;
-    font-size: 14px;
-    margin: 4px 0 8px 0;
+    font-size: 15px;
+    margin: 6px 0 10px 0;
+}
+
+.mock-cards-row {
+    display: flex;
+    gap: 8px;
+}
+
+.mini-card {
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-weight: 600;
 }
 
 /* Bottom Features Ticker */
 .app-features-ticker {
-    margin-top: 50px;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1303,23 +3612,46 @@ nav {
     font-size: 14px;
     color: #64748b;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-/* ================================================= */
-/* RESPONSIVE MEDIA QUERIES                          */
-/* ================================================= */
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .app-hero-content h1 {
+        font-size: 36px;
+    }
+    .side-phone {
+        display: none;
+    }
+    .center-phone {
+        width: 280px;
+        height: 440px;
+    }
+    .app-mockups-universe {
+        height: 380px;
+    }
+}
+/* --- Mobile Fixes for App Development Hero Section --- */
+/* --- Updated Mobile Fix for App Mockups (Showing all 3 phones) --- */
 @media (max-width: 768px) {
     .app-hero-section {
-        padding: 130px 15px 50px 15px;
+        padding: 120px 15px 60px 15px;
     }
 
     .app-hero-content h1 {
         font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .app-hero-content p {
+        font-size: 15px;
+        margin-bottom: 25px;
     }
 
     .app-hero-cta-group {
         flex-direction: column;
         width: 100%;
+        gap: 12px;
     }
 
     .app-primary-btn, .app-secondary-btn {
@@ -1328,37 +3660,88 @@ nav {
         box-sizing: border-box;
     }
 
+    /* Mobile par universe height aur phones adjustment */
     .app-mockups-universe {
-        height: 380px;
-        margin-top: 20px;
+        height: 400px;
+        margin-top: 10px;
+        overflow: visible; /* Taake screen se bahar na nikle */
     }
 
+    /* Center phone mobile ke liye thora chota */
     .center-phone {
         width: 200px;
-        height: 340px;
+        height: 350px;
+        z-index: 3;
     }
 
+    /* Side phones ko mobile par bhi show karwaya with compact scaling */
     .side-phone {
-        display: block !important;
-        width: 150px;
-        height: 260px;
-        opacity: 0.7;
+        display: block !important; /* Force show on mobile */
+        width: 160px;
+        height: 280px;
+        opacity: 0.75;
+        filter: blur(0.5px);
     }
 
     .left-phone {
-        transform: rotate(-6deg) translateY(20px);
-        margin-right: -40px;
+        transform: rotate(-8deg) translateY(20px) scale(0.85);
+        margin-right: -50px; /* Center phone ke sath overlap set kiya */
     }
 
     .right-phone {
-        transform: rotate(6deg) translateY(20px);
-        margin-left: -40px;
+        transform: rotate(8deg) translateY(20px) scale(0.85);
+        margin-left: -50px;
+    }
+
+    /* Screen internal text size mobile par adjust kiya */
+    .screen-content-mock {
+        padding: 10px;
+    }
+    .screen-content-mock h3, .screen-content-mock h4 {
+        font-size: 12px;
+        margin: 4px 0 6px 0;
+    }
+    .mock-tag {
+        font-size: 8px;
     }
 
     .app-features-ticker {
         flex-wrap: wrap;
-        gap: 10px;
-        font-size: 12px;
-        margin-top: 30px;
+        gap: 8px;
+        font-size: 11px;
+        margin-top: 35px;
+        justify-content: center;
     }
+}
+/* --- Corrected Phone Screen Video Styling --- */
+.phone-screen-video-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #0f172a;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.phone-ui-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Video ko frame ke andar bilkul center aur fit rakhne ke liye */
+    z-index: 1;
+}
+
+/* Overlay content z-index high rakha hai taake video ke upar aye */
+.phone-screen-video-wrapper .screen-content-mock {
+    position: relative;
+    z-index: 2;
+    margin: 12px;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(10px);
 }
