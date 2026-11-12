@@ -2917,3 +2917,117 @@ border-radius: 20px;
         display: none; /* Mobile screen par clean rakhne ke liye hide kar diya hai */
     }
 }
+/* --- Tech Stack & Tools Floating Section --- */
+
+.tech-stack-section {
+    padding: 100px 20px;
+    background: #060b14; /* Official deep blue theme background */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: #ffffff;
+}
+
+.tech-stack-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+.tech-stack-header {
+    margin-bottom: 50px;
+}
+
+.tech-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.tech-stack-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.gradient-tech-text {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Floating Pills Wrapper */
+.tech-pills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Individual Pill Styling */
+.tech-pill {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #f8fafc;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: default;
+    animation: gentleTechFloat 4s ease-in-out infinite;
+}
+
+.tech-pill:hover {
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 0 15px 30px rgba(2, 132, 199, 0.25);
+    transform: translateY(-4px);
+}
+
+/* Staggered Floating Animation Delays for organic movement */
+.float-item-1 { animation-delay: 0s; }
+.float-item-2 { animation-delay: 0.5s; }
+.float-item-3 { animation-delay: 1s; }
+.float-item-4 { animation-delay: 1.5s; }
+.float-item-5 { animation-delay: 0.3s; }
+.float-item-6 { animation-delay: 0.8s; }
+.float-item-7 { animation-delay: 1.2s; }
+.float-item-8 { animation-delay: 0.2s; }
+.float-item-9 { animation-delay: 1.7s; }
+.float-item-10 { animation-delay: 0.7s; }
+.float-item-11 { animation-delay: 1.4s; }
+.float-item-12 { animation-delay: 0.4s; }
+
+@keyframes gentleTechFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .tech-stack-header h2 {
+        font-size: 32px;
+    }
+    .tech-pill {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .tech-pills-wrapper {
+        gap: 12px;
+    }
+}
