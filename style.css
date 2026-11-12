@@ -2233,8 +2233,10 @@ nav {
 }
 /* --- Interactive Flip Cards Carousel Fixes --- */
 
+/* --- Glassmorphism & Glowing CTA Flip Cards Styling --- */
+
 .flip-carousel-section {
-    padding: 80px 0;
+    padding: 100px 0;
     background: #f8fafc;
     width: 100%;
     position: relative;
@@ -2260,11 +2262,11 @@ nav {
     color: #64748b;
 }
 
-/* Horizontal Scroll Container - Fixes vertical scrollbar issue */
+/* Horizontal Scroll Container */
 .flip-cards-scroll-container {
     width: 100%;
     overflow-x: auto;
-    overflow-y: hidden; /* Vertical scroller ko khatam karne ke liye */
+    overflow-y: hidden;
     padding: 20px 40px 40px 40px;
     box-sizing: border-box;
     scrollbar-width: thin;
@@ -2292,11 +2294,11 @@ nav {
     padding: 10px 20px;
 }
 
-/* Perfect Card Dimensions (Portrait Proportions) */
+/* Individual Flip Card */
 .flip-card {
     background-color: transparent;
-    width: 280px;  /* Sahi card width */
-    height: 420px; /* Sahi card height */
+    width: 290px;
+    height: 440px;
     perspective: 1000px;
     cursor: pointer;
     flex-shrink: 0;
@@ -2307,28 +2309,31 @@ nav {
     width: 100%;
     height: 100%;
     text-align: left;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    border-radius: 20px;
+    border-radius: 28px;
 }
 
-/* Apni hi jagah par exact flip hoga */
+/* Hover par exact apni jagah flip hoga */
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-/* Front & Back Common Styles */
+/* --- GLASSMORPHISM EFFECT ON CARDS --- */
 .flip-card-front, .flip-card-back {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden; /* Safari support ke liye */
-    border-radius: 20px;
+    -webkit-backface-visibility: hidden;
+    border-radius: 28px;
     overflow: hidden;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
 }
 
 /* Front Side Layout */
@@ -2342,11 +2347,12 @@ nav {
     box-sizing: border-box;
 }
 
+/* Image overlay taake text clearly readability rahe */
 .flip-card-front::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.75) 100%);
     z-index: 1;
 }
 
@@ -2355,11 +2361,11 @@ nav {
     z-index: 2;
     align-self: flex-end;
     background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(8px);
     color: #ffffff;
     font-weight: 700;
     font-size: 13px;
-    padding: 4px 12px;
+    padding: 5px 14px;
     border-radius: 20px;
 }
 
@@ -2373,25 +2379,34 @@ nav {
 
 .service-title-tag {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
+/* --- BLUE GLOWING CTA BUTTON (Front & Back) --- */
 .flip-cta-badge {
-    background: #ffffff;
-    color: #0f172a;
-    padding: 10px 16px;
-    border-radius: 30px;
-    font-size: 13px;
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 35px;
+    font-size: 14px;
     font-weight: 600;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4); /* Default glowing shadow */
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Back Side Layout (Fixes white background & shifting bug) */
+/* Sirf CTA ke hover par glow mazeed barhega */
+.flip-cta-badge:hover, .back-book-btn:hover {
+    background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+    box-shadow: 0 12px 28px rgba(2, 132, 199, 0.65);
+    transform: translateY(-2px);
+}
+
+/* Back Side Layout */
 .flip-card-back {
-    background: #ffffff;
     color: #0f172a;
     transform: rotateY(180deg);
     display: flex;
@@ -2400,7 +2415,7 @@ nav {
 }
 
 .back-card-img {
-    height: 180px;
+    height: 170px;
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -2413,6 +2428,8 @@ nav {
     justify-content: space-between;
     flex-grow: 1;
     box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
 }
 
 .back-card-info h3 {
@@ -2424,24 +2441,23 @@ nav {
 
 .back-card-info p {
     font-size: 13px;
-    color: #64748b;
+    color: #475569;
     line-height: 1.4;
     margin-bottom: 12px;
 }
 
+/* Back Side CTA Button */
 .back-book-btn {
     display: block;
     text-align: center;
-    background: #0f172a;
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
     color: #ffffff;
-    padding: 10px 16px;
-    border-radius: 30px;
+    padding: 11px 18px;
+    border-radius: 35px;
     font-weight: 600;
     font-size: 13px;
     text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.back-book-btn:hover {
-    background: #0284c7;
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
