@@ -2096,9 +2096,16 @@ nav {
 .services-hero-section {
     padding: 190px 20px 80px 20px;
     text-align: center;
-    background: #ffffff;
     position: relative;
-    z-index: 1;
+    overflow: hidden;
+    
+    /* Screenshot jesa exact mesh gradient background */
+    background-color: #f8fafc;
+    background-image: 
+        radial-gradient(circle at 15% 20%, rgba(199, 210, 254, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(186, 230, 253, 0.5) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(224, 231, 255, 0.6) 0%, transparent 50%),
+        radial-gradient(circle at 90% 85%, rgba(216, 180, 254, 0.25) 0%, transparent 40%);
 }
 
 .services-hero-container {
