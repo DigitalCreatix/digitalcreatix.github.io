@@ -2092,3 +2092,119 @@ nav {
         align-items: center !important; /* Icon aur text ko aik line mein center set karne ke liye */
     }
 }
+/* Services Hero Section Styles (Reference Match) */
+.services-hero-section {
+    padding: 160px 20px 80px 20px;
+    text-align: center;
+    background: #ffffff;
+    position: relative;
+}
+
+.services-hero-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.services-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #f1f5f9;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f172a;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+}
+
+.services-hero-badge .badge-tag {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.services-hero-container h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #0f172a;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.highlight-pill {
+    display: inline-block;
+    background: #e0f2fe;
+    color: #0284c7;
+    padding: 2px 18px;
+    border-radius: 40px;
+    font-weight: 700;
+    transform: rotate(-1deg);
+}
+
+.services-hero-desc {
+    font-size: 18px;
+    color: #64748b;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    line-height: 1.6;
+}
+
+.services-hero-ctas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-audit-btn {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+}
+
+.primary-audit-btn:hover {
+    background: #000000;
+    transform: translateY(-2px);
+}
+
+.secondary-explore-btn {
+    background: #ffffff;
+    color: #0f172a;
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #e2e8f0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.secondary-explore-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .services-hero-container h1 {
+        font-size: 34px;
+    }
+    .services-hero-section {
+        padding: 130px 15px 50px 15px;
+    }
+}
