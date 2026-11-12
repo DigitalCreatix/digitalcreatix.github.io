@@ -4148,11 +4148,11 @@ border-radius: 20px;
     .fan-card.pos-3 { transform: translateX(45px) translateY(8px) rotate(6deg) scale(0.9); }
     .fan-card.pos-4 { transform: translateX(90px) translateY(15px) rotate(12deg) scale(0.8); }
 }
-/* --- Professional Navbar Dropdown Styling --- */
+/* --- Professional Navbar Dropdown Fixed Styling --- */
 
 .nav-dropdown-wrapper {
-    position: relative;
-    display: inline-block;
+    position: relative !important;
+    display: inline-block !important;
 }
 
 .services-toggle-btn {
@@ -4160,16 +4160,18 @@ border-radius: 20px;
     align-items: center;
     gap: 6px;
     cursor: pointer;
+    white-space: nowrap;
 }
 
-/* Dropdown Container Box */
+/* Dropdown Container Box (Fixed Width & Sizing) */
 .dropdown-menu-box {
     position: absolute;
     top: calc(100% + 15px);
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     background: #ffffff;
-    width: 260px;
+    width: 280px !important;
+    min-width: 280px !important;
     border-radius: 16px;
     padding: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
@@ -4181,6 +4183,7 @@ border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    box-sizing: border-box;
 }
 
 /* Active class jab JS se dropdown khulega */
@@ -4201,6 +4204,7 @@ border-radius: 20px;
     color: #1e293b;
     font-size: 14px;
     font-weight: 500;
+    white-space: nowrap;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -4208,23 +4212,24 @@ border-radius: 20px;
     font-size: 16px;
     width: 20px;
     text-align: center;
+    flex-shrink: 0;
 }
 
-/* Hover style for normal items (jaise screenshot ke 2nd option mein hai) */
+/* Hover style for normal items */
 .dropdown-item:hover {
-    background: rgba(37, 99, 235, 0.08); /* Halka blue/purple tint */
+    background: rgba(37, 99, 235, 0.08);
     color: #2563eb;
 }
 
 /* --- Special 1st Item: All Services --- */
 .all-services-item {
-    background: #0f172a !important; /* Already dark/black background */
+    background: #0f172a !important;
     color: #ffffff !important;
     font-weight: 600;
 }
 
 .all-services-item:hover {
-    background: #2563eb !important; /* Hover par blue color */
+    background: #2563eb !important;
     color: #ffffff !important;
 }
 
@@ -4233,4 +4238,11 @@ border-radius: 20px;
     height: 1px;
     background: #f1f5f9;
     margin: 4px 8px;
+}
+
+/* --- Desktop Only Fix (Mobile par dropdown hide rahega) --- */
+@media (max-width: 900px) {
+    .dropdown-menu-box {
+        display: none !important;
+    }
 }
