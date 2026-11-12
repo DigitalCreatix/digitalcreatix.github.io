@@ -3100,7 +3100,7 @@ border-radius: 20px;
     background: #ffffff;
     border: 1.5px solid rgba(203, 213, 225, 0.6); /* Clean subtle border */
     border-radius: 20px;
-    padding: 45px 25px;
+    padding: 25px 20px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3209,7 +3209,7 @@ border-radius: 20px;
     background: #ffffff;
     border: 1.5px solid rgba(203, 213, 225, 0.6);
     border-radius: 24px;
-    padding: 45px 40px;
+    padding: 25px 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
