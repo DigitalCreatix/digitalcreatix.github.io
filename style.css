@@ -2151,19 +2151,23 @@ nav {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #e0f2fe;
-    color: transparent; 
-    background-image: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
-    -webkit-background-clip: text; 
-    background-clip: text;
-    padding: 8px 16px; /* Top/Bottom 8px, Left/Right 16px */
+    background-color: #e0f2fe; /* Yeh raha aapka background shape ka light blue color */
+    padding: 8px 16px; /* Top/Bottom 8px, Sides 16px */
     border-radius: 40px;
-    font-size: 0.75em; /* Text size mazeed chhota kar diya hai taake shape ke andar fit aaye */
+    font-size: 0.75em;
     font-weight: 700;
     transform: rotate(-1deg);
     line-height: 1;
-    text-shadow: none; 
     box-shadow: none;
+}
+
+/* Sirf Magic text ke liye gradient */
+.highlight-pill span {
+    background-image: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .services-hero-desc {
