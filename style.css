@@ -4148,6 +4148,3 @@ border-radius: 20px;
     .fan-card.pos-3 { transform: translateX(45px) translateY(8px) rotate(6deg) scale(0.9); }
     .fan-card.pos-4 { transform: translateX(90px) translateY(15px) rotate(12deg) scale(0.8); }
 }
-.page-breadcrumb a:hover {
-    text-decoration: underline;
-}
