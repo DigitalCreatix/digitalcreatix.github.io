@@ -3997,3 +3997,90 @@ border-radius: 20px;
         height: 280px;
     }
 }
+/* --- Graphic Design Hero Section with Animated Showcase --- */
+
+.graphic-hero-section {
+    position: relative;
+    padding: 160px 20px 80px 20px;
+    text-align: center;
+    overflow: hidden;
+    background: #f4f6f9; /* Hamara consistent clean background */
+    background-image: 
+        radial-gradient(circle at 50% 10%, rgba(56, 189, 248, 0.25) 0%, transparent 60%),
+        radial-gradient(circle at 90% 70%, rgba(2, 132, 199, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 10% 70%, rgba(129, 140, 248, 0.15) 0%, transparent 50%);
+}
+
+.graphic-hero-container {
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Animated Infinite Scrolling Posters Track --- */
+.graphic-hero-showcase {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.showcase-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    animation: scrollPosters 25s linear infinite;
+}
+
+.showcase-poster-card {
+    width: 280px;
+    height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    flex-shrink: 0;
+    transition: transform 0.4s ease;
+}
+
+.showcase-poster-card:hover {
+    transform: translateY(-8px);
+}
+
+.showcase-poster-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Infinite Marquee Animation */
+@keyframes scrollPosters {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 12px));
+    }
+}
+
+/* Pause animation on hover */
+.graphic-hero-showcase:hover .showcase-track {
+    animation-play-state: paused;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+    .graphic-hero-section {
+        padding: 120px 15px 40px 15px;
+    }
+    
+    .showcase-poster-card {
+        width: 200px;
+        height: 270px;
+    }
+}
