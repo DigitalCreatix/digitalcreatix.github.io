@@ -2721,3 +2721,199 @@ border-radius: 20px;
         font-size: 18px;
     }
 }
+/* --- Inner Service Page (Web Development & Design) --- */
+
+.inner-service-hero {
+    position: relative;
+    padding: 160px 20px 100px 20px;
+    background: #060b14; /* Official deep blue background */
+    background-image: 
+        radial-gradient(circle at 50% 20%, rgba(2, 132, 199, 0.35) 0%, transparent 55%),
+        radial-gradient(circle at 90% 80%, rgba(14, 116, 144, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 10% 80%, rgba(3, 105, 161, 0.2) 0%, transparent 45%);
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+}
+
+.inner-service-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Content */
+.inner-hero-content {
+    max-width: 750px;
+    margin: 0 auto 70px auto;
+}
+
+.inner-service-tag {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    color: #38bdf8;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.inner-hero-content h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.inner-hero-content p {
+    font-size: 17px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.inner-hero-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    transition: all 0.3s ease;
+}
+
+.inner-hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(2, 132, 199, 0.6);
+}
+
+/* Floating Stat Cards (Reference match corners) */
+.floating-stat-card {
+    position: absolute;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 14px 20px;
+    border-radius: 18px;
+    text-align: left;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: floatingCardAnim 5s ease-in-out infinite;
+}
+
+.stat-left {
+    top: 120px;
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.stat-right {
+    top: 150px;
+    right: 8%;
+    animation-delay: 2.5s;
+}
+
+.stat-badge {
+    font-weight: 700;
+    font-size: 16px;
+    color: #38bdf8;
+}
+
+.floating-stat-card p {
+    font-size: 12px;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+@keyframes floatingCardAnim {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* 3 Glassmorphism Cards Grid */
+.inner-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.inner-feature-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 35px 28px;
+    text-align: left;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.inner-feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+.card-icon-box {
+    width: 48px;
+    height: 48px;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.inner-feature-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.inner-feature-card p {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.card-link {
+    color: #38bdf8;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card-link:hover {
+    color: #7dd3fc;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .inner-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .inner-hero-content h1 {
+        font-size: 36px;
+    }
+    .floating-stat-card {
+        display: none; /* Mobile screen par clean rakhne ke liye hide kar diya hai */
+    }
+}
