@@ -4317,32 +4317,43 @@ border-radius: 20px;
     display: none; /* Narrow state mein sirf chota text ya label dikhega agar chaho */
 }
 
-/* Responsive for Mobile */
+/* --- Desktop view untouched, yeh sirf Mobile ke liye hai --- */
 @media (max-width: 768px) {
     .auto-accordion-section {
-        margin: 40px auto;
+        margin: 30px auto;
+        padding: 0 15px;
     }
 
     .accordion-container {
         flex-direction: column !important;
         height: auto !important;
-        gap: 15px !important;
+        gap: 10px !important;
     }
 
+    /* Mobile par inactive card ki height choti hogi */
     .acc-card {
         width: 100% !important;
-        height: 220px !important; /* Mobile par har card ki aik fixed achi height hogi */
+        height: 75px !important; 
         flex: none !important;
+        transition: height 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
     }
 
-    /* Mobile par sabhi cards ka text/title show ho ga, hidden nahi hoga */
+    /* Jab card active hoga toh mobile par height automatically barh jaye gi */
+    .acc-card.active {
+        height: 300px !important; 
+    }
+
+    /* Mobile ke mutabiq text sizing */
     .acc-card:not(.active) .acc-content h3 {
-        display: block !important;
-        font-size: 20px;
+        font-size: 16px !important;
     }
 
-    .acc-card .acc-content {
-        bottom: 20px;
-        left: 20px;
+    .acc-card.active .acc-content h3 {
+        font-size: 22px !important;
+    }
+
+    .acc-content {
+        bottom: 15px !important;
+        left: 15px !important;
     }
 }
