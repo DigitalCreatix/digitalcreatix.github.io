@@ -4319,14 +4319,30 @@ border-radius: 20px;
 
 /* Responsive for Mobile */
 @media (max-width: 768px) {
+    .auto-accordion-section {
+        margin: 40px auto;
+    }
+
     .accordion-container {
-        flex-direction: column;
-        height: auto;
+        flex-direction: column !important;
+        height: auto !important;
+        gap: 15px !important;
     }
+
     .acc-card {
-        height: 100px;
+        width: 100% !important;
+        height: 220px !important; /* Mobile par har card ki aik fixed achi height hogi */
+        flex: none !important;
     }
-    .acc-card.active {
-        height: 350px;
+
+    /* Mobile par sabhi cards ka text/title show ho ga, hidden nahi hoga */
+    .acc-card:not(.active) .acc-content h3 {
+        display: block !important;
+        font-size: 20px;
+    }
+
+    .acc-card .acc-content {
+        bottom: 20px;
+        left: 20px;
     }
 }
