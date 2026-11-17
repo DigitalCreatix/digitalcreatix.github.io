@@ -4751,12 +4751,13 @@ border-radius: 20px;
     }
 }
 
+
 /* Growth Section */
 
 .growth-section {
     width: 100%;
-    padding: 70px 20px 50px;
-    background: #ffffff;
+    padding: 45px 20px 35px;
+    background: #f5f7fa;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     overflow: hidden;
@@ -4766,42 +4767,42 @@ border-radius: 20px;
 
 .growth-heading {
     text-align: center;
-    margin-bottom: 62px;
+    margin-bottom: 42px;
 }
 
 .heading-tag {
     display: inline-block;
-    font-size: 13px;
+    font-size: 11px;
     color: #3985e9;
     background: #f8faff;
     border: 1px solid #edf2fc;
-    padding: 10px 17px;
+    padding: 7px 13px;
     border-radius: 30px;
-    margin-bottom: 22px;
+    margin-bottom: 17px;
 }
 
 .growth-heading h2 {
-    font-size: 58px;
+    font-size: 40px;
     line-height: 1.12;
     font-weight: 400;
     color: #101828;
     margin: 0;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
 }
 
 .growth-heading h2 span {
     color: #367ee8;
 }
 
-/* Grid Layout */
+/* Grid */
 
 .growth-grid {
     width: 100%;
-    max-width: 1180px;
+    max-width: 1000px;
     margin: auto;
     display: grid;
     grid-template-columns: 1.15fr 1.4fr 1.15fr;
-    grid-template-rows: 180px 195px;
+    grid-template-rows: 135px 150px;
     gap: 0;
 }
 
@@ -4812,19 +4813,18 @@ border-radius: 20px;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    border-radius: 100px;
-    border: 1px solid #f0f1f5;
+    border-radius: 75px;
+    border: 1px solid #edf0f5;
     min-width: 0;
 }
 
-/* Decorative Cards */
+/* Cross Cards */
 
 .decoration-card {
-    gap: 30px;
+    gap: 22px;
     color: #e1e7f1;
-    font-size: 72px;
+    font-size: 48px;
     font-weight: 200;
-    background: #ffffff;
 }
 
 .decoration-card span {
@@ -4832,46 +4832,45 @@ border-radius: 20px;
     font-weight: 200;
 }
 
-/* Statistics Cards */
+/* Statistics */
 
 .stat-card {
     background: #f7f9fe;
-    gap: 22px;
-    padding: 20px 25px;
+    gap: 15px;
+    padding: 15px 20px;
 }
 
 .stat-number {
-    font-size: 58px;
+    font-size: 43px;
     font-weight: 400;
     color: #347be8;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
     white-space: nowrap;
+}
+
+.arrow {
+    font-size: 46px;
+    font-weight: 300;
+    vertical-align: -2px;
 }
 
 .stat-card p,
 .blue-card p {
-    font-size: 14px;
+    font-size: 11px;
     line-height: 1.5;
     color: #747b89;
     margin: 0;
 }
 
-.arrow {
-    font-size: 65px;
-    font-weight: 300;
-    vertical-align: -2px;
-}
-
-/* Bottom Left */
+/* Spending Card */
 
 .spending-card {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-    transform: translateY(0);
 }
 
 .spending-card .stat-number {
-    font-size: 58px;
+    font-size: 43px;
 }
 
 /* Plus Card */
@@ -4879,11 +4878,11 @@ border-radius: 20px;
 .plus-card {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    width: 220px;
-    height: 195px;
-    border-radius: 100px;
+    width: 170px;
+    height: 150px;
+    border-radius: 75px;
     justify-self: center;
-    font-size: 105px;
+    font-size: 75px;
     font-weight: 200;
     color: #e0e7f2;
     background: #ffffff;
@@ -4894,19 +4893,15 @@ border-radius: 20px;
 .blue-card {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
-    background: linear-gradient(
-        110deg,
-        #0960bc,
-        #0785f3
-    );
+    background: linear-gradient(110deg, #0960bc, #0785f3);
     border: none;
-    gap: 20px;
-    padding: 20px 25px;
+    gap: 14px;
+    padding: 15px 18px;
 }
 
 .blue-card .stat-number {
     color: #ffffff;
-    font-size: 58px;
+    font-size: 43px;
 }
 
 .blue-card .arrow {
@@ -4914,30 +4909,25 @@ border-radius: 20px;
 }
 
 .blue-card p {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.9);
 }
 
-/* Responsive Design */
+/* Tablet */
 
 @media (max-width: 900px) {
 
     .growth-heading h2 {
-        font-size: 46px;
+        font-size: 34px;
     }
 
     .growth-grid {
-        grid-template-columns: 1fr 1.2fr;
-        grid-template-rows: repeat(3, 160px);
-        gap: 12px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 125px);
+        gap: 10px;
     }
 
     .decoration-card {
         display: none;
-    }
-
-    .stat-card {
-        grid-column: auto;
-        grid-row: auto;
     }
 
     .spending-card {
@@ -4949,7 +4939,7 @@ border-radius: 20px;
         grid-column: 2;
         grid-row: 1;
         width: 100%;
-        height: 160px;
+        height: 125px;
     }
 
     .blue-card {
@@ -4957,57 +4947,49 @@ border-radius: 20px;
         grid-row: 2;
     }
 
-    .growth-card {
-        border-radius: 80px;
+    .stat-card {
+        grid-column: 1 / 3;
+        grid-row: 3;
     }
 }
+
+/* Mobile */
 
 @media (max-width: 550px) {
 
     .growth-section {
-        padding: 50px 15px;
-    }
-
-    .growth-heading {
-        margin-bottom: 40px;
+        padding: 35px 15px;
     }
 
     .growth-heading h2 {
-        font-size: 36px;
-        letter-spacing: -1px;
+        font-size: 30px;
     }
 
     .growth-grid {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
 
     .growth-card {
-        min-height: 140px;
         width: 100%;
-        border-radius: 80px;
-    }
-
-    .stat-card {
-        justify-content: center;
-        gap: 15px;
-        padding: 20px;
+        min-height: 115px;
+        border-radius: 60px;
     }
 
     .stat-number,
     .spending-card .stat-number,
     .blue-card .stat-number {
-        font-size: 42px;
+        font-size: 35px;
     }
 
     .arrow {
-        font-size: 45px;
+        font-size: 38px;
     }
 
     .stat-card p,
     .blue-card p {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .plus-card {
