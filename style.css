@@ -4750,185 +4750,267 @@ border-radius: 20px;
         width: 100%;
     }
 }
-/* --- Compact Business Growth Stats Section --- */
-.growth-stats-section {
-    padding: 40px 20px !important; /* Uper neechay ka extra space kam kar diya */
-    background-color: #ffffff;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    text-align: center;
-}
 
-.stats-container {
-    max-width: 900px; /* Width ko compact kiya taake cheezein pas pas rahein */
-    margin: 0 auto;
-}
+/* Growth Section */
 
-/* Badge */
-.stats-badge {
-    display: inline-block;
-    background: rgba(241, 245, 249, 0.8);
-    border: 1px solid #e2e8f0;
-    padding: 4px 14px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #475569;
-    margin-bottom: 12px;
-}
-
-/* Title */
-.stats-title {
-    font-size: 34px !important;
-    font-weight: 800;
-    color: #0f172a;
-    line-height: 1.2;
-    margin-bottom: 30px !important; /* Title aur cards ke darmiyan gap kam kiya */
-}
-
-.highlight-blue {
-    color: #2563eb;
-}
-
-/* Grid Wrapper & Tight Gaps */
-.stats-grid-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 15px !important; /* Rows ke beech ka gap kam kiya */
-    align-items: center;
-}
-
-.stats-row {
-    display: flex;
-    justify-content: center;
-    gap: 15px !important; /* Cards ke aapas ka horizontal gap kam kiya */
+.growth-section {
     width: 100%;
+    padding: 70px 20px 50px;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* Base Pill Card Compact Styling */
-.stat-pill {
-    width: 280px !important; /* Width ko thora compact kiya */
-    height: 85px !important;  /* Height kam ki taake chota aur pyara lage */
-    border-radius: 100px;
+/* Heading */
+
+.growth-heading {
+    text-align: center;
+    margin-bottom: 62px;
+}
+
+.heading-tag {
+    display: inline-block;
+    font-size: 13px;
+    color: #3985e9;
+    background: #f8faff;
+    border: 1px solid #edf2fc;
+    padding: 10px 17px;
+    border-radius: 30px;
+    margin-bottom: 22px;
+}
+
+.growth-heading h2 {
+    font-size: 58px;
+    line-height: 1.12;
+    font-weight: 400;
+    color: #101828;
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+.growth-heading h2 span {
+    color: #367ee8;
+}
+
+/* Grid Layout */
+
+.growth-grid {
+    width: 100%;
+    max-width: 1180px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.15fr 1.4fr 1.15fr;
+    grid-template-rows: 180px 195px;
+    gap: 0;
+}
+
+/* Common Cards */
+
+.growth-card {
     display: flex;
     align-items: center;
-    padding: 0 24px;
+    justify-content: center;
     box-sizing: border-box;
-    transition: transform 0.3s ease;
+    border-radius: 100px;
+    border: 1px solid #f0f1f5;
+    min-width: 0;
 }
 
-.stat-pill:hover {
-    transform: translateY(-3px);
-}
+/* Decorative Cards */
 
-/* 1. Outline Cards (XXX) */
-.outline-pill {
-    border: 1px dashed #cbd5e1;
-    background: transparent;
-    justify-content: center;
-}
-
-.placeholder-text {
-    font-size: 20px;
-    letter-spacing: 5px;
-    color: #cbd5e1;
-    font-weight: 600;
-}
-
-/* 2. Solid White & Gradient Cards */
-.light-solid, .solid-pill {
+.decoration-card {
+    gap: 30px;
+    color: #e1e7f1;
+    font-size: 72px;
+    font-weight: 200;
     background: #ffffff;
-    border: 1px solid #f1f5f9;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
-    text-align: left;
 }
 
-.gradient-pill {
-    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
-    text-align: left;
-    border: none;
+.decoration-card span {
+    line-height: 1;
+    font-weight: 200;
 }
 
-/* Content Inside Cards */
-.stat-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* Statistics Cards */
+
+.stat-card {
+    background: #f7f9fe;
+    gap: 22px;
+    padding: 20px 25px;
 }
 
 .stat-number {
-    font-size: 22px !important;
-    font-weight: 800;
+    font-size: 58px;
+    font-weight: 400;
+    color: #347be8;
+    letter-spacing: -2px;
+    white-space: nowrap;
+}
+
+.stat-card p,
+.blue-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #747b89;
+    margin: 0;
+}
+
+.arrow {
+    font-size: 65px;
+    font-weight: 300;
+    vertical-align: -2px;
+}
+
+/* Bottom Left */
+
+.spending-card {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    transform: translateY(0);
+}
+
+.spending-card .stat-number {
+    font-size: 58px;
+}
+
+/* Plus Card */
+
+.plus-card {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: 220px;
+    height: 195px;
+    border-radius: 100px;
+    justify-self: center;
+    font-size: 105px;
+    font-weight: 200;
+    color: #e0e7f2;
+    background: #ffffff;
+}
+
+/* Blue Card */
+
+.blue-card {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    background: linear-gradient(
+        110deg,
+        #0960bc,
+        #0785f3
+    );
+    border: none;
+    gap: 20px;
+    padding: 20px 25px;
+}
+
+.blue-card .stat-number {
     color: #ffffff;
-    line-height: 1.1;
+    font-size: 58px;
 }
 
-.dark-num {
-    color: #2563eb;
+.blue-card .arrow {
+    color: #ffffff;
 }
 
-.stat-desc {
-    font-size: 10.5px !important;
-    color: #94a3b8;
-    margin-top: 2px;
-    line-height: 1.25;
-    font-weight: 500;
-}
-
-.dark-desc {
-    color: #64748b;
-}
-
-.white-text .stat-desc {
+.blue-card p {
     color: rgba(255, 255, 255, 0.85);
 }
 
-/* Small Center Circle Pill (+) */
-.circle-pill {
-    width: 85px !important;  /* Height aur width barabar ki */
-    height: 85px !important;
-    border-radius: 50%;
-    border: 1px solid #f1f5f9;
-    background: #ffffff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
-    justify-content: center;
-    padding: 0;
+/* Responsive Design */
+
+@media (max-width: 900px) {
+
+    .growth-heading h2 {
+        font-size: 46px;
+    }
+
+    .growth-grid {
+        grid-template-columns: 1fr 1.2fr;
+        grid-template-rows: repeat(3, 160px);
+        gap: 12px;
+    }
+
+    .decoration-card {
+        display: none;
+    }
+
+    .stat-card {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .spending-card {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .plus-card {
+        grid-column: 2;
+        grid-row: 1;
+        width: 100%;
+        height: 160px;
+    }
+
+    .blue-card {
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }
+
+    .growth-card {
+        border-radius: 80px;
+    }
 }
 
-.plus-icon {
-    font-size: 26px;
-    color: #cbd5e1;
-    font-weight: 300;
-}
-/* --- Mobile Responsive Fix for Business Growth Stats Section --- */
-@media (max-width: 768px) {
-    .growth-stats-section {
-        padding: 30px 15px !important;
+@media (max-width: 550px) {
+
+    .growth-section {
+        padding: 50px 15px;
     }
 
-    .stats-title {
-        font-size: 26px !important;
-        margin-bottom: 20px !important;
+    .growth-heading {
+        margin-bottom: 40px;
     }
 
-    .stats-grid-wrapper {
-        gap: 12px !important;
+    .growth-heading h2 {
+        font-size: 36px;
+        letter-spacing: -1px;
     }
 
-    .stats-row {
-        flex-direction: column !important;
-        align-items: center;
-        gap: 12px !important;
+    .growth-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .stat-pill {
-        width: 100% !important;
-        max-width: 300px !important;
-        height: 75px !important;
+    .growth-card {
+        min-height: 140px;
+        width: 100%;
+        border-radius: 80px;
     }
 
-    .circle-pill {
-        width: 75px !important;
-        height: 75px !important;
+    .stat-card {
+        justify-content: center;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .stat-number,
+    .spending-card .stat-number,
+    .blue-card .stat-number {
+        font-size: 42px;
+    }
+
+    .arrow {
+        font-size: 45px;
+    }
+
+    .stat-card p,
+    .blue-card p {
+        font-size: 12px;
+    }
+
+    .plus-card {
+        display: none;
     }
 }
