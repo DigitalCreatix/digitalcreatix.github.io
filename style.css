@@ -4323,7 +4323,7 @@ border-radius: 20px;
         margin: 30px auto;
         padding: 0 15px;
     }
-
+}
     .accordion-container {
         flex-direction: column !important;
         height: auto !important;
@@ -4356,7 +4356,6 @@ border-radius: 20px;
         bottom: 15px !important;
         left: 15px !important;
     }
-}
 /* --- SEO Page Exact Match Fixes --- */
 
 /* 1. Hero Background Growth Graphic */
