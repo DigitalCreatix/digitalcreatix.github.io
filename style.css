@@ -4497,20 +4497,13 @@ border-radius: 20px;
 }
 
 /* Active or Hover State for Pills */
+.seo-tab-item:hover,
 .seo-tab-item.active {
-    background: #0f172a !important;
-    color: #ffffff !important;
-    border-color: #0f172a;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border-color: rgba(203, 213, 225, 0.9) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     transform: translateY(-2px);
-}
-
-.seo-tab-item:hover:not(.active) {
-    background: #ffffff;
-    color: #0f172a;
-    border-color: #cbd5e1;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
-    transform: translateY(-1px);
 }
 
 /* Feature Box */
