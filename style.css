@@ -4750,16 +4750,16 @@ border-radius: 20px;
         width: 100%;
     }
 }
-/* --- Business Growth Stats Section --- */
+/* --- Compact Business Growth Stats Section --- */
 .growth-stats-section {
-    padding: 90px 20px;
+    padding: 40px 20px !important; /* Uper neechay ka extra space kam kar diya */
     background-color: #ffffff;
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: center;
 }
 
 .stats-container {
-    max-width: 1100px;
+    max-width: 900px; /* Width ko compact kiya taake cheezein pas pas rahein */
     margin: 0 auto;
 }
 
@@ -4768,57 +4768,56 @@ border-radius: 20px;
     display: inline-block;
     background: rgba(241, 245, 249, 0.8);
     border: 1px solid #e2e8f0;
-    padding: 6px 16px;
+    padding: 4px 14px;
     border-radius: 50px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: #475569;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 /* Title */
 .stats-title {
-    font-size: 42px;
+    font-size: 34px !important;
     font-weight: 800;
     color: #0f172a;
     line-height: 1.2;
-    margin-bottom: 50px;
+    margin-bottom: 30px !important; /* Title aur cards ke darmiyan gap kam kiya */
 }
 
 .highlight-blue {
     color: #2563eb;
 }
 
-/* Grid Wrapper */
+/* Grid Wrapper & Tight Gaps */
 .stats-grid-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px !important; /* Rows ke beech ka gap kam kiya */
     align-items: center;
 }
 
 .stats-row {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 15px !important; /* Cards ke aapas ka horizontal gap kam kiya */
     width: 100%;
-    flex-wrap: wrap;
 }
 
-/* Base Pill Card Styling */
+/* Base Pill Card Compact Styling */
 .stat-pill {
-    width: 320px;
-    height: 110px;
+    width: 280px !important; /* Width ko thora compact kiya */
+    height: 85px !important;  /* Height kam ki taake chota aur pyara lage */
     border-radius: 100px;
     display: flex;
     align-items: center;
-    padding: 0 30px;
+    padding: 0 24px;
     box-sizing: border-box;
     transition: transform 0.3s ease;
 }
 
 .stat-pill:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 /* 1. Outline Cards (XXX) */
@@ -4829,32 +4828,25 @@ border-radius: 20px;
 }
 
 .placeholder-text {
-    font-size: 24px;
-    letter-spacing: 6px;
+    font-size: 20px;
+    letter-spacing: 5px;
     color: #cbd5e1;
     font-weight: 600;
 }
 
-/* 2. Solid White Card ($200+) */
-.light-solid {
+/* 2. Solid White & Gradient Cards */
+.light-solid, .solid-pill {
     background: #ffffff;
     border: 1px solid #f1f5f9;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
-    text-align: left;
-}
-
-/* 3. Highlight Blue / Gradient Filled Card (98% & 50%) */
-.solid-pill {
-    background: #ffffff;
-    border: 1px solid #f1f5f9;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
     text-align: left;
 }
 
 .gradient-pill {
     background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
-    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
     text-align: left;
+    border: none;
 }
 
 /* Content Inside Cards */
@@ -4865,7 +4857,7 @@ border-radius: 20px;
 }
 
 .stat-number {
-    font-size: 26px;
+    font-size: 22px !important;
     font-weight: 800;
     color: #ffffff;
     line-height: 1.1;
@@ -4876,10 +4868,10 @@ border-radius: 20px;
 }
 
 .stat-desc {
-    font-size: 11px;
+    font-size: 10.5px !important;
     color: #94a3b8;
-    margin-top: 3px;
-    line-height: 1.3;
+    margin-top: 2px;
+    line-height: 1.25;
     font-weight: 500;
 }
 
@@ -4888,35 +4880,55 @@ border-radius: 20px;
 }
 
 .white-text .stat-desc {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* Small Center Circle Pill (+) */
 .circle-pill {
-    width: 110px;
-    height: 110px;
+    width: 85px !important;  /* Height aur width barabar ki */
+    height: 85px !important;
     border-radius: 50%;
     border: 1px solid #f1f5f9;
     background: #ffffff;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
     justify-content: center;
     padding: 0;
 }
 
 .plus-icon {
-    font-size: 32px;
+    font-size: 26px;
     color: #cbd5e1;
     font-weight: 300;
 }
-
-/* Responsive Design for Mobile */
-@media (max-width: 900px) {
-    .stats-row {
-        flex-direction: column;
-        align-items: center;
+/* --- Mobile Responsive Fix for Business Growth Stats Section --- */
+@media (max-width: 768px) {
+    .growth-stats-section {
+        padding: 30px 15px !important;
     }
+
+    .stats-title {
+        font-size: 26px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .stats-grid-wrapper {
+        gap: 12px !important;
+    }
+
+    .stats-row {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 12px !important;
+    }
+
     .stat-pill {
-        width: 100%;
-        max-width: 320px;
+        width: 100% !important;
+        max-width: 300px !important;
+        height: 75px !important;
+    }
+
+    .circle-pill {
+        width: 75px !important;
+        height: 75px !important;
     }
 }
