@@ -4375,54 +4375,58 @@ border-radius: 20px;
 .seo-hero {
     position: relative;
     background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 50%, #f8fafc 100%);
-    padding: 120px 20px 100px 20px;
+    padding: 140px 20px 90px 20px;
     text-align: center;
+    overflow: hidden;
 }
-
+.seo-hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
 .seo-hero-content h1 {
-    font-size: 42px;
+    font-size: 52px;
     font-weight: 800;
     color: #0f172a;
-    margin-bottom: 15px;
-    line-height: 1.2;
+    margin-bottom: 20px;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
 }
-
 .seo-hero-content p {
-    max-width: 550px;
-    margin: 0 auto 30px auto;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
     color: #64748b;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.6;
 }
-
 .seo-search-bar {
-    max-width: 500px;
+    max-width: 550px;
     margin: 0 auto 20px auto;
     background: #ffffff;
     display: flex;
     align-items: center;
-    padding: 6px 6px 6px 20px;
+    padding: 6px 6px 6px 24px;
     border-radius: 50px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     border: 1px solid #e2e8f0;
 }
 
 .seo-search-bar input {
     flex: 1;
     border: none;
-    padding: 8px 0;
-    font-size: 14px;
+    padding: 10px 0;
+    font-size: 15px;
     outline: none;
     background: transparent;
+    color: #0f172a;
 }
-
 .seo-search-bar button {
     background: #0f172a;
     color: #ffffff;
     border: none;
-    padding: 12px 28px;
+    padding: 14px 32px;
     border-radius: 50px;
     font-weight: 600;
+    font-size: 14px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
@@ -4430,28 +4434,31 @@ border-radius: 20px;
 .seo-search-bar button:hover {
     background: #2563eb;
 }
-
 .seo-popular-tags {
-    font-size: 13px;
+    font-size: 13.5px;
     color: #64748b;
+    margin-top: 15px;
 }
 
 .seo-popular-tags span {
     margin-right: 8px;
 }
-
 .seo-popular-tags a {
     display: inline-block;
     background: #ffffff;
-    padding: 4px 12px;
+    padding: 6px 16px;
     border-radius: 20px;
     color: #334155;
     text-decoration: none;
     margin: 0 4px;
     border: 1px solid #e2e8f0;
     font-weight: 500;
+    transition: all 0.2s ease;
 }
-
+.seo-popular-tags a:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
 /* 1. Glassmorphism Effect for the Main Header Box */
 .seo-tabs-header {
     display: flex;
