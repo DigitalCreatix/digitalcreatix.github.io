@@ -652,31 +652,34 @@
 });
         </script>
        <script>
-           document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     
     // --- 1. Hero Search & Popular Tags Logic ---
     const searchInput = document.getElementById("heroUrlInput");
     const searchBtn = document.getElementById("heroSearchBtn");
     const popularTags = document.querySelectorAll(".pop-tag");
 
-    popularTags.forEach(tag => {
-        tag.addEventListener("click", function(e) {
-            e.preventDefault();
-            searchInput.value = this.getAttribute("data-url");
+    if (popularTags) {
+        popularTags.forEach(tag => {
+            tag.addEventListener("click", function(e) {
+                e.preventDefault();
+                searchInput.value = this.getAttribute("data-url");
+            });
         });
-    });
-// Search button click action (Alert ki jagah smooth handling)
-    searchBtn.addEventListener("click", function() {
-        const urlValue = searchInput.value.trim();
-        if(urlValue === "") {
-            alert("Please enter a website or URL first!");
-            return;
-        }
-        // Yahan alert ki bajaye aap koi bhi action kar sakte hain
-        console.log("Analyzing URL: " + urlValue);
-        input.value = "";
-        alert("Audit request submitted successfully for: " + urlValue);
-    });
+    }
+
+    if (searchBtn && searchInput) {
+        searchBtn.addEventListener("click", function() {
+            const urlValue = searchInput.value.trim();
+            if(urlValue === "") {
+                alert("Please enter a website or URL first!");
+                return;
+            }
+            console.log("Analyzing URL: " + urlValue);
+            searchInput.value = ""; // Yahan 'input' ko 'searchInput' kar diya hai
+            alert("Audit request submitted successfully for: " + urlValue);
+        });
+    }
 
     // --- 2. Interactive Tabs Content Switching Logic ---
     const tabItems = document.querySelectorAll(".seo-tab-item");
@@ -713,27 +716,29 @@
         }
     };
 
-    tabItems.forEach(tab => {
-        tab.addEventListener("click", function() {
-            // Remove active class from all tabs
-            tabItems.forEach(t => t.classList.remove("active"));
-            
-            // Add active class to clicked tab
-            this.classList.add("active");
+    if (tabItems && contentDisplay) {
+        tabItems.forEach(tab => {
+            tab.addEventListener("click", function() {
+                // Remove active class from all tabs
+                tabItems.forEach(t => t.classList.remove("active"));
+                
+                // Add active class to clicked tab
+                this.classList.add("active");
 
-            // Get service key and update content
-            const serviceKey = this.getAttribute("data-service");
-            const data = serviceData[serviceKey];
+                // Get service key and update content
+                const serviceKey = this.getAttribute("data-service");
+                const data = serviceData[serviceKey];
 
-            if(data) {
-                contentDisplay.style.opacity = 0;
-                setTimeout(() => {
-                    contentDisplay.innerHTML = `<h3>${data.title}</h3><p>${data.desc}</p>`;
-                    contentDisplay.style.opacity = 1;
-                }, 150);
-            }
+                if(data) {
+                    contentDisplay.style.opacity = 0;
+                    setTimeout(() => {
+                        contentDisplay.innerHTML = `<h3>${data.title}</h3><p>${data.desc}</p>`;
+                        contentDisplay.style.opacity = 1;
+                    }, 150);
+                }
+            });
         });
-    });
+    }
 });
 </script>
 </body>
