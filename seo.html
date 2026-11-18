@@ -679,14 +679,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-       <script>
-document.addEventListener("DOMContentLoaded", function() {
-    
-    // --- 1. Hero Search & Popular Tags Logic ---
+     <script>
+         document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.getElementById("heroUrlInput");
     const searchBtn = document.getElementById("heroSearchBtn");
     const popularTags = document.querySelectorAll(".pop-tag");
+    
+    const resultContainer = document.getElementById("seoResultContainer");
+    const auditLoading = document.getElementById("auditLoading");
+    const auditContent = document.getElementById("auditContent");
+    const targetUrlDisplay = document.getElementById("targetUrlDisplay");
+    const closeAuditBtn = document.getElementById("closeAuditBtn");
 
+    // Popular tags click handling
     if (popularTags) {
         popularTags.forEach(tag => {
             tag.addEventListener("click", function(e) {
@@ -696,75 +701,37 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Search button click -> Trigger Dynamic Audit View
     if (searchBtn && searchInput) {
         searchBtn.addEventListener("click", function() {
             const urlValue = searchInput.value.trim();
-            if(urlValue === "") {
+            if (urlValue === "") {
                 alert("Please enter a website or URL first!");
                 return;
             }
-            console.log("Analyzing URL: " + urlValue);
-            searchInput.value = ""; // Yahan 'input' ko 'searchInput' kar diya hai
-            alert("Audit request submitted successfully for: " + urlValue);
+
+            // 1. Show Result Container & Loading State
+            targetUrlDisplay.textContent = urlValue;
+            resultContainer.style.display = "block";
+            auditLoading.style.display = "block";
+            auditContent.style.display = "none";
+
+            // Smooth scroll to the result box
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+
+            // 2. Simulate 2.5 seconds analysis loading time
+            setTimeout(() => {
+                auditLoading.style.display = "none";
+                auditContent.style.display = "block";
+            }, 2500);
         });
     }
 
-    // --- 2. Interactive Tabs Content Switching Logic ---
-    const tabItems = document.querySelectorAll(".seo-tab-item");
-    const contentDisplay = document.getElementById("serviceContentDisplay");
-
-    const serviceData = {
-        "search-engine": {
-            title: "Search Engine Optimization (SEO)",
-            desc: "Boost your website visibility on search engines, drive organic traffic, and outrank your competitors in Pakistan."
-        },
-        "analytics": {
-            title: "Advanced Business Analytics",
-            desc: "Track user behavior, conversion rates, and revenue metrics with precision-driven data dashboards."
-        },
-        "social-media": {
-            title: "Social Media Growth & Branding",
-            desc: "Build a powerful brand presence across Facebook, Instagram, and LinkedIn tailored to local audiences."
-        },
-        "content-marketing": {
-            title: "High-Converting Content Marketing",
-            desc: "Engage your target audience with professional blog outlines, copywriting, and media content."
-        },
-        "management": {
-            title: "Seamless Digital Management",
-            desc: "Manage client projects, workflows, and automated funnels effortlessly using modern tools."
-        },
-        "optimization": {
-            title: "Speed & Performance Optimization",
-            desc: "Lightning-fast load times, mobile responsiveness, and clean code architecture for maximum rankings."
-        },
-        "digital-marketing": {
-            title: "Comprehensive Digital Marketing",
-            desc: "End-to-end paid campaigns, lead generation strategies, and business scaling roadmaps."
-        }
-    };
-
-    if (tabItems && contentDisplay) {
-        tabItems.forEach(tab => {
-            tab.addEventListener("click", function() {
-                // Remove active class from all tabs
-                tabItems.forEach(t => t.classList.remove("active"));
-                
-                // Add active class to clicked tab
-                this.classList.add("active");
-
-                // Get service key and update content
-                const serviceKey = this.getAttribute("data-service");
-                const data = serviceData[serviceKey];
-
-                if(data) {
-                    contentDisplay.style.opacity = 0;
-                    setTimeout(() => {
-                        contentDisplay.innerHTML = `<h3>${data.title}</h3><p>${data.desc}</p>`;
-                        contentDisplay.style.opacity = 1;
-                    }, 150);
-                }
-            });
+    // Close / Reset Audit View
+    if (closeAuditBtn) {
+        closeAuditBtn.addEventListener("click", function() {
+            resultContainer.style.display = "none";
+            searchInput.value = "";
         });
     }
 });
