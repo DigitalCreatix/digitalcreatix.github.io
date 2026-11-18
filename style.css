@@ -5151,3 +5151,171 @@ border-radius: 20px;
         margin: 0 auto;
     }
 }
+/* --- FAQ / Recovery Services Section --- */
+.faq-section {
+    padding: 90px 20px;
+    background-color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.faq-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+/* Left Column */
+.faq-left {
+    flex: 1;
+    max-width: 450px;
+}
+
+.faq-badge {
+    display: inline-block;
+    background: rgba(241, 245, 249, 0.8);
+    border: 1px solid #e2e8f0;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+.faq-main-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 30px;
+}
+
+/* Help Card (Left Bottom) */
+.faq-help-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.faq-help-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.faq-help-card p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.faq-send-btn {
+    display: inline-block;
+    background: #6366f1; /* Purple-blue accent matching reference */
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    transition: background 0.3s ease;
+}
+
+.faq-send-btn:hover {
+    background: #4f46e5;
+}
+
+/* Right Column: Accordion List */
+.faq-right {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Accordion Item */
+.faq-accordion-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+/* Header */
+.faq-accordion-header {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    user-select: none;
+}
+
+.faq-icon {
+    font-size: 11px;
+    color: #64748b;
+    transition: transform 0.3s ease;
+}
+
+/* Content (Dropdown Body) */
+.faq-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 24px;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.faq-accordion-content p {
+    margin-bottom: 8px;
+}
+
+/* Active / Open State Styling */
+.faq-accordion-item.active {
+    background: #0f172a !important; /* Dark navy card when active like reference */
+    border-color: #0f172a !important;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+}
+
+.faq-accordion-item.active .faq-accordion-header {
+    color: #ffffff !important;
+}
+
+.faq-accordion-item.active .faq-icon {
+    transform: rotate(180deg);
+    color: #ffffff !important;
+}
+
+.faq-accordion-item.active .faq-accordion-content {
+    color: #94a3b8 !important;
+    padding: 0 24px 20px 24px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .faq-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .faq-left {
+        max-width: 100%;
+    }
+    .faq-right {
+        width: 100%;
+    }
+}
