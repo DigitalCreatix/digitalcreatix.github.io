@@ -4911,11 +4911,7 @@ border-radius: 20px;
 .blue-card {
     grid-column: 3;
     grid-row: 2;
-    background: linear-gradient(
-        110deg,
-        #0960bc,
-        #0785f3
-    );
+    background: linear-gradient(110deg, #0960bc, #0785f3);
     border: none;
     padding: 12px;
 }
@@ -5631,7 +5627,6 @@ border-radius: 20px;
     line-height: 1.7;
     margin: 0;
 }
-/* SEO Audit Overlay Modal Box - Corrected & Safe */
 .seo-result-box {
     position: fixed !important;
     top: 0 !important;
@@ -5642,7 +5637,7 @@ border-radius: 20px;
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
     
-    /* Shuru mein yeh bilkul hidden rahega */
+    /* Yeh line sab se zaroori hai - Shuru mein box bilkul hide rahega */
     display: none !important; 
     
     justify-content: center !important;
@@ -5651,7 +5646,6 @@ border-radius: 20px;
     padding: 20px !important;
     box-sizing: border-box !important;
 }
-
 .audit-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
