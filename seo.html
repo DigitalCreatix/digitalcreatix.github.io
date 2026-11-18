@@ -161,61 +161,59 @@
         </div>
     </div>
 <!-- === HERO SECTION === -->
-<section class="seo-hero">
-    <div class="seo-hero-content">
-        <h1>Discover Your Business<br>SEO Solution.</h1>
-        <p>Maecenas eget risus quam. Cohabitur dapibus magna eget vehicula pellentesque lobortis iaculis felis viverra sit amet.</p>
-        
-        <!-- Search / Audit Input Bar -->
-        <div class="seo-search-bar">
-            <input type="text" id="heroUrlInput" placeholder="Enter your website or url">
-            <button type="button" id="heroSearchBtn">Search</button>
-        </div>
+    <section class="seo-hero">
+        <div class="seo-hero-content">
+            <h1>Discover Your Business<br>SEO Solution.</h1>
+            <p>Maecenas eget risus quam. Cohabitur dapibus magna eget vehicula pellentesque lobortis iaculis felis viverra sit amet.</p>
+            
+            <!-- Search / Audit Input Bar (IDs added) -->
+            <div class="seo-search-bar">
+                <input type="text" id="heroUrlInput" placeholder="Enter your website or url">
+                <button type="button" id="heroSearchBtn">Search</button>
+            </div>
+<!-- SEO Audit Result Overlay / Box (Initially hidden) -->
+<div id="seoResultContainer" class="seo-result-box" style="display: none;">
+    <div class="audit-card">
+        <div class="audit-header">
+            <span class="audit-badge">🔍 Audit Report</span>
+            <span id="targetUrlDisplay" class="target-url"></span>
+        </div>
+        
+        <!-- Loading State -->
+        <div id="auditLoading" class="audit-loading">
+            <div class="spinner"></div>
+            <p>Analyzing website performance, meta tags, and ranking factors...</p>
+        </div>
 
-        <!-- Popular Tags -->
-        <div class="seo-popular-tags">
-            <span>Popular:</span>
-            <a href="#" class="pop-tag" data-url="google.com">google.com</a>
-            <a href="#" class="pop-tag" data-url="facebook.com">facebook.com</a>
-            <a href="#" class="pop-tag" data-url="twitter.com">twitter.com</a>
-        </div>
+        <!-- Success Report State (Hidden initially) -->
+        <div id="auditContent" class="audit-content" style="display: none;">
+            <div class="score-circle">
+                <span id="seoScoreNumber">78</span>/100
+            </div>
+            <h4>SEO Health Score</h4>
+            <ul class="audit-metrics">
+                <li>❌ <strong>Broken Links Found:</strong> 3 links need fixing</li>
+                <li>⚠️ <strong>Meta Description:</strong> Missing on 2 pages</li>
+                <li>✅ <strong>Mobile Responsive:</strong> Optimized</li>
+                <li>✅ <strong>SSL Security:</strong> Active & Secure</li>
+            </ul>
+            <div class="audit-action-row">
+                <a href="#pricing" class="audit-upgrade-btn">Get Full Optimization Pack</a>
+                <button type="button" id="closeAuditBtn" class="audit-close-btn">Search Another</button>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Popular Tags (Classes added for JS) -->
+            <div class="seo-popular-tags">
+                <span>Popular:</span>
+                <a href="#" class="pop-tag" data-url="google.com">google.com</a>
+                <a href="#" class="pop-tag" data-url="facebook.com">facebook.com</a>
+                <a href="#" class="pop-tag" data-url="twitter.com">twitter.com</a>
+            </div>
+        </div>
+    </section>
 
-        <!-- SEO Audit Result Overlay / Box (Hero section ke bilkul end mein shift kar diya hai) -->
-        <div id="seoResultContainer" class="seo-result-box" style="display: none;">
-            <div class="audit-card">
-                <div class="audit-header">
-                    <span class="audit-badge">🔍 Audit Report</span>
-                    <span id="targetUrlDisplay" class="target-url"></span>
-                </div>
-                
-                <!-- Loading State -->
-                <div id="auditLoading" class="audit-loading">
-                    <div class="spinner"></div>
-                    <p>Analyzing website performance, meta tags, and ranking factors...</p>
-                </div>
-
-                <!-- Success Report State -->
-                <div id="auditContent" class="audit-content" style="display: none;">
-                    <div class="score-circle">
-                        <span id="seoScoreNumber">78</span>/100
-                    </div>
-                    <h4>SEO Health Score</h4>
-                    <ul class="audit-metrics">
-                        <li>❌ <strong>Broken Links Found:</strong> 3 links need fixing</li>
-                        <li>⚠️ <strong>Meta Description:</strong> Missing on 2 pages</li>
-                        <li>✅ <strong>Mobile Responsive:</strong> Optimized</li>
-                        <li>✅ <strong>SSL Security:</strong> Active & Secure</li>
-                    </ul>
-                    <div class="audit-action-row">
-                        <a href="#pricing" class="audit-upgrade-btn">Get Full Optimization Pack</a>
-                        <button type="button" id="closeAuditBtn" class="audit-close-btn">Search Another</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
     <!-- === INTERACTIVE TABS & TAILORED SOLUTIONS SECTION === -->
     <section class="seo-solutions-section">
         <div class="seo-container">
