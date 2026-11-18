@@ -4356,10 +4356,7 @@ border-radius: 20px;
         bottom: 15px !important;
         left: 15px !important;
     }
-/* ==========================================================
-   SEO PAGE FINAL EXACT MATCH STYLING (1st Image Look)
-   ========================================================== */
-
+/* --- SEO Page Final Corrected Styling --- */
 .seo-page {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: #fafbfc;
@@ -4374,58 +4371,67 @@ border-radius: 20px;
     padding: 0 20px;
 }
 
-/* Hero Section */
+/* --- SEO Hero Section Exact 1st Image Match --- */
 .seo-hero {
     position: relative;
     background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 50%, #f8fafc 100%);
-    padding: 120px 20px 100px 20px;
+    padding: 140px 20px 80px 20px;
     text-align: center;
+    overflow: hidden;
+}
+
+.seo-hero-content {
+    max-width: 850px;
+    margin: 0 auto;
 }
 
 .seo-hero-content h1 {
-    font-size: 42px;
+    font-size: 52px;
     font-weight: 800;
     color: #0f172a;
-    margin-bottom: 15px;
-    line-height: 1.2;
+    margin-bottom: 20px;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
 }
 
 .seo-hero-content p {
-    max-width: 550px;
-    margin: 0 auto 30px auto;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
     color: #64748b;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.6;
 }
 
 .seo-search-bar {
-    max-width: 500px;
+    max-width: 550px;
     margin: 0 auto 20px auto;
     background: #ffffff;
     display: flex;
     align-items: center;
-    padding: 6px 6px 6px 20px;
+    padding: 6px 6px 6px 24px;
     border-radius: 50px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     border: 1px solid #e2e8f0;
 }
 
 .seo-search-bar input {
     flex: 1;
     border: none;
-    padding: 8px 0;
-    font-size: 14px;
+    padding: 10px 0;
+    font-size: 15px;
     outline: none;
     background: transparent;
+    color: #0f172a;
 }
 
 .seo-search-bar button {
     background: #0f172a;
     color: #ffffff;
     border: none;
-    padding: 12px 28px;
+    padding: 14px 32px;
     border-radius: 50px;
     font-weight: 600;
+    font-size: 14px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
@@ -4435,8 +4441,9 @@ border-radius: 20px;
 }
 
 .seo-popular-tags {
-    font-size: 13px;
+    font-size: 13.5px;
     color: #64748b;
+    margin-top: 15px;
 }
 
 .seo-popular-tags span {
@@ -4446,16 +4453,21 @@ border-radius: 20px;
 .seo-popular-tags a {
     display: inline-block;
     background: #ffffff;
-    padding: 4px 12px;
+    padding: 6px 16px;
     border-radius: 20px;
     color: #334155;
     text-decoration: none;
     margin: 0 4px;
     border: 1px solid #e2e8f0;
     font-weight: 500;
+    transition: all 0.2s ease;
 }
 
-/* Glassmorphism Effect for the Main Header Box (Overlapping perfectly) */
+.seo-popular-tags a:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+/* 1. Glassmorphism Effect for the Main Header Box */
 .seo-tabs-header {
     display: flex;
     justify-content: center;
@@ -4472,13 +4484,13 @@ border-radius: 20px;
     border-radius: 24px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
     max-width: 1050px;
-    margin: -45px auto 50px auto; /* Yeh negative margin tabs ko hero ke upar overlap karayega */
+    margin: -45px auto 50px auto;
     position: relative;
     z-index: 10;
     border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-/* Sleek Pill-Style Buttons */
+/* --- Sleek Pill-Style Buttons (Reference Image Exact Match) --- */
 .seo-tab-item {
     display: flex;
     align-items: center;
@@ -4489,6 +4501,7 @@ border-radius: 20px;
     font-weight: 600;
     color: #475569;
     
+    /* Soft pill background & subtle shadow */
     background: rgba(255, 255, 255, 0.85);
     border: 1px solid rgba(226, 232, 240, 0.8);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
@@ -4498,6 +4511,7 @@ border-radius: 20px;
     white-space: nowrap;
 }
 
+/* Hover & Active dono par ab aik jesa soft white glow aur shadow aayega (No dark black) */
 .seo-tab-item:hover,
 .seo-tab-item.active {
     background: #ffffff !important;
@@ -4506,10 +4520,1128 @@ border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
     transform: translateY(-2px);
 }
+/* Feature Box */
+.seo-feature-card-box {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+    border: 1px solid #f1f5f9;
+    gap: 40px;
+}
 
-/* ==========================================================
-   SEO AUDIT REPORT MODAL POPUP (Glassmorphic Center Overlay)
-   ========================================================== */
+.seo-feature-text h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.seo-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.seo-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 12px;
+}
+
+.seo-checklist li span {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.seo-learn-btn {
+    display: inline-block;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Trusted Strip */
+.seo-trusted-strip {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.seo-trusted-strip p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.trusted-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 15px;
+    flex-wrap: wrap;
+}
+
+/* Penalties Section */
+.seo-penalties-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.penalties-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.penalties-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 30px;
+}
+
+.penalty-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.penalty-acc-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    cursor: pointer;
+}
+
+.penalty-acc-item.active {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+}
+
+.acc-title {
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.acc-body {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* Pricing Section */
+.seo-pricing-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.pricing-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.pricing-packs {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.price-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px 25px;
+}
+
+.price-card.active-pack {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+    box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
+}
+
+.pack-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.pack-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    font-size: 13px;
+    color: #94a3b8;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.active-pack .pack-list {
+    color: #cbd5e1;
+}
+
+.pack-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.price-val {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.price-val span {
+    font-size: 12px;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+.pack-btn {
+    background: #ff6b00;
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.pricing-info {
+    width: 50%;
+}
+
+.pricing-info h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.pricing-info p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .seo-feature-card-box, .penalties-grid, .pricing-grid {
+        flex-direction: column;
+    }
+    .pricing-packs, .pricing-info {
+        width: 100%;
+    }
+}
+
+
+
+/* =================================
+   BUSINESS GROWTH SECTION
+================================= */
+
+.growth-stats-section {
+    width: 100%;
+    padding: 55px 20px 45px;
+    background: transparent;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.stats-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Badge */
+
+.stats-badge {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 30px;
+    background: #ffffff;
+    border: 1px solid #e8eef8;
+    color: #347be8;
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+/* Heading */
+
+.stats-title {
+    font-size: 40px;
+    line-height: 1.12;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    color: #101828;
+    margin: 0 0 42px;
+}
+
+.highlight-blue {
+    color: #367ee8;
+}
+
+/* Grid */
+
+.growth-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.25fr 1fr;
+    grid-template-rows: 115px 125px;
+    gap: 0;
+    margin: 0 auto;
+}
+
+/* Common Cards */
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    box-sizing: border-box;
+    border: 1px solid #edf0f5;
+    border-radius: 75px;
+}
+
+/* Cross Cards */
+
+.decoration-card {
+    background: #ffffff;
+    gap: 23px;
+    color: #dfe6f1;
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.decoration-card span {
+    line-height: 1;
+}
+
+/* Top Statistics Card */
+
+.top-stat-card {
+    background: #f7f9fe;
+    padding: 12px;
+}
+
+/* Content Layout */
+
+.stat-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    width: 100%;
+}
+
+.stat-number {
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    line-height: 1;
+    color: #347be8;
+    white-space: nowrap;
+}
+
+.stat-desc {
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #747b89;
+    text-align: left;
+}
+
+/* Bottom Left */
+
+.spending-card {
+    grid-column: 1;
+    grid-row: 2;
+    background: #f7f9fe;
+    padding: 12px;
+}
+
+.spending-card .stat-number {
+    font-size: 40px;
+}
+
+/* Center Plus */
+
+.plus-card {
+    grid-column: 2;
+    grid-row: 2;
+    width: 155px;
+    height: 125px;
+    justify-self: center;
+    background: #ffffff;
+    border-radius: 75px;
+    color: #dfe6f1;
+    font-size: 75px;
+    font-weight: 200;
+}
+
+.plus-card span {
+    line-height: 1;
+}
+
+/* Blue Card */
+
+.blue-card {
+    grid-column: 3;
+    grid-row: 2;
+    background: linear-gradient(110deg, #0960bc, #0785f3);
+    border: none;
+    padding: 12px;
+}
+
+.blue-card .stat-number {
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.blue-card .stat-desc {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* =================================
+   TABLET RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+
+    .stats-container {
+        max-width: 650px;
+    }
+
+    .growth-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 115px);
+        gap: 10px;
+    }
+
+    .decoration-card {
+        display: none;
+    }
+
+    .top-stat-card {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .spending-card {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .plus-card {
+        grid-column: 2;
+        grid-row: 2;
+        width: 100%;
+        height: 115px;
+    }
+
+    .blue-card {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
+}
+
+/* =================================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 550px) {
+
+    .growth-stats-section {
+        padding: 40px 15px;
+    }
+
+    .stats-title {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .growth-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .stat-card {
+        width: 100%;
+        min-height: 105px;
+        border-radius: 60px;
+    }
+
+    .stat-number,
+    .spending-card .stat-number,
+    .blue-card .stat-number {
+        font-size: 34px;
+    }
+
+    .stat-desc {
+        font-size: 10px;
+    }
+
+    .plus-card {
+        display: none;
+    }
+}
+/* --- Process Flow Section --- */
+.process-flow-section {
+    padding: 80px 20px;
+    background-color: #f8fafc;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-align: center;
+}
+
+.process-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Heading */
+.process-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 60px;
+}
+
+/* Grid Layout */
+.process-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+/* Individual Card Styling -> Yahan Background & Border Transparent kiya hai */
+.process-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Image Box Container -> Yahan bhi background transparent kiya hai */
+.process-img-box {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Smooth Floating Animation */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px); /* Upar ki taraf halka sa move karega */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.process-mockup-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.12));
+    
+    /* Animation apply kar di hai */
+    animation: floatAnimation 4s ease-in-out infinite;
+}
+
+/* Teeno images alag-alag timing par move karein taake natural lage */
+.process-grid .process-card:nth-child(1) .process-mockup-img {
+    animation-delay: 0s;
+}
+
+.process-grid .process-card:nth-child(3) .process-mockup-img {
+    animation-delay: 1.2s;
+}
+
+.process-grid .process-card:nth-child(5) .process-mockup-img {
+    animation-delay: 2.4s;
+}
+/* Hover effect remove karne ke liye transform hata diya hai */
+.process-card:hover .process-mockup-img {
+    transform: none !important; 
+}
+
+/* Titles & Descriptions */
+.process-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.process-card p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* Dotted Connector Curves */
+.process-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -40px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .process-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .process-connector {
+        display: none;
+    }
+    .process-card {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+/* --- FAQ / Recovery Services Section --- */
+.faq-section {
+    padding: 90px 20px;
+    background-color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.faq-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+/* Left Column */
+.faq-left {
+    flex: 1;
+    max-width: 450px;
+}
+
+.faq-badge {
+    display: inline-block;
+    background: rgba(241, 245, 249, 0.8);
+    border: 1px solid #e2e8f0;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+.faq-main-title {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 30px;
+}
+
+/* Help Card (Left Bottom) */
+.faq-help-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.faq-help-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.faq-help-card p {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.faq-send-btn {
+    display: inline-block;
+    background: #6366f1; /* Purple-blue accent matching reference */
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    transition: background 0.3s ease;
+}
+
+.faq-send-btn:hover {
+    background: #4f46e5;
+}
+
+/* Right Column: Accordion List */
+.faq-right {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Accordion Item */
+.faq-accordion-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+/* Header */
+.faq-accordion-header {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    user-select: none;
+}
+
+.faq-icon {
+    font-size: 11px;
+    color: #64748b;
+    transition: transform 0.3s ease;
+}
+
+/* Content (Dropdown Body) */
+.faq-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 24px;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.faq-accordion-content p {
+    margin-bottom: 8px;
+}
+
+/* Active / Open State Styling */
+.faq-accordion-item.active {
+    background: #0f172a !important; /* Dark navy card when active like reference */
+    border-color: #0f172a !important;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+}
+
+.faq-accordion-item.active .faq-accordion-header {
+    color: #ffffff !important;
+}
+
+.faq-accordion-item.active .faq-icon {
+    transform: rotate(180deg);
+    color: #ffffff !important;
+}
+
+.faq-accordion-item.active .faq-accordion-content {
+    color: #94a3b8 !important;
+    padding: 0 24px 20px 24px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .faq-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .faq-left {
+        max-width: 100%;
+    }
+    .faq-right {
+        width: 100%;
+    }
+}
+/* --- Pricing Cards Section --- */
+.pricing-cards-section {
+    padding: 80px 20px;
+    background-color: #f8fafc;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-align: center;
+}
+
+.pricing-cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 60px 40px;
+    border-radius: 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f1f5f9;
+}
+
+/* Top Badge & Headings */
+.pricing-top-badge {
+    display: inline-block;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #16a34a;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.pricing-main-heading {
+    font-size: 38px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.pricing-sub-heading {
+    font-size: 14px;
+    color: #64748b;
+    max-width: 550px;
+    margin: 0 auto 50px auto;
+    line-height: 1.5;
+}
+
+/* 3 Cards Grid */
+.pricing-cards-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+/* Individual Card */
+.pricing-card {
+    flex: 1;
+    min-width: 320px;
+    max-width: 370px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* Highlighted Popular Card (Middle Card with Gradient Border) */
+.popular-card {
+    background: linear-gradient(#ffffff, #ffffff) padding-box,
+                linear-gradient(135deg, #6366f1, #a855f7, #ec4899) border-box;
+    border: 2px solid transparent;
+    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.1);
+}
+
+.popular-badge-wrapper {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.popular-badge {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}
+
+/* Card Header Components */
+.card-header-top {
+    margin-bottom: 20px;
+}
+
+.card-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 4px 12px;
+    border-radius: 8px;
+}
+
+.card-title-area h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.card-title-area p {
+    font-size: 12.5px;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+/* Action & Price Row */
+.card-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.card-btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.outline-btn {
+    border: 1px solid #cbd5e1;
+    color: #0f172a;
+    background: transparent;
+}
+
+.outline-btn:hover {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+}
+
+.solid-btn {
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+}
+
+.solid-btn:hover {
+    background: #1e293b;
+}
+
+.card-price {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.card-price span {
+    font-size: 11px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.starting-from {
+    text-align: right;
+}
+
+.starting-from small {
+    display: block;
+    font-size: 9.5px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.starting-from strong {
+    font-size: 18px;
+}
+
+/* Features List */
+.card-features-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-features-list li {
+    font-size: 12.5px;
+    color: #475569;
+    margin-bottom: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Footer Note */
+.pricing-footer-note {
+    margin-top: 40px;
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .pricing-cards-container {
+        padding: 30px 15px;
+    }
+    .pricing-main-heading {
+        font-size: 28px;
+    }
+    .pricing-cards-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .pricing-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+/* Tabs Container */
+.seo-solutions-section {
+    padding: 40px 20px 80px 20px;
+    background-color: #fafbfc;
+}
+
+.seo-tabs-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+/* Individual Tab Item */
+.seo-tab-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.seo-tab-item:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+}
+
+/* Active Tab Style */
+.seo-tab-item.active {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.2);
+}
+
+/* Dynamic Content Box Styling */
+.service-dynamic-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    text-align: center;
+    transition: opacity 0.25s ease;
+}
+
+.service-dynamic-content h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.service-dynamic-content p {
+    font-size: 14.5px;
+    color: #64748b;
+    line-height: 1.7;
+    margin: 0;
+}
 .seo-result-box {
     position: fixed !important;
     top: 0 !important;
@@ -4519,23 +5651,25 @@ border-radius: 20px;
     background: rgba(15, 23, 42, 0.45) !important;
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
-    display: none !important; /* Shuru mein bilkul hide rahega */
+    
+    /* Yeh line sab se zaroori hai - Shuru mein box bilkul hide rahega */
+    display: none !important; 
+    
     justify-content: center !important;
     align-items: center !important;
     z-index: 99999 !important;
     padding: 20px !important;
     box-sizing: border-box !important;
 }
-
 .audit-card {
-    background: #ffffff !important;
-    border: 1px solid rgba(226, 232, 240, 0.8) !important;
-    border-radius: 24px !important;
-    padding: 35px !important;
-    width: 100% !important;
-    max-width: 500px !important;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2) !important;
-    text-align: left !important;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 35px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    text-align: left;
 }
 
 .audit-header {
@@ -4544,7 +5678,7 @@ border-radius: 20px;
     align-items: center;
     border-bottom: 1px solid #f1f5f9;
     padding-bottom: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .audit-badge {
@@ -4587,18 +5721,17 @@ border-radius: 20px;
 .audit-loading p {
     font-size: 13.5px;
     color: #64748b;
-    margin: 0;
 }
 
-/* Success Report Content State */
+/* Success Content State */
 .score-circle {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 800;
     color: #0f172a;
     background: #f8fafc;
     border: 2px solid #e2e8f0;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -4644,7 +5777,7 @@ border-radius: 20px;
 }
 
 .audit-upgrade-btn:hover {
-    background: #2563eb;
+    background: #1e293b;
 }
 
 .audit-close-btn {
