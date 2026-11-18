@@ -5631,3 +5631,144 @@ border-radius: 20px;
     line-height: 1.7;
     margin: 0;
 }
+/* SEO Audit Result Box */
+.seo-result-box {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.audit-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 35px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    text-align: left;
+}
+
+.audit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.audit-badge {
+    background: #f0fdf4;
+    color: #16a34a;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.target-url {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+/* Loading Spinner */
+.audit-loading {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f1f5f9;
+    border-top: 4px solid #0f172a;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.audit-loading p {
+    font-size: 13.5px;
+    color: #64748b;
+}
+
+/* Success Content State */
+.score-circle {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0f172a;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.audit-content h4 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.audit-metrics {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0;
+}
+
+.audit-metrics li {
+    font-size: 13.5px;
+    color: #475569;
+    margin-bottom: 10px;
+}
+
+.audit-action-row {
+    display: flex;
+    gap: 12px;
+}
+
+.audit-upgrade-btn {
+    flex: 1;
+    background: #0f172a;
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.audit-upgrade-btn:hover {
+    background: #1e293b;
+}
+
+.audit-close-btn {
+    background: #f1f5f9;
+    border: none;
+    color: #475569;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.audit-close-btn:hover {
+    background: #e2e8f0;
+}
