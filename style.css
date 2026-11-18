@@ -5016,7 +5016,7 @@ border-radius: 20px;
 /* --- Process Flow Section --- */
 .process-flow-section {
     padding: 80px 20px;
-    background-color: #f8fafc; /* Halka sa clean background */
+    background-color: #f8fafc;
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: center;
 }
@@ -5044,7 +5044,7 @@ border-radius: 20px;
     flex-wrap: nowrap;
 }
 
-/* Individual Card Styling */
+/* Individual Card Styling -> Yahan Background & Border Transparent kiya hai */
 .process-card {
     flex: 1;
     display: flex;
@@ -5052,9 +5052,13 @@ border-radius: 20px;
     align-items: center;
     text-align: center;
     padding: 0 10px;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-/* Image Box Container */
+/* Image Box Container -> Yahan bhi background transparent kiya hai */
 .process-img-box {
     width: 100%;
     height: 180px;
@@ -5062,6 +5066,10 @@ border-radius: 20px;
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .process-mockup-img {
@@ -5069,11 +5077,12 @@ border-radius: 20px;
     max-height: 100%;
     object-fit: contain;
     filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.06));
-    transition: transform 0.3s ease;
+    transition: none !important; /* Hover animation disable kar di hai */
 }
 
+/* Hover effect remove karne ke liye transform hata diya hai */
 .process-card:hover .process-mockup-img {
-    transform: translateY(-5px);
+    transform: none !important; 
 }
 
 /* Titles & Descriptions */
@@ -5098,7 +5107,7 @@ border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -40px; /* Images ke level par adjust karne ke liye */
+    margin-top: -40px;
 }
 
 /* Mobile Responsive */
@@ -5108,7 +5117,7 @@ border-radius: 20px;
         gap: 40px;
     }
     .process-connector {
-        display: none; /* Mobile par dotted lines hide rahengi */
+        display: none;
     }
     .process-card {
         max-width: 350px;
