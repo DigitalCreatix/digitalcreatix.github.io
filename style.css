@@ -5631,17 +5631,19 @@ border-radius: 20px;
     line-height: 1.7;
     margin: 0;
     
-}/* SEO Audit Overlay Box (True Center Glassmorphic Popup) */
 .seo-result-box {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-    background: rgba(15, 23, 42, 0.45) !important; /* Halka dark glass blur background */
+    background: rgba(15, 23, 42, 0.45) !important;
     backdrop-filter: blur(8px) !important;
     -webkit-backdrop-filter: blur(8px) !important;
-    display: flex !important;
+    
+    /* Yeh line sab se zaroori hai - Shuru mein box bilkul hide rahega */
+    display: none !important; 
+    
     justify-content: center !important;
     align-items: center !important;
     z-index: 99999 !important;
