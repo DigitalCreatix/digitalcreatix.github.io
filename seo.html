@@ -160,25 +160,24 @@
             </div>
         </div>
     </div>
-
-    <!-- === HERO SECTION === -->
+<!-- === HERO SECTION === -->
     <section class="seo-hero">
         <div class="seo-hero-content">
             <h1>Discover Your Business<br>SEO Solution.</h1>
             <p>Maecenas eget risus quam. Cohabitur dapibus magna eget vehicula pellentesque lobortis iaculis felis viverra sit amet.</p>
             
-            <!-- Search / Audit Input Bar -->
+            <!-- Search / Audit Input Bar (IDs added) -->
             <div class="seo-search-bar">
-                <input type="text" placeholder="Enter your website or url">
-                <button type="button">Search</button>
+                <input type="text" id="heroUrlInput" placeholder="Enter your website or url">
+                <button type="button" id="heroSearchBtn">Search</button>
             </div>
 
-            <!-- Popular Tags -->
+            <!-- Popular Tags (Classes added for JS) -->
             <div class="seo-popular-tags">
                 <span>Popular:</span>
-                <a href="#">google.com</a>
-                <a href="#">facebook.com</a>
-                <a href="#">twitter.com</a>
+                <a href="#" class="pop-tag" data-url="google.com">google.com</a>
+                <a href="#" class="pop-tag" data-url="facebook.com">facebook.com</a>
+                <a href="#" class="pop-tag" data-url="twitter.com">twitter.com</a>
             </div>
         </div>
     </section>
@@ -187,39 +186,47 @@
     <section class="seo-solutions-section">
         <div class="seo-container">
             
-            <!-- Category Icon Tabs -->
+            <!-- Category Icon Tabs (Added class 'seo-tab-item' and 'active' on first tab) -->
             <div class="seo-tabs-header">
-                <div class="seo-tab-item">
+                <div class="seo-tab-item active" data-service="search-engine">
                     <span class="tab-icon">🔍</span>
                     <span>Search Engine</span>
                 </div>
-                <div class="seo-tab-item">
+                <div class="seo-tab-item" data-service="analytics">
                     <span class="tab-icon">📊</span>
                     <span>Analytics</span>
                 </div>
-                <div class="seo-tab-item">
+                <div class="seo-tab-item" data-service="social-media">
                     <span class="tab-icon">🌐</span>
                     <span>Social Media</span>
                 </div>
-                <div class="seo-tab-item">
+                <div class="seo-tab-item" data-service="content-marketing">
                     <span class="tab-icon">📝</span>
                     <span>Content Marketing</span>
                 </div>
-                <div class="seo-tab-item">
+                <div class="seo-tab-item" data-service="management">
                     <span class="tab-icon">⚙️</span>
                     <span>Management</span>
                 </div>
-                <div class="seo-tab-item">
+                <div class="seo-tab-item" data-service="optimization">
                     <span class="tab-icon">⚡</span>
                     <span>Optimization</span>
                 </div>
-                <div class="seo-tab-item">
+                <div class="seo-tab-item" data-service="digital-marketing">
                     <span class="tab-icon">🚀</span>
                     <span>Digital Marketing</span>
                 </div>
+            </div>
+
+            <!-- Dynamic Content Display Box (Yeh tab click karne par badlega) -->
+            <div id="serviceContentDisplay" class="service-dynamic-content">
+                <h3>Search Engine Optimization (SEO)</h3>
+                <p>Boost your website visibility on search engines, drive organic traffic, and outrank your competitors in Pakistan.</p>
+            </div>
+
         </div>
     </section>
-<section class="process-flow-section">
+   <section class="process-flow-section">
     <div class="process-container">
         
         <!-- Main Heading -->
@@ -648,7 +655,89 @@
     });
 });
         </script>
-        
+       <script>
+           document.addEventListener("DOMContentLoaded", function() {
+    
+    // --- 1. Hero Search & Popular Tags Logic ---
+    const searchInput = document.getElementById("heroUrlInput");
+    const searchBtn = document.getElementById("heroSearchBtn");
+    const popularTags = document.querySelectorAll(".pop-tag");
+
+    popularTags.forEach(tag => {
+        tag.addEventListener("click", function(e) {
+            e.preventDefault();
+            searchInput.value = this.getAttribute("data-url");
+        });
+    });
+
+    searchBtn.addEventListener("click", function() {
+        const urlValue = searchInput.value.trim();
+        if(urlValue === "") {
+            alert("Please enter a website or URL first!");
+            return;
+        }
+        alert("Analyzing SEO performance for: " + urlValue + "\nRedirecting to report...");
+    });
+
+
+    // --- 2. Interactive Tabs Content Switching Logic ---
+    const tabItems = document.querySelectorAll(".seo-tab-item");
+    const contentDisplay = document.getElementById("serviceContentDisplay");
+
+    const serviceData = {
+        "search-engine": {
+            title: "Search Engine Optimization (SEO)",
+            desc: "Boost your website visibility on search engines, drive organic traffic, and outrank your competitors in Pakistan."
+        },
+        "analytics": {
+            title: "Advanced Business Analytics",
+            desc: "Track user behavior, conversion rates, and revenue metrics with precision-driven data dashboards."
+        },
+        "social-media": {
+            title: "Social Media Growth & Branding",
+            desc: "Build a powerful brand presence across Facebook, Instagram, and LinkedIn tailored to local audiences."
+        },
+        "content-marketing": {
+            title: "High-Converting Content Marketing",
+            desc: "Engage your target audience with professional blog outlines, copywriting, and media content."
+        },
+        "management": {
+            title: "Seamless Digital Management",
+            desc: "Manage client projects, workflows, and automated funnels effortlessly using modern tools."
+        },
+        "optimization": {
+            title: "Speed & Performance Optimization",
+            desc: "Lightning-fast load times, mobile responsiveness, and clean code architecture for maximum rankings."
+        },
+        "digital-marketing": {
+            title: "Comprehensive Digital Marketing",
+            desc: "End-to-end paid campaigns, lead generation strategies, and business scaling roadmaps."
+        }
+    };
+
+    tabItems.forEach(tab => {
+        tab.addEventListener("click", function() {
+            // Remove active class from all tabs
+            tabItems.forEach(t => t.classList.remove("active"));
+            
+            // Add active class to clicked tab
+            this.classList.add("active");
+
+            // Get service key and update content
+            const serviceKey = this.getAttribute("data-service");
+            const data = serviceData[serviceKey];
+
+            if(data) {
+                contentDisplay.style.opacity = 0;
+                setTimeout(() => {
+                    contentDisplay.innerHTML = `<h3>${data.title}</h3><p>${data.desc}</p>`;
+                    contentDisplay.style.opacity = 1;
+                }, 150);
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
 
