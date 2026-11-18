@@ -5072,14 +5072,41 @@ border-radius: 20px;
     box-shadow: none !important;
 }
 
+/* Smooth Floating Animation */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px); /* Upar ki taraf halka sa move karega */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 .process-mockup-img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.06));
-    transition: none !important; /* Hover animation disable kar di hai */
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.12));
+    
+    /* Animation apply kar di hai */
+    animation: floatAnimation 4s ease-in-out infinite;
 }
 
+/* Teeno images alag-alag timing par move karein taake natural lage */
+.process-grid .process-card:nth-child(1) .process-mockup-img {
+    animation-delay: 0s;
+}
+
+.process-grid .process-card:nth-child(3) .process-mockup-img {
+    animation-delay: 1.2s;
+}
+
+.process-grid .process-card:nth-child(5) .process-mockup-img {
+    animation-delay: 2.4s;
+}
 /* Hover effect remove karne ke liye transform hata diya hai */
 .process-card:hover .process-mockup-img {
     transform: none !important; 
