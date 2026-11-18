@@ -4371,101 +4371,71 @@ border-radius: 20px;
     padding: 0 20px;
 }
 
-/* --- SEO Hero Section Exact 1st Image Match --- */
+/* HERO SECTION ONLY — append this at the VERY END of your existing CSS.
+   This leaves every section below the hero untouched. */
+
 .seo-hero {
-    position: relative;
-    background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 50%, #f8fafc 100%);
-    padding: 140px 20px 80px 20px;
-    text-align: center;
-    overflow: hidden;
+    padding: 38px 20px 74px !important;
 }
 
 .seo-hero-content {
-    max-width: 850px;
-    margin: 0 auto;
+    max-width: 600px !important;
 }
 
 .seo-hero-content h1 {
-    font-size: 52px;
-    font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 20px;
-    line-height: 1.15;
-    letter-spacing: -1.5px;
+    font-size: 32px !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.8px !important;
+    margin: 0 0 12px !important;
 }
 
 .seo-hero-content p {
-    max-width: 650px;
-    margin: 0 auto 35px auto;
-    color: #64748b;
-    font-size: 17px;
-    line-height: 1.6;
+    max-width: 410px !important;
+    font-size: 11px !important;
+    line-height: 1.6 !important;
+    margin: 0 auto 22px !important;
 }
 
 .seo-search-bar {
-    max-width: 550px;
-    margin: 0 auto 20px auto;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    padding: 6px 6px 6px 24px;
-    border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    border: 1px solid #e2e8f0;
+    max-width: 372px !important;
+    padding: 4px 4px 4px 15px !important;
+    margin: 0 auto 12px !important;
 }
 
 .seo-search-bar input {
-    flex: 1;
-    border: none;
-    padding: 10px 0;
-    font-size: 15px;
-    outline: none;
-    background: transparent;
-    color: #0f172a;
+    font-size: 10px !important;
+    padding: 7px 0 !important;
 }
 
 .seo-search-bar button {
-    background: #0f172a;
-    color: #ffffff;
-    border: none;
-    padding: 14px 32px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.seo-search-bar button:hover {
-    background: #2563eb;
+    padding: 9px 22px !important;
+    font-size: 10px !important;
 }
 
 .seo-popular-tags {
-    font-size: 13.5px;
-    color: #64748b;
-    margin-top: 15px;
-}
-
-.seo-popular-tags span {
-    margin-right: 8px;
+    font-size: 9px !important;
+    margin-top: 10px !important;
 }
 
 .seo-popular-tags a {
-    display: inline-block;
-    background: #ffffff;
-    padding: 6px 16px;
-    border-radius: 20px;
-    color: #334155;
-    text-decoration: none;
-    margin: 0 4px;
-    border: 1px solid #e2e8f0;
-    font-weight: 500;
-    transition: all 0.2s ease;
+    padding: 4px 9px !important;
+    margin: 0 2px !important;
+    font-size: 9px !important;
 }
 
-.seo-popular-tags a:hover {
-    border-color: #3b82f6;
-    color: #3b82f6;
+/* Keep the hero compact on smaller screens too. */
+@media (max-width: 600px) {
+    .seo-hero {
+        padding: 34px 15px 65px !important;
+    }
+
+    .seo-hero-content h1 {
+        font-size: clamp(27px, 7vw, 32px) !important;
+    }
+
+    .seo-search-bar {
+        max-width: 100% !important;
+    }
 }
 /* 1. Glassmorphism Effect for the Main Header Box */
 .seo-tabs-header {
