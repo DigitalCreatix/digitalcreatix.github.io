@@ -4371,18 +4371,20 @@ border-radius: 20px;
     padding: 0 20px;
 }
 
-/* Hero Section */
+/* --- SEO Hero Section Exact 1st Image Match --- */
 .seo-hero {
     position: relative;
     background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 50%, #f8fafc 100%);
-    padding: 140px 20px 90px 20px;
+    padding: 140px 20px 80px 20px;
     text-align: center;
     overflow: hidden;
 }
+
 .seo-hero-content {
     max-width: 850px;
     margin: 0 auto;
 }
+
 .seo-hero-content h1 {
     font-size: 52px;
     font-weight: 800;
@@ -4391,6 +4393,7 @@ border-radius: 20px;
     line-height: 1.15;
     letter-spacing: -1.5px;
 }
+
 .seo-hero-content p {
     max-width: 650px;
     margin: 0 auto 35px auto;
@@ -4398,6 +4401,7 @@ border-radius: 20px;
     font-size: 17px;
     line-height: 1.6;
 }
+
 .seo-search-bar {
     max-width: 550px;
     margin: 0 auto 20px auto;
@@ -4419,6 +4423,7 @@ border-radius: 20px;
     background: transparent;
     color: #0f172a;
 }
+
 .seo-search-bar button {
     background: #0f172a;
     color: #ffffff;
@@ -4434,6 +4439,7 @@ border-radius: 20px;
 .seo-search-bar button:hover {
     background: #2563eb;
 }
+
 .seo-popular-tags {
     font-size: 13.5px;
     color: #64748b;
@@ -4443,6 +4449,7 @@ border-radius: 20px;
 .seo-popular-tags span {
     margin-right: 8px;
 }
+
 .seo-popular-tags a {
     display: inline-block;
     background: #ffffff;
@@ -4455,6 +4462,7 @@ border-radius: 20px;
     font-weight: 500;
     transition: all 0.2s ease;
 }
+
 .seo-popular-tags a:hover {
     border-color: #3b82f6;
     color: #3b82f6;
