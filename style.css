@@ -4760,7 +4760,7 @@ border-radius: 20px;
 .growth-stats-section {
     width: 100%;
     padding: 55px 20px 45px;
-    background: #f5f7fa;
+    background: transparent;
     font-family: 'Plus Jakarta Sans', sans-serif;
     box-sizing: border-box;
     overflow: hidden;
