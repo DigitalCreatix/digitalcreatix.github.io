@@ -5630,12 +5630,23 @@ border-radius: 20px;
     color: #64748b;
     line-height: 1.7;
     margin: 0;
-}
-/* SEO Audit Result Box */
+    
+}/* SEO Audit Overlay Box (True Center Glassmorphic Popup) */
 .seo-result-box {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(15, 23, 42, 0.45) !important; /* Halka dark glass blur background */
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 99999 !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
 }
 
 .audit-card {
