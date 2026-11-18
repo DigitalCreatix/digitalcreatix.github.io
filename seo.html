@@ -217,6 +217,10 @@
                     <span>Digital Marketing</span>
                 </div>
             </div>
+            <div id="serviceContentDisplay" class="service-dynamic-content" style="margin-top: 30px;">
+    <h3>Search Engine Optimization (SEO)</h3>
+    <p>Boost your website visibility on search engines, drive organic traffic, and outrank your competitors in Pakistan.</p>
+</div>
     </section>
    <section class="process-flow-section">
     <div class="process-container">
@@ -661,16 +665,18 @@
             searchInput.value = this.getAttribute("data-url");
         });
     });
-
+// Search button click action (Alert ki jagah smooth handling)
     searchBtn.addEventListener("click", function() {
         const urlValue = searchInput.value.trim();
         if(urlValue === "") {
             alert("Please enter a website or URL first!");
             return;
         }
-        alert("Analyzing SEO performance for: " + urlValue + "\nRedirecting to report...");
+        // Yahan alert ki bajaye aap koi bhi action kar sakte hain
+        console.log("Analyzing URL: " + urlValue);
+        input.value = "";
+        alert("Audit request submitted successfully for: " + urlValue);
     });
-
 
     // --- 2. Interactive Tabs Content Switching Logic ---
     const tabItems = document.querySelectorAll(".seo-tab-item");
