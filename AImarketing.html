@@ -160,16 +160,16 @@
             </div>
         </div>
     </div>
-    <!-- === AI MARKETING HERO SECTION === -->
+ <!-- === AI MARKETING HERO SECTION (FIXED HEIGHT + ADVANCED ROBOT ANIMATION) === -->
 <section class="ai-hero-section" id="aiHeroSection">
     <!-- Giant Vertical Background Watermark -->
     <div class="ai-vertical-watermark" aria-hidden="true">NEXT-GEN</div>
 
-    <!-- Bottom-Left Blue Ambient Glow (Replacing Orange) -->
+    <!-- Bottom-Left Blue Ambient Glow -->
     <div class="ai-blue-corner-glow" aria-hidden="true"></div>
 
     <div class="ai-hero-container">
-        <!-- Top Row: Staggered Editorial Headline + Right Quick Index -->
+        <!-- Top Row: Editorial Headline + Right Quick Index -->
         <div class="ai-hero-top-grid">
             <div class="ai-headline-block">
                 <span class="ai-top-pill">✦ AI MARKETING ENGINE</span>
@@ -189,7 +189,6 @@
                     <a href="#ai-analytics">Live ROI</a>
                     <a href="#contact">Book Demo</a>
                 </div>
-
                 <div class="ai-range-indicator" aria-hidden="true">
                     <span>01</span>
                     <div class="ai-range-line"></div>
@@ -198,14 +197,17 @@
             </div>
         </div>
 
-        <!-- Center Stage: Interactive Cursor-Following Robot + Floating Glass Callout -->
+        <!-- Center Stage: Advanced 3D Cursor-Tracking Robot -->
         <div class="ai-robot-stage" id="aiRobotStage">
-            <div class="ai-robot-wrapper" id="aiRobotWrapper">
-                <img src="rbimg1.png" alt="Digital Creatix AI Marketing Assistant" class="ai-robot-img" id="aiRobotImg">
+            <!-- Body Rotates (Parent container) -->
+            <div class="ai-robot-body-container" id="aiRobotBodyContainer">
+                <!-- Head Tracks (Inner element) -->
+                <div class="ai-robot-head-tracker" id="aiRobotHeadTracker">
+                    <img src="rbimg1.png" alt="Digital Creatix AI Marketing Assistant" class="ai-robot-img" id="aiRobotImg">
+                </div>
             </div>
-
             <!-- Glassmorphic Floating Spec Box (Right of Robot) -->
-            <div class="ai-glass-callout">
+            <div class="ai-glass-callout" id="aiGlassCallout">
                 <p>We maximize campaign ROI with autonomous AI targeting, real-time ad optimization, and smart lead scoring.</p>
             </div>
         </div>
@@ -218,11 +220,9 @@
                 </div>
                 <p>Autonomous multi-channel ad scaling that optimizes budgets and bids every second.</p>
             </div>
-
             <div class="ai-hero-center-cta">
-                <a href="contact.html" class="ai-primary-blue-btn">Launch AI Campaign →</a>
+                <a href="#contact" class="ai-primary-blue-btn">Book Your Audit →</a>
             </div>
-
             <div class="ai-mini-feature">
                 <div class="ai-mini-thumb">
                     <span>🎯 +310%</span>
@@ -231,7 +231,6 @@
             </div>
         </div>
     </div>
-
     <!-- Bottom-Right Scroll Indicator -->
     <a href="#ai-services" class="ai-scroll-down-btn" aria-label="Scroll Down">↓</a>
 </section>
@@ -309,50 +308,52 @@
     <script>
 document.addEventListener("DOMContentLoaded", function() {
     const heroSection = document.getElementById("aiHeroSection");
-    const robotWrapper = document.getElementById("aiRobotWrapper");
+    const bodyContainer = document.getElementById("aiRobotBodyContainer");
+    const headTracker = document.getElementById("aiRobotHeadTracker");
 
-    if (!heroSection || !robotWrapper) return;
+    if (!heroSection || !bodyContainer || !headTracker) return;
 
-    let targetX = 0, targetY = 0;
-    let targetRotateX = 0, targetRotateY = 0;
-    let currentX = 0, currentY = 0;
-    let currentRotateX = 0, currentRotateY = 0;
+    let rafId = null;
 
     heroSection.addEventListener("mousemove", function(e) {
-        const rect = heroSection.getBoundingClientRect();
-        // Normalized coordinates (-0.5 to +0.5)
-        const normX = (e.clientX - rect.left) / rect.width - 0.5;
-        const normY = (e.clientY - rect.top) / rect.height - 0.5;
+        // Cancel any pending animation frame
+        if (rafId) cancelAnimationFrame(rafId);
 
-        // Robot shifts slightly toward cursor and tilts head/body in 3D
-        targetX = normX * 45;
-        targetY = normY * 32;
-        targetRotateY = normX * 26;
-        targetRotateX = -normY * 20;
+        rafId = requestAnimationFrame(() => {
+            const rect = heroSection.getBoundingClientRect();
+            // Normalized coordinates (-0.5 to +0.5)
+            const normX = (e.clientX - rect.left) / rect.width - 0.5;
+            const normY = (e.clientY - rect.top) / rect.height - 0.5;
+
+            // --- 1. Body Rotation (Parent) ---
+            // Body rotates slightly toward the cursor (subtle tilt)
+            const bodyRotateY = normX * 10; // max +/- 10 deg
+            const bodyRotateX = -normY * 6; // max +/- 6 deg
+            const bodyTranslateX = normX * 15;
+            const bodyTranslateY = normY * 10;
+
+            // Apply body transform
+            bodyContainer.style.transform =
+                `translate3d(${bodyTranslateX.toFixed(1)}px, ${bodyTranslateY.toFixed(1)}px, 0) ` +
+                `rotateX(${bodyRotateX.toFixed(1)}deg) rotateY(${bodyRotateY.toFixed(1)}deg)`;
+
+            // --- 2. Head Tracking (Child) ---
+            // Head tracks the cursor aggressively
+            const headRotateY = normX * 30; // Head turns left/right aggressively
+            const headRotateX = -normY * 22; // Head looks up/down aggressively
+
+            // Apply head transform (chained *after* body transform via CSS parent/child)
+            headTracker.style.transform =
+                `rotateX(${headRotateX.toFixed(1)}deg) rotateY(${headRotateY.toFixed(1)}deg)`;
+        });
     });
 
+    // Reset on mouse leave
     heroSection.addEventListener("mouseleave", function() {
-        targetX = 0;
-        targetY = 0;
-        targetRotateX = 0;
-        targetRotateY = 0;
+        if (rafId) cancelAnimationFrame(rafId);
+        bodyContainer.style.transform = `translate3d(0, 0, 0) rotateX(0) rotateY(0)`;
+        headTracker.style.transform = `rotateX(0) rotateY(0)`;
     });
-
-    function animateRobot() {
-        // Smooth spring interpolation
-        currentX += (targetX - currentX) * 0.08;
-        currentY += (targetY - currentY) * 0.08;
-        currentRotateX += (targetRotateX - currentRotateX) * 0.08;
-        currentRotateY += (targetRotateY - currentRotateY) * 0.08;
-
-        robotWrapper.style.transform =
-            `translate3d(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px, 0) ` +
-            `rotateX(${currentRotateX.toFixed(2)}deg) rotateY(${currentRotateY.toFixed(2)}deg)`;
-
-        requestAnimationFrame(animateRobot);
-    }
-
-    animateRobot();
 });
 </script>
 </body>
