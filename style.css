@@ -5962,349 +5962,315 @@ border-radius: 20px;
     background: #e2e8f0;
 }
 /* ==========================================================
-   AI MARKETING HERO SECTION (COMPLETE LAYOUT + BLUE THEME)
+   AI MARKETING HERO SECTION - GLOWING LASER LINES THEME
    ========================================================== */
 .ai-hero-section {
     position: relative;
-    min-height: 100vh;
-    padding: 125px 40px 55px 40px;
-    background: linear-gradient(135deg, #f1f5f9 0%, #e8eef7 55%, #f8fafc 100%);
-    color: #0f172a;
+    min-height: 92vh;
+    padding: 155px 20px 95px 20px;
+    background: #060b16;
+    background-image: 
+        radial-gradient(circle at 50% 18%, rgba(37, 99, 235, 0.25) 0%, transparent 55%),
+        radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.14) 0%, transparent 50%);
+    color: #ffffff;
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     box-sizing: border-box;
-    perspective: 1800px;
 }
 
-/* Bottom-Left Blue Ambient Glow */
-.ai-blue-corner-glow {
+/* Subtle Futuristic Grid */
+.ai-cyber-grid {
     position: absolute;
-    bottom: -120px;
-    left: -100px;
-    width: 620px;
-    height: 460px;
-    background: radial-gradient(
-        circle at 25% 75%,
-        rgba(37, 99, 235, 0.52) 0%,
-        rgba(56, 189, 248, 0.28) 45%,
-        rgba(37, 99, 235, 0) 75%
-    );
-    filter: blur(24px);
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    background-size: 55px 55px;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
     pointer-events: none;
     z-index: 1;
 }
 
-/* Giant Vertical Background Watermark */
-.ai-vertical-watermark {
+/* Center Ambient Blue Glow */
+.ai-ambient-glow {
     position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.28) 0%, transparent 70%);
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ==========================================================
+   GLOWING LASER BEAMS CONTAINER & ANIMATIONS
+   ========================================================== */
+.ai-laser-field {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ai-laser-beam {
+    position: absolute;
+    height: 2px;
+    border-radius: 999px;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+/* Left-to-Right Laser Beam (Glowing Blue & Cyan Head) */
+.beam-ltr {
+    left: -260px;
+    background: linear-gradient(90deg, transparent 0%, rgba(37, 99, 235, 0.4) 45%, #38bdf8 88%, #ffffff 100%);
+    box-shadow: 
+        0 0 12px rgba(56, 189, 248, 0.85),
+        0 0 28px rgba(37, 99, 235, 0.75);
+    animation: laserShootLTR linear infinite;
+}
+
+/* Glowing Tip Dot for Left-to-Right */
+.beam-ltr::after {
+    content: "";
+    position: absolute;
+    right: 0;
     top: 50%;
-    left: 52%;
-    transform: translate(-50%, -50%) rotate(-90deg);
-    font-size: 155px;
-    font-weight: 900;
-    letter-spacing: 8px;
-    color: rgba(255, 255, 255, 0.72);
-    white-space: nowrap;
-    user-select: none;
-    pointer-events: none;
-    z-index: 1;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #38bdf8, 0 0 35px #2563eb;
 }
 
+/* Right-to-Left Laser Beam (Glowing Tip on Left Side) */
+.beam-rtl {
+    right: -260px;
+    background: linear-gradient(270deg, transparent 0%, rgba(59, 130, 246, 0.4) 45%, #60a5fa 88%, #ffffff 100%);
+    box-shadow: 
+        0 0 12px rgba(96, 165, 250, 0.85),
+        0 0 28px rgba(37, 99, 235, 0.75);
+    animation: laserShootRTL linear infinite;
+}
+
+/* Glowing Tip Dot for Right-to-Left */
+.beam-rtl::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #60a5fa, 0 0 35px #2563eb;
+}
+
+/* Individual Laser Positions, Lengths & Speeds */
+.beam-1 { top: 20%; width: 220px; animation-duration: 4.2s; animation-delay: 0s; }
+.beam-2 { top: 32%; width: 260px; animation-duration: 5.0s; animation-delay: 1.2s; }
+.beam-3 { top: 48%; width: 180px; animation-duration: 3.6s; animation-delay: 2.1s; }
+.beam-4 { top: 62%; width: 240px; animation-duration: 4.8s; animation-delay: 0.6s; }
+.beam-5 { top: 76%; width: 280px; animation-duration: 5.5s; animation-delay: 1.8s; }
+.beam-6 { top: 86%; width: 190px; animation-duration: 3.9s; animation-delay: 2.9s; }
+
+@keyframes laserShootLTR {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(100vw + 320px));
+        opacity: 0;
+    }
+}
+
+@keyframes laserShootRTL {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(calc(-100vw - 320px));
+        opacity: 0;
+    }
+}
+
+/* ==========================================================
+   HERO CONTENT & GLASS METRICS BAR
+   ========================================================== */
 .ai-hero-container {
     position: relative;
-    z-index: 3;
-    width: 100%;
-    max-width: 1280px;
+    z-index: 4;
+    max-width: 860px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
 }
 
-/* Top Row */
-.ai-hero-top-grid {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 30px;
-}
-
-.ai-top-pill {
+.ai-hero-badge {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.88);
-    border: 1px solid rgba(37, 99, 235, 0.2);
-    color: #2563eb;
-    font-size: 11px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: #38bdf8;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 1.5px;
-    padding: 5px 14px;
+    padding: 7px 18px;
     border-radius: 50px;
-    margin-bottom: 14px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(8px);
 }
 
-.ai-staggered-title {
-    font-size: 44px;
-    font-weight: 600;
-    line-height: 1.08;
-    letter-spacing: -1.5px;
-    color: #0f172a;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-.ai-staggered-title > span {
-    display: block;
-}
-
-.line-indent-0 { margin-left: 0; }
-.line-indent-1 { margin-left: 70px; }
-.line-indent-2 { margin-left: 38px; }
-
-.ai-staggered-title .ai-blue-accent {
-    display: inline;
-    color: #2563eb;
+.ai-hero-container h1 {
+    font-size: 54px;
     font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
-/* Right Quick Links & Range Counter */
-.ai-hero-meta-col {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 35px;
-    flex-shrink: 0;
+.ai-gradient-text {
+    background: linear-gradient(90deg, #38bdf8 0%, #60a5fa 50%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.ai-meta-links {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 8px 26px;
-    text-align: left;
+.ai-hero-container p {
+    font-size: 17px;
+    color: #94a3b8;
+    max-width: 630px;
+    margin: 0 auto 36px auto;
+    line-height: 1.65;
 }
 
-.ai-meta-links a {
-    font-size: 12.5px;
-    font-weight: 600;
-    color: #334155;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    white-space: nowrap;
-}
-
-.ai-meta-links a:hover {
-    color: #2563eb;
-}
-
-.ai-range-indicator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    font-size: 12.5px;
-    font-weight: 700;
-    color: #0f172a;
-}
-
-.ai-range-line {
-    width: 1.5px;
-    height: 65px;
-    background: rgba(15, 23, 42, 0.35);
-}
-
-/* Center Robot Stage */
-.ai-robot-stage {
-    position: relative;
+.ai-hero-actions {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: -20px auto;
-    z-index: 4;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 55px;
 }
 
-.ai-robot-body-container {
-    position: relative;
-    width: 320px;
-    max-width: 78vw;
-    transform-style: preserve-3d;
-    will-change: transform;
+.ai-primary-btn {
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 15px 32px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.45);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.ai-robot-head-tracker {
-    position: relative;
-    width: 100%;
-    transform-style: preserve-3d;
-    will-change: transform;
+.ai-primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.55);
 }
 
-.ai-robot-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 24px;
-    filter: drop-shadow(0 24px 36px rgba(15, 23, 42, 0.2));
-    user-select: none;
-    pointer-events: none;
+.ai-secondary-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+    padding: 15px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: background 0.25s ease, border-color 0.25s ease;
 }
 
-/* Glass Callout Card */
-.ai-glass-callout {
-    position: absolute;
-    right: -235px;
-    bottom: 18%;
-    width: 245px;
-    background: rgba(255, 255, 255, 0.68);
+.ai-secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #38bdf8;
+}
+
+/* Glass Metrics Bar */
+.ai-metrics-bar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(56, 189, 248, 0.2);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-radius: 16px;
-    padding: 14px 16px;
-    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
-    text-align: left;
+    padding: 18px 36px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
 }
 
-.ai-glass-callout p {
+.ai-metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.ai-metric-item strong {
+    font-size: 24px;
+    font-weight: 800;
+    color: #38bdf8;
+}
+
+.ai-metric-item span {
     font-size: 12px;
-    line-height: 1.5;
-    color: #1e293b;
-    margin: 0;
+    color: #cbd5e1;
     font-weight: 500;
 }
 
-/* Bottom Row */
-.ai-hero-bottom-grid {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 24px;
-    margin-top: 10px;
+.ai-metric-divider {
+    width: 1px;
+    height: 34px;
+    background: rgba(255, 255, 255, 0.12);
 }
 
-.ai-mini-feature {
-    max-width: 230px;
-    text-align: left;
-}
-
-.ai-mini-thumb {
-    width: 118px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.78);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13.5px;
-    font-weight: 800;
-    color: #2563eb;
-    margin-bottom: 10px;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
-}
-
-.ai-mini-feature p {
-    font-size: 11.5px;
-    line-height: 1.45;
-    color: #334155;
-    margin: 0;
-}
-
-.ai-primary-blue-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
-    color: #ffffff;
-    padding: 13px 28px;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    white-space: nowrap;
-}
-
-.ai-primary-blue-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 34px rgba(37, 99, 235, 0.48);
-}
-
-/* Scroll Down Button */
-.ai-scroll-down-btn {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 48px;
-    height: 48px;
-    background: #ffffff;
-    color: #0f172a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 17px;
-    font-weight: 700;
-    text-decoration: none;
-    border-top-left-radius: 14px;
-    box-shadow: -4px -4px 20px rgba(15, 23, 42, 0.06);
-    z-index: 5;
-}
-
-.ai-scroll-down-btn:hover {
-    background: #2563eb;
-    color: #ffffff;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .ai-hero-section {
-        height: auto;
-        min-height: 100vh;
-    }
-    .ai-staggered-title { font-size: 34px; }
-    .line-indent-1 { margin-left: 30px; }
-    .line-indent-2 { margin-left: 16px; }
-    .ai-robot-stage {
-        flex-direction: column;
-        margin: 15px auto;
-    }
-    .ai-glass-callout {
-        position: static;
-        margin-top: 14px;
-        width: 100%;
-        max-width: 320px;
-    }
-}
-
+/* Mobile Responsive */
 @media (max-width: 768px) {
     .ai-hero-section {
-        padding: 110px 20px 60px 20px;
+        padding: 130px 18px 70px 18px;
+        min-height: auto;
     }
-    .ai-hero-top-grid {
+    .ai-hero-container h1 {
+        font-size: 34px;
+    }
+    .ai-hero-container p {
+        font-size: 15px;
+    }
+    .ai-metrics-bar {
         flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
     }
-    .ai-hero-meta-col {
-        align-items: flex-start;
-        gap: 15px;
-    }
-    .ai-range-indicator {
-        display: none;
-    }
-    .ai-staggered-title {
-        font-size: 26px;
-    }
-    .line-indent-1, .line-indent-2 {
-        margin-left: 0;
-    }
-    .ai-vertical-watermark {
-        font-size: 85px;
-    }
-    .ai-robot-body-container {
-        width: 250px;
-    }
-    .ai-hero-bottom-grid {
-        flex-direction: column;
-        align-items: flex-start;
+    .ai-metric-divider {
+        width: 60%;
+        height: 1px;
     }
 }
