@@ -4371,20 +4371,11 @@ border-radius: 20px;
     padding: 0 20px;
 }
 
-/* =================================
-   SEO HERO SECTION - RESTORED
-================================= */
-
+/* Hero Section */
 .seo-hero {
-    background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 50%, #f8fafc 100% );
-    padding: 120px 20px 100px 20px;
-    text-align: center;
-}
-
-.seo-hero-content {
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto;
+    position: relative;
+    background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 50%, #f8fafc 100%);
+    padding: 80px 20px 100px 20px;
     text-align: center;
 }
 
@@ -4393,6 +4384,7 @@ border-radius: 20px;
     font-weight: 800;
     color: #0f172a;
     margin-bottom: 15px;
+    line-height: 1.2;
 }
 
 .seo-hero-content p {
@@ -4408,7 +4400,8 @@ border-radius: 20px;
     margin: 0 auto 20px auto;
     background: #ffffff;
     display: flex;
-    padding: 6px;
+    align-items: center;
+    padding: 6px 6px 6px 20px;
     border-radius: 50px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     border: 1px solid #e2e8f0;
@@ -4417,17 +4410,17 @@ border-radius: 20px;
 .seo-search-bar input {
     flex: 1;
     border: none;
-    padding: 12px 20px;
+    padding: 8px 0;
     font-size: 14px;
     outline: none;
-    border-radius: 50px;
+    background: transparent;
 }
 
 .seo-search-bar button {
     background: #0f172a;
     color: #ffffff;
     border: none;
-    padding: 10px 24px;
+    padding: 12px 28px;
     border-radius: 50px;
     font-weight: 600;
     cursor: pointer;
@@ -4437,6 +4430,7 @@ border-radius: 20px;
 .seo-search-bar button:hover {
     background: #2563eb;
 }
+
 .seo-popular-tags {
     font-size: 13px;
     color: #64748b;
@@ -4445,6 +4439,7 @@ border-radius: 20px;
 .seo-popular-tags span {
     margin-right: 8px;
 }
+
 .seo-popular-tags a {
     display: inline-block;
     background: #ffffff;
@@ -4456,12 +4451,6 @@ border-radius: 20px;
     border: 1px solid #e2e8f0;
     font-weight: 500;
 }
-
-.seo-popular-tags a:hover {
-    border-color: #3b82f6;
-    color: #3b82f6;
-}
-
 /* Mobile Responsive */
 
 @media (max-width: 600px) {
