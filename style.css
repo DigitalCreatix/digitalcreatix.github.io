@@ -4397,8 +4397,8 @@ border-radius: 20px;
 
 .seo-search-bar {
     width: 100% !important;
-    max-width: none !important;
-    margin: 0 0 20px 0 !important;
+    max-width: 500 !important;
+    margin: 0 20px !important;
 
     background: #ffffff !important;
     display: flex !important;
