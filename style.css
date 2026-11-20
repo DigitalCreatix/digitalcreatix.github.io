@@ -4443,29 +4443,23 @@ border-radius: 20px;
 .seo-search-bar button:hover {
     background: #2563eb !important;
 }
-
 .seo-popular-tags {
-    display: inline-flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
     font-size: 13px;
     color: #64748b;
-    margin-top: 10px;
 }
 
 .seo-popular-tags span {
-    margin-right: 4px;
+    margin-right: 8px;
 }
 
 .seo-popular-tags a {
     display: inline-block;
     background: #ffffff;
-    padding: 4px 10px;
+    padding: 4px 12px;
     border-radius: 20px;
     color: #334155;
     text-decoration: none;
-    margin: 0;
+    margin: 0 4px;
     border: 1px solid #e2e8f0;
     font-weight: 500;
 }
