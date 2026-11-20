@@ -4376,17 +4376,9 @@ border-radius: 20px;
 ================================= */
 
 .seo-hero {
-    position: relative;
-    background: linear-gradient(
-        135deg,
-        #f3f0ff 0%,
-        #eef2ff 50%,
-        #f8fafc 100%
-    );
-    padding: 35px 20px 80px;
+    background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 50%, #f8fafc 100% );
+    padding: 120px 20px 100px 20px;
     text-align: center;
-    overflow: hidden;
-    box-sizing: border-box;
 }
 
 .seo-hero-content {
@@ -4397,90 +4389,72 @@ border-radius: 20px;
 }
 
 .seo-hero-content h1 {
-    max-width: 450px;
-    margin: 0 auto 12px;
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 800;
     color: #0f172a;
-    line-height: 1.15;
-    letter-spacing: -0.8px;
-    text-align: center;
+    margin-bottom: 15px;
 }
 
 .seo-hero-content p {
-    max-width: 420px;
-    margin: 0 auto 22px;
+    max-width: 550px;
+    margin: 0 auto 30px auto;
     color: #64748b;
-    font-size: 11px;
+    font-size: 15px;
     line-height: 1.6;
-    text-align: center;
 }
 
 .seo-search-bar {
-    width: 100%;
-    max-width: 372px;
-    margin: 0 auto 12px;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
     background: #ffffff;
     display: flex;
-    align-items: center;
-    padding: 4px 4px 4px 15px;
+    padding: 6px;
     border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     border: 1px solid #e2e8f0;
-    box-sizing: border-box;
 }
 
 .seo-search-bar input {
     flex: 1;
-    min-width: 0;
     border: none;
-    padding: 7px 0;
-    font-size: 10px;
+    padding: 12px 20px;
+    font-size: 14px;
     outline: none;
-    background: transparent;
-    color: #0f172a;
+    border-radius: 50px;
 }
 
 .seo-search-bar button {
     background: #0f172a;
     color: #ffffff;
     border: none;
-    padding: 9px 22px;
+    padding: 10px 24px;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 10px;
     cursor: pointer;
-    white-space: nowrap;
     transition: background 0.3s ease;
 }
 
 .seo-search-bar button:hover {
     background: #2563eb;
 }
-
 .seo-popular-tags {
-    font-size: 9px;
+    font-size: 13px;
     color: #64748b;
-    margin-top: 10px;
-    text-align: center;
 }
 
 .seo-popular-tags span {
     margin-right: 8px;
 }
-
 .seo-popular-tags a {
     display: inline-block;
     background: #ffffff;
-    padding: 4px 9px;
+    padding: 4px 12px;
     border-radius: 20px;
     color: #334155;
     text-decoration: none;
-    margin: 0 2px;
+    margin: 0 4px;
     border: 1px solid #e2e8f0;
     font-weight: 500;
-    font-size: 9px;
-    transition: all 0.2s ease;
 }
 
 .seo-popular-tags a:hover {
