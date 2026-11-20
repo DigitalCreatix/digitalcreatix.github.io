@@ -5962,69 +5962,349 @@ border-radius: 20px;
     background: #e2e8f0;
 }
 /* ==========================================================
-   AI MARKETING HERO SECTION (FIXED 100vh + 3D HEAD TRACKING)
+   AI MARKETING HERO SECTION (COMPLETE LAYOUT + BLUE THEME)
    ========================================================== */
 .ai-hero-section {
     position: relative;
-    height: 100vh; /* Full viewport height enforced */
-    min-height: 650px; /* Small screen safety */
-    padding: 120px 40px 40px 40px;
+    min-height: 100vh;
+    padding: 125px 40px 55px 40px;
     background: linear-gradient(135deg, #f1f5f9 0%, #e8eef7 55%, #f8fafc 100%);
     color: #0f172a;
     overflow: hidden;
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    perspective: 2000px; /* Deeper perspective for dramatic effect */
+    perspective: 1800px;
 }
 
-/* Watermark, Glow, Top/Bottom Grid styles remain the same as previous answer */
-/* ... (Previous CSS for Watermark, Glow, Top Grid, Bottom Grid) ... */
+/* Bottom-Left Blue Ambient Glow */
+.ai-blue-corner-glow {
+    position: absolute;
+    bottom: -120px;
+    left: -100px;
+    width: 620px;
+    height: 460px;
+    background: radial-gradient(
+        circle at 25% 75%,
+        rgba(37, 99, 235, 0.52) 0%,
+        rgba(56, 189, 248, 0.28) 45%,
+        rgba(37, 99, 235, 0) 75%
+    );
+    filter: blur(24px);
+    pointer-events: none;
+    z-index: 1;
+}
 
-/* Center Robot Stage (Adjusted margins for fixed container) */
+/* Giant Vertical Background Watermark */
+.ai-vertical-watermark {
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    font-size: 155px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    color: rgba(255, 255, 255, 0.72);
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ai-hero-container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Top Row */
+.ai-hero-top-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.ai-top-pill {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.ai-staggered-title {
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: #0f172a;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.ai-staggered-title > span {
+    display: block;
+}
+
+.line-indent-0 { margin-left: 0; }
+.line-indent-1 { margin-left: 70px; }
+.line-indent-2 { margin-left: 38px; }
+
+.ai-staggered-title .ai-blue-accent {
+    display: inline;
+    color: #2563eb;
+    font-weight: 800;
+}
+
+/* Right Quick Links & Range Counter */
+.ai-hero-meta-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 35px;
+    flex-shrink: 0;
+}
+
+.ai-meta-links {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 8px 26px;
+    text-align: left;
+}
+
+.ai-meta-links a {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #334155;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+}
+
+.ai-meta-links a:hover {
+    color: #2563eb;
+}
+
+.ai-range-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.ai-range-line {
+    width: 1.5px;
+    height: 65px;
+    background: rgba(15, 23, 42, 0.35);
+}
+
+/* Center Robot Stage */
 .ai-robot-stage {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto; /* Centered within the container */
+    margin: -20px auto;
     z-index: 4;
-    height: 35vh; /* Allocate vertical space for robot */
 }
 
-/* Body Container: Handles the overall body rotation */
 .ai-robot-body-container {
     position: relative;
-    width: 350px; /* Adjusted size */
-    height: 350px;
+    width: 320px;
+    max-width: 78vw;
     transform-style: preserve-3d;
     will-change: transform;
-    /* Smooth easing for general body */
-    transition: transform 0.15s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Head Tracker: Handles independent head movement */
 .ai-robot-head-tracker {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 100%;
     transform-style: preserve-3d;
     will-change: transform;
-    /* Slightly faster easing for head response */
-    transition: transform 0.10s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .ai-robot-img {
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 28px 36px rgba(15, 23, 42, 0.22));
-    /* Remove animation if tracking is active, or make it extremely subtle */
-    /* animation: robotIdleHover 4.5s ease-in-out infinite; */
+    border-radius: 24px;
+    filter: drop-shadow(0 24px 36px rgba(15, 23, 42, 0.2));
     user-select: none;
     pointer-events: none;
 }
 
-/* ... (Glass Callout, Primary Button, Scroll Button, Responsive CSS) ... */
+/* Glass Callout Card */
+.ai-glass-callout {
+    position: absolute;
+    right: -235px;
+    bottom: 18%;
+    width: 245px;
+    background: rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 14px 16px;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+    text-align: left;
+}
+
+.ai-glass-callout p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #1e293b;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Bottom Row */
+.ai-hero-bottom-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.ai-mini-feature {
+    max-width: 230px;
+    text-align: left;
+}
+
+.ai-mini-thumb {
+    width: 118px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #2563eb;
+    margin-bottom: 10px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.ai-mini-feature p {
+    font-size: 11.5px;
+    line-height: 1.45;
+    color: #334155;
+    margin: 0;
+}
+
+.ai-primary-blue-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+    color: #ffffff;
+    padding: 13px 28px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    white-space: nowrap;
+}
+
+.ai-primary-blue-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(37, 99, 235, 0.48);
+}
+
+/* Scroll Down Button */
+.ai-scroll-down-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 48px;
+    height: 48px;
+    background: #ffffff;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 700;
+    text-decoration: none;
+    border-top-left-radius: 14px;
+    box-shadow: -4px -4px 20px rgba(15, 23, 42, 0.06);
+    z-index: 5;
+}
+
+.ai-scroll-down-btn:hover {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .ai-hero-section {
+        height: auto;
+        min-height: 100vh;
+    }
+    .ai-staggered-title { font-size: 34px; }
+    .line-indent-1 { margin-left: 30px; }
+    .line-indent-2 { margin-left: 16px; }
+    .ai-robot-stage {
+        flex-direction: column;
+        margin: 15px auto;
+    }
+    .ai-glass-callout {
+        position: static;
+        margin-top: 14px;
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ai-hero-section {
+        padding: 110px 20px 60px 20px;
+    }
+    .ai-hero-top-grid {
+        flex-direction: column;
+    }
+    .ai-hero-meta-col {
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .ai-range-indicator {
+        display: none;
+    }
+    .ai-staggered-title {
+        font-size: 26px;
+    }
+    .line-indent-1, .line-indent-2 {
+        margin-left: 0;
+    }
+    .ai-vertical-watermark {
+        font-size: 85px;
+    }
+    .ai-robot-body-container {
+        width: 250px;
+    }
+    .ai-hero-bottom-grid {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
