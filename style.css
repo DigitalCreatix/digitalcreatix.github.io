@@ -4397,13 +4397,15 @@ border-radius: 20px;
 
 .seo-search-bar {
     width: 100% !important;
-    max-width: 500px !important;
-    margin: 0 auto 20px auto !important;
+    max-width: none !important;
+    margin: 0 0 20px 0 !important;
+
     background: #ffffff !important;
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
     gap: 3px !important;
+
     padding: 5px 5px 5px 16px !important;
     border-radius: 50px !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
@@ -4440,8 +4442,9 @@ border-radius: 20px;
     white-space: nowrap !important;
     transition: background 0.3s ease !important;
 }
+
 .seo-search-bar button:hover {
-    background: #2563eb;
+    background: #2563eb !important;
 }
 
 .seo-popular-tags {
