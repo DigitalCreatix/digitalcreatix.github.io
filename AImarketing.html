@@ -160,79 +160,54 @@
             </div>
         </div>
     </div>
- <!-- === AI MARKETING HERO SECTION (FIXED HEIGHT + ADVANCED ROBOT ANIMATION) === -->
+ <!-- === AI MARKETING HERO SECTION (GLOWING AI LASER LINES) === -->
 <section class="ai-hero-section" id="aiHeroSection">
-    <!-- Giant Vertical Background Watermark -->
-    <div class="ai-vertical-watermark" aria-hidden="true">NEXT-GEN</div>
+    <!-- Subtle Tech Grid Background -->
+    <div class="ai-cyber-grid" aria-hidden="true"></div>
 
-    <!-- Bottom-Left Blue Ambient Glow -->
-    <div class="ai-blue-corner-glow" aria-hidden="true"></div>
+    <!-- Glowing Animated Laser Lines Layer -->
+    <div class="ai-laser-field" aria-hidden="true">
+        <span class="ai-laser-beam beam-ltr beam-1"></span>
+        <span class="ai-laser-beam beam-rtl beam-2"></span>
+        <span class="ai-laser-beam beam-ltr beam-3"></span>
+        <span class="ai-laser-beam beam-rtl beam-4"></span>
+        <span class="ai-laser-beam beam-ltr beam-5"></span>
+        <span class="ai-laser-beam beam-rtl beam-6"></span>
+    </div>
+
+    <!-- Ambient Blue Glow -->
+    <div class="ai-ambient-glow" aria-hidden="true"></div>
 
     <div class="ai-hero-container">
-        <!-- Top Row: Editorial Headline + Right Quick Index -->
-        <div class="ai-hero-top-grid">
-            <div class="ai-headline-block">
-                <span class="ai-top-pill">✦ AI MARKETING ENGINE</span>
-                <h1 class="ai-staggered-title">
-                    <span class="line-indent-1">CHANGING</span>
-                    <span class="line-indent-0">YOUR IDEA OF</span>
-                    <span class="line-indent-2">WHAT <span class="ai-blue-accent">AI AGENTS</span></span>
-                    <span class="line-indent-0">CAN DO</span>
-                </h1>
-            </div>
+        <span class="ai-hero-badge">✦ AUTONOMOUS AI MARKETING ENGINE</span>
+        
+        <h1>Scale Your Revenue With <br><span class="ai-gradient-text">Intelligent AI Marketing.</span></h1>
+        
+        <p>Automate ad targeting, predictive customer journeys, and high-converting content at machine speed—built to maximize every rupee of your marketing budget.</p>
 
-            <!-- Right Quick Links & Vertical Range Counter -->
-            <div class="ai-hero-meta-col">
-                <div class="ai-meta-links">
-                    <a href="#ai-automation">Predictive Ads</a>
-                    <a href="#ai-copy">Smart Funnels</a>
-                    <a href="#ai-analytics">Live ROI</a>
-                    <a href="#contact">Book Demo</a>
-                </div>
-                <div class="ai-range-indicator" aria-hidden="true">
-                    <span>01</span>
-                    <div class="ai-range-line"></div>
-                    <span>10X</span>
-                </div>
-            </div>
+        <div class="ai-hero-actions">
+            <a href="contact.html" class="ai-primary-btn">Launch AI Strategy →</a>
+            <a href="#services" class="ai-secondary-btn">Explore AI Solutions</a>
         </div>
 
-        <!-- Center Stage: Advanced 3D Cursor-Tracking Robot -->
-        <div class="ai-robot-stage" id="aiRobotStage">
-            <!-- Body Rotates (Parent container) -->
-            <div class="ai-robot-body-container" id="aiRobotBodyContainer">
-                <!-- Head Tracks (Inner element) -->
-                <div class="ai-robot-head-tracker" id="aiRobotHeadTracker">
-                    <img src="rbimg1.png" alt="Digital Creatix AI Marketing Assistant" class="ai-robot-img" id="aiRobotImg">
-                </div>
+        <!-- Clean Metrics Strip -->
+        <div class="ai-metrics-bar">
+            <div class="ai-metric-item">
+                <strong>3.4x</strong>
+                <span>Higher Ad ROAS</span>
             </div>
-            <!-- Glassmorphic Floating Spec Box (Right of Robot) -->
-            <div class="ai-glass-callout" id="aiGlassCallout">
-                <p>We maximize campaign ROI with autonomous AI targeting, real-time ad optimization, and smart lead scoring.</p>
+            <div class="ai-metric-divider"></div>
+            <div class="ai-metric-item">
+                <strong>24/7</strong>
+                <span>Autonomous Optimization</span>
             </div>
-        </div>
-
-        <!-- Bottom Row: Left & Right Feature Cards + Scroll Button -->
-        <div class="ai-hero-bottom-grid">
-            <div class="ai-mini-feature">
-                <div class="ai-mini-thumb">
-                    <span>⚡ 24/7</span>
-                </div>
-                <p>Autonomous multi-channel ad scaling that optimizes budgets and bids every second.</p>
-            </div>
-            <div class="ai-hero-center-cta">
-                <a href="#contact" class="ai-primary-blue-btn">Book Your Audit →</a>
-            </div>
-            <div class="ai-mini-feature">
-                <div class="ai-mini-thumb">
-                    <span>🎯 +310%</span>
-                </div>
-                <p>Hyper-personalized customer journeys built to convert cold traffic into loyal buyers.</p>
+            <div class="ai-metric-divider"></div>
+            <div class="ai-metric-item">
+                <strong>-42%</strong>
+                <span>Lower Acquisition Cost</span>
             </div>
         </div>
     </div>
-    <!-- Bottom-Right Scroll Indicator -->
-    <a href="#ai-services" class="ai-scroll-down-btn" aria-label="Scroll Down">↓</a>
 </section>
 <!-- Dark CTA Section (Let's Build Something Amazing Together) -->
 <section class="cta-dark-section">
@@ -305,112 +280,7 @@
         <a href="privacy.html">Privacy Policy</a>
     </div>
 </footer>
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const heroSection = document.getElementById("aiHeroSection");
-    const bodyContainer = document.getElementById("aiRobotBodyContainer");
-    const headTracker = document.getElementById("aiRobotHeadTracker");
-
-    if (!heroSection || !bodyContainer || !headTracker) return;
-
-    let rafId = null;
-
-    heroSection.addEventListener("mousemove", function(e) {
-        // Cancel any pending animation frame
-        if (rafId) cancelAnimationFrame(rafId);
-
-        rafId = requestAnimationFrame(() => {
-            const rect = heroSection.getBoundingClientRect();
-            // Normalized coordinates (-0.5 to +0.5)
-            const normX = (e.clientX - rect.left) / rect.width - 0.5;
-            const normY = (e.clientY - rect.top) / rect.height - 0.5;
-
-            // --- 1. Body Rotation (Parent) ---
-            // Body rotates slightly toward the cursor (subtle tilt)
-            const bodyRotateY = normX * 10; // max +/- 10 deg
-            const bodyRotateX = -normY * 6; // max +/- 6 deg
-            const bodyTranslateX = normX * 15;
-            const bodyTranslateY = normY * 10;
-
-            // Apply body transform
-            bodyContainer.style.transform =
-                `translate3d(${bodyTranslateX.toFixed(1)}px, ${bodyTranslateY.toFixed(1)}px, 0) ` +
-                `rotateX(${bodyRotateX.toFixed(1)}deg) rotateY(${bodyRotateY.toFixed(1)}deg)`;
-
-            // --- 2. Head Tracking (Child) ---
-            // Head tracks the cursor aggressively
-            const headRotateY = normX * 30; // Head turns left/right aggressively
-            const headRotateX = -normY * 22; // Head looks up/down aggressively
-
-            // Apply head transform (chained *after* body transform via CSS parent/child)
-            headTracker.style.transform =
-                `rotateX(${headRotateX.toFixed(1)}deg) rotateY(${headRotateY.toFixed(1)}deg)`;
-        });
-    });
-
-    // Reset on mouse leave
-    heroSection.addEventListener("mouseleave", function() {
-        if (rafId) cancelAnimationFrame(rafId);
-        bodyContainer.style.transform = `translate3d(0, 0, 0) rotateX(0) rotateY(0)`;
-        headTracker.style.transform = `rotateX(0) rotateY(0)`;
-    });
-});
-</script>
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const heroSection = document.getElementById("aiHeroSection");
-    const bodyContainer = document.getElementById("aiRobotBodyContainer");
-    const headTracker = document.getElementById("aiRobotHeadTracker");
-
-    if (!heroSection || !bodyContainer || !headTracker) return;
-
-    let targetX = 0, targetY = 0;
-    let targetRotX = 0, targetRotY = 0;
-    let currentX = 0, currentY = 0;
-    let currentRotX = 0, currentRotY = 0;
-
-    heroSection.addEventListener("mousemove", function(e) {
-        const rect = heroSection.getBoundingClientRect();
-        const normX = (e.clientX - rect.left) / rect.width - 0.5;
-        const normY = (e.clientY - rect.top) / rect.height - 0.5;
-
-        // Cursor ke hisab se left/right/up/down movement + tilt
-        targetX = normX * 36;
-        targetY = normY * 24;
-        targetRotY = normX * 16;
-        targetRotX = -normY * 14;
-    });
-
-    heroSection.addEventListener("mouseleave", function() {
-        targetX = 0;
-        targetY = 0;
-        targetRotX = 0;
-        targetRotY = 0;
-    });
-
-    function animate() {
-        const time = performance.now() * 0.0022;
-        const idleFloatY = Math.sin(time) * 8;
-
-        currentX += (targetX - currentX) * 0.09;
-        currentY += (targetY - currentY) * 0.09;
-        currentRotX += (targetRotX - currentRotX) * 0.09;
-        currentRotY += (targetRotY - currentRotY) * 0.09;
-
-        bodyContainer.style.transform =
-            `translate3d(${(currentX * 0.55).toFixed(2)}px, ${(currentY * 0.55 + idleFloatY).toFixed(2)}px, 0) ` +
-            `rotateX(${(currentRotX * 0.45).toFixed(2)}deg) rotateY(${(currentRotY * 0.45).toFixed(2)}deg)`;
-
-        headTracker.style.transform =
-            `translate3d(${(currentX * 0.45).toFixed(2)}px, ${(currentY * 0.45).toFixed(2)}px, 0) ` +
-            `rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
-
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-});
-</script>
+   
 </body>
 </html>
 
