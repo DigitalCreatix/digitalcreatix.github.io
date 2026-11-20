@@ -356,6 +356,61 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const heroSection = document.getElementById("aiHeroSection");
+    const bodyContainer = document.getElementById("aiRobotBodyContainer");
+    const headTracker = document.getElementById("aiRobotHeadTracker");
+
+    if (!heroSection || !bodyContainer || !headTracker) return;
+
+    let targetX = 0, targetY = 0;
+    let targetRotX = 0, targetRotY = 0;
+    let currentX = 0, currentY = 0;
+    let currentRotX = 0, currentRotY = 0;
+
+    heroSection.addEventListener("mousemove", function(e) {
+        const rect = heroSection.getBoundingClientRect();
+        const normX = (e.clientX - rect.left) / rect.width - 0.5;
+        const normY = (e.clientY - rect.top) / rect.height - 0.5;
+
+        // Cursor ke hisab se left/right/up/down movement + tilt
+        targetX = normX * 36;
+        targetY = normY * 24;
+        targetRotY = normX * 16;
+        targetRotX = -normY * 14;
+    });
+
+    heroSection.addEventListener("mouseleave", function() {
+        targetX = 0;
+        targetY = 0;
+        targetRotX = 0;
+        targetRotY = 0;
+    });
+
+    function animate() {
+        const time = performance.now() * 0.0022;
+        const idleFloatY = Math.sin(time) * 8;
+
+        currentX += (targetX - currentX) * 0.09;
+        currentY += (targetY - currentY) * 0.09;
+        currentRotX += (targetRotX - currentRotX) * 0.09;
+        currentRotY += (targetRotY - currentRotY) * 0.09;
+
+        bodyContainer.style.transform =
+            `translate3d(${(currentX * 0.55).toFixed(2)}px, ${(currentY * 0.55 + idleFloatY).toFixed(2)}px, 0) ` +
+            `rotateX(${(currentRotX * 0.45).toFixed(2)}deg) rotateY(${(currentRotY * 0.45).toFixed(2)}deg)`;
+
+        headTracker.style.transform =
+            `translate3d(${(currentX * 0.45).toFixed(2)}px, ${(currentY * 0.45).toFixed(2)}px, 0) ` +
+            `rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+});
+</script>
 </body>
 </html>
 
