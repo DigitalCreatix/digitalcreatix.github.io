@@ -4396,46 +4396,48 @@ border-radius: 20px;
 }
 
 .seo-search-bar {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 20px auto;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    padding: 6px 6px 6px 18px;
-    border-radius: 50px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e2e8f0;
-    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto 20px auto !important;
+    background: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    padding: 6px 6px 6px 18px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid #e2e8f0 !important;
+    box-sizing: border-box !important;
 }
 
 .seo-search-bar input {
-    flex: 1 1 auto;
-    min-width: 0; /* Flex ke andar input ki extra space khatam karne ke liye */
-    width: 100%;
-    border: none;
-    padding: 8px 4px;
-    font-size: 14px;
-    outline: none;
-    background: transparent;
-    color: #0f172a;
-    box-sizing: border-box;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+    border: none !important;
+    padding: 8px 6px !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+    outline: none !important;
+    background: transparent !important;
+    color: #0f172a !important;
+    box-sizing: border-box !important;
 }
+
 .seo-search-bar button {
-   flex: 0 0 auto;
-    flex-shrink: 0; /* Button ko dabne ya extra space lene se rokne ke liye */
-    background: #0f172a;
-    color: #ffffff;
-    border: none;
-    padding: 11px 22px;
-    border-radius: 50px;
-    font-size: 13.5px;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.3s ease;
+    flex: 0 0 auto !important;
+    background: #0f172a !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 11px 22px !important;
+    margin: 0 !important;
+    border-radius: 50px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    transition: background 0.3s ease !important;
 }
 .seo-search-bar button:hover {
     background: #2563eb;
