@@ -4371,79 +4371,266 @@ border-radius: 20px;
     padding: 0 20px;
 }
 
+/* ==========================================================
+   SEO HERO SECTION - LEFT ALIGNED + RIGHT FLOATING CARDS
+   ========================================================== */
 .seo-hero {
     position: relative;
-    background: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 50%, #f8fafc 100%);
-    padding: 130px 20px 100px 20px;
-    text-align: center;
+    min-height: 620px;
+    padding: 135px 24px 95px 24px;
+    background-color: #eef2ff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
-.seo-hero-content {
+/* Background image ke upar halka soft overlay taake text hamesha crisp parha jaye */
+.seo-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(248, 250, 252, 0.92) 0%,
+        rgba(238, 242, 255, 0.78) 52%,
+        rgba(238, 242, 255, 0.45) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+.seo-hero-inner {
     position: relative;
-    z-index: 4;
-    max-width: 780px;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Left Column */
+.seo-hero-left {
+    text-align: left;
+    max-width: 560px;
+}
+
+.seo-hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #dbeafe;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+}
+
+.seo-hero-left h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+    margin-bottom: 16px;
 }
 
 .seo-highlight {
     color: #2563eb;
 }
 
-/* Left & Right Floating Image Cards */
-.hero-float-card {
-    position: absolute;
-    top: 52%;
-    width: 240px;
-    border-radius: 18px;
+.seo-hero-left p {
+    font-size: 15.5px;
+    color: #475569;
+    line-height: 1.65;
+    margin: 0 0 28px 0;
+    max-width: 500px;
+}
+
+/* Search Bar - Same Pill Shape Aligned Left */
+.seo-search-bar {
+    width: 100%;
+    max-width: 490px;
+    margin: 0 0 14px 0;
     background: #ffffff;
-    padding: 8px;
-    border: 1px solid rgba(226, 232, 240, 0.9);
-    box-shadow: 0 24px 50px rgba(15, 23, 42, 0.14);
-    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 6px 6px 6px 20px;
+    border-radius: 50px;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e2e8f0;
+    box-sizing: border-box;
+}
+
+.seo-search-bar input {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: none;
+    padding: 9px 6px;
+    margin: 0;
+    font-size: 14px;
+    color: #0f172a;
+    background: transparent;
+    outline: none;
+}
+
+.seo-search-bar button {
+    flex: 0 0 auto;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 11px 26px;
+    margin: 0;
+    border-radius: 50px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.28);
+    transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.seo-search-bar button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Popular Tags Left Aligned */
+.seo-popular-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.seo-popular-tags a {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: #334155;
+    text-decoration: none;
+    border: 1px solid #e2e8f0;
+    font-size: 12.5px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.seo-popular-tags a:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+/* Right Column: Two Floating Images */
+.seo-hero-right {
+    position: relative;
+    min-height: 410px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     pointer-events: none;
 }
 
-.hero-float-card img {
+.seo-float-card {
+    position: absolute;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 24px 55px rgba(15, 23, 42, 0.16);
+    overflow: hidden;
+}
+
+.seo-float-card img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
-    border-radius: 12px;
+    border-radius: 14px;
     object-fit: cover;
 }
 
-.hero-float-left {
-    left: 3%;
-    animation: heroFloatLeft 5s ease-in-out infinite;
+/* Upar wali right image */
+.seo-float-top {
+    top: 10px;
+    right: 6px;
+    width: 250px;
+    z-index: 2;
+    animation: seoFloatTop 5s ease-in-out infinite;
 }
 
-.hero-float-right {
-    right: 3%;
-    animation: heroFloatRight 5.5s ease-in-out infinite;
+/* Thori neeche aur aage overlap karti hui right image */
+.seo-float-bottom {
+    bottom: 12px;
+    left: 24px;
+    width: 310px;
+    z-index: 3;
+    animation: seoFloatBottom 6s ease-in-out infinite;
 }
 
-@keyframes heroFloatLeft {
+@keyframes seoFloatTop {
     0%, 100% {
-        transform: translateY(-50%) rotate(-5deg);
+        transform: translateY(0px) rotate(3deg);
     }
     50% {
-        transform: translateY(calc(-50% - 10px)) rotate(-3.5deg);
+        transform: translateY(-10px) rotate(1.5deg);
     }
 }
 
-@keyframes heroFloatRight {
+@keyframes seoFloatBottom {
     0%, 100% {
-        transform: translateY(-50%) rotate(5deg);
+        transform: translateY(0px) rotate(-2deg);
     }
     50% {
-        transform: translateY(calc(-50% - 10px)) rotate(3.5deg);
+        transform: translateY(9px) rotate(-3.5deg);
     }
 }
 
-/* Laptop/Tablet aur Mobile par text/search bar ke upar overlap na ho */
-@media (max-width: 1180px) {
-    .hero-float-card {
-        display: none;
+/* Tablet & Mobile Responsive */
+@media (max-width: 960px) {
+    .seo-hero {
+        padding: 120px 20px 70px 20px;
+        min-height: auto;
+    }
+
+    .seo-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .seo-hero-left {
+        max-width: 100%;
+    }
+
+    .seo-hero-left h1 {
+        font-size: 36px;
+    }
+
+    .seo-hero-right {
+        min-height: 290px;
+        width: 100%;
+    }
+
+    .seo-float-top {
+        top: 0;
+        right: 0;
+        width: 185px;
+    }
+
+    .seo-float-bottom {
+        bottom: 0;
+        left: 0;
+        width: 235px;
     }
 }
 /* 1. Glassmorphism Effect for the Main Header Box */
