@@ -6490,3 +6490,260 @@ border-radius: 20px;
         height: 130px;
     }
 }
+/* ==========================================================
+   AI MARKETING 4-POINT INTERACTIVE ROADMAP (REFERENCE MATCH)
+   ========================================================== */
+.ai-roadmap-section {
+    position: relative;
+    padding: 105px 32px;
+    background: radial-gradient(circle at 65% 28%, rgba(37, 99, 235, 0.14) 0%, transparent 45%), #05080f;
+    color: #ffffff;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.ai-roadmap-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    align-items: center;
+    gap: 64px;
+}
+
+/* Left Column */
+.ai-roadmap-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 430px;
+    text-align: left;
+}
+
+.ai-roadmap-dynamic {
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.ai-roadmap-dynamic.is-switching {
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+.ai-roadmap-step-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    color: #60a5fa;
+    margin-bottom: 12px;
+}
+
+.ai-roadmap-main-title {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -1.3px;
+    color: #ffffff;
+    margin: 0 0 18px 0;
+}
+
+.ai-roadmap-blue {
+    color: #3b82f6;
+}
+
+.ai-roadmap-desc {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #94a3b8;
+    max-width: 440px;
+    margin: 0 0 32px 0;
+}
+
+/* Bottom-Left White Card (Like Reference Image) */
+.ai-roadmap-white-card {
+    width: 190px;
+    background: #ffffff;
+    color: #0f172a;
+    border-radius: 22px;
+    padding: 20px 22px;
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.45);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.ai-roadmap-white-card.is-switching {
+    opacity: 0.35;
+    transform: translateY(4px);
+}
+
+.ai-white-card-star {
+    font-size: 24px;
+    line-height: 1;
+    color: #2563eb;
+    margin-bottom: 14px;
+    font-weight: 800;
+}
+
+.ai-roadmap-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.ai-roadmap-bullets li {
+    position: relative;
+    padding-left: 13px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.35;
+}
+
+.ai-roadmap-bullets li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #2563eb;
+    font-weight: 800;
+}
+
+/* Right / Center Column: Vertical Stacked 1 - 4 Boxes */
+.ai-roadmap-steps-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 540px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(15, 23, 42, 0.45);
+}
+
+.ai-step-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    padding: 0 24px 0 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+.ai-step-row:last-child {
+    border-bottom: none;
+}
+
+.ai-step-row:hover {
+    background: rgba(37, 99, 235, 0.07);
+}
+
+/* Square Number Tile (1, 2, 3, 4) */
+.ai-step-box {
+    flex: 0 0 108px;
+    width: 108px;
+    height: 108px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 800;
+    color: #64748b;
+    background: rgba(15, 23, 42, 0.65);
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+    transition: all 0.28s ease;
+}
+
+.ai-step-row:hover .ai-step-box {
+    color: #cbd5e1;
+}
+
+/* Active Glowing Blue Square (Like Reference #1) */
+.ai-step-row.active .ai-step-box {
+    background: linear-gradient(145deg, #60a5fa 0%, #2563eb 55%, #1d4ed8 100%);
+    color: #ffffff;
+    border-right-color: transparent;
+    box-shadow:
+        0 0 28px rgba(59, 130, 246, 0.65),
+        0 0 55px rgba(37, 99, 235, 0.35),
+        inset 0 1px 2px rgba(255, 255, 255, 0.55);
+    transform: scale(1.02);
+    z-index: 2;
+}
+
+.ai-step-text h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #94a3b8;
+    margin: 0 0 5px 0;
+    transition: color 0.25s ease;
+}
+
+.ai-step-text p {
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: #64748b;
+    margin: 0;
+    max-width: 340px;
+    transition: color 0.25s ease;
+}
+
+.ai-step-row.active .ai-step-text h3 {
+    color: #ffffff;
+}
+
+.ai-step-row.active .ai-step-text p {
+    color: #cbd5e1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ai-roadmap-container {
+        grid-template-columns: 1fr;
+        gap: 44px;
+    }
+
+    .ai-roadmap-left {
+        min-height: auto;
+        gap: 24px;
+    }
+
+    .ai-roadmap-main-title {
+        font-size: 34px;
+    }
+
+    .ai-roadmap-steps-col {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 540px) {
+    .ai-roadmap-section {
+        padding: 75px 18px;
+    }
+
+    .ai-step-row {
+        gap: 16px;
+        padding-right: 14px;
+    }
+
+    .ai-step-box {
+        flex: 0 0 80px;
+        width: 80px;
+        height: 80px;
+        font-size: 30px;
+    }
+
+    .ai-step-text h3 {
+        font-size: 14.5px;
+    }
+
+    .ai-step-text p {
+        font-size: 11.5px;
+    }
+}
