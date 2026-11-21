@@ -459,7 +459,100 @@
         <a href="privacy.html">Privacy Policy</a>
     </div>
 </footer>
-   
+   <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const stepRows = document.querySelectorAll(".ai-step-row");
+    const dynamicBox = document.getElementById("aiRoadmapDynamicContent");
+    const whiteCard = document.querySelector(".ai-roadmap-white-card");
+
+    const stepTagEl = document.getElementById("roadmapStepTag");
+    const mainTitleEl = document.getElementById("roadmapMainTitle");
+    const descEl = document.getElementById("roadmapDesc");
+    const bulletsEl = document.getElementById("roadmapBullets");
+    const cardIconEl = document.getElementById("roadmapCardIcon");
+
+    if (!stepRows.length || !stepTagEl || !mainTitleEl || !descEl || !bulletsEl) return;
+
+    const roadmapData = {
+        "1": {
+            tag: "01 / WHY IT MATTERS",
+            title: 'Why AI Marketing<br>Is <span class="ai-roadmap-blue">Essential</span> Today',
+            desc: "Manual ad guessing and slow campaign tweaks waste budget in fast-moving markets. AI analyzes real-time buyer signals, audience intent, and creative performance to scale what actually converts.",
+            icon: "✳",
+            bullets: [
+                "Real-time intent signals",
+                "Zero manual guesswork",
+                "Faster scaling decisions"
+            ]
+        },
+        "2": {
+            tag: "02 / KEY BENEFITS",
+            title: 'Top <span class="ai-roadmap-blue">Benefits</span> Of<br>AI Marketing',
+            desc: "From predictive budget allocation to automated A/B creative testing and lead scoring, AI turns fragmented marketing tasks into a continuous growth engine that works around the clock.",
+            icon: "⚡",
+            bullets: [
+                "Lower cost per lead",
+                "24/7 automated tuning",
+                "Higher campaign ROAS"
+            ]
+        },
+        "3": {
+            tag: "03 / BRAND IMPACT",
+            title: 'Why It’s Vital For<br>Your <span class="ai-roadmap-blue">Brand</span> Growth',
+            desc: "Modern customers expect relevant offers at the exact moment they are ready to buy. AI helps your brand stay consistent across channels, personalize messaging, and build long-term trust.",
+            icon: "◈",
+            bullets: [
+                "Personalized messaging",
+                "Stronger brand recall",
+                "Higher repeat buyers"
+            ]
+        },
+        "4": {
+            tag: "04 / WHY CHOOSE US",
+            title: 'Why Partner With<br><span class="ai-roadmap-blue">Digital Creatix</span>',
+            desc: "Tools alone don’t grow a business—execution does. We combine smart AI workflows, conversion-focused design, and transparent reporting so you get measurable growth without technical stress.",
+            icon: "✦",
+            bullets: [
+                "Strategy + AI execution",
+                "Tailored to your goals",
+                "Clear ROI reporting"
+            ]
+        }
+    };
+
+    function renderStep(stepNumber) {
+        const data = roadmapData[stepNumber];
+        if (!data) return;
+
+        stepRows.forEach(row => {
+            const isMatch = row.getAttribute("data-step") === stepNumber;
+            row.classList.toggle("active", isMatch);
+            row.setAttribute("aria-selected", isMatch ? "true" : "false");
+        });
+
+        if (dynamicBox) dynamicBox.classList.add("is-switching");
+        if (whiteCard) whiteCard.classList.add("is-switching");
+
+        setTimeout(() => {
+            stepTagEl.textContent = data.tag;
+            mainTitleEl.innerHTML = data.title;
+            descEl.textContent = data.desc;
+            if (cardIconEl) cardIconEl.textContent = data.icon;
+            bulletsEl.innerHTML = data.bullets.map(item => `<li>${item}</li>`).join("");
+
+            if (dynamicBox) dynamicBox.classList.remove("is-switching");
+            if (whiteCard) whiteCard.classList.remove("is-switching");
+        }, 140);
+    }
+
+    stepRows.forEach(row => {
+        row.addEventListener("click", function() {
+            const selectedStep = this.getAttribute("data-step");
+            renderStep(selectedStep);
+        });
+    });
+});
+</script>
 </body>
 </html>
 
