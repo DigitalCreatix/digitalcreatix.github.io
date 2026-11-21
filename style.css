@@ -4323,7 +4323,7 @@ border-radius: 20px;
         margin: 30px auto;
         padding: 0 15px;
     }
-}
+
     .accordion-container {
         flex-direction: column !important;
         height: auto !important;
@@ -4356,6 +4356,7 @@ border-radius: 20px;
         bottom: 15px !important;
         left: 15px !important;
     }
+}
 /* --- SEO Page Final Corrected Styling --- */
 .seo-page {
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -7722,4 +7723,9 @@ border-radius: 20px;
 
 .cta-dark-section {
     margin-top: 0 !important;
+}
+.our-process-section .process-card {
+    background: #ffffff !important;
+    border: 1.5px solid rgba(203, 213, 225, 0.6) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03) !important;
 }
