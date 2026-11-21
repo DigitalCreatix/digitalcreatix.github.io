@@ -7724,3 +7724,494 @@ border-radius: 20px;
 .cta-dark-section {
     margin-top: 0 !important;
 }
+/* ==========================================================
+   VIDEO EDITING & MOTION GRAPHICS PAGE - HERO & VIDEO GRID
+   ========================================================== */
+.ve-hero-section {
+    position: relative;
+    min-height: 94vh;
+    padding: 150px 32px 90px 32px;
+    background: #05080f;
+    color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.ve-hero-bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.24;
+    filter: blur(4px) saturate(1.2);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ve-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 75% 40%, rgba(37, 99, 235, 0.28) 0%, transparent 55%),
+        linear-gradient(180deg, rgba(5, 8, 15, 0.78) 0%, rgba(5, 8, 15, 0.96) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.ve-hero-container {
+    position: relative;
+    z-index: 3;
+    max-width: 1220px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 48px;
+}
+
+.ve-hero-left {
+    text-align: left;
+}
+
+.ve-hero-pill {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.14);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: #38bdf8;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 18px;
+}
+
+.ve-hero-left h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -1.4px;
+    margin: 0 0 18px 0;
+    color: #ffffff;
+}
+
+.ve-blue-gradient {
+    background: linear-gradient(90deg, #38bdf8 0%, #3b82f6 55%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ve-hero-left p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #cbd5e1;
+    max-width: 540px;
+    margin: 0 0 32px 0;
+}
+
+.ve-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 38px;
+}
+
+.ve-primary-btn {
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.42);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.ve-primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(56, 189, 248, 0.52);
+}
+
+.ve-secondary-btn {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: background 0.22s ease, border-color 0.22s ease;
+}
+
+.ve-secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: #38bdf8;
+}
+
+/* Trust Strip */
+.ve-hero-trust-strip {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    background: rgba(15, 23, 42, 0.72);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    backdrop-filter: blur(12px);
+    padding: 14px 24px;
+    border-radius: 18px;
+}
+
+.ve-trust-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ve-trust-item strong {
+    font-size: 17px;
+    font-weight: 800;
+    color: #38bdf8;
+}
+
+.ve-trust-item span {
+    font-size: 11.5px;
+    color: #94a3b8;
+}
+
+.ve-trust-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Right Showreel Video Frame */
+.ve-showreel-card {
+    position: relative;
+    border-radius: 26px;
+    overflow: hidden;
+    border: 1.5px solid rgba(96, 165, 250, 0.4);
+    background: #0b132b;
+    aspect-ratio: 16 / 10;
+    box-shadow: 0 28px 65px rgba(0, 0, 0, 0.6), 0 0 45px rgba(37, 99, 235, 0.25);
+    cursor: pointer;
+}
+
+.ve-showreel-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.ve-showreel-card:hover .ve-showreel-video {
+    transform: scale(1.03);
+}
+
+.ve-showreel-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(5, 8, 15, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #38bdf8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    border-radius: 50px;
+}
+
+.ve-play-trigger {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    background: rgba(37, 99, 235, 0.92);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 12.5px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================
+   VIDEO PORTFOLIO GRID
+   ========================================================== */
+.ve-portfolio-section {
+    padding: 100px 24px;
+    background: #070c18;
+    color: #ffffff;
+}
+
+.ve-portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ve-portfolio-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 50px auto;
+}
+
+.ve-section-pill {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.32);
+    color: #38bdf8;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.ve-portfolio-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+}
+
+.ve-blue-text {
+    color: #3b82f6;
+}
+
+.ve-portfolio-header p {
+    font-size: 15px;
+    color: #94a3b8;
+    margin: 0 0 28px 0;
+}
+
+/* Filter Bar */
+.ve-filter-bar {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px;
+    border-radius: 50px;
+}
+
+.ve-filter-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 9px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+}
+
+.ve-filter-btn:hover {
+    color: #ffffff;
+}
+
+.ve-filter-btn.active {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+}
+
+/* Grid */
+.ve-video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.ve-video-card {
+    background: rgba(15, 23, 42, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 22px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.ve-video-card.is-hidden {
+    display: none;
+}
+
+.ve-video-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(59, 130, 246, 0.55);
+    box-shadow: 0 24px 48px rgba(37, 99, 235, 0.2);
+}
+
+.ve-video-frame {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    background: #0b132b;
+    overflow: hidden;
+}
+
+.ve-video-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ve-card-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(5, 8, 15, 0.75);
+    backdrop-filter: blur(8px);
+    color: #7dd3fc;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50px;
+}
+
+.ve-card-play-icon {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.9);
+    color: #ffffff;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    transition: transform 0.22s ease;
+}
+
+.ve-video-card:hover .ve-card-play-icon {
+    transform: scale(1.12);
+}
+
+.ve-card-info {
+    padding: 20px 22px 24px 22px;
+    text-align: left;
+}
+
+.ve-card-info h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+}
+
+.ve-card-info p {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* Fullscreen Video Modal */
+.ve-video-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.ve-video-modal.open {
+    display: flex;
+}
+
+.ve-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 6, 14, 0.88);
+    backdrop-filter: blur(10px);
+}
+
+.ve-modal-box {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 920px;
+    background: #000000;
+    border: 1px solid rgba(96, 165, 250, 0.4);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+}
+
+.ve-modal-box video {
+    width: 100%;
+    max-height: 80vh;
+    display: block;
+}
+
+.ve-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 3;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    .ve-hero-container {
+        grid-template-columns: 1fr;
+    }
+    .ve-hero-left h1 {
+        font-size: 38px;
+    }
+    .ve-video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .ve-hero-section {
+        padding: 125px 18px 70px 18px;
+    }
+    .ve-hero-left h1 {
+        font-size: 30px;
+    }
+    .ve-hero-trust-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .ve-trust-divider {
+        width: 100%;
+        height: 1px;
+    }
+    .ve-video-grid {
+        grid-template-columns: 1fr;
+    }
+}
