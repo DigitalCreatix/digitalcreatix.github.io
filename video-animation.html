@@ -280,6 +280,86 @@
         <video id="veModalPlayer" controls playsinline></video>
     </div>
 </div>
+    <!-- === RAW FOOTAGE VS. FINAL EDITED VIDEO COMPARISON === -->
+<section class="ve-compare-section" id="veCompareSection">
+    <div class="ve-compare-container">
+        <div class="ve-compare-header">
+            <span class="ve-compare-pill">✦ BEFORE &amp; AFTER BREAKDOWN</span>
+            <h2>Raw Footage vs. <span class="ve-compare-blue">Final Edited Cut</span></h2>
+            <p>See how pacing, motion graphics, color grading, and sound design transform unpolished clips into a finished story.</p>
+
+            <!-- Scenario Switcher Tabs -->
+            <div class="ve-compare-tabs" role="tablist">
+                <button type="button" class="ve-compare-tab active"
+                    data-raw="videos/raw-reel-1.mp4"
+                    data-final="videos/final-reel-1.mp4"
+                    data-raw-poster="posters/raw-reel-1.jpg"
+                    data-final-poster="posters/final-reel-1.jpg">
+                    Short-Form Reel Edit
+                </button>
+                <button type="button" class="ve-compare-tab"
+                    data-raw="videos/raw-promo-1.mp4"
+                    data-final="videos/final-promo-1.mp4"
+                    data-raw-poster="posters/raw-promo-1.jpg"
+                    data-final-poster="posters/final-promo-1.jpg">
+                    Brand &amp; Motion Promo
+                </button>
+                <button type="button" class="ve-compare-tab"
+                    data-raw="videos/raw-yt-1.mp4"
+                    data-final="videos/final-yt-1.mp4"
+                    data-raw-poster="posters/raw-yt-1.jpg"
+                    data-final-poster="posters/final-yt-1.jpg">
+                    YouTube &amp; Ad Cut
+                </button>
+            </div>
+        </div>
+
+        <!-- Sync Controls Bar -->
+        <div class="ve-sync-bar">
+            <button type="button" class="ve-sync-btn" id="veSyncPlayBtn">▶ Play Both</button>
+            <button type="button" class="ve-sync-btn ve-sync-btn-secondary" id="veSyncMuteBtn">🔇 Final Audio: Muted</button>
+        </div>
+
+        <!-- Side-by-Side Comparison Grid -->
+        <div class="ve-compare-grid">
+            <!-- Left: Raw / Uncut -->
+            <div class="ve-compare-card is-raw">
+                <div class="ve-compare-top">
+                    <span class="ve-status-badge raw-badge">RAW / UNCUT</span>
+                    <span class="ve-compare-sub">Unprocessed Camera &amp; Clip Feed</span>
+                </div>
+                <div class="ve-compare-player">
+                    <video id="veRawVideo" muted loop playsinline preload="metadata" poster="posters/raw-reel-1.jpg">
+                        <source src="videos/raw-reel-1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <ul class="ve-compare-points">
+                    <li><span>—</span> Dead air, extra pauses, and untracked cuts</li>
+                    <li><span>—</span> Flat log/ungraded colors and raw room audio</li>
+                    <li><span>—</span> No kinetic text, motion callouts, or hooks</li>
+                </ul>
+            </div>
+
+            <!-- Right: Final Edited -->
+            <div class="ve-compare-card is-final">
+                <div class="ve-compare-top">
+                    <span class="ve-status-badge final-badge">✦ FINAL EDITED CUT</span>
+                    <span class="ve-compare-sub">Motion + Color + Sound Design</span>
+                </div>
+                <div class="ve-compare-player">
+                    <video id="veFinalVideo" muted loop playsinline preload="metadata" poster="posters/final-reel-1.jpg">
+                        <source src="videos/final-reel-1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <ul class="ve-compare-points">
+                    <li><span>✓</span> Tight 3-second hook, rhythm cuts, and clean pacing</li>
+                    <li><span>✓</span> Custom motion graphics, captions, and color grade</li>
+                    <li><span>✓</span> Crisp SFX risers, whooshes, and balanced voice mix</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Dark CTA Section (Let's Build Something Amazing Together) -->
 <section class="cta-dark-section">
     <div class="cta-dark-content">
@@ -492,6 +572,77 @@ document.addEventListener("DOMContentLoaded", function() {
     if (modalBackdrop) modalBackdrop.addEventListener("click", closeVideoModal);
     document.addEventListener("keydown", e => {
         if (e.key === "Escape") closeVideoModal();
+    });
+});
+</script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const rawVid = document.getElementById("veRawVideo");
+    const finalVid = document.getElementById("veFinalVideo");
+    const playBtn = document.getElementById("veSyncPlayBtn");
+    const muteBtn = document.getElementById("veSyncMuteBtn");
+    const tabs = document.querySelectorAll(".ve-compare-tab");
+
+    if (!rawVid || !finalVid) return;
+
+    let isPlaying = false;
+    let finalMuted = true;
+
+    function updatePlayLabel() {
+        if (playBtn) {
+            playBtn.textContent = isPlaying ? "❚❚ Pause Both" : "▶ Play Both";
+        }
+    }
+
+    if (playBtn) {
+        playBtn.addEventListener("click", function() {
+            if (!isPlaying) {
+                rawVid.currentTime = 0;
+                finalVid.currentTime = 0;
+                rawVid.play().catch(() => {});
+                finalVid.play().catch(() => {});
+                isPlaying = true;
+            } else {
+                rawVid.pause();
+                finalVid.pause();
+                isPlaying = false;
+            }
+            updatePlayLabel();
+        });
+    }
+
+    if (muteBtn) {
+        muteBtn.addEventListener("click", function() {
+            finalMuted = !finalMuted;
+            rawVid.muted = true;
+            finalVid.muted = finalMuted;
+            muteBtn.textContent = finalMuted ? "🔇 Final Audio: Muted" : "🔊 Final Audio: On";
+        });
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", function() {
+            tabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+
+            rawVid.pause();
+            finalVid.pause();
+            isPlaying = false;
+            updatePlayLabel();
+
+            const rawSrc = this.getAttribute("data-raw");
+            const finalSrc = this.getAttribute("data-final");
+            const rawPoster = this.getAttribute("data-raw-poster");
+            const finalPoster = this.getAttribute("data-final-poster");
+
+            if (rawPoster) rawVid.poster = rawPoster;
+            if (finalPoster) finalVid.poster = finalPoster;
+
+            rawVid.src = rawSrc;
+            finalVid.src = finalSrc;
+            rawVid.load();
+            finalVid.load();
+        });
     });
 });
 </script>
