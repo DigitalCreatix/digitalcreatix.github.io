@@ -160,6 +160,75 @@
             </div>
         </div>
     </div>
+    <!-- === E-COMMERCE MARKETING - DISTINCT SPLIT FUNNEL HERO === -->
+<section class="ecom-hero-section" id="ecomHeroSection">
+    <div class="ecom-hero-container">
+        <!-- Left Storefront Growth Copy -->
+        <div class="ecom-hero-left">
+            <span class="ecom-hero-pill">✦ FULL-FUNNEL STOREFRONT GROWTH</span>
+            <h1>Scale <span class="ecom-blue-gradient">E-Commerce Revenue</span> With Profitable Acquisition &amp; Retention.</h1>
+            <p>We connect high-converting ad creatives, product feed &amp; landing optimization, and lifecycle retention flows so every click works harder toward profitable orders.</p>
+
+            <div class="ecom-hero-actions">
+                <a href="contact.html?service=ecommerce-marketing" class="ecom-primary-btn">Audit My Store Growth →</a>
+                <a href="#ecomBentoSection" class="ecom-secondary-btn">See Growth System</a>
+            </div>
+
+            <div class="ecom-hero-highlights">
+                <div class="ecom-hl-item">
+                    <strong>Creative + Ads</strong>
+                    <span>Hook testing &amp; paid social scaling</span>
+                </div>
+                <div class="ecom-hl-divider"></div>
+                <div class="ecom-hl-item">
+                    <strong>CRO + LTV</strong>
+                    <span>Cart recovery, bundles &amp; repeat orders</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Interactive Funnel Stage Inspector -->
+        <div class="ecom-hero-right">
+            <div class="ecom-funnel-card" id="ecomFunnelCard">
+                <div class="ecom-funnel-top">
+                    <div>
+                        <span class="ecom-funnel-eyebrow">● INTERACTIVE FUNNEL MAP</span>
+                        <h3>Storefront Growth Stages</h3>
+                    </div>
+                    <span class="ecom-funnel-badge" id="ecomFunnelBadge">STAGE 01 • ACQUIRE</span>
+                </div>
+
+                <!-- 3 Funnel Stage Selector Pills -->
+                <div class="ecom-stage-tabs" role="tablist">
+                    <button type="button" class="ecom-stage-tab active" data-stage="tofu">TOFU Acquisition</button>
+                    <button type="button" class="ecom-stage-tab" data-stage="mofu">MOFU Retargeting</button>
+                    <button type="button" class="ecom-stage-tab" data-stage="bofu">BOFU &amp; Retention</button>
+                </div>
+
+                <!-- Dynamic Stage Details -->
+                <div class="ecom-stage-panel">
+                    <h4 id="ecomStageTitle">Cold Audience Discovery &amp; Creative Testing</h4>
+                    <p id="ecomStageDesc">Hook new shoppers in the first 3 seconds with native UGC, problem-solution demos, and structured creative testing.</p>
+
+                    <div class="ecom-stage-metrics">
+                        <div class="ecom-m-box">
+                            <small>PRIMARY FOCUS</small>
+                            <strong id="ecomM1">Thumbstop &amp; CTR</strong>
+                        </div>
+                        <div class="ecom-m-box">
+                            <small>KEY ASSET</small>
+                            <strong id="ecomM2">UGC &amp; Ad Angles</strong>
+                        </div>
+                    </div>
+
+                    <div class="ecom-stage-foot">
+                        <span id="ecomStageNext"><strong>Next Step:</strong> Move engaged viewers into objection-crushing retargeting.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Dark CTA Section (Let's Build Something Amazing Together) -->
 <section class="cta-dark-section">
     <div class="cta-dark-content">
@@ -253,3 +322,98 @@
         });
     });
 </script>
+ <!-- Mobile Sidebar & Dropdown JavaScript for Services Page -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 1. Mobile Sidebar Open / Close Logic
+            const menuBtn = document.getElementById('menuBtn');
+            const closeBtn = document.getElementById('closeBtn');
+            const mobileSidebar = document.getElementById('mobileSidebar');
+            const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+            if (menuBtn && mobileSidebar && sidebarOverlay) {
+                menuBtn.addEventListener('click', () => {
+                    mobileSidebar.classList.add('active');
+                    sidebarOverlay.classList.add('active');
+                });
+
+                function closeMenu() {
+                    mobileSidebar.classList.remove('active');
+                    sidebarOverlay.classList.remove('active');
+                }
+
+                if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+                sidebarOverlay.addEventListener('click', closeMenu);
+            }
+
+            // 2. Mobile Services Dropdown Toggle Logic
+            const servicesDropdownBtn = document.getElementById('servicesDropdownBtn');
+            const servicesSubMenu = document.getElementById('servicesSubMenu');
+
+            if (servicesDropdownBtn && servicesSubMenu) {
+                servicesDropdownBtn.addEventListener('click', (e) => {
+                    e.preventDefault(); // Page ko upar scroll hone se rokne ke liye
+                    servicesSubMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    <!-- hero java -->
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const stageTabs = document.querySelectorAll(".ecom-stage-tab");
+    const badge = document.getElementById("ecomFunnelBadge");
+    const title = document.getElementById("ecomStageTitle");
+    const desc = document.getElementById("ecomStageDesc");
+    const m1 = document.getElementById("ecomM1");
+    const m2 = document.getElementById("ecomM2");
+    const nextEl = document.getElementById("ecomStageNext");
+
+    const stages = {
+        tofu: {
+            badge: "STAGE 01 • ACQUIRE",
+            title: "Cold Audience Discovery & Creative Testing",
+            desc: "Hook new shoppers in the first 3 seconds with native UGC, problem-solution demos, and structured creative testing.",
+            m1: "Thumbstop & CTR",
+            m2: "UGC & Ad Angles",
+            next: "<strong>Next Step:</strong> Move engaged viewers into objection-crushing retargeting."
+        },
+        mofu: {
+            badge: "STAGE 02 • CONSIDER",
+            title: "Social Proof, Offers & Cart Consideration",
+            desc: "Address product doubts with comparison visuals, customer proof, bundle offers, and high-intent product page clarity.",
+            m1: "Add-to-Cart Rate",
+            m2: "Proof & Bundles",
+            next: "<strong>Next Step:</strong> Convert high-intent visitors and recover abandoned checkouts."
+        },
+        bofu: {
+            badge: "STAGE 03 • CONVERT & LTV",
+            title: "Checkout Conversion & Repeat Retention",
+            desc: "Recover abandoned carts via email/SMS & retargeting, and drive repeat orders through post-purchase drops and loyalty loops.",
+            m1: "ROAS & Repeat Rate",
+            m2: "Flows & AOV Lift",
+            next: "<strong>Next Step:</strong> Reinvest profitable margin into winning top-of-funnel winners."
+        }
+    };
+
+    stageTabs.forEach(tab => {
+        tab.addEventListener("click", function() {
+            stageTabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+
+            const key = this.getAttribute("data-stage");
+            const s = stages[key];
+            if (!s) return;
+
+            if (badge) badge.textContent = s.badge;
+            if (title) title.textContent = s.title;
+            if (desc) desc.textContent = s.desc;
+            if (m1) m1.textContent = s.m1;
+            if (m2) m2.textContent = s.m2;
+            if (nextEl) nextEl.innerHTML = s.next;
+        });
+    });
+});
+</script>
+</body>
+</html>
