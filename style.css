@@ -8663,3 +8663,196 @@ border-radius: 20px;
         padding: 22px 18px;
     }
 }
+/* ==========================================================
+   VIDEO EDITING - PRODUCTION & EDITING WORKFLOW (4 STEPS)
+   ========================================================== */
+.ve-workflow-section {
+    position: relative;
+    padding: 100px 24px;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    color: #0f172a;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.ve-workflow-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ve-workflow-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 60px auto;
+}
+
+.ve-workflow-pill {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    color: #2563eb;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.06);
+}
+
+.ve-workflow-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    margin: 0 0 12px 0;
+}
+
+.ve-workflow-blue {
+    color: #2563eb;
+}
+
+.ve-workflow-header p {
+    font-size: 15.5px;
+    color: #475569;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* 4-Column Grid */
+.ve-workflow-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+/* Horizontal Connector Line Behind Cards */
+.ve-workflow-line {
+    position: absolute;
+    top: 44px;
+    left: 6%;
+    right: 6%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.15) 0%, rgba(37, 99, 235, 0.55) 50%, rgba(37, 99, 235, 0.15) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Individual Workflow Card */
+.ve-workflow-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    padding: 24px 22px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.05);
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.ve-workflow-card:hover {
+    transform: translateY(-6px);
+    border-color: #93c5fd;
+    box-shadow: 0 22px 44px rgba(37, 99, 235, 0.12);
+}
+
+.ve-wf-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.ve-wf-num {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.28);
+}
+
+.ve-wf-tag {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    padding: 4px 10px;
+    border-radius: 50px;
+}
+
+.ve-workflow-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.ve-workflow-card p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+.ve-wf-deliverable {
+    padding-top: 14px;
+    border-top: 1px solid #f1f5f9;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.ve-wf-deliverable span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* Tablet & Mobile Responsive */
+@media (max-width: 1024px) {
+    .ve-workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .ve-workflow-line {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .ve-workflow-section {
+        padding: 75px 18px;
+    }
+    .ve-workflow-header h2 {
+        font-size: 28px;
+    }
+    .ve-workflow-grid {
+        grid-template-columns: 1fr;
+    }
+}
