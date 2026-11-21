@@ -1026,6 +1026,39 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const veFaqItems = document.querySelectorAll(".ve-faq-item");
+
+    veFaqItems.forEach(item => {
+        const trigger = item.querySelector(".ve-faq-trigger");
+        const panel = item.querySelector(".ve-faq-panel");
+        if (!trigger || !panel) return;
+
+        item.classList.remove("active");
+        trigger.setAttribute("aria-expanded", "false");
+        panel.style.maxHeight = null;
+
+        trigger.addEventListener("click", function() {
+            const isOpen = item.classList.contains("active");
+
+            veFaqItems.forEach(other => {
+                other.classList.remove("active");
+                const otherBtn = other.querySelector(".ve-faq-trigger");
+                const otherPanel = other.querySelector(".ve-faq-panel");
+                if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+                if (otherPanel) otherPanel.style.maxHeight = null;
+            });
+
+            if (!isOpen) {
+                item.classList.add("active");
+                trigger.setAttribute("aria-expanded", "true");
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
 
