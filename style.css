@@ -6274,3 +6274,219 @@ border-radius: 20px;
         height: 1px;
     }
 }
+/* ==========================================================
+   AI MARKETING TOOLS - FROSTED GLASS SQUIRCLE GRID
+   ========================================================== */
+.ai-tools-glass-section {
+    position: relative;
+    padding: 95px 24px 105px 24px;
+    background: linear-gradient(180deg, #f5f6f8 0%, #f1f4f9 100%);
+    text-align: center;
+    overflow: hidden;
+}
+
+.ai-tools-header {
+    max-width: 680px;
+    margin: 0 auto 55px auto;
+}
+
+.ai-tools-pill {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #2563eb;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.ai-tools-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    margin: 0 0 12px 0;
+}
+
+.ai-blue-word {
+    color: #2563eb;
+}
+
+.ai-tools-header p {
+    font-size: 15.5px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Squircle Grid Container */
+.ai-squircle-grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 136px);
+    justify-content: center;
+    gap: 22px;
+}
+
+/* Base Frosted Squircle Tile */
+.ai-glass-tile {
+    position: relative;
+    width: 136px;
+    height: 136px;
+    border-radius: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Subtle Empty Recessed Tiles (Reference Style) */
+.ai-glass-tile.empty-tile {
+    background: rgba(255, 255, 255, 0.34);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow:
+        inset 0 2px 6px rgba(15, 23, 42, 0.025),
+        0 4px 12px rgba(15, 23, 42, 0.02);
+    pointer-events: none;
+}
+
+/* Active Milky Frosted Glass Card */
+.ai-glass-tile.active-tile,
+.ai-glass-tile.more-tile {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.72) 100%);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1.5px solid rgba(255, 255, 255, 0.96);
+    box-shadow:
+        0 18px 36px rgba(15, 23, 42, 0.065),
+        0 4px 12px rgba(15, 23, 42, 0.03),
+        inset 0 2px 3px rgba(255, 255, 255, 1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ai-glass-tile.active-tile:hover,
+.ai-glass-tile.more-tile:hover {
+    box-shadow:
+        0 24px 44px rgba(37, 99, 235, 0.13),
+        inset 0 2px 4px rgba(255, 255, 255, 1);
+}
+
+/* Soft Inner Diffused Color Glow Behind Each Icon */
+.tile-ambient-aura {
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--tile-glow, rgba(37, 99, 235, 0.2)) 0%, transparent 72%);
+    filter: blur(10px);
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.tile-svg {
+    position: relative;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    transition: transform 0.3s ease;
+}
+
+.ai-glass-tile.active-tile:hover .tile-svg {
+    transform: scale(1.1);
+}
+
+.tile-label {
+    position: relative;
+    z-index: 2;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #475569;
+    letter-spacing: -0.1px;
+    text-align: center;
+    padding: 0 8px;
+}
+
+/* +20 More Card Typography */
+.ai-glass-tile.more-tile strong {
+    font-size: 26px;
+    font-weight: 800;
+    color: #334155;
+    line-height: 1;
+}
+
+.ai-glass-tile.more-tile span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+/* Staggered Gentle Floating Animations */
+.float-a {
+    animation: squircleFloatA 5.2s ease-in-out infinite;
+}
+
+.float-b {
+    animation: squircleFloatB 6.0s ease-in-out infinite;
+}
+
+.float-c {
+    animation: squircleFloatC 5.6s ease-in-out infinite;
+}
+
+@keyframes squircleFloatA {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-7px); }
+}
+
+@keyframes squircleFloatB {
+    0%, 100% { transform: translateY(-4px); }
+    50% { transform: translateY(5px); }
+}
+
+@keyframes squircleFloatC {
+    0%, 100% { transform: translateY(2px); }
+    50% { transform: translateY(-6px); }
+}
+
+/* Tablet & Mobile Responsive */
+@media (max-width: 860px) {
+    .ai-squircle-grid {
+        grid-template-columns: repeat(3, 120px);
+        gap: 16px;
+    }
+    .ai-glass-tile {
+        width: 120px;
+        height: 120px;
+        border-radius: 28px;
+    }
+    .ai-glass-tile.empty-tile {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .ai-tools-header h2 {
+        font-size: 28px;
+    }
+    .ai-squircle-grid {
+        grid-template-columns: repeat(2, 130px);
+        gap: 14px;
+    }
+    .ai-glass-tile {
+        width: 130px;
+        height: 130px;
+    }
+}
