@@ -160,6 +160,126 @@
             </div>
         </div>
     </div>
+    <!-- === VIDEO SHOWCASE & MOTION REELS SECTION === -->
+<section class="ve-portfolio-section" id="vePortfolioSection">
+    <div class="ve-portfolio-container">
+        <div class="ve-portfolio-header">
+            <span class="ve-section-pill">✦ FEATURED EDITS &amp; MOTION WORK</span>
+            <h2>Built For Attention, <span class="ve-blue-text">Engineered For Retention</span></h2>
+            <p>Hover over any frame to preview the motion flow, or click to watch in full HD with sound design.</p>
+
+            <!-- Category Filter Buttons -->
+            <div class="ve-filter-bar" role="tablist">
+                <button type="button" class="ve-filter-btn active" data-filter="all">All Work</button>
+                <button type="button" class="ve-filter-btn" data-filter="reels">Reels &amp; Shorts</button>
+                <button type="button" class="ve-filter-btn" data-filter="motion">Motion Graphics</button>
+                <button type="button" class="ve-filter-btn" data-filter="youtube">YouTube &amp; Ads</button>
+            </div>
+        </div>
+
+        <!-- Video Cards Grid -->
+        <div class="ve-video-grid">
+            <!-- Video Card 1: Short-Form Reel (9:16 Vertical Look) -->
+            <div class="ve-video-card" data-category="reels" data-video="videos/reel-edit-1.mp4">
+                <div class="ve-video-frame">
+                    <video muted loop playsinline preload="metadata" poster="posters/reel-1.jpg">
+                        <source src="videos/reel-edit-1.mp4" type="video/mp4">
+                    </video>
+                    <span class="ve-card-tag">Reels / TikTok</span>
+                    <div class="ve-card-play-icon">▶</div>
+                </div>
+                <div class="ve-card-info">
+                    <h3>High-Retention Hook &amp; Kinetic Captions</h3>
+                    <p>Fast-paced pacing, sound effects, and dynamic B-roll overlays.</p>
+                </div>
+            </div>
+
+            <!-- Video Card 2: Motion Graphics -->
+            <div class="ve-video-card" data-category="motion" data-video="videos/motion-ui-1.mp4">
+                <div class="ve-video-frame">
+                    <video muted loop playsinline preload="metadata" poster="posters/motion-1.jpg">
+                        <source src="videos/motion-ui-1.mp4" type="video/mp4">
+                    </video>
+                    <span class="ve-card-tag">Motion Graphics</span>
+                    <div class="ve-card-play-icon">▶</div>
+                </div>
+                <div class="ve-card-info">
+                    <h3>SaaS &amp; Product UI Explainer Animation</h3>
+                    <p>Smooth vector transitions, 3D camera tilts, and brand typography.</p>
+                </div>
+            </div>
+
+            <!-- Video Card 3: YouTube & Commercial Ads -->
+            <div class="ve-video-card" data-category="youtube" data-video="videos/ad-commercial-1.mp4">
+                <div class="ve-video-frame">
+                    <video muted loop playsinline preload="metadata" poster="posters/ad-1.jpg">
+                        <source src="videos/ad-commercial-1.mp4" type="video/mp4">
+                    </video>
+                    <span class="ve-card-tag">Performance Ad</span>
+                    <div class="ve-card-play-icon">▶</div>
+                </div>
+                <div class="ve-card-info">
+                    <h3>Direct-Response E-Commerce Video Ad</h3>
+                    <p>3-second visual hook, problem-solution cuts, and bold CTA end-card.</p>
+                </div>
+            </div>
+
+            <!-- Video Card 4: Logo & Brand Motion -->
+            <div class="ve-video-card" data-category="motion" data-video="videos/logo-reveal-1.mp4">
+                <div class="ve-video-frame">
+                    <video muted loop playsinline preload="metadata" poster="posters/logo-1.jpg">
+                        <source src="videos/logo-reveal-1.mp4" type="video/mp4">
+                    </video>
+                    <span class="ve-card-tag">Logo &amp; Title VFX</span>
+                    <div class="ve-card-play-icon">▶</div>
+                </div>
+                <div class="ve-card-info">
+                    <h3>3D Lighting &amp; Cinematic Logo Reveal</h3>
+                    <p>Custom glow shaders, whoosh foley, and crisp 60fps export.</p>
+                </div>
+            </div>
+
+            <!-- Video Card 5: Podcast / Documentary Cut -->
+            <div class="ve-video-card" data-category="youtube" data-video="videos/youtube-doc-1.mp4">
+                <div class="ve-video-frame">
+                    <video muted loop playsinline preload="metadata" poster="posters/doc-1.jpg">
+                        <source src="videos/youtube-doc-1.mp4" type="video/mp4">
+                    </video>
+                    <span class="ve-card-tag">YouTube Storytelling</span>
+                    <div class="ve-card-play-icon">▶</div>
+                </div>
+                <div class="ve-card-info">
+                    <h3>Documentary &amp; Talking-Head Retention Edit</h3>
+                    <p>Animated charts, map zooms, color grading, and clean audio mix.</p>
+                </div>
+            </div>
+
+            <!-- Video Card 6: Viral Short -->
+            <div class="ve-video-card" data-category="reels" data-video="videos/reel-edit-2.mp4">
+                <div class="ve-video-frame">
+                    <video muted loop playsinline preload="metadata" poster="posters/reel-2.jpg">
+                        <source src="videos/reel-edit-2.mp4" type="video/mp4">
+                    </video>
+                    <span class="ve-card-tag">Founder Branding</span>
+                    <div class="ve-card-play-icon">▶</div>
+                </div>
+                <div class="ve-card-info">
+                    <h3>Founder Authority Short-Form Series</h3>
+                    <p>Custom branded subtitles, zoom punch-ins, and retention sound cues.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- === FULLSCREEN VIDEO LIGHTBOX MODAL === -->
+<div class="ve-video-modal" id="veVideoModal" aria-hidden="true">
+    <div class="ve-modal-backdrop" id="veModalBackdrop"></div>
+    <div class="ve-modal-box">
+        <button type="button" class="ve-modal-close" id="veModalClose" aria-label="Close Video">✕</button>
+        <video id="veModalPlayer" controls playsinline></video>
+    </div>
+</div>
     <!-- Dark CTA Section (Let's Build Something Amazing Together) -->
 <section class="cta-dark-section">
     <div class="cta-dark-content">
@@ -307,7 +427,74 @@
             }
         });
     </script>
-   
+   <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll(".ve-video-card");
+    const filterBtns = document.querySelectorAll(".ve-filter-btn");
+    const showreelCard = document.getElementById("veShowreelCard");
+
+    const modal = document.getElementById("veVideoModal");
+    const modalPlayer = document.getElementById("veModalPlayer");
+    const modalClose = document.getElementById("veModalClose");
+    const modalBackdrop = document.getElementById("veModalBackdrop");
+
+    function openVideoModal(src) {
+        if (!modal || !modalPlayer || !src) return;
+        modalPlayer.src = src;
+        modal.classList.add("open");
+        modalPlayer.play().catch(() => {});
+    }
+
+    function closeVideoModal() {
+        if (!modal || !modalPlayer) return;
+        modalPlayer.pause();
+        modalPlayer.removeAttribute("src");
+        modalPlayer.load();
+        modal.classList.remove("open");
+    }
+
+    if (showreelCard) {
+        showreelCard.addEventListener("click", function() {
+            openVideoModal(this.getAttribute("data-video"));
+        });
+    }
+
+    cards.forEach(card => {
+        const vid = card.querySelector("video");
+        card.addEventListener("mouseenter", () => {
+            if (vid) vid.play().catch(() => {});
+        });
+        card.addEventListener("mouseleave", () => {
+            if (vid) {
+                vid.pause();
+                vid.currentTime = 0;
+            }
+        });
+        card.addEventListener("click", () => {
+            openVideoModal(card.getAttribute("data-video"));
+        });
+    });
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener("click", function() {
+            filterBtns.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            const filter = this.getAttribute("data-filter");
+
+            cards.forEach(card => {
+                const cat = card.getAttribute("data-category");
+                card.classList.toggle("is-hidden", filter !== "all" && cat !== filter);
+            });
+        });
+    });
+
+    if (modalClose) modalClose.addEventListener("click", closeVideoModal);
+    if (modalBackdrop) modalBackdrop.addEventListener("click", closeVideoModal);
+    document.addEventListener("keydown", e => {
+        if (e.key === "Escape") closeVideoModal();
+    });
+});
+</script>
 </body>
 </html>
 
