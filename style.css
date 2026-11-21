@@ -10725,3 +10725,306 @@ border-radius: 20px;
         padding: 26px 20px;
     }
 }
+/* ==========================================================
+   SOCIAL MEDIA MARKETING - FAQS + FINAL CTA BANNER
+   ========================================================== */
+.smm-faq-cta-section {
+    position: relative;
+    padding: 105px 24px 110px 24px;
+    background:
+        radial-gradient(circle at 50% 12%, rgba(37, 99, 235, 0.18) 0%, transparent 48%),
+        #060b16;
+    color: #ffffff;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+.smm-faq-container {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Left-Aligned Header */
+.smm-faq-top-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 720px;
+    margin: 0 0 36px 0;
+}
+
+.smm-faq-pill {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    white-space: nowrap;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.32);
+    color: #38bdf8;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+}
+
+.smm-faq-top-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    margin: 0 0 10px 0;
+}
+
+.smm-faq-blue {
+    color: #3b82f6;
+}
+
+.smm-faq-top-header p {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Accordion List */
+.smm-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 70px;
+}
+
+.smm-faq-item {
+    background: rgba(15, 23, 42, 0.74);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.smm-faq-item.active {
+    border-color: rgba(59, 130, 246, 0.55);
+    background: rgba(15, 23, 42, 0.94);
+}
+
+.smm-faq-trigger {
+    width: 100%;
+    padding: 20px 24px;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.smm-faq-trigger > span:first-child {
+    flex: 1 1 auto;
+    text-align: left;
+}
+
+.smm-faq-icon {
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.16);
+    color: #60a5fa;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.28s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.smm-faq-item.active .smm-faq-icon {
+    transform: rotate(45deg);
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.smm-faq-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.32s ease;
+}
+
+.smm-faq-panel p {
+    padding: 0 24px 20px 24px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #cbd5e1;
+    text-align: left;
+}
+
+/* Final CTA Banner */
+.smm-final-cta-banner {
+    position: relative;
+    background: linear-gradient(135deg, rgba(23, 37, 84, 0.92) 0%, rgba(15, 23, 42, 0.96) 65%, rgba(30, 58, 138, 0.88) 100%);
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    border-radius: 28px;
+    padding: 44px 38px;
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.smm-final-cta-glow {
+    position: absolute;
+    top: -90px;
+    right: -70px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.28) 0%, transparent 70%);
+    filter: blur(25px);
+    pointer-events: none;
+}
+
+.smm-final-cta-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.smm-final-cta-text {
+    max-width: 560px;
+    text-align: left;
+}
+
+.smm-cta-mini-badge {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: #7dd3fc;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+}
+
+.smm-final-cta-text h3 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.22;
+    letter-spacing: -0.6px;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.smm-cta-highlight {
+    color: #60a5fa;
+}
+
+.smm-final-cta-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.smm-final-cta-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.smm-cta-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 14px 26px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.45);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.smm-cta-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(56, 189, 248, 0.55);
+}
+
+.smm-cta-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e2e8f0;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.22s ease, border-color 0.22s ease;
+}
+
+.smm-cta-btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #60a5fa;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+    .smm-final-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .smm-final-cta-actions {
+        width: 100%;
+    }
+    .smm-cta-btn-primary,
+    .smm-cta-btn-ghost {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .smm-faq-cta-section {
+        padding: 75px 18px 85px 18px;
+    }
+    .smm-faq-top-header h2 {
+        font-size: 28px;
+    }
+    .smm-faq-trigger {
+        font-size: 14.5px;
+        padding: 18px;
+    }
+    .smm-final-cta-banner {
+        padding: 30px 22px;
+        border-radius: 22px;
+    }
+    .smm-final-cta-text h3 {
+        font-size: 22px;
+    }
+}
