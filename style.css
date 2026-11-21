@@ -8856,3 +8856,294 @@ border-radius: 20px;
         grid-template-columns: 1fr;
     }
 }
+/* ==========================================================
+   VIDEO EDITING - MONTHLY RETAINERS VS. PER-PROJECT PACKAGES
+   ========================================================== */
+.ve-packages-section {
+    position: relative;
+    padding: 105px 24px;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+        #060b16;
+    color: #ffffff;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.ve-packages-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ve-packages-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 52px auto;
+}
+
+.ve-packages-pill {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.32);
+    color: #38bdf8;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.ve-packages-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    margin: 0 0 12px 0;
+}
+
+.ve-packages-blue {
+    color: #3b82f6;
+}
+
+.ve-packages-header p {
+    font-size: 15.5px;
+    color: #94a3b8;
+    line-height: 1.65;
+    margin: 0 0 28px 0;
+}
+
+/* Switcher Tabs */
+.ve-pkg-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 6px;
+    border-radius: 50px;
+}
+
+.ve-pkg-tab {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 13.5px;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.24s ease;
+}
+
+.ve-pkg-tab:hover {
+    color: #ffffff;
+}
+
+.ve-pkg-tab.active {
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.38);
+}
+
+/* Groups */
+.ve-pkg-group {
+    display: none;
+}
+
+.ve-pkg-group.is-active {
+    display: block;
+}
+
+/* 3-Card Grid */
+.ve-pkg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+    gap: 24px;
+}
+
+/* Card */
+.ve-pkg-card {
+    position: relative;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 26px;
+    padding: 30px 26px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.ve-pkg-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 26px 55px rgba(37, 99, 235, 0.18);
+}
+
+/* Featured Middle Card */
+.ve-pkg-card.is-featured {
+    background: linear-gradient(165deg, rgba(23, 37, 84, 0.92) 0%, rgba(15, 23, 42, 0.96) 65%, rgba(30, 58, 138, 0.88) 100%);
+    border: 2px solid #3b82f6;
+    box-shadow: 0 26px 58px rgba(37, 99, 235, 0.28);
+}
+
+.ve-pkg-ribbon {
+    position: absolute;
+    top: -13px;
+    right: 24px;
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    padding: 5px 14px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+}
+
+.ve-pkg-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #60a5fa;
+    margin-bottom: 8px;
+}
+
+.ve-pkg-card h3 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    line-height: 1.25;
+}
+
+.ve-pkg-sub {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #94a3b8;
+    margin: 0 0 18px 0;
+}
+
+.ve-pkg-scope {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    font-size: 12.5px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.ve-pkg-card.is-featured .ve-pkg-scope {
+    background: rgba(59, 130, 246, 0.18);
+    border-color: rgba(96, 165, 250, 0.35);
+}
+
+.ve-pkg-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 26px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    flex-grow: 1;
+}
+
+.ve-pkg-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: #cbd5e1;
+}
+
+.ve-pkg-list li span {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    font-size: 11px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+}
+
+.ve-pkg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.ve-pkg-btn-outline {
+    background: rgba(59, 130, 246, 0.12);
+    color: #93c5fd;
+    border: 1px solid rgba(96, 165, 250, 0.35);
+}
+
+.ve-pkg-btn-outline:hover {
+    background: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.ve-pkg-btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.42);
+}
+
+.ve-pkg-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(56, 189, 248, 0.52);
+}
+
+.ve-pkg-footnote {
+    text-align: center;
+    font-size: 12.5px;
+    color: #64748b;
+    margin: 32px auto 0 auto;
+    max-width: 740px;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    .ve-pkg-grid {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .ve-packages-section {
+        padding: 75px 18px;
+    }
+    .ve-packages-header h2 {
+        font-size: 28px;
+    }
+    .ve-pkg-card {
+        padding: 24px 20px;
+    }
+}
