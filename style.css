@@ -7426,14 +7426,27 @@ border-radius: 20px;
     z-index: 2;
 }
 
-.ai-faq-header {
-    text-align: center;
-    max-width: 680px;
-    margin: 0 auto 50px auto;
+/* Section Top Header (Left Aligned With FAQ Boxes) */
+.ai-faq-container > .ai-faq-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 0 36px 0;
+    background: transparent;
+    border: none;
+    cursor: default;
 }
 
 .ai-faq-pill {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    white-space: nowrap;
     background: rgba(56, 189, 248, 0.12);
     border: 1px solid rgba(56, 189, 248, 0.32);
     color: #38bdf8;
@@ -7442,27 +7455,30 @@ border-radius: 20px;
     letter-spacing: 1.4px;
     padding: 6px 16px;
     border-radius: 50px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
-.ai-faq-header h2 {
+.ai-faq-container > .ai-faq-header h2 {
     font-size: 36px;
     font-weight: 800;
     color: #ffffff;
     line-height: 1.2;
     letter-spacing: -0.8px;
-    margin: 0 0 12px 0;
+    margin: 0 0 10px 0;
+    text-align: left;
 }
 
 .ai-faq-blue {
     color: #3b82f6;
 }
 
-.ai-faq-header p {
-    font-size: 15.5px;
+.ai-faq-container > .ai-faq-header p {
+    font-size: 15px;
     color: #94a3b8;
     line-height: 1.65;
     margin: 0;
+    max-width: 680px;
+    text-align: left;
 }
 
 /* Accordion Items */
@@ -7486,7 +7502,7 @@ border-radius: 20px;
     background: rgba(15, 23, 42, 0.92);
 }
 
-.ai-faq-header {
+.ai-faq-item .ai-faq-header {
     width: 100%;
     padding: 20px 24px;
     margin: 0;
@@ -7497,21 +7513,30 @@ border-radius: 20px;
     font-weight: 700;
     text-align: left;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
     cursor: pointer;
 }
 
+.ai-faq-item .ai-faq-header > span:first-child {
+    flex: 1 1 auto;
+    text-align: left;
+}
+
 .ai-faq-icon {
-    flex: 0 0 28px;
-    width: 28px;
-    height: 28px;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
     border-radius: 50%;
     background: rgba(59, 130, 246, 0.16);
     color: #60a5fa;
     font-size: 18px;
     font-weight: 700;
+    line-height: 1;
+    padding: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
