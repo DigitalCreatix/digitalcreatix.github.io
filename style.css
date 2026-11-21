@@ -7405,3 +7405,289 @@ border-radius: 20px;
         padding: 26px 20px;
     }
 }
+/* ==========================================================
+   AI MARKETING - FAQS ACCORDION + FINAL CTA BANNER
+   ========================================================== */
+.ai-faq-cta-section {
+    position: relative;
+    padding: 105px 24px 110px 24px;
+    background:
+        radial-gradient(circle at 50% 12%, rgba(37, 99, 235, 0.18) 0%, transparent 48%),
+        #060b16;
+    color: #ffffff;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.ai-faq-container {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.ai-faq-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 50px auto;
+}
+
+.ai-faq-pill {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.32);
+    color: #38bdf8;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.ai-faq-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    margin: 0 0 12px 0;
+}
+
+.ai-faq-blue {
+    color: #3b82f6;
+}
+
+.ai-faq-header p {
+    font-size: 15.5px;
+    color: #94a3b8;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Accordion Items */
+.ai-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 72px;
+}
+
+.ai-faq-item {
+    background: rgba(15, 23, 42, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.ai-faq-item.active {
+    border-color: rgba(59, 130, 246, 0.55);
+    background: rgba(15, 23, 42, 0.92);
+}
+
+.ai-faq-header {
+    width: 100%;
+    padding: 20px 24px;
+    margin: 0;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+}
+
+.ai-faq-icon {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.16);
+    color: #60a5fa;
+    font-size: 18px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.28s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.ai-faq-item.active .ai-faq-icon {
+    transform: rotate(45deg);
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.ai-faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.32s ease;
+}
+
+.ai-faq-content p {
+    padding: 0 24px 20px 24px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #cbd5e1;
+    text-align: left;
+}
+
+/* Final CTA Banner */
+.ai-final-cta-banner {
+    position: relative;
+    background: linear-gradient(135deg, rgba(23, 37, 84, 0.92) 0%, rgba(15, 23, 42, 0.96) 65%, rgba(30, 58, 138, 0.88) 100%);
+    border: 1px solid rgba(96, 165, 250, 0.35);
+    border-radius: 28px;
+    padding: 44px 38px;
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+.ai-final-cta-glow {
+    position: absolute;
+    top: -90px;
+    right: -70px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.28) 0%, transparent 70%);
+    filter: blur(25px);
+    pointer-events: none;
+}
+
+.ai-final-cta-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.ai-final-cta-text {
+    max-width: 560px;
+    text-align: left;
+}
+
+.ai-cta-mini-badge {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: #7dd3fc;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+}
+
+.ai-final-cta-text h3 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.22;
+    letter-spacing: -0.6px;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.ai-cta-highlight {
+    color: #60a5fa;
+}
+
+.ai-final-cta-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0;
+}
+
+.ai-final-cta-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.ai-cta-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 14px 26px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.45);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.ai-cta-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(56, 189, 248, 0.55);
+}
+
+.ai-cta-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e2e8f0;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.22s ease, border-color 0.22s ease;
+}
+
+.ai-cta-btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #60a5fa;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+    .ai-final-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .ai-final-cta-actions {
+        width: 100%;
+    }
+    .ai-cta-btn-primary,
+    .ai-cta-btn-ghost {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .ai-faq-cta-section {
+        padding: 75px 18px 85px 18px;
+    }
+    .ai-faq-header h2 {
+        font-size: 28px;
+    }
+    .ai-faq-header {
+        font-size: 14.5px;
+        padding: 18px;
+    }
+    .ai-final-cta-banner {
+        padding: 30px 22px;
+        border-radius: 22px;
+    }
+    .ai-final-cta-text h3 {
+        font-size: 22px;
+    }
+}
