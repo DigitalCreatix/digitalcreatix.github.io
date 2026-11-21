@@ -7716,3 +7716,10 @@ border-radius: 20px;
         font-size: 22px;
     }
 }
+#aiFaqCtaSection {
+    margin-bottom: 0 !important;
+}
+
+.cta-dark-section {
+    margin-top: 0 !important;
+}
