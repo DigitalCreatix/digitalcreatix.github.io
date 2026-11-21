@@ -923,6 +923,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const pkgTabs = document.querySelectorAll(".ve-pkg-tab");
+    const retainerGroup = document.getElementById("veRetainerGroup");
+    const projectGroup = document.getElementById("veProjectGroup");
+
+    pkgTabs.forEach(tab => {
+        tab.addEventListener("click", function() {
+            pkgTabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+
+            const mode = this.getAttribute("data-pkg-mode");
+            if (retainerGroup) retainerGroup.classList.toggle("is-active", mode === "retainer");
+            if (projectGroup) projectGroup.classList.toggle("is-active", mode === "project");
+        });
+    });
+});
+</script>
 </body>
 </html>
 
