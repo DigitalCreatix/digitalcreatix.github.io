@@ -900,5 +900,38 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const smmFaqItems = document.querySelectorAll(".smm-faq-item");
+
+    smmFaqItems.forEach(item => {
+        const trigger = item.querySelector(".smm-faq-trigger");
+        const panel = item.querySelector(".smm-faq-panel");
+        if (!trigger || !panel) return;
+
+        item.classList.remove("active");
+        trigger.setAttribute("aria-expanded", "false");
+        panel.style.maxHeight = null;
+
+        trigger.addEventListener("click", function() {
+            const isOpen = item.classList.contains("active");
+
+            smmFaqItems.forEach(other => {
+                other.classList.remove("active");
+                const otherBtn = other.querySelector(".smm-faq-trigger");
+                const otherPanel = other.querySelector(".smm-faq-panel");
+                if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+                if (otherPanel) otherPanel.style.maxHeight = null;
+            });
+
+            if (!isOpen) {
+                item.classList.add("active");
+                trigger.setAttribute("aria-expanded", "true");
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
