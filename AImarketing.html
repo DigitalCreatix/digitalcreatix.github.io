@@ -963,6 +963,39 @@ document.addEventListener("DOMContentLoaded", function() {
     // Har 1 second (1000 milliseconds) baad function chalega
     setInterval(autoRotateAccordion, 1000);
 </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const aiFaqItems = document.querySelectorAll(".ai-faq-item");
+
+    aiFaqItems.forEach(item => {
+        const header = item.querySelector(".ai-faq-header");
+        const content = item.querySelector(".ai-faq-content");
+        if (!header || !content) return;
+
+        item.classList.remove("active");
+        header.setAttribute("aria-expanded", "false");
+        content.style.maxHeight = null;
+
+        header.addEventListener("click", function() {
+            const isOpen = item.classList.contains("active");
+
+            aiFaqItems.forEach(other => {
+                other.classList.remove("active");
+                const otherBtn = other.querySelector(".ai-faq-header");
+                const otherContent = other.querySelector(".ai-faq-content");
+                if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+                if (otherContent) otherContent.style.maxHeight = null;
+            });
+
+            if (!isOpen) {
+                item.classList.add("active");
+                header.setAttribute("aria-expanded", "true");
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
 
