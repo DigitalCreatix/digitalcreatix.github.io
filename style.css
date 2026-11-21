@@ -10262,3 +10262,198 @@ border-radius: 20px;
         font-size: 22px;
     }
 }
+/* ==========================================================
+   SOCIAL MEDIA MARKETING - MONTHLY EXECUTION WORKFLOW (4 STEPS)
+   ========================================================== */
+.smm-workflow-section {
+    position: relative;
+    padding: 105px 24px;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 82% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+        #070c18;
+    color: #ffffff;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.smm-workflow-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.smm-workflow-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 60px auto;
+}
+
+.smm-workflow-pill {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.32);
+    color: #38bdf8;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.smm-workflow-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    margin: 0 0 12px 0;
+}
+
+.smm-workflow-blue {
+    color: #3b82f6;
+}
+
+.smm-workflow-header p {
+    font-size: 15.5px;
+    color: #94a3b8;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* 4-Column Grid */
+.smm-workflow-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+/* Horizontal Connector Line Behind Cards */
+.smm-workflow-line {
+    position: absolute;
+    top: 44px;
+    left: 6%;
+    right: 6%;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.15) 0%, rgba(56, 189, 248, 0.55) 50%, rgba(37, 99, 235, 0.15) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Individual Frosted Dark Workflow Card */
+.smm-workflow-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(15, 23, 42, 0.76);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 22px;
+    padding: 24px 22px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.smm-workflow-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(59, 130, 246, 0.55);
+    box-shadow: 0 26px 54px rgba(37, 99, 235, 0.18);
+}
+
+.smm-wf-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.smm-wf-num {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.32);
+}
+
+.smm-wf-tag {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #7dd3fc;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.28);
+    padding: 4px 10px;
+    border-radius: 50px;
+}
+
+.smm-workflow-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.smm-workflow-card p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+.smm-wf-deliverable {
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 12px;
+    font-weight: 700;
+    color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.smm-wf-deliverable span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.22);
+    color: #60a5fa;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* Tablet & Mobile Responsive */
+@media (max-width: 1024px) {
+    .smm-workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .smm-workflow-line {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .smm-workflow-section {
+        padding: 75px 18px;
+    }
+    .smm-workflow-header h2 {
+        font-size: 28px;
+    }
+    .smm-workflow-grid {
+        grid-template-columns: 1fr;
+    }
+}
