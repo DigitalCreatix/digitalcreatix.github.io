@@ -580,5 +580,105 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const platformTabs = document.querySelectorAll(".smm-platform-tab");
+    const pbCard = document.getElementById("smmPlaybookCard");
+    const pbBadge = document.getElementById("smmPbBadge");
+    const pbTitle = document.getElementById("smmPbTitle");
+    const pbDesc = document.getElementById("smmPbDesc");
+    const pbList = document.getElementById("smmPbList");
+    const pbCta = document.getElementById("smmPbCta");
+    const bpGoal = document.getElementById("smmBpGoal");
+    const bpFormats = document.getElementById("smmBpFormats");
+    const bpCadence = document.getElementById("smmBpCadence");
+    const bpTrigger = document.getElementById("smmBpTrigger");
+
+    const platformData = {
+        meta: {
+            badge: "META ECOSYSTEM • VISUAL & SOCIAL PROOF",
+            title: "Instagram & Facebook Growth System",
+            desc: "We combine high-retention Reels for cold discovery with save-worthy carousels, interactive Stories, and Meta ad creatives that turn warm followers into buyers.",
+            bullets: [
+                "<strong>Reels Retention:</strong> Fast 3-second visual hooks, kinetic captions, and crisp pacing for reach.",
+                "<strong>Carousel Saves &amp; Shares:</strong> Step-by-step educational breakdowns designed to get bookmarked.",
+                "<strong>Stories Engagement:</strong> Daily polls, behind-the-scenes proof, and reply triggers that warm up leads.",
+                "<strong>Meta Ad Creatives:</strong> Scroll-stopping ad variations built for cold testing and retargeting."
+            ],
+            ctaText: "Launch Instagram & Facebook Plan →",
+            ctaHref: "contact.html?service=social-media-marketing&platform=meta",
+            goal: "Discovery + Warm DM & Ad Conversions",
+            formats: "Reels, Carousels, Stories & Ad Cuts",
+            cadence: "4–5 Feed Posts/Wk + Daily Stories",
+            trigger: "DM Keyword Automations & Bio/Ad Links"
+        },
+        shorts: {
+            badge: "SHORT-FORM VELOCITY • ALGORITHMIC REACH",
+            title: "TikTok & YouTube Shorts Engine",
+            desc: "Built for rapid attention capture—pairing native, relatable storytelling with fast visual hooks, trend adaptation, and high-frequency creative testing.",
+            bullets: [
+                "<strong>Fast Hooks:</strong> Immediate visual &amp; spoken pattern interrupts in the first 2–3 seconds.",
+                "<strong>Trend Adaptation:</strong> Timely audio, format twists, and niche-relevant hooks without losing brand trust.",
+                "<strong>Raw / Native Feel:</strong> Authentic pacing that blends into the feed rather than looking like a stiff ad.",
+                "<strong>High-Frequency Testing:</strong> Multiple hook openings tested to double down on top-retaining winners."
+            ],
+            ctaText: "Scale TikTok & Shorts →",
+            ctaHref: "contact.html?service=social-media-marketing&platform=shorts",
+            goal: "Explosive Top-of-Funnel Views & Subscribers",
+            formats: "9:16 Vertical Shorts, Hook Variants & Series",
+            cadence: "4–7 Vertical Videos Per Week",
+            trigger: "Pinned Comments, Profile Funnel & Channel Links"
+        },
+        linkedin: {
+            badge: "B2B AUTHORITY • FOUNDER & EXECUTIVE BRANDING",
+            title: "LinkedIn Authority & Inbound Pipeline",
+            desc: "Position founders and decision-makers as trusted industry voices with sharp POV posts, visual document carousels, and conversation-driven inbound outreach.",
+            bullets: [
+                "<strong>Founder Branding:</strong> Authentic insights, lessons, and case breakdowns written in your real voice.",
+                "<strong>B2B Authority Posts:</strong> Clear frameworks and proof-backed stories that attract qualified buyers.",
+                "<strong>Document Carousels:</strong> Clean, swipeable PDF/slide breakdowns built for high dwell time and shares.",
+                "<strong>Inbound Conversation Starters:</strong> Strategic CTAs and profile positioning that spark real DMs."
+            ],
+            ctaText: "Build LinkedIn Authority →",
+            ctaHref: "contact.html?service=social-media-marketing&platform=linkedin",
+            goal: "High-Ticket B2B Trust & Qualified Inbound DMs",
+            formats: "Founder POV Posts, Slide Carousels & Short Clips",
+            cadence: "3–5 Authority Posts Per Week",
+            trigger: "Profile Banner Funnel, Lead Magnets & Direct DMs"
+        }
+    };
+
+    platformTabs.forEach(tab => {
+        tab.addEventListener("click", function() {
+            platformTabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+
+            const key = this.getAttribute("data-platform");
+            const d = platformData[key];
+            if (!d || !pbCard) return;
+
+            pbCard.classList.add("is-switching");
+            setTimeout(() => {
+                if (pbBadge) pbBadge.textContent = d.badge;
+                if (pbTitle) pbTitle.textContent = d.title;
+                if (pbDesc) pbDesc.textContent = d.desc;
+                if (pbList) {
+                    pbList.innerHTML = d.bullets.map(b => `<li><span>✓</span><div>${b}</div></li>`).join("");
+                }
+                if (pbCta) {
+                    pbCta.textContent = d.ctaText;
+                    pbCta.setAttribute("href", d.ctaHref);
+                }
+                if (bpGoal) bpGoal.textContent = d.goal;
+                if (bpFormats) bpFormats.textContent = d.formats;
+                if (bpCadence) bpCadence.textContent = d.cadence;
+                if (bpTrigger) bpTrigger.textContent = d.trigger;
+
+                pbCard.classList.remove("is-switching");
+            }, 160);
+        });
+    });
+});
+</script>
 </body>
 </html>
