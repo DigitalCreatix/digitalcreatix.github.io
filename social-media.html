@@ -160,7 +160,93 @@
             </div>
         </div>
     </div>
+<!-- === SOCIAL MEDIA MARKETING - LIGHT THEME HERO SECTION === -->
+<section class="smm-hero-section" id="smmHeroSection">
+    <div class="smm-hero-container">
+        <!-- Left Column -->
+        <div class="smm-hero-left">
+            <span class="smm-hero-pill">✦ ORGANIC + PAID SOCIAL GROWTH ENGINE</span>
+            <h1>Turn Social Media Into <span class="smm-blue-gradient">Brand Authority</span> &amp; Inbound Leads.</h1>
+            <p>We go beyond random posting—combining content strategy, high-retention reels &amp; visuals, persuasive copy, and lead-focused distribution that builds trust and drives revenue.</p>
 
+            <div class="smm-hero-actions">
+                <a href="contact.html?service=social-media-marketing" class="smm-primary-btn">Book Strategy Call →</a>
+                <a href="#smmPillarsSection" class="smm-secondary-btn">Explore Growth Pillars</a>
+            </div>
+
+            <div class="smm-hero-trust-row">
+                <div class="smm-trust-box">
+                    <strong>Strategy + Creative</strong>
+                    <span>Calendar, Hooks, Reels &amp; Visuals</span>
+                </div>
+                <div class="smm-trust-sep"></div>
+                <div class="smm-trust-box">
+                    <strong>Organic + Paid</strong>
+                    <span>Reach, Engagement &amp; Ad Testing</span>
+                </div>
+                <div class="smm-trust-sep"></div>
+                <div class="smm-trust-box">
+                    <strong>Lead-Focused</strong>
+                    <span>Clear CTAs &amp; DM-to-Lead Flow</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Interactive Growth Snapshot Card -->
+        <div class="smm-hero-right">
+            <div class="smm-snapshot-card" id="smmSnapshotCard">
+                <div class="smm-snap-top">
+                    <div>
+                        <span class="smm-snap-eyebrow">● LIVE CAMPAIGN SNAPSHOT</span>
+                        <h3>Structured Social Growth System</h3>
+                    </div>
+                    <span class="smm-snap-status">MONTHLY CADENCE</span>
+                </div>
+
+                <!-- Interactive Snapshot Switcher -->
+                <div class="smm-snap-tabs" role="tablist">
+                    <button type="button" class="smm-snap-tab active" data-snap="organic">Organic Reach</button>
+                    <button type="button" class="smm-snap-tab" data-snap="reels">Reels &amp; Carousels</button>
+                    <button type="button" class="smm-snap-tab" data-snap="funnel">Paid + DM Funnel</button>
+                </div>
+
+                <!-- Dynamic Snapshot Body -->
+                <div class="smm-snap-body" id="smmSnapBody">
+                    <div class="smm-metrics-2x2">
+                        <div class="smm-stat-tile">
+                            <span class="smm-stat-label">3s Hook Rate</span>
+                            <strong class="smm-stat-val" id="smmMetric1">38%–46%</strong>
+                            <small id="smmSub1">Strong opening visual &amp; script</small>
+                        </div>
+                        <div class="smm-stat-tile">
+                            <span class="smm-stat-label">Saves &amp; Shares</span>
+                            <strong class="smm-stat-val" id="smmMetric2">2.4x Lift</strong>
+                            <small id="smmSub2">Educational &amp; authority formats</small>
+                        </div>
+                        <div class="smm-stat-tile">
+                            <span class="smm-stat-label">DM-to-Lead Flow</span>
+                            <strong class="smm-stat-val" id="smmMetric3">Direct CTA</strong>
+                            <small id="smmSub3">Keyword triggers &amp; profile funnel</small>
+                        </div>
+                        <div class="smm-stat-tile">
+                            <span class="smm-stat-label">Content Cadence</span>
+                            <strong class="smm-stat-val" id="smmMetric4">20–28 Posts</strong>
+                            <small id="smmSub4">Planned monthly batch &amp; schedule</small>
+                        </div>
+                    </div>
+
+                    <div class="smm-feed-preview">
+                        <div class="smm-feed-row">
+                            <span class="smm-feed-dot"></span>
+                            <span id="smmFeedText"><strong>Active Pillar:</strong> Founder POV + Authority Carousel + Story Funnel</span>
+                        </div>
+                        <span class="smm-feed-chip" id="smmFeedChip">Weekly Review</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Dark CTA Section (Let's Build Something Amazing Together) -->
 <section class="cta-dark-section">
     <div class="cta-dark-content">
@@ -288,6 +374,70 @@
             }
         });
     </script>
-  
+    <!-- Hero java -->
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const snapTabs = document.querySelectorAll(".smm-snap-tab");
+    const m1 = document.getElementById("smmMetric1");
+    const m2 = document.getElementById("smmMetric2");
+    const m3 = document.getElementById("smmMetric3");
+    const m4 = document.getElementById("smmMetric4");
+    const s1 = document.getElementById("smmSub1");
+    const s2 = document.getElementById("smmSub2");
+    const s3 = document.getElementById("smmSub3");
+    const s4 = document.getElementById("smmSub4");
+    const feedText = document.getElementById("smmFeedText");
+    const feedChip = document.getElementById("smmFeedChip");
+
+    const snapData = {
+        organic: {
+            m1: "38%–46%", s1: "Strong opening visual & script",
+            m2: "2.4x Lift", s2: "Educational & authority formats",
+            m3: "Direct CTA", s3: "Keyword triggers & profile funnel",
+            m4: "20–28 Posts", s4: "Planned monthly batch & schedule",
+            feed: "<strong>Active Pillar:</strong> Founder POV + Authority Carousel + Story Funnel",
+            chip: "Weekly Review"
+        },
+        reels: {
+            m1: "3.0s Hook", s1: "Fast visual pattern interrupt",
+            m2: "High Save %", s2: "Actionable checklists & tips",
+            m3: "Bio & Link", s3: "Clear next-step call to action",
+            m4: "12–20 Clips", s4: "Reels, Shorts & vertical cuts/mo",
+            feed: "<strong>Active Format:</strong> Retention Reels + Kinetic Captions + SFX Mix",
+            chip: "48–72h Batch"
+        },
+        funnel: {
+            m1: "A/B Creatives", s1: "Hook & angle testing variants",
+            m2: "Warm Retarget", s2: "Re-engaging engaged viewers",
+            m3: "Lead / DM", s3: "Frictionless inquiry capture",
+            m4: "Weekly Tune", s4: "Creative & audience iteration",
+            feed: "<strong>Active Funnel:</strong> Paid Ad Creatives + Retargeting + Lead Capture",
+            chip: "ROI Tracked"
+        }
+    };
+
+    snapTabs.forEach(tab => {
+        tab.addEventListener("click", function() {
+            snapTabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+
+            const key = this.getAttribute("data-snap");
+            const d = snapData[key];
+            if (!d) return;
+
+            if (m1) m1.textContent = d.m1;
+            if (m2) m2.textContent = d.m2;
+            if (m3) m3.textContent = d.m3;
+            if (m4) m4.textContent = d.m4;
+            if (s1) s1.textContent = d.s1;
+            if (s2) s2.textContent = d.s2;
+            if (s3) s3.textContent = d.s3;
+            if (s4) s4.textContent = d.s4;
+            if (feedText) feedText.innerHTML = d.feed;
+            if (feedChip) feedChip.textContent = d.chip;
+        });
+    });
+});
+</script>
 </body>
 </html>
