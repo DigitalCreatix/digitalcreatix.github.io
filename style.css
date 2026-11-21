@@ -9786,3 +9786,204 @@ border-radius: 20px;
         grid-template-columns: 1fr;
     }
 }
+/* ==========================================================
+   SOCIAL MEDIA MARKETING - CORE PILLARS (DARK FROSTED)
+   ========================================================== */
+.smm-pillars-section {
+    position: relative;
+    padding: 105px 24px;
+    background:
+        radial-gradient(circle at 18% 22%, rgba(37, 99, 235, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 82% 78%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+        #070c18;
+    color: #ffffff;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.smm-pillars-container {
+    max-width: 1220px;
+    margin: 0 auto;
+}
+
+.smm-pillars-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 58px auto;
+}
+
+.smm-pillars-pill {
+    display: inline-block;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.32);
+    color: #38bdf8;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.smm-pillars-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    margin: 0 0 12px 0;
+}
+
+.smm-pillars-blue {
+    color: #3b82f6;
+}
+
+.smm-pillars-header p {
+    font-size: 15.5px;
+    color: #94a3b8;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* 4-Column Grid */
+.smm-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+/* Pillar Card */
+.smm-pillar-card {
+    background: rgba(15, 23, 42, 0.74);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 24px;
+    padding: 26px 22px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.smm-pillar-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(59, 130, 246, 0.55);
+    box-shadow: 0 26px 54px rgba(37, 99, 235, 0.18);
+}
+
+.smm-pillar-card.is-featured {
+    border-color: rgba(56, 189, 248, 0.38);
+    background: linear-gradient(165deg, rgba(23, 37, 84, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+}
+
+.smm-pillar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.smm-pillar-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background: rgba(59, 130, 246, 0.16);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smm-pillar-tag {
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #7dd3fc;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 4px 10px;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+.smm-pillar-card h3 {
+    font-size: 18.5px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.smm-pillar-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #94a3b8;
+    margin: 0 0 18px 0;
+}
+
+.smm-pillar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    flex-grow: 1;
+}
+
+.smm-pillar-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: #cbd5e1;
+}
+
+.smm-pillar-list li span {
+    color: #38bdf8;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.smm-pillar-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #60a5fa;
+    text-decoration: none;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    transition: color 0.2s ease;
+}
+
+.smm-pillar-link:hover {
+    color: #93c5fd;
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+    .smm-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .smm-pillars-section {
+        padding: 75px 18px;
+    }
+    .smm-pillars-header h2 {
+        font-size: 28px;
+    }
+    .smm-pillars-grid {
+        grid-template-columns: 1fr;
+    }
+    .smm-pillar-card {
+        padding: 22px 18px;
+    }
+}
