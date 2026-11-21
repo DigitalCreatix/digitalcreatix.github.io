@@ -160,4 +160,42 @@
             </div>
         </div>
     </div>
+<!-- Navbar services Dropdown -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropdownWrapper = document.getElementById('servicesDropdown');
+        const servicesToggle = document.getElementById('servicesToggle');
 
+        // Toggle dropdown on click
+        servicesToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownWrapper.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!dropdownWrapper.contains(e.target)) {
+                dropdownWrapper.classList.remove('active');
+            }
+        });
+    });
+</script>
+    <!-- Auto-Rotating Expanding Accordion -->
+    <script>
+    const cards = document.querySelectorAll('.acc-card');
+    let currentIndex = 0;
+
+    function autoRotateAccordion() {
+        // Sab cards se active class hatao
+        cards.forEach(card => card.classList.remove('active'));
+        
+        // Current index wale card par active class lagao
+        cards[currentIndex].classList.add('active');
+        
+        // Agla index set karo (6 images hain toh 0 se 5 tak ghumega)
+        currentIndex = (currentIndex + 1) % cards.length;
+    }
+
+    // Har 1 second (1000 milliseconds) baad function chalega
+    setInterval(autoRotateAccordion, 1000);
+</script>
