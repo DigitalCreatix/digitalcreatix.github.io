@@ -472,5 +472,101 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const leverRows = document.querySelectorAll(".ec-lever-row");
+    const viewer = document.getElementById("ecStageViewer");
+    const svTag = document.getElementById("ecSvTag");
+    const svStatus = document.getElementById("ecSvStatus");
+    const svTitle = document.getElementById("ecSvTitle");
+    const svDesc = document.getElementById("ecSvDesc");
+    const pipe1 = document.getElementById("ecPipe1");
+    const pipe2 = document.getElementById("ecPipe2");
+    const pipe3 = document.getElementById("ecPipe3");
+    const deliverables = document.getElementById("ecSvDeliverables");
+    const svCta = document.getElementById("ecSvCta");
+
+    const leverData = {
+        acquire: {
+            tag: "LEVER 01 • ACQUISITION & CREATIVE LAB",
+            status: "ACTIVE SCALING",
+            title: "Creative-First Paid Acquisition",
+            desc: "We replace guesswork with weekly creative hook testing—pairing scroll-stopping UGC and motion ads with clean audience structure.",
+            p1: "UGC & Hook Variants",
+            p2: "Split-Test & Scale Winners",
+            p3: "Lower CAC & Steady ROAS",
+            pills: [
+                "✓ Meta & TikTok Ad Management",
+                "✓ 3-Second Hook & Angle Testing",
+                "✓ Dynamic Product Retargeting"
+            ],
+            ctaText: "Launch Acquisition Plan →",
+            ctaHref: "contact.html?service=ecommerce-marketing&lever=acquire"
+        },
+        convert: {
+            tag: "LEVER 02 • STOREFRONT CRO & AOV",
+            status: "CONVERSION LIFT",
+            title: "Product Page & Checkout Optimization",
+            desc: "Traffic only pays off when your product page answers buyer objections fast, stacks irresistible bundles, and removes checkout friction.",
+            p1: "Product Page Audit",
+            p2: "Bundles, Proof & Offer Stack",
+            p3: "Higher CVR & Order Value",
+            pills: [
+                "✓ High-Converting PDP Wireframes",
+                "✓ Quantity Breaks & Bundle Offers",
+                "✓ Mobile Speed & Cart Drawer Flow"
+            ],
+            ctaText: "Optimize Store Conversion →",
+            ctaHref: "contact.html?service=ecommerce-marketing&lever=convert"
+        },
+        retain: {
+            tag: "LEVER 03 • LIFECYCLE EMAIL & SMS",
+            status: "REPEAT REVENUE",
+            title: "Automated Retention & Cart Recovery",
+            desc: "Turn one-time shoppers into repeat buyers with automated abandoned checkout recovery, welcome flows, and targeted product drops.",
+            p1: "Browse & Cart Triggers",
+            p2: "Segmented Email & SMS Flows",
+            p3: "Recovered Sales & Higher LTV",
+            pills: [
+                "✓ Abandoned Cart & Checkout Flows",
+                "✓ Welcome & First-Order Series",
+                "✓ Post-Purchase Upsell & Winback"
+            ],
+            ctaText: "Build Retention Flows →",
+            ctaHref: "contact.html?service=ecommerce-marketing&lever=retain"
+        }
+    };
+
+    leverRows.forEach(row => {
+        row.addEventListener("click", function() {
+            leverRows.forEach(r => r.classList.remove("active"));
+            this.classList.add("active");
+
+            const key = this.getAttribute("data-lever");
+            const d = leverData[key];
+            if (!d || !viewer) return;
+
+            viewer.classList.add("is-updating");
+            setTimeout(() => {
+                if (svTag) svTag.textContent = d.tag;
+                if (svStatus) svStatus.textContent = d.status;
+                if (svTitle) svTitle.textContent = d.title;
+                if (svDesc) svDesc.textContent = d.desc;
+                if (pipe1) pipe1.textContent = d.p1;
+                if (pipe2) pipe2.textContent = d.p2;
+                if (pipe3) pipe3.textContent = d.p3;
+                if (deliverables) {
+                    deliverables.innerHTML = d.pills.map(p => `<span>${p}</span>`).join("");
+                }
+                if (svCta) {
+                    svCta.textContent = d.ctaText;
+                    svCta.setAttribute("href", d.ctaHref);
+                }
+                viewer.classList.remove("is-updating");
+            }, 150);
+        });
+    });
+});
+</script>
 </body>
 </html>
