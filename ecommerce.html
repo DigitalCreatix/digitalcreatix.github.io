@@ -351,6 +351,69 @@
         </div>
     </div>
 </section>
+    <!-- === E-COMMERCE MARKETING - 4TH SECTION: BEFORE VS AFTER STORE DIAGNOSTIC === -->
+<section class="ec-audit-section" id="ecomAuditSection">
+    <div class="ec-audit-container">
+        <!-- Header -->
+        <div class="ec-audit-header">
+            <span class="ec-audit-pill">✦ STOREFRONT DIAGNOSTIC &amp; TRANSFORMATION</span>
+            <h2>Why Most E-Commerce Stores <span class="ec-audit-cyan">Leak Revenue</span> — And How We Fix It</h2>
+            <p>Select your store’s biggest bottleneck below to compare an unoptimized setup against our AI-powered growth system.</p>
+
+            <!-- Bottleneck Filter Pills -->
+            <div class="ec-audit-filters" role="tablist">
+                <button type="button" class="ec-audit-btn active" data-audit="cart">High Cart Abandonment</button>
+                <button type="button" class="ec-audit-btn" data-audit="ads">Low Ad ROAS &amp; High CAC</button>
+                <button type="button" class="ec-audit-btn" data-audit="aov">Low AOV &amp; One-Time Buyers</button>
+            </div>
+        </div>
+
+        <!-- Comparison Stage -->
+        <div class="ec-audit-grid" id="ecAuditGrid">
+            <!-- Left: Before (Leaking Revenue) -->
+            <div class="ec-audit-card is-before">
+                <div class="ec-ac-top">
+                    <span class="ec-ac-tag">BEFORE • TYPICAL STORE SETUP</span>
+                    <span class="ec-ac-metric" id="ecBeforeMetric">~72% Cart Drop-Off</span>
+                </div>
+                <h3 id="ecBeforeTitle">Shoppers Add to Cart &amp; Disappear Forever</h3>
+                <ul class="ec-ac-list" id="ecBeforeList">
+                    <li><span>✕</span> Generic single abandoned-cart email sent 24 hours too late</li>
+                    <li><span>✕</span> Hidden shipping fees &amp; slow multi-step mobile checkout</li>
+                    <li><span>✕</span> Zero dynamic retargeting ads for product viewers</li>
+                    <li><span>✕</span> No exit-intent offer or SMS nudge for high-intent buyers</li>
+                </ul>
+            </div>
+
+            <!-- Center Divider Badge -->
+            <div class="ec-audit-vs" aria-hidden="true">VS</div>
+
+            <!-- Right: After (Digital Creatix System) -->
+            <div class="ec-audit-card is-after">
+                <div class="ec-ac-top">
+                    <span class="ec-ac-tag">AFTER • DIGITAL CREATIX SYSTEM</span>
+                    <span class="ec-ac-metric" id="ecAfterMetric">+28% Recovered Orders</span>
+                </div>
+                <h3 id="ecAfterTitle">Automated Multi-Channel Cart Rescue Engine</h3>
+                <ul class="ec-ac-list" id="ecAfterList">
+                    <li><span>✓</span> 4-step timed Email + SMS recovery flows triggered within 30 mins</li>
+                    <li><span>✓</span> Streamlined 1-click express checkout with clear trust badges</li>
+                    <li><span>✓</span> Dynamic catalog retargeting ads across Meta &amp; Google</li>
+                    <li><span>✓</span> Smart cart-drawer progress bar for free shipping &amp; gifts</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Action Strip -->
+        <div class="ec-audit-cta-bar">
+            <div class="ec-acb-text">
+                <strong>Want to see where your store is losing sales right now?</strong>
+                <span>Get a custom video &amp; funnel breakdown for your Shopify, Amazon, or WooCommerce store.</span>
+            </div>
+            <a href="contact.html?service=ecommerce-marketing&ref=store-diagnostic" class="ec-acb-btn">Get Free Store Audit →</a>
+        </div>
+    </div>
+</section>
     <!-- Dark CTA Section (Let's Build Something Amazing Together) -->
 <section class="cta-dark-section">
     <div class="cta-dark-content">
@@ -832,6 +895,96 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+</script>
+    // === 4TH SECTION: BEFORE VS AFTER DIAGNOSTIC ===
+   <script>
+    const auditBtns = document.querySelectorAll(".ec-audit-btn");
+    const auditGrid = document.getElementById("ecAuditGrid");
+    const beforeMetric = document.getElementById("ecBeforeMetric");
+    const beforeTitle = document.getElementById("ecBeforeTitle");
+    const beforeList = document.getElementById("ecBeforeList");
+    const afterMetric = document.getElementById("ecAfterMetric");
+    const afterTitle = document.getElementById("ecAfterTitle");
+    const afterList = document.getElementById("ecAfterList");
+
+    const auditData = {
+        cart: {
+            bMetric: "~72% Cart Drop-Off",
+            bTitle: "Shoppers Add to Cart & Disappear Forever",
+            bPoints: [
+                "Generic single abandoned-cart email sent 24 hours too late",
+                "Hidden shipping fees & slow multi-step mobile checkout",
+                "Zero dynamic retargeting ads for product viewers",
+                "No exit-intent offer or SMS nudge for high-intent buyers"
+            ],
+            aMetric: "+28% Recovered Orders",
+            aTitle: "Automated Multi-Channel Cart Rescue Engine",
+            aPoints: [
+                "4-step timed Email + SMS recovery flows triggered within 30 mins",
+                "Streamlined 1-click express checkout with clear trust badges",
+                "Dynamic catalog retargeting ads across Meta & Google",
+                "Smart cart-drawer progress bar for free shipping & gifts"
+            ]
+        },
+        ads: {
+            bMetric: "1.4x Unprofitable ROAS",
+            bTitle: "Random Ad Boosting With Unoptimized Product Feeds",
+            bPoints: [
+                "Running broad ads without AI audience or hook testing",
+                "Sending cold paid traffic to slow, cluttered homepages",
+                "Unstructured Google Shopping & Amazon Sponsored bids",
+                "Scaling ad spend without tracking net contribution margin"
+            ],
+            aMetric: "3.8x+ Scalable ROAS",
+            aTitle: "AI-Powered Acquisition & Dedicated Funnel Pages",
+            aPoints: [
+                "Weekly AI creative hook testing with high-converting UGC",
+                "Dedicated product landing pages built for cold traffic intent",
+                "Feed-optimized Google Shopping, Meta & Amazon campaigns",
+                "Profit-first bid scaling tied to real store MER & margin"
+            ]
+        },
+        aov: {
+            bMetric: "1.1x Repeat Order Rate",
+            bTitle: "Single-Item Orders With Zero Post-Purchase Follow-Up",
+            bPoints: [
+                "Customers buy one product and never hear from the brand again",
+                "No volume bundles, starter kits, or cart cross-sells",
+                "Weak product pages lacking social proof or comparison tables",
+                "High customer acquisition cost eaten up on the first order"
+            ],
+            aMetric: "+35% AOV & Repeat LTV",
+            aTitle: "Bundle Upsells & Automated Retention Loops",
+            aPoints: [
+                "Tiered quantity breaks & 'Complete the Routine' bundle builders",
+                "One-click post-purchase upsells right after checkout",
+                "Automated 30/60/90-day replenishment & VIP winback flows",
+                "Higher first-order profit so you can outbid competitors on ads"
+            ]
+        }
+    };
+
+    auditBtns.forEach(btn => {
+        btn.addEventListener("click", function() {
+            auditBtns.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+
+            const key = this.getAttribute("data-audit");
+            const d = auditData[key];
+            if (!d || !auditGrid) return;
+
+            auditGrid.classList.add("is-switching");
+            setTimeout(() => {
+                if (beforeMetric) beforeMetric.textContent = d.bMetric;
+                if (beforeTitle) beforeTitle.textContent = d.bTitle;
+                if (beforeList) beforeList.innerHTML = d.bPoints.map(p => `<li><span>✕</span> ${p}</li>`).join("");
+                if (afterMetric) afterMetric.textContent = d.aMetric;
+                if (afterTitle) afterTitle.textContent = d.aTitle;
+                if (afterList) afterList.innerHTML = d.aPoints.map(p => `<li><span>✓</span> ${p}</li>`).join("");
+                auditGrid.classList.remove("is-switching");
+            }, 150);
+        });
+    });
 </script>
 </body>
 </html>
