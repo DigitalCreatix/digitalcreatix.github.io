@@ -632,8 +632,103 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-</script><script>
+</script>
+    <script>
 document.addEventListener("DOMContentLoaded", function() {
+    const leverRows = document.querySelectorAll(".ec-lever-row");
+    const viewer = document.getElementById("ecStageViewer");
+    const svTag = document.getElementById("ecSvTag");
+    const svStatus = document.getElementById("ecSvStatus");
+    const svTitle = document.getElementById("ecSvTitle");
+    const svDesc = document.getElementById("ecSvDesc");
+    const pipe1 = document.getElementById("ecPipe1");
+    const pipe2 = document.getElementById("ecPipe2");
+    const pipe3 = document.getElementById("ecPipe3");
+    const deliverables = document.getElementById("ecSvDeliverables");
+    const svCta = document.getElementById("ecSvCta");
+
+    const leverData = {
+        acquire: {
+            tag: "PILLAR 01 • SHOPIFY, AMAZON & WOOCOMMERCE ADS",
+            status: "SALES SCALING",
+            title: "AI-Assisted Acquisition & Product Feed Scaling",
+            desc: "We combine AI audience signals, optimized product feeds, and scroll-stopping UGC/motion creatives to bring high-intent buyers straight to your store.",
+            p1: "Shopify / Amazon / Woo",
+            p2: "Smart Targeting & Creatives",
+            p3: "Higher Sales & Lower CAC",
+            pills: [
+                "✓ Paid Social & Shopping Feeds",
+                "✓ AI Audience & Hook Testing",
+                "✓ Marketplace & Store Attribution"
+            ],
+            ctaText: "Scale My Store Sales →",
+            ctaHref: "contact.html?service=ecommerce-marketing&pillar=acquire"
+        },
+        abandonment: {
+            tag: "PILLAR 02 • CHECKOUT & CART RECOVERY",
+            status: "RECOVER LOST REVENUE",
+            title: "Automated Cart Abandonment & Checkout Rescue",
+            desc: "Stop losing ready-to-buy shoppers at checkout. We deploy timed email/SMS triggers, dynamic retargeting ads, and frictionless cart UX to recover abandoned orders.",
+            p1: "Abandoned Cart Signal",
+            p2: "Email, SMS & Dynamic Ads",
+            p3: "Recovered Orders & Lift",
+            pills: [
+                "✓ Multi-Step Cart Recovery Flows",
+                "✓ Browse & Checkout Retargeting",
+                "✓ Friction-Free Mobile Checkout"
+            ],
+            ctaText: "Reduce Cart Abandonment →",
+            ctaHref: "contact.html?service=ecommerce-marketing&pillar=abandonment"
+        },
+        dominate: {
+            tag: "PILLAR 03 • NICHE DOMINANCE & REPEAT LTV",
+            status: "MARGIN & RETENTION",
+            title: "Product Page CRO, Bundles & Repeat Customer Loops",
+            desc: "Dominate your category with high-converting product pages, smart AOV bundle offers, and post-purchase retention campaigns that turn buyers into repeat fans.",
+            p1: "High-Intent Product Page",
+            p2: "Bundles, Proof & Retention",
+            p3: "Higher AOV & Repeat LTV",
+            pills: [
+                "✓ Bundle & Quantity Upsell Offers",
+                "✓ High-Converting PDP Optimization",
+                "✓ Post-Purchase VIP & Winback Flows"
+            ],
+            ctaText: "Dominate My Niche →",
+            ctaHref: "contact.html?service=ecommerce-marketing&pillar=dominate"
+        }
+    };
+
+    leverRows.forEach(row => {
+        row.addEventListener("click", function() {
+            leverRows.forEach(r => r.classList.remove("active"));
+            this.classList.add("active");
+
+            const key = this.getAttribute("data-lever");
+            const d = leverData[key];
+            if (!d || !viewer) return;
+
+            viewer.classList.add("is-updating");
+            setTimeout(() => {
+                if (svTag) svTag.textContent = d.tag;
+                if (svStatus) svStatus.textContent = d.status;
+                if (svTitle) svTitle.textContent = d.title;
+                if (svDesc) svDesc.textContent = d.desc;
+                if (pipe1) pipe1.textContent = d.p1;
+                if (pipe2) pipe2.textContent = d.p2;
+                if (pipe3) pipe3.textContent = d.p3;
+                if (deliverables) {
+                    deliverables.innerHTML = d.pills.map(p => `<span>${p}</span>`).join("");
+                }
+                if (svCta) {
+                    svCta.textContent = d.ctaText;
+                    svCta.setAttribute("href", d.ctaHref);
+                }
+                viewer.classList.remove("is-updating");
+            }, 150);
+        });
+    });
+
+    // === 3RD SECTION: STOREFRONT SHOWCASE TABS ===
     const workTabs = document.querySelectorAll(".ec-work-tab");
     const workStage = document.getElementById("ecWorkStage");
     const workUrl = document.getElementById("ecWorkUrl");
@@ -646,10 +741,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const stat3 = document.getElementById("ecWorkStat3");
     const workList = document.getElementById("ecWorkList");
 
+    // HTML mein pehle se lagi working Shopify image ka path save kar lein
+    const initialShopifyImg = workImg ? workImg.getAttribute("src") : "lumina-botanics-1280x2000.jpg";
+
     const workData = {
         shopify: {
             url: "https://lumina-botanics.myshopify.com",
-            img: "lumina-botanics-1280x2000.jpg",
+            img: initialShopifyImg,
             badge: "SHOPIFY PLUS • D2C SKINCARE",
             title: "Lumina Botanics — High-Converting Storefront & Retention",
             desc: "Redesigned the product page flow with 3-step ritual bundle offers, integrated Meta/TikTok ad creatives, and launched automated abandoned checkout recovery.",
@@ -662,7 +760,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 "AI-tested UGC video hooks for cold acquisition"
             ]
         },
-       amazon: {
+        amazon: {
             url: "https://amazon.com/stores/RiftSupplyOfficial",
             img: "ecomimg2.jpg",
             badge: "AMAZON BRAND STORE • STREETWEAR APPAREL",
@@ -694,6 +792,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
+    // Preload images for instant tab switching
+    Object.values(workData).forEach(item => {
+        const pre = new Image();
+        pre.src = item.img;
+    });
+
     workTabs.forEach(tab => {
         tab.addEventListener("click", function() {
             workTabs.forEach(t => t.classList.remove("active"));
@@ -706,7 +810,14 @@ document.addEventListener("DOMContentLoaded", function() {
             workStage.classList.add("is-fading");
             setTimeout(() => {
                 if (workUrl) workUrl.textContent = d.url;
-                if (workImg) workImg.src = d.img;
+                if (workImg) {
+                    workImg.style.transition = "none";
+                    workImg.style.transform = "translateY(0)";
+                    workImg.src = d.img;
+                    void workImg.offsetWidth;
+                    workImg.style.transition = "";
+                    workImg.style.transform = "";
+                }
                 if (workBadge) workBadge.textContent = d.badge;
                 if (workTitle) workTitle.textContent = d.title;
                 if (workDesc) workDesc.textContent = d.desc;
@@ -717,7 +828,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     workList.innerHTML = d.bullets.map(b => `<li><span>✓</span> ${b}</li>`).join("");
                 }
                 workStage.classList.remove("is-fading");
-            }, 160);
+            }, 140);
         });
     });
 });
