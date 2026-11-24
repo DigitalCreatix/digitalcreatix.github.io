@@ -284,6 +284,73 @@
         </div>
     </div>
 </section>
+    <!-- === E-COMMERCE MARKETING - INTERACTIVE STORE SHOWCASE (BROWSER MOCKUP) === -->
+<section class="ec-work-section" id="ecomWorkSection">
+    <div class="ec-work-container">
+        <!-- Header + Platform Filter -->
+        <div class="ec-work-header">
+            <span class="ec-work-pill">✦ PROVEN STOREFRONT &amp; DASHBOARD WORK</span>
+            <h2>Stores &amp; Growth Dashboards <span class="ec-work-blue">We’ve Scaled</span></h2>
+            <p>Hover over any storefront preview to scroll the full page layout, or switch between Shopify, Amazon, and WooCommerce builds.</p>
+
+            <!-- Platform Tabs -->
+            <div class="ec-work-tabs" role="tablist">
+                <button type="button" class="ec-work-tab active" data-work="shopify">Shopify D2C Store</button>
+                <button type="button" class="ec-work-tab" data-work="amazon">Amazon Brand Store</button>
+                <button type="button" class="ec-work-tab" data-work="woo">WooCommerce &amp; Ads</button>
+            </div>
+        </div>
+
+        <!-- Main Showcase Frame -->
+        <div class="ec-work-stage" id="ecWorkStage">
+            <!-- Left: Interactive Browser Window (Hover to Auto-Scroll Full Screenshot) -->
+            <div class="ec-browser-frame">
+                <div class="ec-browser-bar">
+                    <div class="ec-browser-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="ec-browser-url" id="ecWorkUrl">https://lumina-skincare.myshopify.com</div>
+                    <span class="ec-browser-hint">Hover to scroll page ↕</span>
+                </div>
+                <div class="ec-browser-viewport">
+                    <img src="images/work-shopify-store.png" alt="E-commerce Storefront Preview" id="ecWorkImg">
+                </div>
+            </div>
+
+            <!-- Right: Case Breakdown & Metrics -->
+            <div class="ec-work-details">
+                <span class="ec-wd-badge" id="ecWorkBadge">SHOPIFY PLUS • D2C SKINCARE</span>
+                <h3 id="ecWorkTitle">Lumina Botanics — High-Converting Storefront &amp; Retention</h3>
+                <p id="ecWorkDesc">Redesigned the product page flow with bundle quantity breaks, integrated Meta/TikTok ad creatives, and launched automated abandoned checkout recovery.</p>
+
+                <div class="ec-wd-stats">
+                    <div class="ec-wd-stat">
+                        <small>CHECKOUT CONVERSION</small>
+                        <strong id="ecWorkStat1">+42% Lift</strong>
+                    </div>
+                    <div class="ec-wd-stat">
+                        <small>CART ABANDONMENT</small>
+                        <strong id="ecWorkStat2">-28% Drop</strong>
+                    </div>
+                    <div class="ec-wd-stat">
+                        <small>AVERAGE ORDER VALUE</small>
+                        <strong id="ecWorkStat3">+31% AOV</strong>
+                    </div>
+                </div>
+
+                <ul class="ec-wd-list" id="ecWorkList">
+                    <li><span>✓</span> Custom bundle &amp; routine builder on product pages</li>
+                    <li><span>✓</span> 4-step abandoned cart email &amp; SMS recovery sequence</li>
+                    <li><span>✓</span> AI-tested UGC video hooks for cold acquisition</li>
+                </ul>
+
+                <div class="ec-wd-actions">
+                    <a href="contact.html?service=ecommerce-marketing&ref=store-showcase" class="ec-wd-btn">Build Similar Results →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Dark CTA Section (Let's Build Something Amazing Together) -->
 <section class="cta-dark-section">
     <div class="cta-dark-content">
@@ -562,6 +629,96 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 viewer.classList.remove("is-updating");
             }, 150);
+        });
+    });
+});
+</script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const workTabs = document.querySelectorAll(".ec-work-tab");
+    const workStage = document.getElementById("ecWorkStage");
+    const workUrl = document.getElementById("ecWorkUrl");
+    const workImg = document.getElementById("ecWorkImg");
+    const workBadge = document.getElementById("ecWorkBadge");
+    const workTitle = document.getElementById("ecWorkTitle");
+    const workDesc = document.getElementById("ecWorkDesc");
+    const stat1 = document.getElementById("ecWorkStat1");
+    const stat2 = document.getElementById("ecWorkStat2");
+    const stat3 = document.getElementById("ecWorkStat3");
+    const workList = document.getElementById("ecWorkList");
+
+    const workData = {
+        shopify: {
+            url: "https://lumina-skincare.myshopify.com",
+            img: "images/work-shopify-store.png",
+            badge: "SHOPIFY PLUS • D2C SKINCARE",
+            title: "Lumina Botanics — High-Converting Storefront & Retention",
+            desc: "Redesigned the product page flow with bundle quantity breaks, integrated Meta/TikTok ad creatives, and launched automated abandoned checkout recovery.",
+            s1: "+42% Lift",
+            s2: "-28% Drop",
+            s3: "+31% AOV",
+            bullets: [
+                "Custom bundle & routine builder on product pages",
+                "4-step abandoned cart email & SMS recovery sequence",
+                "AI-tested UGC video hooks for cold acquisition"
+            ]
+        },
+        amazon: {
+            url: "https://amazon.com/stores/ApexGearOfficial",
+            img: "images/work-amazon-store.png",
+            badge: "AMAZON BRAND STORE • A+ CONTENT",
+            title: "Apex Gear — Sponsored Ads & A+ Storefront Revamp",
+            desc: "Overhauled A+ comparison modules, keyword-indexed product listings, and Sponsored Brand video campaigns to capture category search share.",
+            s1: "3.8x ROAS",
+            s2: "-22% ACOS",
+            s3: "+54% Sales",
+            bullets: [
+                "Custom Amazon Brand Store & A+ comparison charts",
+                "AI-assisted search term harvesting & bid optimization",
+                "Sponsored Brand video creatives for top keywords"
+            ]
+        },
+        woo: {
+            url: "https://veloce-home.com/shop",
+            img: "images/work-woo-dashboard.png",
+            badge: "WOOCOMMERCE • REVENUE DASHBOARD",
+            title: "Veloce Home — Full-Funnel Ads & Checkout Optimization",
+            desc: "Streamlined one-page WooCommerce checkout, connected Google Shopping feeds, and deployed retargeting ads that turned window shoppers into buyers.",
+            s1: "+37% CVR",
+            s2: "-34% Drop",
+            s3: "4.1x MER",
+            bullets: [
+                "One-step mobile checkout & express wallet integration",
+                "Dynamic Google Shopping & Meta catalog retargeting",
+                "Post-purchase cross-sell email automation"
+            ]
+        }
+    };
+
+    workTabs.forEach(tab => {
+        tab.addEventListener("click", function() {
+            workTabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+
+            const key = this.getAttribute("data-work");
+            const d = workData[key];
+            if (!d || !workStage) return;
+
+            workStage.classList.add("is-fading");
+            setTimeout(() => {
+                if (workUrl) workUrl.textContent = d.url;
+                if (workImg) workImg.src = d.img;
+                if (workBadge) workBadge.textContent = d.badge;
+                if (workTitle) workTitle.textContent = d.title;
+                if (workDesc) workDesc.textContent = d.desc;
+                if (stat1) stat1.textContent = d.s1;
+                if (stat2) stat2.textContent = d.s2;
+                if (stat3) stat3.textContent = d.s3;
+                if (workList) {
+                    workList.innerHTML = d.bullets.map(b => `<li><span>✓</span> ${b}</li>`).join("");
+                }
+                workStage.classList.remove("is-fading");
+            }, 160);
         });
     });
 });
