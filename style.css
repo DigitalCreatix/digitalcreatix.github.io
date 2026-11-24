@@ -12181,3 +12181,168 @@ border-radius: 20px;
         font-size: 28px;
     }
 }
+/* ==========================================================
+   E-COMMERCE MARKETING - COMPACT 5TH SECTION (MINI FAQ + CTA)
+   ========================================================== */
+.ec-final-section {
+    padding: 85px 24px 95px 24px;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    color: #0f172a;
+    box-sizing: border-box;
+}
+
+.ec-final-container {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.ec-mini-faq {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.ec-final-pill {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+}
+
+.ec-mini-faq h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 28px 0;
+    letter-spacing: -0.6px;
+}
+
+.ec-mfaq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.ec-mfaq-item {
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    border-radius: 16px;
+    padding: 18px 22px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.ec-mfaq-item summary {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.ec-mfaq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.ec-mfaq-item summary::after {
+    content: "+";
+    font-size: 20px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.ec-mfaq-item[open] summary::after {
+    content: "−";
+}
+
+.ec-mfaq-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 12px 0 0 0;
+    padding-top: 12px;
+    border-top: 1px solid #f1f5f9;
+}
+
+/* Closing CTA Card */
+.ec-final-cta-box {
+    background: radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.25) 0%, transparent 50%),
+                linear-gradient(135deg, #0b132b 0%, #172554 100%);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 26px;
+    padding: 44px 32px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 22px 50px rgba(15, 23, 42, 0.16);
+}
+
+.ec-fcb-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.14);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.ec-final-cta-box h3 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0 0 10px 0;
+}
+
+.ec-final-cta-box p {
+    font-size: 15px;
+    color: #cbd5e1;
+    max-width: 540px;
+    margin: 0 auto 24px auto;
+    line-height: 1.6;
+}
+
+.ec-fcb-btn {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 12px 26px rgba(37, 99, 235, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ec-fcb-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(37, 99, 235, 0.5);
+}
+
+@media (max-width: 600px) {
+    .ec-final-section {
+        padding: 64px 16px 72px 16px;
+    }
+    .ec-mini-faq h2 {
+        font-size: 24px;
+    }
+    .ec-final-cta-box {
+        padding: 32px 20px;
+    }
+    .ec-final-cta-box h3 {
+        font-size: 22px;
+    }
+}
