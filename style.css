@@ -11582,3 +11582,319 @@ border-radius: 20px;
         transform: rotate(90deg);
     }
 }
+/* ==========================================================
+   E-COMMERCE MARKETING - INTERACTIVE BROWSER WORK SHOWCASE
+   ========================================================== */
+.ec-work-section {
+    position: relative;
+    padding: 105px 24px;
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    color: #0f172a;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.ec-work-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ec-work-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 48px auto;
+}
+
+.ec-work-pill {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    color: #2563eb;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.06);
+}
+
+.ec-work-header h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    margin: 0 0 12px 0;
+}
+
+.ec-work-blue {
+    color: #2563eb;
+}
+
+.ec-work-header p {
+    font-size: 15.5px;
+    color: #475569;
+    line-height: 1.65;
+    margin: 0 0 28px 0;
+}
+
+/* Switcher Tabs */
+.ec-work-tabs {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 6px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+}
+
+.ec-work-tab {
+    background: transparent;
+    border: none;
+    color: #475569;
+    font-size: 13.5px;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+}
+
+.ec-work-tab:hover {
+    color: #0f172a;
+}
+
+.ec-work-tab.active {
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.3);
+}
+
+/* Main Showcase Stage */
+.ec-work-stage {
+    background: #ffffff;
+    border: 1px solid #dbeafe;
+    border-radius: 28px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 36px;
+    box-shadow: 0 24px 55px rgba(15, 23, 42, 0.07);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.ec-work-stage.is-fading {
+    opacity: 0.45;
+    transform: translateY(4px);
+}
+
+/* Browser Frame */
+.ec-browser-frame {
+    border: 1px solid #cbd5e1;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #0f172a;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.ec-browser-bar {
+    background: #f1f5f9;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 11px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.ec-browser-dots {
+    display: inline-flex;
+    gap: 6px;
+}
+
+.ec-browser-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #cbd5e1;
+}
+
+.ec-browser-dots span:first-child { background: #fca5a5; }
+.ec-browser-dots span:nth-child(2) { background: #fcd34d; }
+.ec-browser-dots span:nth-child(3) { background: #86efac; }
+
+.ec-browser-url {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: 11.5px;
+    color: #475569;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ec-browser-hint {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2563eb;
+    white-space: nowrap;
+}
+
+/* Hover-to-Scroll Viewport */
+.ec-browser-viewport {
+    position: relative;
+    height: 390px;
+    overflow: hidden;
+    background: #0b132b;
+}
+
+.ec-browser-viewport img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: translateY(0);
+    transition: transform 3.8s ease-in-out;
+}
+
+.ec-browser-frame:hover .ec-browser-viewport img {
+    transform: translateY(calc(-100% + 390px));
+}
+
+/* Right Details Column */
+.ec-work-details {
+    text-align: left;
+}
+
+.ec-wd-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.1px;
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 5px 12px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+}
+
+.ec-work-details h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 12px 0;
+    line-height: 1.28;
+}
+
+.ec-work-details > p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #475569;
+    margin: 0 0 20px 0;
+}
+
+.ec-wd-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.ec-wd-stat {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ec-wd-stat small {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    color: #64748b;
+}
+
+.ec-wd-stat strong {
+    font-size: 15px;
+    font-weight: 800;
+    color: #2563eb;
+}
+
+.ec-wd-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.ec-wd-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 13.5px;
+    color: #334155;
+}
+
+.ec-wd-list li span {
+    color: #2563eb;
+    font-weight: 800;
+}
+
+.ec-wd-btn {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+    color: #ffffff;
+    padding: 13px 26px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ec-wd-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    .ec-work-stage {
+        grid-template-columns: 1fr;
+        padding: 24px;
+    }
+    .ec-browser-viewport {
+        height: 300px;
+    }
+    .ec-browser-frame:hover .ec-browser-viewport img {
+        transform: translateY(calc(-100% + 300px));
+    }
+}
+
+@media (max-width: 600px) {
+    .ec-work-section {
+        padding: 75px 18px;
+    }
+    .ec-work-header h2 {
+        font-size: 28px;
+    }
+    .ec-wd-stats {
+        grid-template-columns: 1fr;
+    }
+}
