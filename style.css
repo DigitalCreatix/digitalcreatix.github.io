@@ -12709,3 +12709,22 @@ border-radius: 20px;
         font-size: 22px;
     }
 }
+/* === FORCE CENTER ALIGNMENT FOR SIMULATOR CHECK CIRCLES === */
+.smm-sim-points .smm-sp-icon {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    padding: 0 !important;
+    margin: 2px 0 0 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+}
+
+.smm-sim-points .smm-sp-icon svg {
+    display: block !important;
+    margin: 0 auto !important;
+}
