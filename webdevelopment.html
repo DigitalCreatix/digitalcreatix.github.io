@@ -571,7 +571,7 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
     </div>
 </section>
-    <script>
+  <script>
 document.addEventListener("DOMContentLoaded", function() {
     const runway = document.getElementById("wdStackRunway");
     const inner = runway ? runway.querySelector(".wd-stack-inner") : null;
@@ -589,25 +589,28 @@ document.addEventListener("DOMContentLoaded", function() {
             inner.style.position = "fixed";
             inner.style.top = "0";
             inner.style.bottom = "auto";
-            inner.style.left = "0";
-            inner.style.right = "0";
-            inner.style.margin = "0 auto";
+            inner.style.left = rect.left + "px";
+            inner.style.right = "auto";
+            inner.style.width = rect.width + "px";
+            inner.style.margin = "0";
             inner.style.transform = "none";
         } else if (rect.top > 0) {
             inner.style.position = "relative";
             inner.style.top = "0";
             inner.style.bottom = "auto";
-            inner.style.left = "auto";
+            inner.style.left = "0";
             inner.style.right = "auto";
-            inner.style.margin = "0 auto";
+            inner.style.width = "100%";
+            inner.style.margin = "0";
             inner.style.transform = "none";
         } else {
             inner.style.position = "absolute";
             inner.style.top = "auto";
             inner.style.bottom = "0";
             inner.style.left = "0";
-            inner.style.right = "0";
-            inner.style.margin = "0 auto";
+            inner.style.right = "auto";
+            inner.style.width = "100%";
+            inner.style.margin = "0";
             inner.style.transform = "none";
         }
 
