@@ -390,7 +390,7 @@
         </div>
     </div>
 </section>
-    <script>
+   <script>
 document.addEventListener("DOMContentLoaded", function() {
     const compareBox = document.getElementById("wdCompareBox");
     const slowLayer = document.getElementById("wdSlowLayer");
@@ -417,6 +417,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     compareBox.addEventListener("mousedown", function(e) {
         isDragging = true;
+        compareBox.classList.add("is-dragging");
         updatePosition(e.clientX);
     });
 
@@ -427,10 +428,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener("mouseup", function() {
         isDragging = false;
+        compareBox.classList.remove("is-dragging");
     });
 
     compareBox.addEventListener("touchstart", function(e) {
         isDragging = true;
+        compareBox.classList.add("is-dragging");
         if (e.touches[0]) updatePosition(e.touches[0].clientX);
     }, { passive: true });
 
@@ -441,6 +444,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener("touchend", function() {
         isDragging = false;
+        compareBox.classList.remove("is-dragging");
     });
 
     window.addEventListener("resize", syncInnerWidth);
