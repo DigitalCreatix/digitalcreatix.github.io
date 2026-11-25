@@ -13366,13 +13366,13 @@ border-radius: 20px;
 .wd-stack-inner {
     position: relative;
     width: 100% !important;
-    max-width: 100px !important;
+    max-width: 100% !important;
     height: 100vh !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     padding: 84px 24px 28px 24px;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
     box-sizing: border-box;
     overflow: hidden;
