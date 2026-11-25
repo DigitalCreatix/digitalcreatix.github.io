@@ -252,6 +252,196 @@
             }
         });
     </script>
+    <!-- === WEB DEVELOPMENT - INTERACTIVE LIGHTHOUSE & SPEED SLIDER === -->
+<section class="wd-perf-section" id="wdPerfSection">
+    <!-- Giant Subtle Italic Watermark -->
+    <div class="wd-bg-watermark" aria-hidden="true">Web Development</div>
+
+    <div class="wd-perf-container">
+        <!-- Left Column: Value Proposition -->
+        <div class="wd-perf-left">
+            <span class="wd-perf-pill">✦ ENGINEERED FOR SPEED &amp; CONVERSION</span>
+            <h2>Live in Days. <span class="wd-perf-cyan">Loads in Under a Second.</span></h2>
+            <p class="wd-perf-lead">Slow, bloated template websites kill ad ROAS and search rankings. We engineer custom, lightweight frontends that feel like a native product.</p>
+
+            <ul class="wd-perf-points">
+                <li>
+                    <span class="wd-sp-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </span>
+                    <div>
+                        <strong>Custom Design &amp; Clean Code Build</strong>
+                        <span>No bloated page builders or heavy themes—pure semantic code built to convert.</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="wd-sp-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </span>
+                    <div>
+                        <strong>60fps Smooth Interactions &amp; Mobile UX</strong>
+                        <span>Hardware-accelerated animations and thumb-friendly layouts across every screen.</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="wd-sp-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </span>
+                    <div>
+                        <strong>95+ Lighthouse Scores, SEO &amp; Analytics</strong>
+                        <span>Technical schema, Core Web Vitals, and conversion pixels wired in from day one.</span>
+                    </div>
+                </li>
+            </ul>
+
+            <a href="contact.html?service=web-development&ref=lighthouse-audit" class="wd-perf-cta">Start My Web Build →</a>
+        </div>
+
+        <!-- Right Column: Lighthouse Card + Interactive Drag Comparison -->
+        <div class="wd-perf-card">
+            <div class="wd-pc-header">
+                <span class="wd-pc-title">LIGHTHOUSE • AUDIT BENCHMARK</span>
+                <span class="wd-pc-device">mobile &amp; desktop</span>
+            </div>
+
+            <!-- 4 Glowing Score Rings -->
+            <div class="wd-rings-grid">
+                <div class="wd-ring-item">
+                    <div class="wd-ring-circle" style="--pct: 95;">
+                        <span>95</span>
+                    </div>
+                    <small>Performance</small>
+                </div>
+                <div class="wd-ring-item">
+                    <div class="wd-ring-circle" style="--pct: 100;">
+                        <span>100</span>
+                    </div>
+                    <small>Accessibility</small>
+                </div>
+                <div class="wd-ring-item">
+                    <div class="wd-ring-circle" style="--pct: 100;">
+                        <span>100</span>
+                    </div>
+                    <small>Best Practices</small>
+                </div>
+                <div class="wd-ring-item">
+                    <div class="wd-ring-circle" style="--pct: 100;">
+                        <span>100</span>
+                    </div>
+                    <small>SEO</small>
+                </div>
+            </div>
+
+            <!-- Comparison Labels -->
+            <div class="wd-comp-labels">
+                <span>Typical template site</span>
+                <span class="wd-cl-brand">Built by Digital Creatix</span>
+            </div>
+
+            <!-- Interactive Drag Comparison Stage -->
+            <div class="wd-compare-box" id="wdCompareBox">
+                <!-- Under Layer (Fast Custom Site - Digital Creatix) -->
+                <div class="wd-layer wd-layer-fast">
+                    <div class="wd-mock-nav">
+                        <span class="wd-mn-dot"></span>
+                        <span class="wd-mn-pill"></span>
+                    </div>
+                    <div class="wd-mock-hero">
+                        <div class="wd-mh-line is-lg"></div>
+                        <div class="wd-mh-line is-sm"></div>
+                    </div>
+                    <div class="wd-mock-cards">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <span class="wd-stat-badge is-fast">Load 0.8s • Score 98</span>
+                </div>
+
+                <!-- Over Layer (Slow Template Site - Clipped by Slider) -->
+                <div class="wd-layer wd-layer-slow" id="wdSlowLayer" style="width: 52%;">
+                    <div class="wd-slow-inner">
+                        <div class="wd-slow-nav">
+                            <span></span><span></span>
+                        </div>
+                        <div class="wd-slow-spinner">
+                            <div class="wd-spin-ring"></div>
+                            <span>loading heavy scripts...</span>
+                        </div>
+                        <div class="wd-slow-cards">
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <span class="wd-stat-badge is-slow">Load 4.8s • Score 41</span>
+                    </div>
+                </div>
+
+                <!-- Draggable Divider & Handle -->
+                <div class="wd-divider" id="wdDivider" style="left: 52%;">
+                    <div class="wd-drag-pill" aria-hidden="true">↔</div>
+                    <button type="button" class="wd-drag-circle" id="wdDragHandle" aria-label="Drag to compare site speed">DRAG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const compareBox = document.getElementById("wdCompareBox");
+    const slowLayer = document.getElementById("wdSlowLayer");
+    const divider = document.getElementById("wdDivider");
+    const slowInner = document.querySelector(".wd-slow-inner");
+
+    if (!compareBox || !slowLayer || !divider) return;
+
+    let isDragging = false;
+
+    function syncInnerWidth() {
+        if (slowInner) {
+            slowInner.style.width = compareBox.offsetWidth + "px";
+        }
+    }
+
+    function updatePosition(clientX) {
+        const rect = compareBox.getBoundingClientRect();
+        let pct = ((clientX - rect.left) / rect.width) * 100;
+        pct = Math.max(12, Math.min(88, pct));
+        slowLayer.style.width = pct + "%";
+        divider.style.left = pct + "%";
+    }
+
+    compareBox.addEventListener("mousedown", function(e) {
+        isDragging = true;
+        updatePosition(e.clientX);
+    });
+
+    window.addEventListener("mousemove", function(e) {
+        if (!isDragging) return;
+        updatePosition(e.clientX);
+    });
+
+    window.addEventListener("mouseup", function() {
+        isDragging = false;
+    });
+
+    compareBox.addEventListener("touchstart", function(e) {
+        isDragging = true;
+        if (e.touches[0]) updatePosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener("touchmove", function(e) {
+        if (!isDragging || !e.touches[0]) return;
+        updatePosition(e.touches[0].clientX);
+    }, { passive: true });
+
+    window.addEventListener("touchend", function() {
+        isDragging = false;
+    });
+
+    window.addEventListener("resize", syncInnerWidth);
+    syncInnerWidth();
+});
+</script>
     <!-- Tech Stack Floating Section -->
 <section class="tech-stack-section">
     <div class="tech-stack-container">
