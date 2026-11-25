@@ -13178,28 +13178,36 @@ border-radius: 20px;
     transform: translateX(-50%);
     pointer-events: none;
 }
-
+/* Center Pill with Crisp Full Double-Arrow */
 .wd-drag-pill {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 34px;
+    height: 24px;
     background: #ffffff;
     color: #0f172a;
-    font-size: 11px;
-    font-weight: 800;
-    padding: 3px 8px;
     border-radius: 50px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.38);
 }
 
+.wd-drag-pill svg {
+    display: block;
+}
+
+/* DRAG Circle: Hidden by Default, Appears Smoothly on Hover / Drag */
 .wd-drag-circle {
     position: absolute;
     bottom: -22px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 68px;
-    height: 68px;
+    transform: translateX(-50%) scale(0.75);
+    opacity: 0;
+    width: 66px;
+    height: 66px;
     border-radius: 50%;
     background: #ffffff;
     color: #0f172a;
@@ -13210,13 +13218,23 @@ border-radius: 20px;
     cursor: ew-resize;
     pointer-events: auto;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-    transition: transform 0.15s ease;
+    transition: opacity 0.22s ease, transform 0.22s ease;
 }
 
-.wd-drag-circle:hover {
-    transform: translateX(-50%) scale(1.06);
+/* Show DRAG Circle on Hover or Active Drag */
+.wd-compare-box:hover .wd-drag-circle,
+.wd-compare-box.is-dragging .wd-drag-circle {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
 }
 
+/* Always keep visible on touch devices (where there is no mouse hover) */
+@media (hover: none) {
+    .wd-drag-circle {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
 /* Responsive */
 @media (max-width: 980px) {
     .wd-perf-container {
