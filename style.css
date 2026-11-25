@@ -13287,27 +13287,48 @@ border-radius: 20px;
 
 /* Header Scrolls Up Normally Before Cards Lock */
 .wd-stack-header-wrap {
+    position: relative;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 24px 36px 24px;
+    padding: 120px 24px 44px 24px;
     box-sizing: border-box;
+    text-align: center;
+}
+
+/* Giant Background Italic Stroke Watermark ("Our Work") */
+.wd-stack-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    font-size: clamp(95px, 16vw, 230px);
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: -4px;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.08);
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
 }
 
 .wd-stack-header {
+    position: relative;
+    z-index: 1;
     width: 100%;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-    text-align: left;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .wd-sh-left {
-    text-align: left;
+    text-align: center;
 }
-
 .wd-stack-pill {
     display: inline-block;
     background: rgba(56, 189, 248, 0.12);
