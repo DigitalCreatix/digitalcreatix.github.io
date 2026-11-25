@@ -13366,7 +13366,7 @@ border-radius: 20px;
 .wd-stack-inner {
     position: relative;
     width: 100% !important;
-    max-width: 1280px !important;
+    max-width: 100px !important;
     height: 100vh !important;
     margin: 0 auto !important;
     padding: 84px 24px 28px 24px;
@@ -13383,8 +13383,9 @@ border-radius: 20px;
     position: relative;
     z-index: 1;
     width: 100%;
-    flex: 1;
-    min-height: 0;
+    max-width: 1240px;
+    height: min(640px, 75vh);
+    flex-shrink: 0;
 }
 
 /* Individual Stacked Card */
