@@ -13503,6 +13503,9 @@ border-radius: 20px;
    CUSTOM SMOOTH FOLLOWER CURSOR (DESKTOP ONLY)
    ========================================================== */
 @media (hover: hover) and (pointer: fine) {
+    html, body, a, button, input, textarea, select, [role="button"], * {
+        cursor: none !important;
+    }
     .dc-cursor-dot,
     .dc-cursor-ring {
         position: fixed;
