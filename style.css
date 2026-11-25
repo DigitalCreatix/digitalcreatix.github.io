@@ -13499,3 +13499,63 @@ border-radius: 20px;
         font-size: 12.5px;
     }
 }
+/* ==========================================================
+   CUSTOM SMOOTH FOLLOWER CURSOR (DESKTOP ONLY)
+   ========================================================== */
+@media (hover: hover) and (pointer: fine) {
+    .dc-cursor-dot,
+    .dc-cursor-ring {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 99999;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.25s ease, width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+        will-change: transform;
+    }
+
+    /* Inner Crisp White Dot */
+    .dc-cursor-dot {
+        width: 7px;
+        height: 7px;
+        margin: -3.5px 0 0 -3.5px;
+        background: #ffffff;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    }
+
+    /* Outer Smooth-Trailing Glowing Ring */
+    .dc-cursor-ring {
+        width: 38px;
+        height: 38px;
+        margin: -19px 0 0 -19px;
+        border: 1.5px solid rgba(56, 189, 248, 0.65);
+        box-shadow: 0 0 18px rgba(56, 189, 248, 0.28), inset 0 0 10px rgba(56, 189, 248, 0.12);
+    }
+
+    /* Expand Ring on Links / Buttons / Interactive Elements */
+    .dc-cursor-ring.is-hover {
+        width: 56px;
+        height: 56px;
+        margin: -28px 0 0 -28px;
+        border-color: #38bdf8;
+        background-color: rgba(56, 189, 248, 0.1);
+        box-shadow: 0 0 26px rgba(56, 189, 248, 0.45);
+    }
+
+    /* Click Press Effect */
+    .dc-cursor-ring.is-click {
+        width: 30px;
+        height: 30px;
+        margin: -15px 0 0 -15px;
+    }
+}
+
+/* Hide Custom Cursor on Touch / Mobile Devices */
+@media (hover: none), (pointer: coarse) {
+    .dc-cursor-dot,
+    .dc-cursor-ring {
+        display: none !important;
+    }
+}
