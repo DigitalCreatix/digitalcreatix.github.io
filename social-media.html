@@ -247,79 +247,135 @@
         </div>
     </div>
 </section>
-    <!-- === SOCIAL MEDIA MARKETING - CORE PILLARS (DARK FROSTED) === -->
-<section class="smm-pillars-section" id="smmPillarsSection">
-    <div class="smm-pillars-container">
-        <div class="smm-pillars-header">
-            <span class="smm-pillars-pill">✦ HOW WE BUILD SOCIAL MOMENTUM</span>
-            <h2>Core Social Media <span class="smm-pillars-blue">Growth Pillars</span></h2>
-            <p>Four connected pillars designed to turn consistent content and visual craft into real audience trust and inbound leads.</p>
+   <!-- === SOCIAL MEDIA MARKETING - INTERACTIVE CAMPAIGN SIMULATOR === -->
+<section class="smm-sim-section" id="smmSimulatorSection">
+    <div class="smm-sim-container">
+        <!-- Left Column: Value Proposition -->
+        <div class="smm-sim-left">
+            <span class="smm-sim-pill">✦ INTERACTIVE ROI CALCULATOR</span>
+            <h2>Traffic Is Easy. <span class="smm-sim-cyan">We Bring You Customers.</span></h2>
+            <p class="smm-sim-lead">Adjust the sliders to simulate how paid social ads, scroll-stopping creatives, and high-converting landing pages compound your monthly revenue.</p>
+
+            <ul class="smm-sim-points">
+                <li>
+                    <span class="smm-sp-icon">✓</span>
+                    <div>
+                        <strong>Meta, TikTok &amp; Google Campaigns</strong>
+                        <span>Full-funnel creative testing, audience scaling, and daily ROAS optimization.</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="smm-sp-icon">✓</span>
+                    <div>
+                        <strong>Short-Form Reels, Hooks &amp; Content Engine</strong>
+                        <span>High-retention videos and carousels built to stop the scroll and lower CPC.</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="smm-sp-icon">✓</span>
+                    <div>
+                        <strong>Landing Pages &amp; Conversion Tracking</strong>
+                        <span>Dedicated funnel pages and pixel attribution built by the same team.</span>
+                    </div>
+                </li>
+            </ul>
+
+            <a href="contact.html?service=social-media-marketing&ref=campaign-simulator" class="smm-sim-cta">Launch My Campaign →</a>
         </div>
 
-        <div class="smm-pillars-grid">
-            <!-- Pillar 1 -->
-            <div class="smm-pillar-card">
-                <div class="smm-pillar-top">
-                    <span class="smm-pillar-icon">🗓️</span>
-                    <span class="smm-pillar-tag">PILLAR 01</span>
-                </div>
-                <h3>Content Strategy &amp; Monthly Calendar</h3>
-                <p class="smm-pillar-desc">Structured monthly roadmaps aligned with your offers, audience pain points, and campaign goals.</p>
-                <ul class="smm-pillar-list">
-                    <li><span>✓</span> Core audience &amp; topic pillars</li>
-                    <li><span>✓</span> Hook angles &amp; weekly rhythm</li>
-                    <li><span>✓</span> Clear monthly publishing calendar</li>
-                </ul>
-                <a href="contact.html?service=social-media-marketing&pillar=strategy-calendar" class="smm-pillar-link">Plan Content Calendar →</a>
+        <!-- Right Column: Live Interactive Simulator Card -->
+        <div class="smm-sim-card">
+            <div class="smm-sc-header">
+                <span class="smm-sc-title">CAMPAIGN SIMULATOR</span>
+                <button type="button" class="smm-sc-reset" id="smmResetBtn">Reset</button>
             </div>
 
-            <!-- Pillar 2 (Featured) -->
-            <div class="smm-pillar-card is-featured">
-                <div class="smm-pillar-top">
-                    <span class="smm-pillar-icon">🎬</span>
-                    <span class="smm-pillar-tag">CREATIVE ENGINE</span>
+            <!-- Sliders Grid -->
+            <div class="smm-sliders-grid">
+                <div class="smm-slider-box">
+                    <div class="smm-sb-top">
+                        <label for="smmBudget">Monthly ad budget</label>
+                        <span class="smm-sb-val" id="smmBudgetVal">$1,500</span>
+                    </div>
+                    <input type="range" id="smmBudget" min="300" max="15000" step="100" value="1500">
                 </div>
-                <h3>Short-Form &amp; Visual Creatives</h3>
-                <p class="smm-pillar-desc">High-retention short videos, swipeable carousels, and clean brand graphics built to look unmistakable in-feed.</p>
-                <ul class="smm-pillar-list">
-                    <li><span>✓</span> Reels/Shorts pacing, cuts &amp; captions</li>
-                    <li><span>✓</span> Carousels &amp; static brand creatives</li>
-                    <li><span>✓</span> Unified visual &amp; motion identity</li>
-                </ul>
-                <a href="contact.html?service=social-media-marketing&pillar=shortform-visuals" class="smm-pillar-link">Upgrade Feed Creatives →</a>
+
+                <div class="smm-slider-box">
+                    <div class="smm-sb-top">
+                        <label for="smmCpc">Cost per click (CPC)</label>
+                        <span class="smm-sb-val" id="smmCpcVal">$0.80</span>
+                    </div>
+                    <input type="range" id="smmCpc" min="0.20" max="5.00" step="0.10" value="0.80">
+                </div>
+
+                <div class="smm-slider-box">
+                    <div class="smm-sb-top">
+                        <label for="smmCvr">Landing page conversion</label>
+                        <span class="smm-sb-val" id="smmCvrVal">3.0%</span>
+                    </div>
+                    <input type="range" id="smmCvr" min="0.5" max="10.0" step="0.5" value="3.0">
+                </div>
+
+                <div class="smm-slider-box">
+                    <div class="smm-sb-top">
+                        <label for="smmClose">Leads that become customers</label>
+                        <span class="smm-sb-val" id="smmCloseVal">25%</span>
+                    </div>
+                    <input type="range" id="smmClose" min="5" max="80" step="5" value="25">
+                </div>
+
+                <div class="smm-slider-box is-full">
+                    <div class="smm-sb-top">
+                        <label for="smmLtv">Average customer value</label>
+                        <span class="smm-sb-val" id="smmLtvVal">$450</span>
+                    </div>
+                    <input type="range" id="smmLtv" min="50" max="3000" step="50" value="450">
+                </div>
             </div>
 
-            <!-- Pillar 3 -->
-            <div class="smm-pillar-card">
-                <div class="smm-pillar-top">
-                    <span class="smm-pillar-icon">✍️</span>
-                    <span class="smm-pillar-tag">DISCOVERY &amp; COPY</span>
+            <!-- Live Funnel Bars -->
+            <div class="smm-funnel-bars">
+                <div class="smm-fb-row">
+                    <span class="smm-fb-label">Visitors</span>
+                    <div class="smm-fb-track">
+                        <div class="smm-fb-fill is-visitors" id="smmVisitorsBar" style="width: 100%;">
+                            <span id="smmVisitorsNum">1,875</span>
+                        </div>
+                    </div>
                 </div>
-                <h3>Copywriting, Captions &amp; Hashtags/SEO</h3>
-                <p class="smm-pillar-desc">Words that hold attention, spark conversation, and help your posts get discovered through social search.</p>
-                <ul class="smm-pillar-list">
-                    <li><span>✓</span> Scroll-stopping hooks &amp; captions</li>
-                    <li><span>✓</span> Intent-driven CTAs &amp; prompts</li>
-                    <li><span>✓</span> Keyword tags &amp; platform SEO</li>
-                </ul>
-                <a href="contact.html?service=social-media-marketing&pillar=copy-social-seo" class="smm-pillar-link">Boost Copy &amp; Reach →</a>
+
+                <div class="smm-fb-row">
+                    <span class="smm-fb-label">Leads</span>
+                    <div class="smm-fb-track">
+                        <div class="smm-fb-fill is-leads" id="smmLeadsBar" style="width: 34%;">
+                            <span id="smmLeadsNum">56</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="smm-fb-row">
+                    <span class="smm-fb-label">Customers</span>
+                    <div class="smm-fb-track">
+                        <div class="smm-fb-fill is-customers" id="smmCustomersBar" style="width: 16%;">
+                            <span id="smmCustomersNum">14</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Pillar 4 -->
-            <div class="smm-pillar-card">
-                <div class="smm-pillar-top">
-                    <span class="smm-pillar-icon">🎯</span>
-                    <span class="smm-pillar-tag">CONVERSION FLOW</span>
+            <!-- Bottom Result Tiles -->
+            <div class="smm-results-grid">
+                <div class="smm-res-box">
+                    <span class="smm-res-label">Estimated Revenue / Month</span>
+                    <strong class="smm-res-num" id="smmRevenueNum">$6,300</strong>
                 </div>
-                <h3>Paid Social &amp; Funnel Support</h3>
-                <p class="smm-pillar-desc">Test winning creative angles with paid distribution and route interested viewers cleanly into DMs or landing pages.</p>
-                <ul class="smm-pillar-list">
-                    <li><span>✓</span> Ad creative &amp; hook variations</li>
-                    <li><span>✓</span> Audience &amp; angle testing support</li>
-                    <li><span>✓</span> DM trigger &amp; landing handoff</li>
-                </ul>
-                <a href="contact.html?service=social-media-marketing&pillar=paid-funnel" class="smm-pillar-link">Build Lead Funnel →</a>
+                <div class="smm-res-box">
+                    <span class="smm-res-label">Return on Ad Spend (ROAS)</span>
+                    <strong class="smm-res-num is-green" id="smmRoasNum">4.2x</strong>
+                </div>
             </div>
+
+            <p class="smm-sim-note">Nudge landing page conversion from <strong>2% to 4%</strong> and watch your return double — that lever is the funnel &amp; creative system we build together.</p>
         </div>
     </div>
 </section>
@@ -958,6 +1014,71 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+});
+</script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const budgetEl = document.getElementById("smmBudget");
+    const cpcEl = document.getElementById("smmCpc");
+    const cvrEl = document.getElementById("smmCvr");
+    const closeEl = document.getElementById("smmClose");
+    const ltvEl = document.getElementById("smmLtv");
+    const resetBtn = document.getElementById("smmResetBtn");
+
+    if (!budgetEl) return;
+
+    function updateSimulator() {
+        const budget = parseFloat(budgetEl.value);
+        const cpc = parseFloat(cpcEl.value);
+        const cvr = parseFloat(cvrEl.value);
+        const closeRate = parseFloat(closeEl.value);
+        const ltv = parseFloat(ltvEl.value);
+
+        // Update slider labels
+        document.getElementById("smmBudgetVal").textContent = "$" + budget.toLocaleString();
+        document.getElementById("smmCpcVal").textContent = "$" + cpc.toFixed(2);
+        document.getElementById("smmCvrVal").textContent = cvr.toFixed(1) + "%";
+        document.getElementById("smmCloseVal").textContent = closeRate + "%";
+        document.getElementById("smmLtvVal").textContent = "$" + ltv.toLocaleString();
+
+        // Funnel math
+        const visitors = Math.max(1, Math.round(budget / cpc));
+        const leads = Math.max(0, Math.round(visitors * (cvr / 100)));
+        const customers = Math.max(0, Math.round(leads * (closeRate / 100)));
+        const revenue = customers * ltv;
+        const roas = budget > 0 ? (revenue / budget) : 0;
+
+        // Update numbers
+        document.getElementById("smmVisitorsNum").textContent = visitors.toLocaleString();
+        document.getElementById("smmLeadsNum").textContent = leads.toLocaleString();
+        document.getElementById("smmCustomersNum").textContent = customers.toLocaleString();
+        document.getElementById("smmRevenueNum").textContent = "$" + revenue.toLocaleString();
+        document.getElementById("smmRoasNum").textContent = roas.toFixed(1) + "x";
+
+        // Update visual bar widths proportionally
+        const leadsPct = Math.min(100, Math.max(12, (leads / visitors) * 100 * 3.5));
+        const custPct = Math.min(100, Math.max(10, (customers / visitors) * 100 * 6));
+        document.getElementById("smmVisitorsBar").style.width = "100%";
+        document.getElementById("smmLeadsBar").style.width = leadsPct + "%";
+        document.getElementById("smmCustomersBar").style.width = custPct + "%";
+    }
+
+    [budgetEl, cpcEl, cvrEl, closeEl, ltvEl].forEach(slider => {
+        slider.addEventListener("input", updateSimulator);
+    });
+
+    if (resetBtn) {
+        resetBtn.addEventListener("click", function() {
+            budgetEl.value = 1500;
+            cpcEl.value = 0.80;
+            cvrEl.value = 3.0;
+            closeEl.value = 25;
+            ltvEl.value = 450;
+            updateSimulator();
+        });
+    }
+
+    updateSimulator();
 });
 </script>
 </body>
