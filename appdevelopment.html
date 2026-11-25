@@ -703,6 +703,74 @@
     });
 </script>
 
+<!-- Custom Smooth Magnetic Cursor -->
+<div class="dc-cursor-dot" id="dcCursorDot"></div>
+<div class="dc-cursor-ring" id="dcCursorRing"></div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const dot = document.getElementById("dcCursorDot");
+    const ring = document.getElementById("dcCursorRing");
+    if (!dot || !ring) return;
+
+    // Only run on mouse/trackpad devices
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let ringX = mouseX;
+    let ringY = mouseY;
+    let isVisible = false;
+
+    window.addEventListener("mousemove", function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (!isVisible) {
+            isVisible = true;
+            ringX = mouseX;
+            ringY = mouseY;
+            dot.style.opacity = "1";
+            ring.style.opacity = "1";
+        }
+
+        // Dot moves instantly with mouse
+        dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+    }, { passive: true });
+
+    // Smooth 60fps trailing physics for outer ring
+    function animateCursor() {
+        ringX += (mouseX - ringX) * 0.16;
+        ringY += (mouseY - ringY) * 0.16;
+        ring.style.transform = `translate3d(${ringX.toFixed(2)}px, ${ringY.toFixed(2)}px, 0)`;
+        requestAnimationFrame(animateCursor);
+    }
+    requestAnimationFrame(animateCursor);
+
+    // Hide when leaving browser window
+    document.addEventListener("mouseleave", function () {
+        isVisible = false;
+        dot.style.opacity = "0";
+        ring.style.opacity = "0";
+    });
+
+    // Hover scale effect on clickable elements
+    const hoverTargets = "a, button, input, textarea, select, [role='button'], .wd-compare-box, .faq-question";
+    document.addEventListener("mouseover", function (e) {
+        if (e.target.closest(hoverTargets)) {
+            ring.classList.add("is-hover");
+        }
+    });
+    document.addEventListener("mouseout", function (e) {
+        if (e.target.closest(hoverTargets)) {
+            ring.classList.remove("is-hover");
+        }
+    });
+
+    // Subtle click pulse
+    window.addEventListener("mousedown", () => ring.classList.add("is-click"));
+    window.addEventListener("mouseup", () => ring.classList.remove("is-click"));
+});
+</script>
 </body>
 </html>
 
